@@ -1,0 +1,18 @@
+.botao-submit {
+	border-radius: 25px;
+	width: 50px;
+	height: 50px;
+	position: fixed; /* tive skill issue a tentar perceebr como se mete isto em sticky */
+	bottom: 25px;
+	right: 25px;
+}
+
+/* solucao manhosa, tive preguica de tar a meter um flex so para 2 botoes que tao sempre no mesmo sitio */
+.botao-submit-2 {
+	border-radius: 25px;
+	width: 50px;
+	height: 50px;
+	position: fixed; /* tive skill issue a tentar perceebr como se mete isto em sticky */
+	bottom: 85px;
+	right: 25px;
+}
