@@ -126,5 +126,5 @@ if __name__ == '__main__':
 
         with open('./json/' + str(XMLFile.name).replace('xml','json'),'w') as jsonFile:
             jsonDB = xmlToJson(str(XMLFile.resolve()))
-            jsonDB.update(handleNewFiguras(atualImages,regex.search(r'\d+',str(XMLFile.resolve())).group(0)))
+            jsonDB.update(handleNewFiguras(atualImages,regex.search(r'[1-9]\d*',str(XMLFile.resolve())).group(0)))
             jsonFile.write(json.dumps(jsonDB,ensure_ascii=False,indent=4))
