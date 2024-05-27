@@ -25,7 +25,7 @@
                 Separando-as, estava a <lugar>rua de S.Miguel o Anjo</lugar>, continuação natural da
             <lugar>rua de Maximinos</lugar>. No ponto de encontro destas 4 vias situava-se a
             <lugar>capela de S. Miguel o Anjo</lugar>, construída em data desconhecida e que 
-            <entidade entidade="pessoa">D. Diogo de Sousa</entidade> mandara «ladrilhar». Nos
+            <entidade tipo="pessoa">D. Diogo de Sousa</entidade> mandara «ladrilhar». Nos
             <data>séc. XVII</data> e seguintes, eram nela que os novos Arcebispos se paramentavam,
              antes de entrar na cidade.
         </para>
@@ -55,13 +55,13 @@
         <para>
             De todo este conjunto apenas a terceira casa a Norte do prazo nº11, subsiste, com a
             sua bela varanda de madeira em muitíssimo mau estado; e a casa grande que faz gaveto 
-            com a <lugar>rua de S. Miguel o Anjo</lugar>, então pertencente aos <entidade entidade="instituição">Cónegos Regrantes de Santa Cruz de Coimbra</entidade>.
-            O <lugar>cruzeiro</lugar>, mandado fazer em <data>1621</data> por <entidade entidade="pessoa">D. Afonso Furtado de Medonça</entidade> para o <lugar>campo das Hortas</lugar>,
+            com a <lugar>rua de S. Miguel o Anjo</lugar>, então pertencente aos <entidade tipo="instituição">Cónegos Regrantes de Santa Cruz de Coimbra</entidade>.
+            O <lugar>cruzeiro</lugar>, mandado fazer em <data>1621</data> por <entidade tipo="pessoa">D. Afonso Furtado de Medonça</entidade> para o <lugar>campo das Hortas</lugar>,
             foi transferido em <data>1915</data> para o centro do <lugar>campo de S. Sebastião</lugar>.
         </para>
         <para>
-            Das 7 casas de <lugar>Em Frente do Açougue</lugar> 5 são do <entidade entidade="instituição">Cabido</entidade> e das 17 do <lugar>campo de S. Sebastião</lugar>
-            são foreiras ao <entidade entidade="instituição">Cabido</entidade> 9.
+            Das 7 casas de <lugar>Em Frente do Açougue</lugar> 5 são do <entidade tipo="instituição">Cabido</entidade> e das 17 do <lugar>campo de S. Sebastião</lugar>
+            são foreiras ao <entidade tipo="instituição">Cabido</entidade> 9.
         </para>
         <para>
             Actualmente, <lugar>Em Frente do Açougue</lugar> corresponde à <lugar>avenida de S. Miguel o Anjo</lugar>; o <lugar>campo de
@@ -75,8 +75,8 @@
                 <foro>400 reis e 2 galinhas</foro>
                 <desc>
                     <para>
-                        O enfiteuta é filho de <entidade entidade="pessoa"> Garcia de Noronha de Mesquita e Melo</entidade> e de sua mulher,
-                        <entidade entidade="pessoa"> D. Brites Josefa de Abreu Soares.</entidade>
+                        O enfiteuta é filho de <entidade tipo="pessoa"> Garcia de Noronha de Mesquita e Melo</entidade> e de sua mulher,
+                        <entidade tipo="pessoa"> D. Brites Josefa de Abreu Soares.</entidade>
                     </para>
                     <para>
                         Esta casa é cabeça do prazo do lugar ou casal de S. Sebastião. Foram feitas diversas escrituras,

@@ -41,7 +41,7 @@
             era-lhe acrescentado mais uma vão; outras, raras, tinham mais um piso.
         </para>
         <para>
-            Das 52 casas do lado Nascente e 54 do Poente, eram prazos do <entidade  entidade="instituição">Cabido</entidade> 38 e 20, respetivamente.
+            Das 52 casas do lado Nascente e 54 do Poente, eram prazos do <entidade  tipo="instituição">Cabido</entidade> 38 e 20, respetivamente.
         </para>
         <para>
             Actualmente conserva ainda a mesma designação que lhe deverá ter sido dada pela cruz que
@@ -53,8 +53,8 @@
                 <número>1</número>
                 <enfiteuta>D. António de Noronha de Mesquita Soares</enfiteuta>
                 <desc>
-                    <para>A casa e parte do quintal são foreiras ao <entidade entidade="instituição">Hospital de S. Marcos</entidade>. Pela outra parte do quintal e rossio
-                        paga-se 1006 reis ao n.º 1 do <lugar>Campo de S. Sebastião</lugar>. São subenfiteutas os herdeiros de <entidade entidade="pessoa">Maria Ferreira</entidade>, víuva.</para>
+                    <para>A casa e parte do quintal são foreiras ao <entidade tipo="instituição">Hospital de S. Marcos</entidade>. Pela outra parte do quintal e rossio
+                        paga-se 1006 reis ao n.º 1 do <lugar>Campo de S. Sebastião</lugar>. São subenfiteutas os herdeiros de <entidade tipo="pessoa">Maria Ferreira</entidade>, víuva.</para>
                 </desc>
             </casa>
             <casa>
@@ -63,9 +63,9 @@
                 
                 <desc>
                     <para>
-                        Esta casa é foreira ao <entidade entidade="instituição">Hospital de S. Marcos</entidade>.
+                        Esta casa é foreira ao <entidade tipo="instituição">Hospital de S. Marcos</entidade>.
                         O quintal paga, de foro, 1006 reis e meio ao n.º 1 do Campo de S. Sebastião. São subenfiteutas os herdeiros
-                        de <entidade entidade="pessoa"> Bento de Araújo</entidade>, casado com <entidade entidade="pessoa">Maria Francisca</entidade>.
+                        de <entidade tipo="pessoa"> Bento de Araújo</entidade>, casado com <entidade tipo="pessoa">Maria Francisca</entidade>.
                     </para>
                 </desc>
             </casa>
@@ -75,7 +75,7 @@
                 <desc>
                     <para>
                         Paga, pelo quintal desta casa, 1613 reis ao n.º 1 do <lugar>Campo de S. Sebastião</lugar>.
-                        São subenfiteutas os herdeiros de <entidade entidade="pessoa">José Cunha</entidade>, padeiro, casado com <entidade entidade="pessoa">Ursula Ferreira</entidade>
+                        São subenfiteutas os herdeiros de <entidade tipo="pessoa">José Cunha</entidade>, padeiro, casado com <entidade tipo="pessoa">Ursula Ferreira</entidade>
                     </para>
                 </desc>
             </casa>
@@ -85,7 +85,7 @@
                 <desc>
                     <para>
                         Paga 1250 reis, pelo quintal desta casa, ao n.º 1 do <lugar>Campo de S. Sebastião</lugar>. A casa é foreira
-                        ao Hospital de S. Marcos. São subenfiteutas os herdeiros de <entidade entidade="pessoa">Manuel da Costa Braga</entidade>, morador em <lugar>Lisboa</lugar>.
+                        ao Hospital de S. Marcos. São subenfiteutas os herdeiros de <entidade tipo="pessoa">Manuel da Costa Braga</entidade>, morador em <lugar>Lisboa</lugar>.
                     </para>
                 </desc>
             </casa>
@@ -95,7 +95,7 @@
                 <desc>
                     <para>
                         Pertence ao n.º 1 do <lugar>Campo de S. Sebastião</lugar>, a quem se paga, de pensão ou foro, 3271 reis.
-                        São subenfiteutas os herdeiros de <entidade entidade="pessoa">Domingos da Costa</entidade>, casado com <entidade entidade="pessoa">Maria Correira</entidade>.
+                        São subenfiteutas os herdeiros de <entidade tipo="pessoa">Domingos da Costa</entidade>, casado com <entidade tipo="pessoa">Maria Correira</entidade>.
                     </para>
                 </desc>
             </casa>
@@ -104,8 +104,8 @@
                 <enfiteuta>D. António de Noronha de Mesquita Soares</enfiteuta>
                 <desc>
                     <para>
-                        Paga foro ao n.º 1 do <lugar>Campo de S. Sebastião</lugar>. São subenfiteutas os herdeiros de <entidade entidade="pessoa">Domingos Peixoto</entidade>,
-                        casado com <entidade entidade="pessoa">Paula de Araújo</entidade>.
+                        Paga foro ao n.º 1 do <lugar>Campo de S. Sebastião</lugar>. São subenfiteutas os herdeiros de <entidade tipo="pessoa">Domingos Peixoto</entidade>,
+                        casado com <entidade tipo="pessoa">Paula de Araújo</entidade>.
                     </para>
                 </desc>
             </casa>
@@ -114,8 +114,8 @@
                 <enfiteuta>D. António de Noronha de Mesquita Soares</enfiteuta>
                 <desc>
                     <para>
-                        Paga 893 reis ao n.º 1 do <lugar>Campo de S. Sebastião</lugar>. São subenfiteutas os herdeiros de <entidade entidade="pessoa">José de Teive</entidade>,
-                        casado com <entidade entidade="pessoa">Maria Antónia</entidade>.
+                        Paga 893 reis ao n.º 1 do <lugar>Campo de S. Sebastião</lugar>. São subenfiteutas os herdeiros de <entidade tipo="pessoa">José de Teive</entidade>,
+                        casado com <entidade tipo="pessoa">Maria Antónia</entidade>.
                     </para>
                 </desc>
             </casa>
@@ -134,7 +134,7 @@
                 <desc>
                     <para>
                         Paga, 1583 reis e meio ao n.º 1 do <lugar>Campo de S. Sebastião</lugar>. São subenfiteutas sos herdeiros de 
-                        <entidade entidade="pessoa">Maria de Carvalho</entidade>, viúva de <entidade entidade="pessoa">Manuel Carvalho</entidade>.
+                        <entidade tipo="pessoa">Maria de Carvalho</entidade>, viúva de <entidade tipo="pessoa">Manuel Carvalho</entidade>.
                     </para>
                 </desc>
             </casa>
@@ -143,8 +143,8 @@
                 <enfiteuta>D. António de Noronha de Mesquita Soares</enfiteuta>
                 <desc>
                     <para>
-                        Paga, 1522 reis ao n.º 1 do <lugar>Campo de S. Sebastião</lugar>. São subenfiteutas, os herdeiros de <entidade entidade="pessoa">João Gomes Ferreira</entidade>, marchante
-                        , casado com <entidade entidade="pessoa">Custódia Carvalho</entidade>.
+                        Paga, 1522 reis ao n.º 1 do <lugar>Campo de S. Sebastião</lugar>. São subenfiteutas, os herdeiros de <entidade tipo="pessoa">João Gomes Ferreira</entidade>, marchante
+                        , casado com <entidade tipo="pessoa">Custódia Carvalho</entidade>.
                     </para>
                 </desc>
             </casa>
@@ -153,8 +153,8 @@
                 <enfiteuta>D. António de Noronha de Mesquita Soares</enfiteuta>
                 <desc>
                     <para>
-                        Paga, 803 reis e um quarto ao n.º 1 do <lugar>Campo de S. Sebastião</lugar>. São subenfiteutas os herdeiros de <entidade entidade="pessoa">Domingos FRancisco</entidade>, torneiro
-                        , casado com <entidade entidade="pessoa">Rosa Francisca</entidade>.
+                        Paga, 803 reis e um quarto ao n.º 1 do <lugar>Campo de S. Sebastião</lugar>. São subenfiteutas os herdeiros de <entidade tipo="pessoa">Domingos FRancisco</entidade>, torneiro
+                        , casado com <entidade tipo="pessoa">Rosa Francisca</entidade>.
                     </para>
                 </desc>
             </casa><casa>
@@ -163,7 +163,7 @@
                 <desc>
                     <para>
                         Paga, 803 reis ao n.º 1 do <lugar>Campo de S. Sebastião</lugar>. São subenfiteutas os herdeiros de 
-                        <entidade entidade="pessoa">João Barbosa</entidade>, caso com <entidade entidade="pessoa">Benta Francisca</entidade>.
+                        <entidade tipo="pessoa">João Barbosa</entidade>, caso com <entidade tipo="pessoa">Benta Francisca</entidade>.
                     </para>
                 </desc>
             </casa>
@@ -174,7 +174,7 @@
                     <para>
                         Paga, 1521 reis e meio ao n.º 1 do <lugar>Campo de S. Sebastião</lugar>. Foi construída depois do ano de
                         <data>1669</data>. Confronta, do sul, com serventia do referido n.º 1, a qual, por sua vez, confronta com casa foreira à <lugar>Companhia de Jesus</lugar>.
-                        São subenfiteutas os herdeiros de <entidade entidade="pessoa">Manuel Gomes Góis</entidade>, casado com <entidade entidade="pessoa">Jerónima Luísa</entidade>.
+                        São subenfiteutas os herdeiros de <entidade tipo="pessoa">Manuel Gomes Góis</entidade>, casado com <entidade tipo="pessoa">Jerónima Luísa</entidade>.
                     </para>
                 </desc>
             </casa>
@@ -204,7 +204,7 @@
                     <para>
                         Esta casa é cabeça do prazo denominado «Casal de S. Cristóvão». Pertencem a este prazo os n.º 14 a 19, desta rua; os n.º 21 a 38; da <lugar>Rua da Cruz da Pedra</lugar> e os
                         n.º 1 a 22, da congosta de S. Sebatião. O quintal possui serventia pelo n.º 18 da dita cangosta.
-                        Este prazo pertencia a <entidade entidade="pessoa">João Afonso Chanceler</entidade>, no ano de <data>1466</data>.
+                        Este prazo pertencia a <entidade tipo="pessoa">João Afonso Chanceler</entidade>, no ano de <data>1466</data>.
                     </para>
                 </desc>
             </casa>
@@ -241,7 +241,7 @@
                 <enfiteuta>Os herdeiros de Bento Vaz Perreira, da freguesia de S. Martinho de Dume, casado com Maria Josefa de Macedo e Castro</enfiteuta>
                 <desc>
                     <para>
-                        Pertence aos herdeiros de <entidade entidade="pessoa">António Ferreira</entidade>, casado com <entidade entidade="pessoa">Domingos Ferreira</entidade>. Paga, de foro, 1300 reis ao n.º20. Foi subemprazada em <data>1733</data>.
+                        Pertence aos herdeiros de <entidade tipo="pessoa">António Ferreira</entidade>, casado com <entidade tipo="pessoa">Domingos Ferreira</entidade>. Paga, de foro, 1300 reis ao n.º20. Foi subemprazada em <data>1733</data>.
                     </para>
                 </desc>
             </casa>
@@ -268,7 +268,7 @@
                 <enfiteuta>Os herdeiros de Bento Vaz Perreira, da freguesia de S. Martinho de Dume, casado com Maria Josefa de Macedo e Castro</enfiteuta>
                 <desc>
                     <para>
-                        Paga, de foro, 20 reis ao n.º 20. Foi suemprazada em <data>1690</data>. São subenfiteutas os herdeiros de <entidade entidade="pessoa">Manuel Calheiros</entidade>, casado com <entidade entidade="pessoa">Maria Perreira</entidade>.
+                        Paga, de foro, 20 reis ao n.º 20. Foi suemprazada em <data>1690</data>. São subenfiteutas os herdeiros de <entidade tipo="pessoa">Manuel Calheiros</entidade>, casado com <entidade tipo="pessoa">Maria Perreira</entidade>.
                     </para>
                 </desc>
             </casa>
@@ -286,7 +286,7 @@
                 <enfiteuta>Os herdeiros de Bento Vaz Perreira, da freguesia de S. Martinho de Dume, casado com Maria Josefa de Macedo e Castro</enfiteuta>
                 <desc>
                     <para>
-                        Paga, de foro, 20 reis, ao n.º 20. Foi subemprazada no ano de <data>1706</data>. São subenfiteutas os herdeiros de <entidade entidade="pessoa">João Vaz</entidade>, frasqueiro, casado com <entidade entidade="pessoa">Mariana de Campos</entidade>.
+                        Paga, de foro, 20 reis, ao n.º 20. Foi subemprazada no ano de <data>1706</data>. São subenfiteutas os herdeiros de <entidade tipo="pessoa">João Vaz</entidade>, frasqueiro, casado com <entidade tipo="pessoa">Mariana de Campos</entidade>.
                     </para>
                 </desc>
             </casa>
@@ -295,7 +295,7 @@
                 <enfiteuta>Os herdeiros de Bento Vaz Perreira, da freguesia de S. Martinho de Dume, casado com Maria Josefa de Macedo e Castro</enfiteuta>
                 <desc>
                     <para>
-                        Paga, de foro, 700 reis ao n.º 20. Possui porta de serventia para o n.º 11 da cangosta de <lugar>S. Sebastião</lugar>. É subenfiteuta <entidade entidade="pessoa">Catarina Álvares</entidade>, solteira.
+                        Paga, de foro, 700 reis ao n.º 20. Possui porta de serventia para o n.º 11 da cangosta de <lugar>S. Sebastião</lugar>. É subenfiteuta <entidade tipo="pessoa">Catarina Álvares</entidade>, solteira.
                     </para>
                 </desc>
             </casa>
@@ -304,7 +304,7 @@
                 <enfiteuta>Os herdeiros de Bento Vaz Perreira, da freguesia de S. Martinho de Dume, casado com Maria Josefa de Macedo e Castro</enfiteuta>
                 <desc>
                     <para>
-                        Paga, de foro, 1000 reis ao n.º 20. É subenfiteuta <entidade entidade="pessoa">Valentim Pereira</entidade>, padeiro, e sua mulher, <entidade entidade="pessoa">Francisca Ferreira</entidade>.
+                        Paga, de foro, 1000 reis ao n.º 20. É subenfiteuta <entidade tipo="pessoa">Valentim Pereira</entidade>, padeiro, e sua mulher, <entidade tipo="pessoa">Francisca Ferreira</entidade>.
                     </para>
                 </desc>
             </casa>
@@ -313,7 +313,7 @@
                 <enfiteuta>Os herdeiros de Bento Vaz Perreira, da freguesia de S. Martinho de Dume, casado com Maria Josefa de Macedo e Castro</enfiteuta>
                 <desc>
                     <para>
-                        Paga, de foro, 1000 reis ao n.º 20. O quintal desta possui saída para o n.º 9 da cangosta de <lugar>S. Sebastião</lugar>. É subenfiteuta o <entidade entidade="pessoa">Padre António Nogueira</entidade>.
+                        Paga, de foro, 1000 reis ao n.º 20. O quintal desta possui saída para o n.º 9 da cangosta de <lugar>S. Sebastião</lugar>. É subenfiteuta o <entidade tipo="pessoa">Padre António Nogueira</entidade>.
                     </para>
                 </desc>
             </casa>
@@ -332,7 +332,7 @@
                 <foro>610 reis e 1 galinha</foro>
                 <desc>
                     <para>
-                        Confronta, do sul, com a casa foreira à <entidade entidade="instituição">confraria do Nome de Deus</entidade>. de <lugar>S. Pedro de Maximinos</lugar>. Foi doado ao <entidade entidade="instituição">cabido</entidade>, juntamente com os n.º 40 a 49, no ano de <data>1562</data>, com encargo de aniversário, pelo mestre escola, <entidade entidade="pessoa">Baltazar Carneiro</entidade>.
+                        Confronta, do sul, com a casa foreira à <entidade tipo="instituição">confraria do Nome de Deus</entidade>. de <lugar>S. Pedro de Maximinos</lugar>. Foi doado ao <entidade tipo="instituição">cabido</entidade>, juntamente com os n.º 40 a 49, no ano de <data>1562</data>, com encargo de aniversário, pelo mestre escola, <entidade tipo="pessoa">Baltazar Carneiro</entidade>.
                     </para>
                 </desc>
             </casa>
@@ -352,7 +352,7 @@
                 <foro>800 reis</foro>
                 <desc>
                     <para>
-                        No ano de <data>1624</data> as casas n.º 47 e 48 foram unidas ao n.º 49. O n.º 49 confronta, do norte, com a casa foreira à <entidade entidade="instituição">confrafia da Santíssima Sé</entidade>.
+                        No ano de <data>1624</data> as casas n.º 47 e 48 foram unidas ao n.º 49. O n.º 49 confronta, do norte, com a casa foreira à <entidade tipo="instituição">confrafia da Santíssima Sé</entidade>.
                     </para>
                 </desc>
             </casa>
@@ -365,10 +365,10 @@
                         Esta casa é cabeça do prazo do «Casal da Vinha e Campo de S. Cristóvão».
                     </para>
                     <para>
-                        Confronta, do sul, com quintal da casa, foreira à <entidade entidade="instituição">confraria da Santíssima Sé</entidade>, e, do norte, com a <lugar>cangosta dos Corvos</lugar>.
+                        Confronta, do sul, com quintal da casa, foreira à <entidade tipo="instituição">confraria da Santíssima Sé</entidade>, e, do norte, com a <lugar>cangosta dos Corvos</lugar>.
                     </para>
                     <para>
-                        Pertencem a este prazo as casas que vão desde o n.º57 a 62, com seus quintais, situadas na <lugar>Rua da Cruz de Pedra</lugar>, que foram subemprazadas, no ano de <data>1650</data>. Este prazo foi de <entidade entidade="pessoa"> Francisco Belo</entidade>, criado do Arcebispo <entidade entidade="pessoa">D. Diogo de Sousa</entidade>, em <data>1520</data>.
+                        Pertencem a este prazo as casas que vão desde o n.º57 a 62, com seus quintais, situadas na <lugar>Rua da Cruz de Pedra</lugar>, que foram subemprazadas, no ano de <data>1650</data>. Este prazo foi de <entidade tipo="pessoa"> Francisco Belo</entidade>, criado do Arcebispo <entidade tipo="pessoa">D. Diogo de Sousa</entidade>, em <data>1520</data>.
                     </para>
                 </desc>
             </casa>
@@ -396,7 +396,7 @@
                 <enfiteuta>Frei Sebastião Xavier de Novais Furtado de Mendonça, Cavaleiro da Ordem de Cristo</enfiteuta>
                 <desc>
                     <para>
-                        <entidade entidade="pessoa">Lourenço Francisco da Costa</entidade>, ourives, casado com <entidade entidade="pessoa">Mariana Rosa Ferreira</entidade>, paga 3000 reis ao n.º 50.
+                        <entidade tipo="pessoa">Lourenço Francisco da Costa</entidade>, ourives, casado com <entidade tipo="pessoa">Mariana Rosa Ferreira</entidade>, paga 3000 reis ao n.º 50.
                     </para>
                 </desc>
             </casa>
