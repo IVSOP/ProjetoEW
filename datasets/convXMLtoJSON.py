@@ -179,7 +179,7 @@ if __name__ == '__main__':
         #construct initial json files from xml filmes
         jsonFilePath = './parsed/streets/' + str(XMLFile.name).replace('xml','json')
         jsonDB = xmlToJson(str(XMLFile.resolve()))
-        jsonDB.update(handleNewFiguras(atualImages,regex.search(r'\d+',str(XMLFile.resolve())).group(0)))
+        jsonDB.update(handleNewFiguras(atualImages,regex.search(r'[1-9]\d*',str(XMLFile.resolve())).group(0)))
 
         filesJSON.append((jsonFilePath,jsonDB))
 
