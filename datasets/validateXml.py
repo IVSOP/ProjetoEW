@@ -21,8 +21,8 @@ def validate_xml_files(directory, xsd_path):
     
     return validation_results
 
-directory_path = 'datasets/MapaRuas-materialBase/texto/'
-xsd_path = 'datasets/MapaRuas-materialBase/MRB-rua.xsd'
+directory_path = 'MapaRuas-materialBase/texto/'
+xsd_path = 'MapaRuas-materialBase/MRB-rua.xsd'
 results = validate_xml_files(directory_path, xsd_path)
 
 for file, result in results.items():
