@@ -1,10 +1,10 @@
 # ProjetoEW
 
 Para processamento inicial de dados:
-- validateXml.py -> validar se todos os .xml de acordo com o .xsd
+- `validateXml.py` -> validar se todos os .xml de acordo com o .xsd
   verificamos que havia atributos e tags nos sítios incorretos:
-  - Tag <vista> -> aparecia na 2a posição (incorretamente), dentro do elemento <casa>. Foi movido para o fim do elemento <casa>.
-  - atributo "entidade" dentro da tag <entidade> não existia. Foi substituído para o atributo correto "tipo"
+  - Tag `<vista>` -> aparecia na 2a posição (incorretamente), dentro do elemento `<casa>`. Foi movido para o fim do elemento `<casa>`.
+  - atributo `"entidade"` dentro da tag `<entidade>` não existia. Foi substituído para o atributo correto `"tipo"`
 
 - Com recurso ao script convXMLtoJSON.py, convertemos os dados xml das ruas para o formato json. Por passos:
     - Fizemos a conversão inicial de XML para JSON, com recurso à biblioteca lxml, guardando nomeadamente, para cada rua, os lugares,entidades, datas encontrados nas tags dos parágrafos de descrição da respetiva rua.

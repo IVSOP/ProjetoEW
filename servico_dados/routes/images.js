@@ -9,7 +9,9 @@ const mime = require('mime-types');
 
 // });
 
-router.post('/atual/:nome', function(req,res) {
+// GET para imagens atuais, devolve a imagem
+
+router.get('/atual/:nome', function(req,res) {
 	const imagePath = 'imagens/atual/' + req.params.nome
 	// const extension = path.extname(imagePath).toLowerCase()
 	const mimetype = mime.lookup(imagePath);
@@ -24,6 +26,8 @@ router.post('/atual/:nome', function(req,res) {
         res.status(201).send(data);
     });
 });
+
+// GET para imagens antigas, devolve a imagem
 
 router.get('/antigo/:nome', function(req,res) {
 	const imagePath = 'imagens/antigo/' + req.params.nome
@@ -42,16 +46,14 @@ router.get('/antigo/:nome', function(req,res) {
 });
 
 
-// router.put('/:id', (req,res) => {
-//   Entity.updateEntity(req.params.id, req.body)
-//   .then(data => res.status(201).jsonp(data))
-//   .catch(erro => res.status(528).jsonp(erro))
-// });
-
-// router.delete('/:id', (req,res) => {
-//   Entity.deleteEntityById(req.params.id, req.body)
-//   .then(data => res.status(201).jsonp(data))
-//   .catch(erro => res.status(529).jsonp(erro))
+// router.delete('/antigo/:nome', (req,res) => {
+// 	fs.unlink('imagens/antigo/' + req.params.nome, (err) => {
+// 		if (err) {
+// 			res.status(500).jsonp("Error: " + err)
+// 			return;
+// 		}
+// 		res.status(201).jsonp("Image deleted")
+// 	})
 // });
 
 module.exports = router;
