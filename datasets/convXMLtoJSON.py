@@ -72,7 +72,6 @@ def handleOldFiguras(figuras):
 
     return jsonFiguras
 
-
 def handleCasas(casas):
 
     jsonCasas = {}
@@ -142,7 +141,6 @@ def handleNewFiguras(files,id):
             jsonFiguras['new_images'].append(f'../atual/{file.name}')
 
     return jsonFiguras
-
 
 #id parsers
 def calc_ids(filesJSON, target_field: str) -> dict:

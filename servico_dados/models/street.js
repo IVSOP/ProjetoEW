@@ -1,21 +1,25 @@
 var mongoose = require('mongoose');
+var { v4: uuidv4 } = require('uuid');
 
 var oldImageSchema = new mongoose.Schema({
-    _id: Number,
+    _id: String,
     path: String,
     subst: String
-}, { _id: false });
+}, { versionKey: false });
 
 var houseSchema = new mongoose.Schema({
-    _id: Number,
+    _id: String,
     enfiteuta: String,
     subst: String,
     vista: String,
     desc: [String]
-}, { _id: false });
+}, { versionKey: false });
 
 var streetSchema = new mongoose.Schema({
-    _id: Number,
+    _id: {
+        type: String,
+        default: uuidv4
+    },
     name: String,
     description: [String],
     places: [String],
