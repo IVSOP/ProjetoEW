@@ -2,7 +2,14 @@
     {
         "id": "1",
         "name": "Rua do Campo",
-        "description": [],
+        "description": [
+            "Pequena rua, entre a rua Nova e a Porta de S. Francisco, existente ja na Idade Media, entao com o nome de rua Nova.",
+            "Actualmente toda esta rua tem feição diferente: a porta de S. Francisco foi demolida em data que desconhecemos e a parte central do lado Nascentefoi destruida em 1754 para aí se construir o novo edificio da Camara Municipal (so concluido em 1865) que ficou com a fachada traseira para esta rua.O lado Sul foi integralmente perdido no final da decada de oitenta do seculo passado, quando se fez o alargamento e rectificação do traçado desta artéria.",
+            "Se, na Idade Media, esta rua teve, possivelmente, grande importância (tinha uma porta num dos seus extremos, dava imediato acesso a saída de Braga para Prado,Ponte de Lima e Valença, atraves da rua da Conega), no sec. XVIII, o seu peso deve ter decaído bastante.",
+            "A designagao de Campo podera datar talvez do primeiroquartel do sec. XVI, quando passou a estar em ligação com o campo da Vinha, então aberto.",
+            "Das 10 casas do lado Nascente e 14 do Poente, apenas três deste ladopertenciam ao Cabido.",
+            "A rua do Campo é um troço da actual rua D. Frei Caetano Brandao, entre a rua D. Diogo de Sousa e o largo Conselheiro Torres e Almeida,tendo recebido esta designação na sessão da Câmara de 28.07.1890."
+        ],
         "places": [
             "17",
             "222",
@@ -72,12 +79,26 @@
                 ]
             }
         ],
-        "new_images": []
+        "new_images": [
+            "../atual/1-RuadoCampo-Vista2.JPG",
+            "../atual/1-RuadoCampo-Vista1.JPG"
+        ]
     },
     {
         "id": "2",
         "name": "Rua Nova",
-        "description": [],
+        "description": [
+            "Eixo fundamental da cidade, na sequencia da rua do Souto, define com ela a metade Norte e a metade Sul de Braga.",
+            "Alargada no tempo de D. Diogo de Sousa,ligava a rua do Souto com o Campo das Hortas, através de uma abertura, feita nessa data na muralha, a Porta Nova. Esta porta viria a ser alterada na suaarquitectura, em 1772, segundo um desenho atribuído a André Soares.",
+            "Rua de primordial importancia, nela se situava, de Este para Oeste, a igreja da Misericórdia,a casa brasonada de familiares de D. Jorge da Costa,cardeal de Alpedrinha e uma fonte (aberta por D. Diogo de Sousa e reconstruida por D. Frei Agostinho de Jesus).",
+            "Mais importante ainda e o facto de ser por esta rua que os novos Arcebispos faziam a sua entrada solene na cidade sempre corn grande pompa e festejos.",
+            "0 Mappa mostra-nos uma rua repleta de gelosias, uma forma de fechar as janelas e portas de varandas muito comuns (das casas da burguesia comercial?)-,bastantesedifícios de três pisos e algumas mesmo de quatro; e muitas com varandas.",
+            "No extremo so ficava um pequeno mercado coberto, a Pracinha, espaço aberto tambem porD. Diogo de Sousa, que ao longo dos tempos, e ate 1750, teve os nomes de praça da Hortalice, praça do Pescado e praça do Pão, designações que mostram bem aactividade economica que nela se praticava.",
+            "Uma significativa perda de importância comercial e social deverá ter acontecido a partir da data de mudança do centrocomercial da cidade, da zona da Sé para a da Arcada.",
+            "A rua Nova corresponde hoje exactamente à rua de D. Diogo de Sousa; a Pracinha mantém também o tradicionalsentido toponímico, com o nome de praça Velha. Com 27 casas de cada lado pertenciam ao Cabido 13 do lado Norte e 1 do lado Sul.",
+            "Hoje esta rua mantém ainda muitasdas casas que apresentava em 1750. As que foram alteradas correspondem, porém, a uma tipologia de pisos e aberturas de fachada semelhantes; só as gelosiasdesapareceram integralmente. A fonte foi tapada em finais do seculo passado.",
+            "A Pracinha viu os seus edifícios crescer em altura, sobretudo do lado Este e o mercadocoberto foi retirado em data que desconhecemos."
+        ],
         "places": [
             "4",
             "5",
@@ -259,12 +280,22 @@
                 ]
             }
         ],
-        "new_images": []
+        "new_images": [
+            "../atual/2-RuaNova-Vista1.JPG",
+            "../atual/2-RuaNova-Vista2.JPG"
+        ]
     },
     {
         "id": "3",
         "name": "Rua dos Açougues velhos",
-        "description": [],
+        "description": [
+            "Pequenina rua que liga a fachada da Sé com a rua Nova.",
+            "Aberta possivelmente na Idade Media nela existiram ate ao sec. XV os açougues da cidade. Nessa data a rua era mais longa, prolongando-se até quase ao início da rua do Poço.",
+            "Actualmente poucas alterações de peso há nesta rua quanto ao Mappa e nenhuma respeitante ao seu tamanho e largura. O edifício pertencente à Sé foi porém substancialmente aumentado em altura, apresentando-se hoje radicalmente diferente.",
+            "Pena foi que as casas dos prazos n.° 3 e 4 desta rua, ja em 1750 com um só inquilino, tivessem sido destruídos, pois apresentavam uma curiosíssima janela de canto e um jogo de telhados estranho.",
+            "Das duas casas do lado Norte e 6 do Sul pertenciam ao Cabido 1 e 6 respectivamente.",
+            "Não sabemos quando o seu nome mudou para a rua do Cabido. No mapa de 1857 tem ainda o nome de Travessa dos Açougues Velhos."
+        ],
         "places": [
             "15",
             "17",
@@ -349,12 +380,22 @@
                 ]
             }
         ],
-        "new_images": []
+        "new_images": [
+            "../atual/3-RuaDosAáouguesVelhos-Vista2.JPG",
+            "../atual/3-RuaDosAáouguesVelhos-Vista1.JPG"
+        ]
     },
     {
         "id": "4",
         "name": "Praça do Pão",
-        "description": [],
+        "description": [
+            "Pequena praça em frente à fachada da Sé, que ao longo dos séculos foi tendo uma vida e importância diferentes, mas sempre descendente.",
+            "Aberta talvez no séc. XV, resultou da destruição da rua dos Açougues, pequena artéria que então ligava as actuais rua D. Gonçalo Pereira e D. Gualdim Pais. Nessa data instalou-se nela a Praça do Pão. No tempo de D. Diogo de Sousa construiu-se, no ângulo que esta praça faz com a rua de Maximinos, o novo edifício da Câmara Municipal, que seria destruído nos inícios do séc. XIX (No Mappa está na rua de D. Gualdim).",
+            "A partir de meados do séc. XVIII, com a mudança da vida comercial para a rua do Souto e zona exterior da porta que tem o mesmo nome, com a erecção da ala barroca do Palácio dos Arcebispos e, defrontando-a, com o novo edifício da Câmara (1755), a praça do Pão irá perdendo toda a sua importância comercial e política.",
+            "Em 1868 foi projectado o alargamento da rua de Maximinos, que rapidamente foi levado a cabo, recebendo a nova rua a largura total da praça do Pão. A partir daí deixou de fazer sentido a existência de duas artérias diferentes, sendo este largo integrado na nova rua que, desde 26/11/1925, se passou a chamar rua D. Paio Mendes.",
+            "Hoje ainda se conservam algumas das casas existentes no Mappa. Mas as mais interessantes, as dos prazos 4-6 e 13-14 já desapareceram.",
+            "Das 5 casas do lado Norte e 9 do lado Sul eram prazos do Cabido 4 e 9, respectivamente."
+        ],
         "places": [
             "15",
             "185",
@@ -512,12 +553,26 @@
                 "desc": []
             }
         ],
-        "new_images": []
+        "new_images": [
+            "../atual/4-PraáaDoP∆o-Vista1.JPG",
+            "../atual/4-PraáaDoP∆o-Vista2.JPG"
+        ]
     },
     {
         "id": "5",
         "name": "Rua das Oucias",
-        "description": [],
+        "description": [
+            "Tortuosa rua que contornava as traseiras e fachada lateral Sul da Sé.",
+            "Longa e atribulada história tem esta via, que, no espaço curto, quase de notícia, como convém a esta edição, não pode ser aqui contada.",
+            "Formada, naturalmente, pelo isolamento que os monumentos religiosos sempre têm, as suas casas foram lentamente surgindo.",
+            "No ponto de encontro desta rua com a rua do Souto desembocava o «cano» que, vindo de lugar desconhecido, abastecia a principal fonte da cidade medieval,a fonte de S. Geraldo, que por aqui se deveria localizar. Junto, no local onde está a Capela da Glória, existiu a casa do Conselho Municipal demolida paradar lugar àquela capela.",
+            "Com D. Diogo de Sousa, em 1509, a capela mor da Sé foi profundamente alterada, e, embora não tenha avançado sobre os alicerces da velhaconstrução medieval, deu-lhe outra leveza, que o manuelino, nos seus rendilhados, sempre tem. Poucos anos após o mesmo arcebispo mandou abrir a rua de S. João ,permitindo uma ligação directa com a Porta de S. João.",
+            "No pequeno «rexio» existente do lado Sul da Sé, entre o braço do transepto e a fachada, existiu, na Idade Média,uma feira de olarias.",
+            "Toda esta parte foi violentamente destruída nos anos quarenta do nosso século, para «limpar esta zona socialmente tão degradada» criando-se o Rocioda Sé. E na sequência dessa obra de «limpeza» constroem-se, em «estilo Português Suave», o edifício do Tribunal do Trabalho/Delegação Escolar e um outro, particular; e,passados vinte anos, foi destruído um grande e nobre edifício setecentista, para se construir a Residência Académica.",
+            "Hoje a rua conserva todos os seus belíssimos edifícios na zonacorrespondente à rua de Nossa Senhora do Leite. Na parte Sul toda a malha urbanística e escala arquitectónica desapareceu com a introdução do novo e amplo Rocio da Sé, que, no Mappaapenas conserva uma casa.",
+            "Das 15 casas existentes, 12 eram prazos do Cabido.",
+            "A designação de Oucias (e aparecem também as designações de Ussias e Adussias),será talvez uma corrupção de ousia, isto é capela-mor. E a de Nossa Senhora do Leite é devida à belíssima imagem, da escola coimbrã do séc. XVI, que foi oferecida por D. Diogo de Sousa ."
+        ],
         "places": [
             "15",
             "4",
@@ -678,12 +733,25 @@
                 ]
             }
         ],
-        "new_images": []
+        "new_images": [
+            "../atual/5-RuaDasOucias-Vista1.JPG",
+            "../atual/5-RuaDasOucias-Vista2.JPG"
+        ]
     },
     {
         "id": "6",
         "name": " Rua do Souto Porta do Souto ",
-        "description": [],
+        "description": [
+            "Rua chave de todo o urbanismo e vida económica bracarense, a rua do Souto, terá sido, pelo menos desde o séc. XVII, a mais importante da cidade.",
+            "Quando se construiram as muralhas de Braga pensou-se logo no possível crescimento citadino. A metade Sul,já habitada e arruada com artérias cujo traçado remonta aos romanos, ficou protegida; a metade Norte continuou vazia, com campos, que lentamente se foram enchendo.",
+            "Primeiro foi a rua Nova, mais tarde chamada do Campo; depois, em 1565, a dos Gatos ou da Misericórdia.",
+            "A rua que delimitou as duas zonas foi a do Souto. Era longa, bem lançada e recta, unia o Paço dos Arcebispos com o Castelo e uma porta da muralha, no seu extremo.",
+            "Não importa agora que tipo de casas teria naquela longínqua data. O Mappa mostra-nos que em 1750 era uma artéria muito bem organizada,tendo quase todas as casas com três pisos, gelosias, muitas varandas de madeira cobertas também com gelosias e, no piso térreo,grandes portas de madeira, permitindo o comércio. É verdadeiramente magnífico de beleza e de unidade este conjunto!Pena foi que, nas décadas de 60 ou 70 do séc. XIX, todas as gelosias tivessem sido destruídas.",
+            "No desenho das fachadas sobressaem apenas o conjunto monumental do largo do Paço, obra já dos Arcebispos que vão de D. Diogo de Sousa a D. Rodrigo de Moura Teles,e as casas a seguir aos prazos n.° 2, com um belo trabalho de pedra nas janelas e n. ° 50, com os pisos superiores assentes sobre duas finas colunas.",
+            "Hoje a estrutura das suas casas mantém-se, excepto no que respeita às gelosias. Em 1923 e 1954 a rua do Souto foi cortada pelas rua Justino Cruz(que a ligou ao Campo da Vinha) e pela rua Francisco Sanches (no enfiamento da anterior, estabelecendo ligação para carros com o largo de S. João do Souto,uma vez que a passagem de pessoas já era feita através da Casa do Passadiço).",
+            "A zona denominada Porta do Souto, que corresponde à parte do Largo Barão de S. Martinho entre a rua dos Janes e a Foto Pelicano,foi totalmente alterada em 1853, quando foi destruído o arco da Porta do Souto.",
+            "Das 37 casas do lado Norte e 55 do lado Sul eram prazos do Cabido 16 e 33 respectivamente."
+        ],
         "places": [
             "4",
             "172",
@@ -1181,12 +1249,25 @@
                 ]
             }
         ],
-        "new_images": []
+        "new_images": [
+            "../atual/6-RuaDoSoutoPortaDoSouto-Vista2.JPG",
+            "../atual/6-RuaDoSoutoPortaDoSouto-Vista1.JPG"
+        ]
     },
     {
         "id": "7",
         "name": " Loura e Terreiro do Castelo  ",
-        "description": [],
+        "description": [
+            "Pequena artéria que, partindo da igreja dos Terceiros, contornava a cidadela medieval, até à rua do Souto.",
+            "Segundo Alberto Feio, a construção da cidadela deu origem a um pequeno largo que tomou o nome de Terreiro do Castelo. No séc. XVII deverá ter sido aberta a Loura, uma vez que na planta de Braunio ainda não figura.",
+            "Da sua história,que deverá ter sido rica, pouco sabemos; e não vamos falar aqui da vida do Castelo.",
+            "Entre 1690 e 1733 foi construída a igreja do Terceiros, da Venerável Ordem Terceira de S. Francisco que, embora já esteja fora desta rua, nela intervirá com a construção da casa do Definitório, em 1758.",
+            "De 1750 até aos nossos dias perdeu-se na Loura o magnífico portão de pedra e no seu lugar foi edificada uma boa casa, que tem data de 1824; e no local do prazo nº 3 foram edificadas casas \"estilo Português Suave\". Os prédios do Terreiro do Castelo foram todos alterados no séc. XX.",
+            "Do lado oposto, após a destruição da cidadela em 1905 começou a ser construído o edifício que ainda agora se vê, projectado pelo arquitecto Marques da Silva.",
+            "A rua, contudo, mantém ainda o recanto entre as casas dos prazos 2 e 3, embora de forma menos acentuada.",
+            "Das 10 casas, desta rua, 3 eram prazos do Cabido.",
+            "Estas duas artérias têm hoje o nome comum de rua do Castelo."
+        ],
         "places": [
             "158",
             "159",
@@ -1251,12 +1332,21 @@
                 ]
             }
         ],
-        "new_images": []
+        "new_images": [
+            "../atual/7-LouraETerreiroDoCastelo-Vista2.JPG",
+            "../atual/7-LouraETerreiroDoCastelo-Vista1.JPG"
+        ]
     },
     {
         "id": "8",
         "name": "Rua de Janes ",
-        "description": [],
+        "description": [
+            "Pequena e tortuosa rua que ligava a igreja de S. João do Souto à Porta de Souto. Aparece também com os nomes de Jano e Janoas.",
+            "Aberta na Idade Média, esta artéria deverá ter perdido grande parte da sua importância quando D. Diogo de Sousa deu efectiva funcionalidade à porta de S. João.",
+            "No Mappa aparece-nos como uma rua desordenada, com uma linha de empenas muito recortada no lado Sul, com casas de um certo ar rural, misturadas com outras do desenho urbano característico de Braga desta época e, sobretudo, com muitos edifícios de cariz bastante arcaico (15%). O fraco tratamento dado às janelas e a quase inexistência de varandas mostra bem o carácter secundário desta rua.",
+            "Com 19 casas do lado Sul e 18 do Norte, eram prazos do Cabido 7 e 12 respectivamente.",
+            "Este topónimo, que se mantém ainda hoje, deriva do nome do instituidor da medieval igreja de S. João de Souto, João Anes."
+        ],
         "places": [
             "45",
             "46",
@@ -1435,12 +1525,19 @@
                 ]
             }
         ],
-        "new_images": []
+        "new_images": [
+            "../atual/8-RuaDeJanes-Vista1.JPG",
+            "../atual/8-RuaDeJanes-Vista2.JPG"
+        ]
     },
     {
         "id": "9",
         "name": "Rua de S.João",
-        "description": [],
+        "description": [
+            "Rua ampla, de boas e grandes casas de pedra, aberta por D. Diogo de Sousa: «Fez a rua de S. Marcos,a qual é da Cappella maior da Sé até a porta do dito S. Marcos; comprou muitas casas acerca da Sé para fazera dita rua e quintaes atraz d'ellas porque tudo era cerrado de casas e de quintaes e não havia ahi rua nenhuma...»",
+            "Esta rua é uma das mais importantes obras urbanísticas de D. Diogo de Sousa. Ao ligar as traseiras da Sé com a porta deS. João, este arcebispo não se limitou a permitir um maior ângulo de visão para a belíssima capela mor da Sé,também obra sua; acima de tudo o que esta artéria representa é um violento abanão na estrutura urbana, pois que será ampla e de bons prédios, grandese de pedra; e, principalmente, permitirá o abrir a cidade ao exterior, porque continuava pelo Campo dos Remédios e Granginhos em direcçãoà rua da Ponte de Guimarães.",
+            "Nela se fixaria a família dos Coimbras — família que acompanhou D. Diogo na sua vinda paraBraga — em casa hoje reconstruída noutro local e desenhada por João de Castilho; osPaiva Marinho, na notável casa dos Paivas, riscada em finais do séc. XVI por alguém que passoupor Florença e procurou transplantar um pouco da arquitectura do Palácio Pitti; a irmã do Cónego Francisco Pacheco Pereira na grande casa do Passadiço; e os Lagos e os Antões Pereira em casas mais simples, mas não menos belas, que no Mappa se vêem com os nºs 9 e 10."
+        ],
         "places": [
             "51",
             "52",
@@ -1477,12 +1574,23 @@
                 "subst": "Rua de S.João - vista sul. "
             }
         ],
-        "new_images": []
+        "new_images": [
+            "../atual/9-RuaDeS.Jo∆o-Vista2.JPG",
+            "../atual/9-RuaDeS.Jo∆o-Vista1.JPG"
+        ]
     },
     {
         "id": "10",
         "name": "Travessa da Rua de S. João para a do Forno",
-        "description": [],
+        "description": [
+            "Rua em forma de cotovelo, tendo uma espécie deprotuberância no ângulo, mais parecendo duas viasque se encontrava num ponto que se alargava, formandoaí um «Rexio».",
+            "Seria um pouco estranho de compreender o seu traçado,se não soubessemos que no ponto onde se encontrava osseus troços Sul e Oeste terá passado, possivelmente,a muralha da cidade romana. Só assim se pode aceitarque esta artéria não tivesse sequência até à Igrejade S. João de Souto, ou à Porta de S. João.",
+            "Sem unidade no tipo de casas que a formavam, tinhaprédios de dois pisos, alternando com outros de trêsou até um; edifícios com longa fachada, a par com outrosde pequena e média dimensão.",
+            "Todas as casas são de arquitectura tradicional, talvezna sua maioria em pedra, com seis raras varandas e apenastrês gelosias, e uma forte percentagem (60%) de janelastípicas de Braga. De notar a casa grande situada no cantoSudoeste do «Rexio de S. João» que tem um grande terrenode cultivo virado à rua, estando o prédio implantadoatrás, na linha de barreira que fecha a Sul o «Rexio».",
+            "Das 10 casas existentes do lado Norte e outras tantasdo lado Sul são prazos do Cabido 5 e 6 respectivamente.",
+            "Se bem que todo o bairro a Sul da Sé, pelo entrecruzarde ruas, seja conhecido como Bairro das Travessas é muitoestranho e nada aceitável o nome desta rua que ora tratamos.Na Idade Média a parte Este desta artéria, que no Mappa temo nome de «Travessa para a rua de S. João», era conhecida comorua da Carrapata e a parte Sul, sem designação especialno Mappa, tinha o nome de Paio Manta, talvez uma pessoadominante que aí vivesse. No séc. XVI, a rua de Paio Mantatomou o nome de rua Coelho que manteve até 19/12/1892, dataem que passou a denominar-se de El-Rei. Em 24 de Fevereiro de1944 recebeu o nome de D. Afonso Henriques.",
+            "Desde 1892 que esta rua está muito alterada, embora semantenha a sua função: A rua de «Coelho» foi alargada,o «Rexio de S. João» desapareceu e a «Travessa para o Rexiode S. João» integrou o novo largo de S. João de Souto, entãoformado juntamente com parte da rua de S. João e outrosterrenos. Grosso modo, podemos dizer que esta travessa seintegra hoje na rua D. Afonso Henriques e Largo deS. João de Souto."
+        ],
         "places": [
             "263",
             "232",
@@ -1641,7 +1749,16 @@
     {
         "id": "11",
         "name": "Rua dos Cegos ou do Forno",
-        "description": [],
+        "description": [
+            "Pequena rua, hoje parcialmente desaparecida,que, segundo o Mappa, ligava as traseiras daigreja do Colégio da Companhia de Jesus às daSé.",
+            "Era conhecida por esta designação já naIdade Média, devido ao Forno da Infanta que selocalizava na casa do prazo n.º 12.",
+            "Estranhamente esta artéria não figura noTombo do Cabido (ca. de 1369-1380).",
+            "É esta uma rua da periferia da Sé, bastantesecundária, simples elo de ligação entre ruas.Os seus edifícios, têm 2 e 3 pisos, com poucasvarandas e raras gelosias. De notar uma casagrande na esquina da rua de S. João; outra,duplamente sobradada na junção com a rua dasOucias; e a janela de canto, de carizrenascentista, do prédio grande, do gavetofeito com a rua Pay Manta.",
+            "Das 13 casas do lado Nascente e 11 do ladoPoente, são prazos do Cabido 11 e 8respectivamente.",
+            "Hoje muito poucas casas se conservam no ladoEste desta rua. O lado Oeste está totalmentealterado.",
+            "A parte Sul da rua, isto é, a que vai alémda rua de Pay Manta, foi fechada ao público,por deliberação camarária de 20-06-1896.",
+            "Actual rua do Forno."
+        ],
         "places": [
             "59",
             "15",
@@ -1850,7 +1967,15 @@
     {
         "id": "12",
         "name": "Travessa Da Rua Do Forno Para A Do Poco",
-        "description": [],
+        "description": [
+            "Mais um fragmento da grande rua das Travessas, espinha dorsal do velho bairro medieval e que decalca uma velha rua romana.",
+            "Com construções de desigual desenho de fachada e características, esta é mais uma artéria que, lentamente, também foi perdendo a sua importância até aos finais do séc. XIX.",
+            "Em 1892 foi consideravelmente alargada, sendo destruídos todos os seus prédios, embora a linha de fachadas do lado Sul se tivesse mantido.",
+            "Hoje conservam-se apenas alguns pormenores da casa do prazo n.º 5, que era um belo edifício gótico e com pedra de armas: e onde, parece terem vivido familiares de João de Barros, autor da «Geografia de Entre Douro e Minho».",
+            "Extremamente curiosa é, também, a casa do prazo n.° 6. Com portão e janelas renascentistas, organiza-se em diferentes pisos, ligados por um muro oblíquo, descendo para o canto da rua. Sobre essa parte do edifício, tem um acréscimo, empoleirado, fazendo lembrar a arquitectura japonesa.",
+            "Das 8 casas do lado Norte e 9 do lado Sul, são 4 e 6, respectivamente, prazos do Cabido.",
+            "Hoje esta travessa é um troço na rua D. Afonso Henriques situado entre a rua do Forno e a rua D. Gonçalo Pereira."
+        ],
         "places": [
             "42",
             "213",
@@ -1978,7 +2103,15 @@
     {
         "id": "13",
         "name": "Rua Pequena",
-        "description": [],
+        "description": [
+            "Como o nome diz é uma pequenina rua que ligava a rua das Oucias com a travessa da rua do Forno para a do Poço.",
+            "Respeitando o reticulado romano era mais uma das artérias do bairro medieval adjacente à catedral.",
+            "Na Idade Média era já pequena e permitia um melhor acesso ao mercado da olaria, então existente junto ao transepto da Sé. Por isso recebeu esse nome.",
+            "No séc. XVI, o célebre humanista Diogo Teive emprazou ao Cabido a casa n.º 2, passando a ser conhecida por rua do Teive. Até que por volta de 1620 Mateus Fernando Farto, talvez senhor de forte importância política ou económica, veio para aqui viver, tanto bastando para ser conhecida pelo seu apelido.",
+            "No Mappa, contudo, aparece como rua Pequena. Sabemos ainda que talvez a partir do fim da Idade Média, e durante cerca de um século, também foi chamada de rua Painsalvos, por nela ter morado o abade da freguesia transmontana do mesmo nome.",
+            "Embora pequena, tem 3 edifícios notáveis: o prazo n.º 1, grande construção em pedra, com fachada bem organizada e um recuado em toda a extensão; o prazo n.º 2, casa com quase excesso de aberturas, (sem comparação com qualquer outra em todo o Mappa); e o prazo n.º 5, construção também em pedra, de 2 pisos, com mais um piso, no seu último vão Sul, quase semelhando uma torre.",
+            "Das 4 casas existentes quer no lado Nascente, quer no Poente, 3 e 4, respectivamente, são prazos do Cabido."
+        ],
         "places": [
             "85",
             "86",
@@ -2101,7 +2234,20 @@
     {
         "id": "14",
         "name": "Rua de Sta. Maria ou do Poço",
-        "description": [],
+        "description": [
+            "Longa e importantíssima artéria que ligava aCatedral com o terreiro de S. Paulo ou de S. Tiagoonde existia a principal porta da cidade virada a Sul,a Porta de S. Tiago, depois chamada do Colégio.",
+            "Rua de farta história foi um eixo fundamental dacidade, só deixando de o ser a partir da data em queo centro se mudou para o eixo rua do Souto-Arcada.",
+            "Na Idade Média era por aqui que se tinha acesso àfeira que se fazia algures, junto à porta da muralha,no Terreiro de S. Tiago. Nela também talvez tivessehavido um mercado de forragens, pois foi conhecida,no séc. XIV, com o nome de rua da Erva.",
+            "No séc. XV, instalou-se em casa logo pegada à actualIgreja de Santiago, a Sinagoga, sendo arruada estaartéria aos judeus, por decisão do Senado; a ruapassou então a ser conhecida como rua da Judiaria.",
+            "Em 1465, pelo menos, foi decidido mudar os judeuspara uma rua que não ficasse tão próxima da Sé, poiscausava má impressão haver tantas moradas de «casasde hereges» em local tão próximo da Catedral, ouIgreja de Santa Maria de Braga.",
+            "Começou então a ser conhecida por rua de Santa Mariae, também, por rua da Judiaria Velha.",
+            "Entretanto instalou-se no contíguo terreiro deS. Tiago o Colégio de S. Paulo, onde existiram osEstudos Gerais.",
+            "No séc. XVIII, tinha o nome de rua do Poço, que provinha de um poço municipal existente quase noextremo Noroeste desta artéria que serviu desde a Idade Média até ao séc. XIX. A metade Sul, além darua das Travessas, foi também conhecida pelo nome de rua de S. Tiago.",
+            "Alargada em fins do séc. XIX, manterá a sua importância como eixo. O comércio, esse,é que não voltou.",
+            "Hoje perdeu quase todas as casas que vemos no Mappa; e algumas eram bem interessantes como, porexemplo, a casa do prazo n.° 16, com uma bela janela de canto, renascentista.",
+            "Das 18 casas existentes no lado Nascente e 14 do lado Poente eram prazos doCabido 16 e 11 respectivamente.",
+            "Tendo recebido ainda outros nomes, foi em 24 de Fevereiro de 1944designada de rua D. Gonçalo Pereira, que mantém."
+        ],
         "places": [
             "26",
             "27",
@@ -2387,7 +2533,12 @@
     {
         "id": "15",
         "name": "Travessa da Rua do Poço para a de D.Gualdim",
-        "description": [],
+        "description": [
+            "Fragmento da actual rua D. Afonso Henriques, entre as ruas D. Gonçalo Pereira e D. Gualdim Pais.",
+            "Se na sua pequeníssima extensão poucas casas há (1 do lado Norte e 4 do lado Sul, todas prazos do Cabido) não deixa de ter mesmo assim dois edifícios interessantes: a dos prazos 5 e 6, boa casa de pedra com uma notável porta varanda dos finais de seiscentos; e a dos números 1 e 2 por ser uma casa muito grande com o piso superior sobradado, à maneira antiga.",
+            "Curiosos são ainda os prazos n.ºs 3 e 4 onde se vêem 2 habitações com «porta ladeada de uma janela» que eram frequentes, sobretudo, nas ruas existentes no exterior das muralhas.",
+            "Alargadas nos finais do séc. XIX, não se conservam hoje nenhuma das casas desta rua existentes no Mappa."
+        ],
         "places": [
             "215",
             "228"
@@ -2501,7 +2652,17 @@
     {
         "id": "16",
         "name": "Rua de D. Gualdim",
-        "description": [],
+        "description": [
+            "Longa e curiosíssima rua que no Mappa se estende da praça do Pão até ao Terreiro de Sto. António.",
+            "Aberta sobre uma rua do reticulado da cidade romana é hoje uma das raras artérias medievais que não sofreu o alargamento feito nos finais do séc. XIX a quase todas as ruas do bairro das Travessas.",
+            "Em data que desconhecemos, foi dividida em duas: rua de D. Gualdim, da Sé até à rua D. Afonso Henriques, e rua de S. Tiago, daí até à rua de S. Paulo.",
+            "Não sabemos hoje qual a casa onde viveu D. Gualdim Pais, célebre guerreiro do nosso primeiro rei, e que apenas a tradição diz aqui ter habitado; ou onde se situou a casa cedida pelo arcebispo D. Paio Mendes aos Templários para hospício dos peregrinos. Sabemos sim que esta rua aparece no mais antigo livro de Nota do Arquivo da Câmara Municipal de Braga, onde a 12 de Fevereiro de 1445 Vasco Jorge, escrivão da Câmara, lançou o primeiro prazo dos seus bens, com o nome de Cruz da Picota. Em 1459 vem já noutro prazo como rua de D. Gualdím.",
+            "Por essa data já as duas partes da rua se deviam assumir e ter populações bem diferentes: as da metade Norte, mais rica, próximas da Sé e praça do Pão, centro fundamental da cidade medieval e onde um século mais tarde seria construído, por mando de D. Diogo de Sousa, o novo edifício da Câmara. E a parte Sul junto à porta de S. Tiago, com a sua igreja própria (a Igreja de Santiago, hoje Igreja da Cividade) então virada para esta rua.",
+            "Em 1750 muita da sua importância foi alterada: o arcebispo D. José de Bragança já mandara fazer a ala barroca do seu palácio e na sua ideia já gravitava a vontade de mudar o edifício da Câmara para mais perto de si, o que fez em 1754. O comércio há muito que saíra da rua dos Burgueses para a doSouto; e, também, já desde D. Diogo de Sousa que os mercados se tinham implantado, com recintos próprios, noutros locais, um deles, até relativamente próximo. E a Igreja de Santiago, viria a ser reconstruída, mas com a planta invertida, isto é, com a fachada virada para a rua D. Gonçalo Pereira, 37 anos após.",
+            "Como dissemos, hoje a rua de D. Gualdim, isto é, a parte Norte, conserva muitíssimo bem o aspecto que mostra no Mappa. Pena só que as curiosas casas sobradadas do prazo n.º 1, a casa do prazo n.º 18 e o edifício da Câmara tenham sido perdidas na voragem dos séculos.",
+            "A metade Sul, essa, mercê do alargamento que recebeu nos inícios do nosso século, transformou-se totalmente, sendo hoje uma das ruas mais incaracterísticas de Braga.",
+            "Das 20 casas do lado Nascente e 23 do Poente eram 10 e 13, respectivamente, prazos do Cabido."
+        ],
         "places": [
             "13",
             "324",
@@ -2785,7 +2946,12 @@
     {
         "id": "17",
         "name": "Travessa da Rua de D.Gualdim até ao Couto do Arvoredo",
-        "description": [],
+        "description": [
+            "Mais um fragmento da rua das Travessas, o último no sentido Este-Oeste. Só noúltimo quartel do século passado a rua das Travessas se prolongaria além da rua Verdee Couto do Arvoredo, cortando a muralha, para desembocar no campo das Carvalheiras,então chamado de S.Miguel o Anjo.",
+            "A transformação recebida há cem anos nesta artéria, qua a fez passar a ter odobro da largura, destruiu todas as casas apresentadas no Mappa. E pena foi,porque embora este troço de rua seja de interesse secundário na cidade de então,apresentava uma casa brasonada, em pedra, de 3 pisos, no gaveto com a rua deD. Gualdim e uma curiossísima casa com escada exterior, talvez quinhentista, nada vulgarneste documento.",
+            "Das 6 casas do lado Norte e 7 do Sul, são prazos do Cabido 2 de cada lado.",
+            "Esta travessa, está atualmente integrada na rua D. Afonso Henriques."
+        ],
         "places": [
             "42",
             "42",
@@ -2866,7 +3032,14 @@
     {
         "id": "18",
         "name": "Rua das Chagas",
-        "description": [],
+        "description": [
+            "Artéria secundária, de origem romana, ligava a rua das Travessas com a ruade Maximinos.",
+            "Aberta em data indeterminada da Idade Média, tinha, em 1750, uma estranha feiçãopelo aspecto cego que lhe era dado pelas portadas de madeira que protegiam 83,5%de todas as suas janelas.",
+            "Com casas de aspeto pobre, muitas delas sobradadas, só nos gavetos apresentavaconstruções mais ricas. Curioso é, contudo, o enorme bloco, de empena e telhado comuns,que ocupa quase toda a metade Norte do lado Nascente da rua e quase lembra um prédiode rendimento dos nossos dias.",
+            "Chamada primeiro de Triparia, devido ao tipo de carne que aqui se vendia, passoua partir de 1593 a ser conhecida pelo nome actual de rua das Chagas.",
+            "Hoje está bastante alterada. Com o alargamento das ruas Verde, de Maximinose das Travessas, muitos dos seus prédios foram destruídos, principalmente ossituados no lado Poente e no extremo Norte do lado oposto. Assim a rua foi muitoencurtada e deixou de desembocar na rua de Maximinos, passando a ter o seu limite na ruaD. Frei Caetano Brandão. A zona que não foi mexida, mantém, contudo, a sua feição arcaica.",
+            "Das 10 casas do lado Nascente e 13 do Poente, são prazos do Cabido 5 e 3 respetivamente."
+        ],
         "places": [
             "42",
             "22",
@@ -3000,7 +3173,13 @@
     {
         "id": "19",
         "name": "Rua de Sto. António",
-        "description": [],
+        "description": [
+            "Pequena rua, que ligava a rua das Travessas com o Terreiro de Santo António. De raiz romana,não sabemos qual teria sido a sua função na cidade medieval.",
+            "Em 1465 são transferidos para aqui os judeus e instalados no prédio mais interessante que hojeaqui resta, e um dos mais estimáveis de toda a cidade, passando a ser denominada de Judiaria Nova.Esta casa veio depois a pertencer ao cónego João de Meira Carrilho, que lhe pôs as suas armas.",
+            "No final de quatrocentos, com a obrigação que os judeus sofreram de abjurar a sua religiãopassou a ser chamada de Sto. António, nome que se mantém.",
+            "Das 3 casas medievais que se vêem no alçado Nascente nada resta hoje infelizmente (uma já estavaem adiantada ruína). Do lado Poente conservam-se algumas casas, ainda. É curioso notar que as suasconstruções têm um tipo de acabamento e proteção de janelas bem mais cuidado que a rua quelhe era sequente, a das Chagas.",
+            "Esta artéria, que felizmente ainda hoje conserva o seu traçado original, tinha 7 casas do ladoNascente e 15 do Poente, sendo 6 e 11, respectivamente, prazos do Cabido."
+        ],
         "places": [
             "42",
             "338",
@@ -3179,7 +3358,17 @@
     {
         "id": "20",
         "name": "Terreiro de Sto. António e Postigo",
-        "description": [],
+        "description": [
+            "Pequena artéria que ligava o terreiro de S. Tiago ao Postigo de S.Sebastião.",
+            "Mantendo o traçado de uma rua da cidade romana, já no séc. XIV nos aparece com os nomesde rua Travessa e rua do Postigo.",
+            "Com a expulsão dos judeus a sua designação passará a ser de Santo António, a mesmada rua que lhe era contígua.",
+            "Poucos anos mais tarde D. Diogo de Sousa criou os Estudos Gerais, que os seus sucessoresD. Henrique e D. Frei Bartolomeu dos Mártires muito protegeram;a sua capela, com a invocaçãode S. Paulo, faceava com o lado Sul do Terreiro, que aqui aparece como rua do Terreiro de SantoAntónio.",
+            "Ao lado da capela, não se sabe se relacionada com os Estudos Gerais, havia uma estupendacasa seiscentista, com um belíssimo e muito raro trabalho de pedra nas janelas, e portão, lateral,brasonado.",
+            "O impacto económico da saída dos muitos estudantes aqui hospedados, após a expulsão dos jesuítas em 1759,e, consequente encerramento dos Estudos Gerais, ainda não foi estudado.",
+            "No último quartel do séc. XIX foi esta rua alargada desaparecendo a sua face Sul, bem com o «postigo»da muralha.",
+            "A face Norte manteve-se excepto a casa mais recuada, que, nos inícios do séc. XIX, foi totalmentealterada.",
+            "Actual rua de S. Paulo."
+        ],
         "places": [
             "105",
             "106",
@@ -3280,7 +3469,15 @@
     {
         "id": "21",
         "name": "Rua Verde",
-        "description": [],
+        "description": [
+            "Longa rua, com início no postigo de S. Sebastião e fim narua de Maximinos. O seu traçado prolongava-se, porém, até àPorta de S. Francisco, através dasruas dos Sapateiros e do Campo.",
+            "Decalcando, uma rua da cidade romana, era esta a mais ocidental das artériasintra-muros da velha urbe medieval.",
+            "Ponto privilegiado nas ligações com Maximinos e acapela de S. Sebastião, o seu traçado foi no séc. XIX (inícios?)violentamente rompido com a continuação da rua das travessas, que, abrindo uma brechanas muralhas, a ligou com o campo de S. Miguel o Anjo; no fim do mesmoséculo, por volta de 1880, foi alargada, sendo destruídas todas as casas,excepto uma, de dois pisos, no seu extremo Norte, recebendo então o nome de D. FreiCaetano Brandão.",
+            "Em 1750 apresentava-se dividida em duas: uma, a Norte darua das Travessas com o nome de rua Verde; outra, a Sul, chamada somenteCouto do Arvoredo.",
+            "O Couto do Arvoredo estava parcialmente construído (ainda hoje, aliás,do lado Este conserva os quintais; e os do Oeste só nos anos 60 e 70 do nosso séc. foramocupados com habitações), com casas simples, de 2 pisos, de um tipo mais frequente forade muralhas, nos arrabaldes, sem varandas e com as janelas apenas tapadas por portas demadeira.",
+            "A rua Verde, embora apresente um tipo de casa também muito simples, ede contrução sem dúvida arcaica, estava já em 1750 toda construída. Mantém,todas as casas apenas com dois pisos (excepto duas), com aberturas predominantementetapadas por portadas de madeira, raríssimas gelosias e varandas e algumas casas comjanela do tipo bracarense. Muito curiosos são os primeiros cinco edifícios do ladoNascente e uma boa parte dos do Poente: são geralmente de dois vãos, 2 pisos, porta norés do chão e 2 janelas no andar, com um ritmo bem marcado e, sobretudo, com o sobradomuito pronunciado, mostrando bem a fragilidade dos seus materiais construtivos.",
+            "Das 24 casas do lado Nascente e 33 do Poente, 3 e 13 são, respectivamente, prazos doCabido."
+        ],
         "places": [
             "221",
             "22",
@@ -3454,7 +3651,17 @@
     {
         "id": "22",
         "name": "Rua de Maximinos",
-        "description": [],
+        "description": [
+            "Bastante larga para a época em que foi construída, ligava apraça do Pão com a Porta de Maximinos ou deNossa Senhora da Ajuda, onde houve um altar com esta invocação e comconfraria existente desde 1613, pelo menos.",
+            "Decalcando uma rua da cidade romana, a rua de Maximinos foi durante aIdade Média, o mais importante local de comércio da cidade de Braga.",
+            "Local de residência dos burgueses, que certamente faziam o seu comércio no piso térreodas casas que habitavam, recebeu deles a sua designação. Com o avançar dos tempos e atransferência do comércio para a rua do Souto, mudou o seu nome para o deMaximinos, apropriando-se do topónimo que pertencia à artéria por onde seprolongava.",
+            "Em 1868 foi alargada a toda a extensão da fachada da Sé epraça do Pão e englobou-as. Essa acção de «modernização» fora jápreparada com demolição da Torre da Nossa Senhora da Ajuda, em 1826.",
+            "Após essas obras, traçadas com base na linha de fachadas do lado Norte, todas as casasdo lado oposto foram destruídas, não restando hoje nenhuma.",
+            "Em 1750, conservava ainda bastantes edifícios de raiz medieval. No ladoSul há duas casas notáveis de grandes dimensões (prazos 3, 4, 5 e 8), ostentando umadelas uma pedra de armas. Mas muito mais interessante é o ritmo dos alçados, quase todosde três pisos (com dois sobrados) e dois vãos, janelas bracarenses simples ou protegidaspor gelosias e, sobretudo, grandes aberturas no piso térreo, em toda a largura dafachada, a permitir a existência de uma ampla sala para o comércio, que em1750 lhe devia andar arredio.",
+            "Algumas modernizações se notam; mas são apenas aplicações de varandas ou molduras depedra em portas ou janelas, que em nada tocaram na estrutura, mesmo exterior, dosedifícios.",
+            "Das 20 casas do lado Norte e 16 do lado Sul, são prazos do Cabido 14 e 13,respectivamente.",
+            "Desde 1925 que esta rua se designa por D. Paio Mendes, em homenagem àacção dos Arcebispos na independência e formalçao de Portugal."
+        ],
         "places": [
             "13",
             "20",
@@ -3768,7 +3975,17 @@
     {
         "id": "23",
         "name": "Rua dos Sapateiros e Rossio da Praça",
-        "description": [],
+        "description": [
+            "Pequena artéria, no enfiamento da rua Verde, que ligava a rua deMaximinos à rua Nova.",
+            "Aberta na Idade Média, aqui deveriam estar arruados os sapateiros há longa data,porque já no Tombo do Cabido, datável cerca de 1369-80, lhe era dado o nomede Çapataria.",
+            "Com muitas casas de raiz antiga, apresentava em 1750, do lado Poente,muitas analogias com a de Maximinos, no tipo decasas; mas sem a qualidade de desenho e o ordenamento que se vê naquela rua.",
+            "Tinha então a maioria dos edifícios com 3 pisos, 50% dos quais de dois sobrados; asjanelas eram do tipo bracarense, havendo, contudo, no terceiro piso, muitas com portadasde madeira. Do lado Poente o primeiro piso teria lojas de comércio, detectáveis pelalargura da porta, a toda a extensão da casa. Do lado Nascente a tipologia é outra,apesar de haver doisa casos, os prazos n.ª 2 e 10, de porta ampla; aqui aparece-nosoutro tipo de abertura que irá ser extremamente frequente em ruas secundárias deextra-muros: trata-se da conjugação de uma porta normal ladeada por uma janela,separadas por uma fina coluna de pedra de secção rectangular.",
+            "Em complemento desta rua está o Rossio da Praça, que comunicava a Oestecom a Pracinha.",
+            "Implantado numa zona com um pequeno declive, apresentava habitações de três pisos,sobradadas, no lado Norte e de 2 pisos no Sul, sendo estas muito semelhantes às do ladoNascente da rua dos Sapateiros.",
+            "Das 15 casas do lado Nascente e 23 do Poente, eram prazos do Cabido 9 e 7 casas,respectivamente. No Rossio da Praça havia 4 casas do lado Sul e 5 doNorte, havendo só dois prazos do Cabido, no Sul.",
+            "Com o alargamento da rua em 1890, toda a linha de fachadas de Nascentedesapareceu. O alçado Poente, a partir do prazo n.º 15 e em direcção a Norte, bem como oRossio da Praça (lado Sul) mantiveram-se.",
+            "Actual fragmento da rua D. Frei Caetano Brandão."
+        ],
         "places": [
             "227",
             "309",
@@ -3975,7 +4192,16 @@
     {
         "id": "24",
         "name": "Rua da Vielinha",
-        "description": [],
+        "description": [
+            "Pequena e estreitíssima artéria que ligava a Rua de Maximinos com orexio da Praça.",
+            "Acompanhando a muralha que a faceia parcialmente, tem o prazo do Cabido mais antigo,com data de 1515.",
+            "Com uma configuração esquisita, tinha em 1750 as casas do lado Poente,que escontavam à muralha, de bastante boa qualidade, havendo em 4 delas varandas (demadeira?) e gelosias. Com excepção de uma, todas eram sobradadas.",
+            "Quase insólita é a existência de uma capela, sobre as casas, talvez até sobre amuralha, e sensivelmente a meio da rua, de que não conhecemos nenhuma referênciaescrita.",
+            "Do lado Nascente, as casas são de diferentes pisos, com bastante mau desenho defachada; as janelas eram tapadas por portadas de madeira. Há uma, porém, com um desenhoestranhíssimo e com uma linha de empena extremamente irregular.",
+            "A meio deste lado havia um pequeno beco que levava a uma casa.",
+            "Penso ser a designação de Vielinha bastante mais correcta que a actual de Violinha,que, aliás, deve ter origem no topónimo antigo.",
+            "Das 8 casas do lado Nascente e 7 do Poente, eram prazos do Cabido 6 doNascente."
+        ],
         "places": [
             "219",
             "220"
@@ -4063,7 +4289,18 @@
     {
         "id": "25",
         "name": "Campo de S. Sebastião e em Frente do Açougue",
-        "description": [],
+        "description": [
+            "As muralhas da cidade, do lado Oeste, eram rodeadas de dois grandes largosabertos no tempo de D. Diogo de Sousa: ocampo das Hortas e o campo de S. Sebastião. Ligando-ose vencendo uma pequena rampa que talvez corresponda ao local de passagem da muralha romana,havia a pequena rua denominada Em Frente do Açougue.",
+            "Separando-as, estava a rua de S.Miguel o Anjo, continuação natural darua de Maximinos. No ponto de encontro destas 4 vias situava-se acapela de S. Miguel o Anjo, construída em data desconhecida e queD. Diogo de Sousa mandara «ladrilhar». Nosséc. XVII e seguintes, eram nela que os novos Arcebispos se paramentavam,antes de entrar na cidade.",
+            "Em 1750, esta zona era pouco habitada e já de arrabalde,com as casas construídassem qualquer conexão, havendo até algumas no campo de S. Sebastiãocom aspecto de casa rural.",
+            "O Mappa mostra-nos só as construções do lado Poente, embora as houvesse ao lado contrário,encostadas às muralhas.",
+            "Os açougues viriam a ser demolidos em 1839, embora já mal servissem hámuito tempo, desde que em 1787 se construiram um novo edifício para essefim, em terrnos imediatamente a Sul do prazo nº1, no campo de S. Sebastião.",
+            "Muitas transformações urbanísticas aqui aconteceram, mas todas nos séc. XIX e XX, quando esta zona foi envolvida por novas ruas, tornado-a bem mais central.",
+            "Hoje já não podemos ver a bela varanda de canto renascentista(?) do prazo nº5, nem quasenenhuma das outras casas, nem sequer a capela de S. Miguel o Anjo, transferida para outro localda cidade em 1882.",
+            "De todo este conjunto apenas a terceira casa a Norte do prazo nº11, subsiste, com asua bela varanda de madeira em muitíssimo mau estado; e a casa grande que faz gavetocom a rua de S. Miguel o Anjo, então pertencente aos Cónegos Regrantes de Santa Cruz de Coimbra.O cruzeiro, mandado fazer em 1621 por D. Afonso Furtado de Medonça para o campo das Hortas,foi transferido em 1915 para o centro do campo de S. Sebastião.",
+            "Das 7 casas de Em Frente do Açougue 5 são do Cabido e das 17 do campo de S. Sebastiãosão foreiras ao Cabido 9.",
+            "Actualmente, Em Frente do Açougue corresponde à avenida de S. Miguel o Anjo; o campo deS. Sebastião é partilhado pelo campo das Carvalheiras e rua do Matadouro Velho."
+        ],
         "places": [
             "202",
             "203",
@@ -4145,7 +4382,13 @@
     {
         "id": "26",
         "name": "Rua de S.Miguel O Anjo",
-        "description": [],
+        "description": [
+            "Pequena artéria extra-muros que ligava a rua Em Frente dos Açogues,como campo das Hortas e a rua de Cruz de Pedra.",
+            "Decalcando um troço do possível traçado da muralha da cidade romana e na pendente dacapela de S.Miguel o Anjo, era já conhecida na Idade Média com o nome derua de Maximinos. Destruída totalmente em 1384, porD. João de Castela, perdem-se depois as notícias sobrea sua história.",
+            "Em 1750 era uma rua talvez sem comércio, com muitas casas de sobrado, algumasvarandas, muitas janelas com gelosias e apenas 4 edifícios totalmente construídos em pedra.Destas, três situavam-se curiosamente em gavetos: as casas do prazo nº8 e a 9 e a que lheficava contígua. Esta tinha ainda a característica de apresentar uma das raras pedras dearmas de heráldica de família, a dos Bravos, existenteentão na cidade.",
+            "Das 14 casas do lado Norte e 11 do Sul, era prazos do Cabido oito e uma, respectivamente.",
+            "Desde 1891 que se chama rua Visconde Pindela"
+        ],
         "places": [
             "334",
             "202",
@@ -4257,7 +4500,15 @@
     {
         "id": "27",
         "name": "Rua Da Cruz De Pedra",
-        "description": [],
+        "description": [
+            "Longa rua, extra-muros, que ligava a rua de S. Miguel o Anjo às do Beco e Direita",
+            "Acompanhando o traçado da muralha romana esta artéria, cuja existência remonta à Idade Média,ligava então a porta de Nossa Senhora da Ajuda à Igreja de Maximinos que se situava algures ao lado Oesteda rua do Caires, no enfiamento do largo do Beco.",
+            "Totalmente destruída em 1384, por D. Jõao de Castela perdem-se depoisas notícias sobre a sua história.",
+            "Em 1750 esta artéria estava ainda numa zona rural, o que aliás é confirmado por documentoscoevos, que lhe chamam do Arrabalde da Cruz de Pedra. Essa ruralidade é aliás bem patente no Mappa; não só existe umgrande espaço, de cerca de 40 metros de extensão, sensivelmente a meio da rua, lado Poente, que estácom campos, como, sobretudo, pelo tipo de edifícios que apresnta.",
+            "Aqui as casas estão ordenadas em vários pequenos conjuntos (no máximo com 7 habitações), casas, quase todas muitosemelhantes, variando apenas no pé direito do segundo e último piso. Estas casas, de dois vãos e dois pisos, em pedra,tinham no rés-do-chão uma porta ladeada de uma janela e, no 1.º andar uma ou duas janelas bracarenses(ex. prazo n.º60). De uma construção extremamente simples, este tipo de edifícios é o maiscaracterístico da cidade extra-muros, abundando sobretudo nas ruas mais periféricas. Por vezes, em casas maiores,era-lhe acrescentado mais uma vão; outras, raras, tinham mais um piso.",
+            "Das 52 casas do lado Nascente e 54 do Poente, eram prazos do Cabido 38 e 20, respetivamente.",
+            "Actualmente conserva ainda a mesma designação que lhe deverá ter sido dada pela cruz queexistia no extremo Nordeste da rua, na idade Média e que em 1750 se situava no extremo oposto."
+        ],
         "places": [
             "207",
             "297",
@@ -4632,7 +4883,12 @@
     {
         "id": "28",
         "name": "Rua Direita",
-        "description": [],
+        "description": [
+            "Longa rua, no enfiamento da rua Cruz de Pedra, que se prolongava até aoMonte das Penas, ponto extremo da cidade onde havia uma igreja e que correspondeactualmente ao espaço compreendido entre o largo de Maximinos e a praça do Condestável",
+            "Aberta em data que desconhecemos torna-se notável pela ordenação dos seus edifícios,muito singelos, de pedra, com dois pisos, com porta e janela portadas de madeira no.º1 pisoe com duas janelas bracarenses no andar superior; as empenas, corridas, estão quase todas ao mesmo nível.No extremo da rua, no Monte das Penas, vê-se uma casa grande, talvez de quinta e, a seu lado,ruínas de outra.",
+            "Com 41 casas do lado Nascente e 29 do Poente, nenhuma destas casas, curiosamente, era prazo do Cabido.",
+            "Mantém actualmente o mesmo nome."
+        ],
         "places": [
             "312",
             "313",
@@ -4673,7 +4929,12 @@
     {
         "id": "29",
         "name": "Rua do Beco",
-        "description": [],
+        "description": [
+            "Pequena rua, bastante ampla no enfiamento da Cangosta de S.Sebastião",
+            "Nada sabemos sobre esta artéria, de arrabalde, que em 1750 apresentava assuas casas construídas um pouco a esmo, com dois pisos e janelas de portadas de madeira.",
+            "Com uma importância bem secundária na via da cidade - de notar a quantidade de árvores,dois muros em ruínas, etc. - veria essa importância ainda ser diminuída nos fins doséc. XVIII, quando a medieval igreja de Maximinos, que então selocalizava algures, sensivelmente no extremo Oeste desta rua, foi destruída e transferidapara o local onde está actualmente. Em 1881-1884 com a abertura da ruado Caires, o Beco transformou-se num largo que se manteve, curiosamentee a contra-senso, o topónimo.",
+            "Das 21 casas do lado Norte e 15 do Sul nenhuma era prazo do Cabido."
+        ],
         "places": [
             "71",
             "72",
@@ -4719,7 +4980,14 @@
     {
         "id": "30",
         "name": "Cangosta De S. Sebastião",
-        "description": [],
+        "description": [
+            "Longa rua extra-muros que descia toda a colina da Cividade, desde o Terreiro de S. Sebastião (onde estava a capela de S.Sebastião das Carvalheiras) até à do Beco.",
+            "Decalcando talvez o cardo da cidade romana, e embora não conste no Tombo do Cabido ( datável de 1369-1380), esta rua já existia na Idade Médiapois era uma das duas vias de ligação da cidade intra-muros com a igreja paroquial de Maximinos.",
+            "Recebendo o nome de S. Sebastião por no seu topo estar a capela do santo da mesma invocação, de data de fundação desconhecida, esta rua só nos finais dadécada de setenta do nosso século perdeu o ar rual que ostentava em 1750.",
+            "No Mappa, a rua era cosntítuida por casas de pedra, na sua grande maioria de um piso, muito simples, sendo 36% do tipo de porta/janela. Tinhavários portões que davam acesso directo a campos de cultivo, bem vísiveis atrás de muros que faceavam a rua , ou atrás das habitações.",
+            "Das 25 casas do lado Norte e 24 do Sul, eram prazos do Cabido 20 casas do lado Norte.",
+            "Mantém hoje o topónimo de S. Sebastião embora também seja conehcida por rua dos Marchantes."
+        ],
         "places": [
             "151",
             "152",
@@ -4838,7 +5106,13 @@
     {
         "id": "31",
         "name": "Rua do Alcaide",
-        "description": [],
+        "description": [
+            "Construída em volta da parte sul da muralha medieval, ligava o campo de S.Tiagocom o Terreiro de S.Sebastião.",
+            "Começada a construir talvez no tempo de D.Diogo de Sousa, tinha,em 1750, boas casas de granito, com uma grande fachada, de 2 pisos, molduras de pedrasnas portas e janelas do 1º piso e filetes de pedra sobre as janelas bracarenses do andar principal.Curiosamente não se vêem casas com brasões, embora tivessem, com toda a certeza, vivido aqui membrosde famílias nobres. A sua própria designação, do Alcaide, aponta para isso.",
+            "Até hoje pouco se alterou, tendo só desaparecido as casas dos prazos 19 a 21. O seu nome também semanteve.",
+            "O lado Norte não está desenhado porque as habitações que encostavam à muralha deveriam ser prazos daCâmara.",
+            "As 18 casas que apresentam são todas prazos do Cabido."
+        ],
         "places": [
             "23",
             "24",
@@ -4948,7 +5222,12 @@
     {
         "id": "32",
         "name": "Rua dos Pelames",
-        "description": [],
+        "description": [
+            "Longa rua que descia a colina da Cividade, ligando o largo de S.Tiago com a ponte dos Pelames,donde partia a estrada estreita para o Porto.",
+            "Correspondendo ao decumano da cidade romana esta artéria foi aberta no tempo do arcebispo infanteD.Henrique (1533-1540), recebendo então o nome de rua do InfanteMas desde logo foi conhecida pelo de Pelames, em razão da indústria de curtumes aí existente. Em 1618passaria a ser denominada por rua de S.Geraldo, a quem fora dedicado o Convento da Conceição, existenteno seu extremo Sul, designação que a par de Pelames, ainda hoje se mantém.",
+            "Em 1750 esta rua era habitada sobretudo por estudantes do Colégio de S.Paulo e também,talvez, por industriais e trabalhadores de curtumes, tinha suas casas de feição bastante irregular, de fachadas díspares, na sua maioria dedois pisos e com janelas bracarenses, que conforme se descia a rua se iam banalisando ou, inclusivé, perdendo um piso. Notáveiseram as casas dos prazos nº 5 e sobretudo a do nº 10, com a sua loggia virada a Sul que, felizmente,ainda hoje se conservam; a meio, do lado Este, estava a casa, hoje demolida, dos Correias da Cunha, com pedrade armas; no extremo Sul situavam-se a casa do Avelar, da família dos Jácomes que aí viviam desde1509, e o Convento da Conceição, fundado em 1625 pelo cónego GeraldoGomes para as freiras da ordem da Conceição, cuja igreja foi totalmente reformulada em1725.",
+            "Das 34 casas do lado Nascente e 30 do Poente era prazos do Cabido 9 e 7 respectivamente, que se localizavamapenas na parte Norte da rua."
+        ],
         "places": [
             "166",
             "167",
@@ -5170,7 +5449,20 @@
     {
         "id": "33",
         "name": "Campo de S. Tiago",
-        "description": [],
+        "description": [
+            "Grande largo mandado abrir por D. Diogo de Sousa, em frente à porta da muralha que tem o mesmo nome.",
+            "Ponto de chegada da estrada do Porto, que subia a rua dos Pelames, este campo passou a ter uma maior importância a partir da construção das novas instalações do Colégio de S. Paulo (na década de 1560-1570) sobre a muralha, no local onde agora se encontra o Seminário de Santiago. Este edifício, contudo, tinha apenas duas fiadas corridas de janelas abertas para ele.",
+            "Rapidamente todo este espaço foi preenchido. Com D. Frei Bartolomeu dos Mártires a zona envolvente ao Colégio (ruas dos Pelames, rua S. Paulo, largo de S. Paulo e campo de S. Tiago) foi limpa das prostitutas e dos ociosos que aí habitavam, para neles poderem viver, em melhor ambiente, os estudantes que chegaram a atingir um número máximo de 2000 alunos.",
+            "Em 1623 a Câmara mandou construir uma fonte «cêrca da torre e porta de S. Tiago e em frente da rua dos Pellames», que foi removida em 1745, por determinação do Arcebispo D. José de Bragança, fazendo-se então o actual chafariz.",
+            "Em 1759, com a expulsão dos Jesuítas, a quem fora confiado o ensino neste colégio, o campo de S. Tiago deverá ter perdido grande parte da sua vida.",
+            "Em 1750 no lado Sul deste largo havia onze casas, todas prazos do Cabido, que se podiam dividir em três grupos: um, mais pobre, (casas dos prazos 5 a 11) de desenho de fachada simples, com janelas do tipo bracarense, parcialmente cobertas por gelosias; outro (casas dos prazos 2 a 4) mais cuidado, com portas com rebordo saliente e frisos, também de pedra, sobre as janelas; e o terceiro, formado pela belíssima casa dos Falcões Cota, mandada fazer em 1703 pelo Cónego Meira Carrilho, e onde actualmente está instalado o Governo Civil.",
+            "Rua extramuros, ao longo da parte Sul da muralha, servia de ligação entre os campos de S. Tiago e dos Remédios, ambos abertos por D. Diogo de Sousa.",
+            "Esta rua cujas «...casas ccom seus quintais que do ano de 1540 para diante se começaram a edificar...» seria também uma consequência, embora indirecta, da obra daquele grande arcebispo.",
+            "Tendo do lado Norte casas que encostavam à muralha e que talvez fossem prazos da Câmara, estava, já em 1594, totalmente edificada na parte Sul conforme se vê no mapa de Braunio.",
+            "Lentamente se terá mudado o estatuto social dos seus moradores. É que embora haja hoje em dia muitos edifícios do séc. XVII a XIX de grande qualidade, a ponto de a tornar uma das ruas mais interessantes da cidade actual, em 1750, ao lado de apenas 3 casas grandes havia uma série de outras pequenas, do tipo com porta ladeada de janela no piso térreo, e que já vimos ser característica das ruas secundárias e mais distantes do centro.",
+            "No seu extremo nascente, com fachada virada ao campo dos Remédios, estava a igreja de Santa Cruz, cujo alçado lateral Norte faceava inteiramente esta rua.",
+            "Das 16 casas aqui apresentadas só uma, a que ficava imediatamente atrás daquela igreja, não era prazo do Cabido."
+        ],
         "places": [
             "118",
             "119",
@@ -5323,7 +5615,12 @@
     {
         "id": "34",
         "name": "Cangosta das Cruzes",
-        "description": [],
+        "description": [
+            "De características bem rurais ligava o Campo de S. Tiago com a fachada latera Poente do hospital de S. Marcos.",
+            "Não se conhecendo dados sobre a sua história, podemos apenas dizer que em 1750 estava só parcialmente construída, com casas simples, de 2 pisos, muitas delas com janelas de tipo bracarense. Um correr de habitações do tipo de porta com janela ao lado, no piso térreo (prazos 7 a 13), bem como a casa grande, mas de características rurais, virada ao campo de S. Tiago, são as peças de arquitectura desta rua, ainda hoje, bem secundária e, também, com muitos poucos edifícios a ladeá-la.",
+            "Das 17 casas ao lado Norte e 9 do lado Sul, eram prazos do Cabido 5 e 8 respectivamente.",
+            "Não sabemos a razão porque esta Cangosta foi conhecida pelo nomes das «Cruzes», nem sabemos qual a data em que passou a ser conhecida pelo nome actual, «Falcões», embora em 1857 já assim apareça designada. Essa designação deverá ser mais antiga e provém, sem dúvida, do nome da família Falcões Cota cujo palácio existente no Campo de S. Tiago tinha a envolvê-lo terrenos desta rua, os que estão a Oeste do prazo nº 13."
+        ],
         "places": [
             "156",
             "157",
@@ -5424,7 +5721,17 @@
     {
         "id": "35",
         "name": "Rua de S. Marcos",
-        "description": [],
+        "description": [
+            "Envolvia muralha, do lado Este, e ligava o exterior da Porta do Soutoao campo dos Remédios.",
+            "Aberta no tempo de D. Diogo de Sousa rapidamente se encheu de casas no alçado Nascente; o Cabido, que aqui tem aforada apenas uma casa e o convento dos Remédios, era já senhor de um prazo em 1515. O lado Poente, que encostava à muralha, não tinha nenhuma edificação em 1594, segundo o mapa de Braunio.",
+            "Esta rua, onde existe o último exemplar completo de casa com gelosias, tão vulgar nas artérias principais de Braga em 1750, não está representada no Mappa porque pertencia à Câmara. E é pena porque, para além da imagem que nos transmitiria, nos poderia dar muitos elementos que agora só documentalmente poderemos obter. Uma última informação fica: no último quartel do séc. XIX agrupavam-se aqui as principais oficinas de escultores santeiros da cidade. Seria também assim no séc. XVIII?",
+            "Mantém ainda hoje o mesmo nome.",
+            "Mandada abrir por D. Diogo de Sousa em terreno acidentado, estabelecia uma ligação rápida entre a porta de S. João e a rua da Ponte de Guimarães. Aquele arcebispo instalou também aqui uma fonte em 1509.",
+            "Aberta em plena zona rural, de certo modo nas traseiras do hospital de S. Marcos, esta artéria mostra muitas casas do tipo de porta ladeada de janela, no piso térreo. Uma única habitação aparece aqui bem cuidada, com «molduras» em pedra nas portas e janelas: todas as outras, são simples e de pedra – excepto a do prazo nº 1 - mais ou menos bem tratadas, avultando 3 com varandas.",
+            "De salientar ainda que quase todas as janelas são do tipo bracarense.",
+            "Tendo no Mappa apenas desenhado o seu lado Nascente, tinha então 32 casas, 9 das quais eram prazos do Cabido.",
+            "A rua dos Granjinhos corresponde hoje à metade Sul das ruas de S. Lázaro e dos Granjinhos."
+        ],
         "places": [
             "181",
             "128",
@@ -5491,7 +5798,13 @@
     {
         "id": "36",
         "name": "Rua das Águas",
-        "description": [],
+        "description": [
+            "Longa artéria que, conjuntamente com as ruas de S. Lázaro e da Porta de Guimarães, ligava a Arcada à ponte de Guimarães, donde partia a estrada para aquela cidade.",
+            "Aberta ainda na Idade Média tem um prazo datável já de 1478.",
+            "Ao longo dos tempos, foi lentamente ganhando importância, sobretudo na sua parte Norte. Em 1750 o Mappa das Ruas é bem explícito: no lado Nascente, àparte de algumas casas com porta e janela no primeiro piso, tem já uma série de outras que ombreiam com as da rua do Souto, com gelosias, varandas e, sobretudo, grandes vãos no piso térreo, indicadores de local de comércio; no Poente, bastante mais modesto, tem contudo a animá-lo a parte do convento dos Remédios virada para esta rua, que estava em construção, nesta data. Sente-se bem que a rua das Águas estava em franca ascensão económica, o que a documentação escrita não deixará de confirmar.",
+            "Das 35 casas do lado Poente e 38 do Nascente, eram prazos do Cabido apenas 35 todas do Nascente.",
+            "A rua das Águas corresponde ao troço da avenida da Liberdade entre a Arcada e o Rechicho."
+        ],
         "places": [
             "75",
             "76",
@@ -5702,7 +6015,13 @@
     {
         "id": "37",
         "name": "Rua de S. Lázaro",
-        "description": [],
+        "description": [
+            "Troço da grande via que ligava a Arcada à ponte de Guimarães, entre arua de Águas e o terreiro de S. Lázaro.",
+            "Aberta ainda na Idade Média esta velha rua tem o prazo mais antigo com a data de 1451.",
+            "Apesar de em 1750 ser ainda de arrabalde, havia nas suas casas uma certa diferença em relaçãoa outras com função semelhante: embora apenas com dois pisos, e apesar de haver algumas habitações do tipo já descritode porta com janela ao lado no piso térreo, a maior largura das suas fachadas, a existência de uma ou outravaranda de ferro ou recoberta por gelosias, ou ainda de \"molduras\" de pedra, sobretudo em algumas portas, confere-lhe quaseoutro estatuto de grandeza.",
+            "É curioso notar que nesta rua, que tinha 19 casas do lado Nascente e 29 do Poente, todos os edifícios estavam emprazados ao Cabido.",
+            "A rua de S. Lázaro corresponde hoje ao fragmento da avenida da Liberdade, entre o largo do Rechicho e a rua 25 de Abril."
+        ],
         "places": [
             "16",
             "241",
@@ -6125,7 +6444,14 @@
     {
         "id": "38",
         "name": "Rua da Ponte de Guimarães",
-        "description": [],
+        "description": [
+            "Longa rua que juntamente com as ruas das Ágoas e de S. Lázaro ligava aArcada com a ponte de Guimarães.",
+            "Aberta talvez na Idade Média não nos aparece no Mappa com a importânciaque deveria ter como via de entrada na cidade de uma estrada antiga e importante,e que no seu limite tinha uma velha ponte.",
+            "Em 1750 a rua da Ponte estava repleta de casas de 2 pisos (e muitas delassão de dois pisos bastante baixos) com porta ladeada de janela no rés-do-chãoe duas janelas bracarenses no primeiro andar. Uma única há com um segundoandar (embora haja outra de dois pisos com mais um recuado), mas há váriasque são térreas e, inclusivé, há zonas apenas, muradas que davam acesso directoa campos. De notar ainda a pequeníssima quantidade de gelosias e de varandas.",
+            "Ao mesmo tempo, e da mesma maneira que a rua de S. Lázaro, as casas aquisão, não só um pouco mais largas que as da rua Direita que poderá parecertipologicamente semelhante, mas também tem «molduras» de pedras em muitasportas e algumas das janelas.",
+            "No extremo Norte da rua, do lado Poente, ficava a capela de S. Lázaro, quea partir de 1747, data da criação da freguesia do mesmo nome, passou a paroquial.Das 60 casas do lado Nascente e 72 do Poente eram prazos do Cabido 48e 40, respectivamente.",
+            "Esta rua corresponde hoje ao troço da avenida da Liberdade entre a rua 25de Abril e o largo das Latinhas ou do Senhor dos Aflitos."
+        ],
         "places": [
             "340",
             "75",
@@ -6807,7 +7133,15 @@
     {
         "id": "39",
         "name": "Ponte de Guimarães",
-        "description": [],
+        "description": [
+            "Parte terminal da longa artéria que, sensivelmente em linha recta, descia a Arcada para a ponte sobre o rio Este.",
+            "Zona rural por excelência, tinha no seu termo uma ponte quinhentista de um só arco, canopial, e que infelizmente foi destruída em data desconhecida.",
+            "Os dois alçados que vemos no Mappa não são, os dois lados da rua, como à primeira vista poderá parecer; o Norte vai corresponder à parte Oeste do actual largo do Senhor dos Aflitos ou, segundo a toponímia popular, das Latinhas: e o Poente é a parte final da avenida da Liberdade, lado Oeste entre a Rua Conselheiro Lobato e o rio.",
+            "Nestes alçados onde coexistem habitações de dois pisos (52,7%) alternando com outras de um só piso (47,2%), e uma única de três pisos, toda a ruralidade da zona está bem patente: casas baixas, com a porta de entrada ladeada de uma janela (55,5%), janelas vazadas que seriam tapadas por portas de madeira, desalinhamento da linha das fachadas, etc.",
+            "Constrastando há um excelente edifício de três pisos, em pedra, do séc. XVII, contido em duas fortes pilastras, com portas e janelas com \"moldura\" de pedra, almofadas sob as janelas do piso nobre e três óculos magnificamente trabalhados no 2º andar.",
+            "Como elemento curioso na rua há o forno(?) de pedra exterior à casa, no prazo nº 38.",
+            "As 23 casas do lado Norte e 15 do Poente são todas prazos do Cabido."
+        ],
         "places": [
             "16",
             "147",
@@ -7026,7 +7360,14 @@
     {
         "id": "40",
         "name": "Rua do Paymanta",
-        "description": [],
+        "description": [
+            "Rua de zona rural, que antes deveria ser chamada de cangosta, mesmo para os padrões do séc. XVIII.",
+            "Ligando a rua da Ponte de Guimarães com o pontilhão das Lagesestava, em 1750, marginada por prédios de um e dois pisos do lado Sul e de apenas um piso no Norte.Todas estas casas são extraordinariamente simples, estão implantadas em terreno não nivelado, com uma técnica construtiva rudimentar, como nos mostram as pequeníssimas aberturas das habitações de dois pisos.",
+            "No termo da rua está a magnífica casa seiscentista das Lages, \"deque he Emphiteuta Pedro da C.ª Sottomaior\" que foi Alcaide Mor de Braga. É este sem dúvida o edifício civil que apareceno Mappa e, o que mereceu mais cuidado no desenho.",
+            "Era uma casa com pedra de armas sobre um portão que dava acesso a um páteo interior, vedado por uma cerca ameada. Tinha três corpos que terminavam na margem do rio Este.Sobre o curso de água, tinha um anexo coberto, talvez um moinho. Infelizmente está hoje destruído todo este conjunto.",
+            "Das 17 casas do lado Norte e 16 do Sul eram todas prazos do Cabido.",
+            "Não tem hoje uma correspondência correcta pois andava entre as actuais ruas dePai Amante (que está em vias de completo desaparecimento) e Conselheiro Lobato."
+        ],
         "places": [
             "56",
             "192",
@@ -7317,7 +7658,21 @@
     {
         "id": "41",
         "name": "Campo de Santa Ana",
-        "description": [],
+        "description": [
+            "Grande espaço aberto em frente à porta de Souto, onde já na Idade Médiapassava uma rua- a Corredoura- que levava à Senhora a Branca eS.Victor, donde partia a estrada para Chaves ou Bom Jesus.",
+            "Nos inícios do séc. XVI «era todo cheio de vinhas e árvores e não tinha maisespaço nem campo saindo da porta do Souto para Santa Maria a Branca».O arcebispo D.Diogo de Sousa, «mandou fazer o rocio de Santa Ana...e comprou estas vinhas e campos até ao padrão onde está uma cruz acerca de Nossa Senhora e meteutudo neste rocio de Santa Ana, e do dito padrão para diante alargou aquele campo até Nossa Senhora»,criando assim um espaço amplo e belo onde «fez de novo a Ermida se Santa Ana, com a sua capela eescada... e poz de redor delas certas colunas escritas do tempo dos romanos» e «uma Cruz... comseus degraus e haste».",
+            "Era a transformação deste local em amplo espaço urbano. Até essa data apenas existia a capelade S.Gonçalo, fundada poucos anos antes, em 1500, por D.Jorge daCosta, além da rua da Corredoura.",
+            "Com a construção de uma casa «àporta do Souto...[para] estrebarias e alpendrecom suas colunas para pousarem de praça os Almocreves» e de «um pelourinho de pedra». por ordemtambém de D.Diogo, ficava imediatamente criado um polo de atracçãoe comércio que pela proximidade com que estava deste campo, não deixaria de o afectar; o que aliásé visível no desenho das casas existentes no seu extremo Sudoeste.",
+            "Em 1652 foi fundado o recolhimento das Beatas daPenha de França, que seria ampliado em 1720, com mais quartos e uma igreja.",
+            "Passados 34 anos instalaram-se aqui os Oratorianos quelançaram a primeira pedra para a sua igreja em 1689. Em 1739-1766conseguiram construir o seu magnífico convento e igreja (dos Congregados), onde andou a mão deAndré Soares.",
+            "Em 1722 a capela de S.Gonçalo foi totalmente reedificada, fundando-se na mesmadata o Recolhimento das Convertidas, em espaço contíguo.",
+            "Com todas estas instituições, onde nos permitimos salientar os Oratonianos pela forma com que souberam atrair as populações, campo de Santa Anafoi tomando uma importância na vida da cidade que atingiu o seu máximo em meados do século passado,e que ainda hoje mantém.",
+            "Em 1750, e embora o Mappa nos mostre apenas algumas das suas casas, nota-se bema excelente qualidade de muitas delas, sobretudo as do lado Norte (excepto a do prazo n.º5) e asituada no seu extremo Sudoeste. São amplas, de grande fachada, construídas em pedra e ladeadas porpilastras, com fartas aberturas, e as janelas do piso nobre transformadas em varandas. O lado Sulcontrasta totalmente; exceptuando a magnífica e grande casa localizada no gaveto com arua de Águas que tem quatro vãos e três pisos, com uma raríssima varanda corrida noseu último andar, todas as outras são bastantes diferentes. São habitações na sua maioria de trêspisos (sendo o terceiro sobradado em quatro delas), com amplas portas para possibilitar melhor comércioe com janelas bracarenses. Curiosamente não encontramos aqui nenhuma casa recoberta de gelosias.",
+            "No extremo Sudeste está o convento dos Congregados,ainda em construção.",
+            "Não deixa de ser curioso assinalar que quando na segunda metade do séc.XIX sereconstruiram muitos destes edifícios, os do lado Norte continuaram a ter grande vulto e dos do Sulmantiveram também as pequenas proporções de 100 anos atrás.",
+            "Das 8 casas do lado Norte e 20 do Sul, eram prazos do Cabido5 e 2, respectivamente.",
+            "O campo de Santa Ana tem o nome actual de avenida Central."
+        ],
         "places": [
             "93",
             "94",
@@ -7445,7 +7800,15 @@
     {
         "id": "42",
         "name": "Campo e Calçada de Nossa Senhora a Branca",
-        "description": [],
+        "description": [
+            "Grande espaço aberto, continuação natural de Santa Ana, onde, pelo menosdesde 1319, existia uma ermida, então com a invocação de Nossa Senhora da Carreira.",
+            "D.Diogo de Sousa reedificou esta igreja durante oséc. XVIII recebeu um retábulo para a capela mor (1745, alterado em 1782), sacrário (1756-57)e fachada (1771).",
+            "Em 1750 este campo era ainda uma zona de arrabalde. As suas casas, quase todas dedois pisos e dois vãos- embora haja uma ou outra de 3 pisos-, são na sua maioria, dotipo de porta com janela no piso térreo (62%). Algumas eram de maiores dimensões oucontinham outra organização de fachada (casas n.º 11, 14, casa A Oeste da n.º26, 26 e 37,esta com o terceiro piso todo recoberto de gelosias), bem como a existência de gelosiasna maioria das janelas (embora haja ainda bastantes aberturas que eram tapadas com portas de madeira),não são bastantes para melhorar a qualidade da arquitectura deste campo.",
+            "Saliente-se ainda a casa do prazo n.º4, com o seu portão lateral terminado em cubossobrepostos por bolsas e «torre» com janelas de canto.",
+            "Este espaço só se desenvolveu cem anos mais tarde com o crescimento da cidade queobrigou, em 1882, à abertura da actual rua de Santa Margarida.",
+            "Das 27 casas do lado Norte e 25 do Sul, eram prazos do Cabido15 e 25, respectivamente.",
+            "Os alçados que vemos correspondem o do Norte à parte deste largo que vao desde a actualrua do Sardoal até ao ponto Sudoeste da rua de Santa Margarida:e o alçado Sul, hoje totalmente alterado, compreende o espaço entre as ruas de Restauração e 31 de Janeiro."
+        ],
         "places": [
             "112",
             "295",
@@ -7741,7 +8104,17 @@
     {
         "id": "43",
         "name": "Campo de Nossa Senhora a Branca. Rua da Régua. Rua Nova da Seara",
-        "description": [],
+        "description": [
+            "Devido ao desnível do terreno onde se implantava, estava dividido em duas ruas, separadaspor um murete no centro.",
+            "Aberta talvez sobre o traçado da via romana que levava a Chaves,esta rua, na Idade Média, fazia a ligação entre a cidade e a igreja deS. Victor.Chamava-se então rua da Corredoura.",
+            "D.Luís de Sousa (1677-1690) reedificadorda igreja de S.Victor que fica na extremidade Este destaartéria, mandou alargá-la, criando então 2 artérias paralelas e desniveladas: a da Réguano lado Norte e a rua Nova da Seara, no Sul.",
+            "Em 1750 tinha um carácter ainda de via de penetração; por ela entrava na cidadetodo o tráfego oriundo da zona do Barroso e do Bom Jesus.",
+            "Os seus edifícios eram quase todos do tipo com a porta de entrada ladeada de uma janela, comdois pisos e janelas bracarenses no primeiro andar.",
+            "Os alçados que aqui se apresentam têm três tipos diferentes: os da parte do campo deNossa Senhora a Branca são casas simples, de dois pisos, do tipo de porta ladeada por janelano rés-do-chão e janelas bracarenses no andar nobre, e três vãos. Os da rua da Régua,são do mesmo tipo mas têm apenas 2 vãos o que imediatamente lhe dá outro carácter. Os da ruaNova da Seara são muito mais pobres, predominando os de um só piso (75%), muitos deles tambémdo tipo de porta ladeada por janela (79%), e com as aberturas vazadas, que seriam tapadas por portasde madeira; a metade Oeste estava totalmente ocupada por campos.",
+            "Esta artéria mantém algumas das raras casas deste tipo que ainda hoje se conservam em Braga.",
+            "Das 56 casas do lado Norte (correspondendo ao Campo de Nossa Senhora a Branca erua da Régua) e 24 do Sul (rua Nova da Seara) eram prazos doCabido 22 e 24, respectivamente.",
+            "As ruas da Régua e Nova da Seara formam actualmente a rua de S. Victor.Esta designação remonta já a 1865."
+        ],
         "places": [
             "97",
             "101",
@@ -7912,7 +8285,20 @@
     {
         "id": "44",
         "name": "Rua da Fonte da Carcova",
-        "description": [],
+        "description": [
+            "A sua fundação, remontará talvez aos inícios do séc. XVI. Marginando a muralhamedieval, fazia ligação entre os dois novos e amplos campos então abertos, de Santa Anae da Vinha.",
+            "No seu extremo Este existia, desde a Idade Média, uma fonte, conhecida pela Fonte daCárcova ou Cárcoda.",
+            "Embora a sua ocupação se tenha iniciado de imediato (p.ex. o prazo do Cabidomais antigo nesta rua data de 1531), ee incidiu apenas sobre o lado Norte, porque no mapade Braunio não se vê ainda nenhuma construção encostada à muralha.",
+            "Em 1750 mostrava bem a razão por que foi denominada, em data que desconehcemos,de rua dos Mercadores: o rés-do-chão era totalmente ocupado com largas portas de madeiraque durante o dia se abriam para afzer o comércio.",
+            "De resto é predominantemente ocupada com prédios de 3 andares, e janelas bracarenses, e poucas varandase gelosias. Diferentes são apenas os prazos 5, 6 e sobretudo o 7, onde se vê uma construção setecentistajá de certa dimensão, com duas varandas, «molduras» de pedra nas aberturas e, sobretudo, um dos vãosextremos da casa tem mais um piso, reminiscência talvez de opções estilísticas mais arcaicas.",
+            "Das 27 casas aqui desenhadas e que correspondem apenas ao lado Norte da rua, 10 eram prazos doCabido.",
+            "Desde 1865 que passou a ser oficialmente denominada de rua dos Capelistas.",
+            "Aberta em data desconhecida. No Tombo do Cabido (cª 1369-80), já figura estetopónimo.",
+            "Estabelecida a ligação entre o largo dos Penedos e os espaços onde bastantemais tarde, nos meados do séc. XVII, se construiu a igreja e convento do Carmo.",
+            "Em 1750, era uma rua que alternava, um pouco a esmo, casas de 1, 2 ou 3 pisos,de bom ou mau desenho, de famílias pobres ou ricas, numa indefinição absoluta: vêem-se aquicasas grandes, com bom trabalho de pedra e casas do tipo de porta com janela ao lado, no pisotérreo. Só com uma leitura dos prazos se poderá definir o tipo de vivência que nela se fazia,o que nos parece poder dar resultados muitíssimo interessantes.",
+            "Das 27 casas aqui desenhadas e que correspondem apenas ao lado Sul da rua, 18 eram prazosdo Cabido.",
+            "Mantém o nome de rua do Carvalhal."
+        ],
         "places": [
             "112",
             "113",
@@ -8040,7 +8426,14 @@
     {
         "id": "45",
         "name": "Rua dos Chãos de Baixo",
-        "description": [],
+        "description": [
+            "Longa rua existente já em 1281, ligava a Arcada com o largo dos Penedos e que, em 1384, foi arrasada por D. João de Castela.",
+            "No Mappa, surge-nos cmo um local de comércio. Na sua metade Sul, sobretudo, o piso térreo dos edifícios está totalmente ocupado por largas portas de madeira que possibilitam a existência de amplos espaços com boa iluminação exterior e a atividade comercial.",
+            "Os seus prédios estão ou adaptados às novas necessidades - caso dos edifícios dos prazos 10 e 11, por exemplo, que primitivamente eram do tipo de porta com janela ao lado - ou reconstruídos, segundo o gosto burguês do séc. XVII que se prolongaria pela primeira metade do seguinte - casa com gelosias -, existindo ainda alguns, talvez construídos já no séc. XVIII que nos parecem ser o tipo da casa moderna da época (prazos 33, 35, etc.). Sente-se bem que, não obstante a grande quantidade de casas antigas que a faceavam, há uma forte vontade de mudança para novas modas sociais, que a casa do prazo 45 nos parece exemplificar bastante bem ou, sobretudo, para novos desenhos de arquitectura.",
+            "Ao sul da rua ficava o amplo largo do Eyrado. Estranhamente, nas suas casas não parece haver indícios de actividade comercial. Saliente-se, contudo, a grande casa n.º 54, de três pisos, com um belíssimo arco geminado, talvez ainda gótico, e outra seiscentista, ao lado do prazo nº 4.",
+            "Das 45 casas do lado Nascente e 44 do Poente eram prazos do Cabido 30 e 24, respectivamente.",
+            "A rua dos Chaos de Baixo corresponde hoje à Rua dos Chãos e o Eyrado compreende o largo de S. Francisco e o espaço, agora construído, Banco de Portugal e Caixa Geral de Depósitos."
+        ],
         "places": [
             "16",
             "2",
@@ -8557,7 +8950,14 @@
     {
         "id": "46",
         "name": "Rua de Santo André",
-        "description": [],
+        "description": [
+            "Aberta em 1725, em conexão com o conjunto que tem centro na praça do Gavião. Ligava o largo dos Penedos com a praça do Gavião.",
+            "Zona de expansão da cidade setecentista, obedecia a um sistema de loteamento semelhante ao actual.",
+            "Rapidamente se encheu de casas de desenho tradicional que, embora obedecendo a um plano prévio de construção, permitia pequenas variantes de composição nas fachadas. Só os prazos (lotes) 26, 27 e 28 estavam «chãos» em 1750.",
+            "As casas são de dois pisos, tendo quase todas, no andar nobre, janelas do tipo bracarense. Seis edificações há que são térreas, embora dentro do mesmo esquema construtivo.",
+            "As 25 casas do lado Norte e 21 do Sul eram todas prazos do Cabido.",
+            "Mantém a designação de rua de Santo André."
+        ],
         "places": [
             "1",
             "2",
@@ -8962,7 +9362,9 @@
     {
         "id": "47",
         "name": "Rua de S. Barnabé",
-        "description": [],
+        "description": [
+            "Pertencente ao complexo que tinha o centro na praça do Gavião, ligava as ruas de Santo André e da Oliveira.Artéria um pouco marginal a este conjunto, tem o seu prazo mais antigo em 1743.Dividida em lotes, como todo o conjunto denominado de Quinteiro ou Gavião, ou, actualmente de campo Novo, tinha apenas ocupados com casas 18 dos 31 terrenos preparados para edificações. O restante espaço disponível, aqui assinalado com os n?s 8-20 e 23-24, eram as entradas ou muros de limite dos quintais da rua dos Chãos de Cima.As 20 casas desenhadas no Mappa são todas térreas, muito simples, do tipo de porta com janela lateral, mas com as «molduras» de pedra visíveis. Todas estas construções são prazos do Cabido.Mantém o nome de S. Barnabé."
+        ],
         "places": [
             "1",
             "197",
@@ -9213,7 +9615,9 @@
     {
         "id": "48",
         "name": "Praça do Gavião",
-        "description": [],
+        "description": [
+            "Centro nevrálgico de todo o bairro da Gavieira, a praça do Gavião, de cujos vértices partiam 4 ruas, teve o seu início em «Abril de 1725... [data em que] se começou a quebrar pedra e a fazer casas no bairro da Gavieira, chamado o Quinteiro ou Reduto que é prazo do Cabido de que é enfiteuta António Barreto Gavião».Caso ímpar na cidade de Braga e, do ponto de vista histórico, talvez o primeiro loteamento do país, ainda não foi, infelizmente, estudado: não sabemos as razões que levaram à sua criação (aumento de população?), nem o nome do seu urbanista ou do arquitecto, nem quem veio morar para aqui, etc.Sabemos apenas o que os desenhos que o Mappa nos mostra dizem: há uma nova forma de pensar as fachadas (grandes aberturas nas portas e janelas), há uma intervenção, talvez de arquitecto — por oposição a formas tradicionais —nesse projecto, e há indícios de, pelo menos, ter existido alguma contingentação no desenho das fachadas das casas: poderiam ir além de seis varas de largura previstas para cada lote, mas as linhas das empenas e de separação de dois pisos tinha que ser contínua, apesar do desnível do terreno onde estão implantadas; as portas e janelas tinham sempre «molduras» em pedra.Com 9 casas construídas em 1725 e 27 para construir, não sabemos quanto tempo levou a preencher todos os lotes.Cerca de 1775, foi aqui colocada uma fonte, de desenho «rocaille».Com uma unidade arquitectónica ainda hoje notável tem apenas a destoar as duas casas, construídas em 1871 e 1872, que ocupam os espaços correspondentes aos prazos n.º 17, 18 e 19.A praça do Gavião, que no século XVIII também foi conhecida por, Quinteiro, Reduto ou campo Novo do Reduto, tem actualmente a designação oficial de praça Mouzinho de Albuquerque, que lhe foi dada pela Câmara Municipal em 4 de Janeiro de 1898. É mais conhecida, porém, por Campo Novo."
+        ],
         "places": [
             "1",
             "5",
@@ -9380,7 +9784,13 @@
     {
         "id": "49",
         "name": "Rua de S. Gonçalo",
-        "description": [],
+        "description": [
+            "Rua íngreme, pertencente ao complexo urbanístico do campo Novo, ligavaesta praça com o campo de Santa Ana.",
+            "Aberta também em 1725, tinha em 1750 a parte em declive ocupada porquintais: do lado Nascente, o do Recolhimento das Convertidas e, do oposto, ode uma casa do campo de Santa Ana pertencente ao Mosteiro de Vilar de Frades(o quintal era, porém, prazo do Cabido).",
+            "A metade Norte da rua, bastante plana, tinha do lado Nascente, uma sériede casas térreas (71,5%): o Poente apresentava bastantes diferenças: não só osedifícios são todos de dois pisos como, também, há uma casa, no prazo n.º 4,com um desenho de fachada diferente, mais moderno, próximo dos da praça do Gavião.No prazo n.º 11 vê-se a fachada lateral de um edifício que tem a frontariavirada à praça do Gavião; é curioso ver-se aqui que todo o programa foi totalmentealterado, mostrando não só que a divisão em dois pisos não foi seguida, permitindoa abertura de janelas de uma forma anárquica, como, também, que essas janelasnão têm a «moldura» de pedra que as enobrecia.",
+            "Todas as 23 casas aqui apresentadas são prazos do Cabido. No gaveto Nascentehavia ainda, nesta data, um lote vazio para construção.",
+            "Mantém o nome de rua de S. Gonçalo."
+        ],
         "places": [
             "197",
             "102",
@@ -9594,7 +10004,13 @@
     {
         "id": "50",
         "name": "Rua de Nossa Senhora de Guadalupe",
-        "description": [],
+        "description": [
+            "Rua íngreme, pertencente ao complexo urbanístico do campo Novo, ligavaa Capela de Guadalupe à praça do Gavião.",
+            "Aberta também em 1725, tinha já, nesta data, quase todas as suas casasconstruídas, no lado Norte. Eram simples, na sua grande maioria de um só piso,e que, contrariamente à rua de S. Gonçalo, se estendiam pela encosta acima, atéà rua em Frente de Nossa Senhora de Guadalupe.",
+            "Na parte Sul estavam apenas construídas 2 habitações, sensivelmente no meioda rua, na parte plana. Eram edifícios de 2 pisos, em pedra, mas de desenhotradicional. Infelizmente o desenho está um pouco destruído, cortando todo o pisotérreo da casa do prazo n.º 9 e um pouco da do anterior.",
+            "Todas as 17 casas aqui apresentadas são prazos do Cabido.",
+            "Ainda hoje é denominada rua de Guadalupe."
+        ],
         "places": [
             "197",
             "198",
@@ -9706,7 +10122,13 @@
     {
         "id": "51",
         "name": "Rua Da Oliveira",
-        "description": [],
+        "description": [
+            "Pertencente ao complexo urbanístico do campo Novo, ligava esta praça aolocal actualmente chamado largo das Teresinhas. Uma pequena artéria, denominadaCangosta para a rua de Santa Margarida, permitia a passagem para a igreja de S. Vicentee capela de Guadalupe.",
+            "Aberta também em 1725 era, nesta data, uma rua cujos edifícios estavamem construção. No Mapa há 22 casas já levantadas e 13 «chãos» para edificarem.",
+            "Os prédios que vemos são de um piso (59%) ou dois, bastante semples, sendoa maior parte (59%) do tipo com porta ladeada de janela no piso térreo. A linhade empenas é irregular, quebrada e as janelas ou são vazadas, ou são do tipobracarense. Também aqui não há o rigor da marcação de janelas altas e portas,da praça do Gavião; são antes casas avulsas que tiveram o desenho de fachadadesejado pelo morador, sem preocupações de conjunto ou de integração. Não deixade ser curioso notar, contudo, a sequência vertical de porta e janela alta nas casasdos prazos 5 e 7, ou até a janela alta do prazo n.º 8, a lembrar aquela praça.",
+            "As 14 do lado Nascente e 8 do Poente são todas prazos do Cabido.",
+            "Mantém a designação de rua das Oliveiras."
+        ],
         "places": [
             "197",
             "293",
@@ -9912,7 +10334,17 @@
     {
         "id": "52",
         "name": "Rua em Frente de Nossa Senhora de Guadalupe",
-        "description": [],
+        "description": [
+            "Troço da Cangosta de Guadalupe, situado em frente à capela do mesmo nome.",
+            "Parcialmente construído em 1725, tinha, 25 anos mais tarde, ainda 3 «chãos».Um significativo espaço era ocupado por um grande quintal e pela fachada lateralde uma casa da rua de Nossa Senhora de Guadalupe, o que mostra bem asubalternização total desta rua.",
+            "As 5 casas construídas eram extremamente simples e tinham as janelas vazadas.Todos esses prédios estavam emprazados ao Cabido.",
+            "Chama-se actualmente rua de Guadalupe.",
+            "Pequena artéria, mais parecida com uma cangosta, ligava a igreja de S. Vicentecom a capela de Guadalupe.",
+            "Rua de arrabalde, na vertente Noroeste do então chamado monte de Santa Margarida,tinha do lado Norte — o único representado no Mappa, onze habitaçõesde um piso e duas de dois. Essas casas eram muito simples, do tipo com portaladeada de janela. No extremo Este está uma casa de pedra, de dois pisos, bemdefinida por fortes pilastras, que tem a ladeá-la um bonito, mas singelo, portãode pedra.",
+            "Na década de 60 do séc. XVIII, a rua sofreu uma alteração de traçado -que é o que actualmente se vê - devido à construção, neste local, do convento e capela das Teresinhas,facto que motivou a amortização dos prazos 1 a 8.",
+            "Das 13 casas representadas no Mappa, 9 eram foreiras do cabido.",
+            "Desde 5 de Junho de 1880 passou, oficialmente, a chamar-se rua de Camões."
+        ],
         "places": [
             "285",
             "286",
@@ -10010,7 +10442,14 @@
     {
         "id": "53",
         "name": "Rua dos Chãos de Cima",
-        "description": [],
+        "description": [
+            "Longa rua, que deveria já existir na Idade Média, ligava a rua dos Chãos de Baixo com a Igreja de S. Vicente.Tinha também comunicação com as ruas de S. Barnabé e Oliveiras através de uma viela que corresponde à actualrua de Espanha.",
+            "Aberta em terreno plano, estendia-se no lado Norte por terrenos do casal das Oliveiras e leira da Agra da Escoura, e no Sul,pelo casal dos Chãos ou do Quinteiro, no que respeita às casas foreiras ao Cabido.",
+            "Formada no Mappa, pelo largo dos Penedos e rua dos Chãos de Sima, tinha duas fontes. Uma situava-se no centrodaquele largo, a outra, de desenho hexagonal, estava no meio da rua, no ponto em que entroncava a já referida viela que levava àsruas de S. Barnabé e Oliveiras.",
+            "O largo dos Penedos, apesar dos dois grandes edifícios que tinha - o do gaveto com a rua do Carvalhal e o doprazo n.º 1 - não se não se diferençava, pela arquitectura, da rua dos Chãos de Sima.",
+            "Ambas tinham casas de dois pisos (88%) mas de diferentes alturas, que alternavam, por vezes, com outras de três (10,3%); tinha desenhos defachada díspares onde predominava contudo, a casa do tipo com porta ladeada por janela no piso térreo (57%). Curiosamente, vêm-se aqui algunsedifícios com amplas portas no piso da entrada, a possibilitar boa iluminação natural para a prática do comércio.",
+            "Algumas casas têm já um desenho bem moderno (casas dos prazos n.ºs 1, 30, 111), por vezes conjugado com gelosias (13, 47) que aliás aqui aparecemcom alguma quantidade. As janelas são, predominantemente, do tipo bracarense. Das 60 casas do lado Norte e 69 do Sul (a que se devem acrescentar 3na viela), são prazos do Cabido 52 e 56 (+3), respectivamente. Desde cerca de 1860-70 que passou a ser mais conhecida comorua de S. Vicente."
+        ],
         "places": [
             "138",
             "139",
@@ -11006,7 +11445,14 @@
     {
         "id": "54",
         "name": "Rua das Palhotas",
-        "description": [],
+        "description": [
+            "Comprida artéria que saindo da rua dos Chãos de Sima se dirigia para o Alto Minho e que, a partir do ponto onde actualmentebifurca, tinha o nome de rua Nova do Bico.",
+            "Desconhece-se a data da sua abertura. Há quem ponha a hipótese de que partia daqui a Geira, via militar romana que atravessando oGerês se dirigia a Astorga. Mas, se não serviu de estrada romana, teve ocupação medieval; antes de haver a estrada actual(aberta ao trânsito, por troços, a partir de 1860) para o Alto Minho, passavam aqui os carros e populações que se dirigiampara Palmeira, Pico de Regalados, etc. Esta estrada ainda em 1836 recebia reparações no seu lageado.",
+            "Em 1750, como agora, esta rua era de arrabalde. As suas casas tinham desenho tradicional. A maioria possuía apenas o piso térreo (60,2 %);as habitações de dois pisos (37,6%) estavam, na metade Sul da rua, aliás a zona mais próxima da cidade, onde havia duas casas de três pisos e, sobretudo,uma fonte mandada fazer em 1742 pela Câmara (que, em data recente, foi transferida para um recanto da rua Andrade Corvo).",
+            "A construção destes prédios seguia o modelo comum das zonas mais afastadas do centro, pois tinha no piso térreo uma porta ladeada de uma janela (88,2%).As janelas ou eram vazadas (62,7 %) ou do tipo bracarense (37,3 %) cobertas ou não por gelosias.",
+            "Das 52 casas do lado Poente e 41 do Nascente, eram prazos do Cabido 31 e 17, respectivamente. As restantes eram, na sua esmagadora maioria, foreiras aJácome Borges Pacheco, senhor da Casa de Vale Flor, em Infias.",
+            "Estas ruas mantêm hoje as designações e seu aspecto geral. A rua Nova do Bico foi, contudo, cortada em duas, pela via de cintura da cidade,ficando as duas partes isolados uma da outra."
+        ],
         "places": [
             "144",
             "300",
@@ -11421,7 +11867,15 @@
     {
         "id": "55",
         "name": "Rua de Infias",
-        "description": [],
+        "description": [
+            "Extensa rua que partindo da rua da Escoura ia em direcção à casa de Vale Flor ou de Infias. Aberta em campo plano, estendia-se porterrenos da primeira metade do casal do Lagarto, no que respeita aos edifícios foreiros ao Cabido, que representavam cerca de dois terçosdesta artéria, do lado Oeste.",
+            "Rua de arrabalde, era em 1750 formada tanto por habitações, como por portões ou muros de delimitação de propriedade.",
+            "As suas casas são todas muito simples, de arquitectura tradicional, na sua maioria do tipo de porta com janela ao lado (75,9%), no piso térreo.No extremo Oeste, vê-se um conjunto de edifícios que mais parecem uns pardieiros: são as construções de aspecto mais pobre em todo este Mappa.",
+            "Destas casas, 66% eram de um só piso. As janelas estariam na sua maioria tapadas por portadas de madeira (73,3 %), sendo as restantes do tipobracarense; destas, algumas tinham gelosias.",
+            "No extremo Oeste, parece ver-se um bom prédio. Mas porque tem a fachada principal virada para o interior não podemos percebê-lo bem. Pela sualocalização e arquitectura não nos parece ser a Casa de Vale Flor, embora esteja muito próximo.",
+            "Desta rua, de que só temos os alçados do lado Norte, eram foreiras ao Cabido 31 das 52 casas aqui desenhadas.",
+            "Bastante alterada nos edifícios, mas mantendo a sua implantação, integra actualmente uma parte da rua da Escoura — no seu extremoOeste, sensivelmente até à casa do prazo n.º 11 —, sendo a restante denominada rua Conselheiro Januário."
+        ],
         "places": [
             "65",
             "66",
@@ -11737,7 +12191,14 @@
     {
         "id": "56",
         "name": "Cangosta da Escoura",
-        "description": [],
+        "description": [
+            "Pequena artéria, de carácter rural, estabelecia ligação entre a igreja de S. Vicente e aigreja e convento do Carmo.",
+            "Aberta em data que desconhecemos, não está totalmente representada no Mappa; nele só vemos a metade Este, embora de ambos os lados.",
+            "Sem casas dignas de relevo, apresenta do lado Sul uma série de portas que davam acesso aos quintais das habitações darua dos Chãos de Cima. Aliás todo este lado era pertença das casas daquela rua, pois que até os 4 edifícios (n.ºs 8, 24, 27 e 28) nelerepresentados pertenciam, respectivamente, aos seus prazos n.ºs 46, 27, 23 e 22.",
+            "Do lado Norte, há apenas 5 pequenas casinhas totalmente ligadas aos campos que as envolviam: assim a casa do prazo n.ºs 30 e 31 andam emprazadasjuntamente com o campo n.º 29, e as casas 32, 33 e 35 estavam também todas subemprazadas com os quintais n.º 34 e 36 num só título.",
+            "Todas estas casas são foreiras ao cabido.",
+            "Desde 14 de Setembro de 1885 que passou a chamar-se rua Gabriel Pereira de Castro. Apesar das placas toponímicas existentesno local competente terem gravado este nome é apenas conhecida como rua da Escoura."
+        ],
         "places": [
             "239",
             "240",
@@ -12078,7 +12539,11 @@
     {
         "id": "57",
         "name": "Estrada de Real",
-        "description": [],
+        "description": [
+            "Longa via, talvez decalcando a velha estrada romana, saía de Braga, por terrenos que pensamos ser coincidentes com os da actual rua Andrade Corvo, em direção á freguesia suburbana de S.Jerónimo de Real.",
+            "Em 1750, todas as suas casas (3 do lado Norte e 15 do Sul) eram foreiras ao Cabido e incluiam-se no prazo da Quinta da Cónega.",
+            "Eram, naturalmente, construções muito pequenas, muito simples, de um só piso (excepto 2), e do tipo de porta ladeada por janela. Estes edifícios inscreviam-se apenas no extremo Oeste da rua: o restante espaço estava ocupado apenas com campos de cultivo."
+        ],
         "places": [
             "5",
             "82",
@@ -12140,7 +12605,16 @@
     {
         "id": "58",
         "name": "Rua da Cónega",
-        "description": [],
+        "description": [
+            "Longa rua, a maior do Mapa, que saindo de Braga junto á casa dosSotomaior descia em direção à freguesia deS.Jerónimo de Real. Há quem ponha a hipótese do seu traçado coincidircom o da via romana Braga-Lugo.",
+            "Aberta em data controversa para os historiadores bracarenses (periodo romano,séc.XII, séc. XVI), aparece também nos ínicios dos séc. XVIIcom o nome de rua Nova da Cónega. É esta a data (ou ainda de finais doséc.XVI ), em que foi construida a casa dos Sotomaior.",
+            "Em 1750, estava dividida em duas partes bem distintas:o terço Este,isto é, toda a zona da rua que compreendia as casas 1 a 27 (até ao portão da casa dasHortas, dos Ruby); 145 a 171; e a restante.",
+            "No primeiro núcleo, mais próximo do centro da cidade, predominam os edifícios dedoispisos. Para além da casa dos Sotomaior havia alguns edifícios deboa qualidade, (4,5,7,12,20,156,158,165), modernos (5,7,12,156), comgelosias(5,158,165), ou até, os únicos de três pisos de toda esta rua(4,5,6,12,15,167,170 esta com um 4ºpiso recuado,171).",
+            "A parte restante, com um declive pronunciado, tinha as suas construções muito maissimples, com um desenho de fachada tradicional, onde se alternavam casas com dois pisoscom outras térreas, em proporções quase iguais, e onde havia, naturalmente, muitosedifícios do tipo de porta ladeada de janela. As janelas eram na sua quase totalidadevazadas, raras havendo do tipo bracarense, sendo apenas duas protegidas com gelosias(nºs 100 e 117,esta uma casa de pedra e de boa qualidade).)",
+            "De realçar ainda que aqui existia uma pequena capela, dedicada ao Senhor das Âncias,erecta em 1735 pela população; e a fonte de S.Tiago (entre os prazos 61 e62) mandada fazer porD.Diogo de Sousa.",
+            "Todas as suas 93 casas do lado Norte e 57 do Sul eram prazos do Cabido.",
+            "É actualmente, mais conhecida pela designação tradicional de rua daCónega, do que pela oficial de rua da Boavista."
+        ],
         "places": [
             "5",
             "83",
@@ -12533,7 +13007,14 @@
     {
         "id": "59",
         "name": "Rua dos Biscaínhos",
-        "description": [],
+        "description": [
+            "Aberta no séc. XVI no tempo de D.Diogo de Sousa, unia o campo da Vinha com o campo das Hortas.",
+            "Em finais doséc.XVI, tinha já muitos edifícios conforme nos mostra o mapa de Braunio.",
+            "No Mappa, contudo, estão apenas desenhados três edifícios do lado Norte: dois de três pisos e o palácio dos Biscaínhos .",
+            "Se as casas são simples e de arquitetura tradicional, o palácio é o magnífico edifício que, felizmente, ainda hoje se mantém intacto.",
+            "Curiosamente, no Mappa, não há indicações de que qualquer um destes edifícios foram foreiros ao Cabido. No volume 4 dos Índices dos Prazos do Cabido (p.441 e 442) há, porém, notícia de duas destas casas serem emprazadas.",
+            "Mantém a designação de rua dos Biscaínhos."
+        ],
         "places": [
             "68",
             "69",
@@ -12583,7 +13064,13 @@
     {
         "id": "60",
         "name": "Cangosta da Rua das Águas",
-        "description": [],
+        "description": [
+            "Pequena artéria que partindo da rua das Águas passava pela quingosta da Palha e de dirigia ao Campo de Nossa Senhora a Branca. No volume 2, dos Índices das Casas dos Prazos do Cabido, a páginas 273-278 é chamada Cangosta Que Vai Para Nossa Senhora a Branca.",
+            "No Mappa não há, porém, indicações de que estes edifícios sejam foreiros ao Cabido, o que cintraria os Índices.",
+            "A 7 casas que vemos no Mappa são bastante simples, pobres até, de arquitetura tradicional. Seis são térreas e uma tem três pisos, sendo o último andar, contudo, mais baixo e de mais pequenas aberturas.",
+            "Em1891 a Câmara decidiu fazer um pequeno largo (o Rechicho) no seu extremo Oeste e alargá-la.",
+            "Atual rua do Raio e largo João Penha (ou do Rechicho)."
+        ],
         "places": [
             "79",
             "282",

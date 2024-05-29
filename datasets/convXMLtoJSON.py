@@ -46,7 +46,7 @@ def handleCorpo(corpo):
             datas.append(regex_spaces.sub(r' ',data.text.strip()))
 
     jsonCorpo = {}
-    jsonCorpo['description'] = []
+    jsonCorpo['description'] = descricao
     jsonCorpo['places'] = lugares
     jsonCorpo['entities'] = entidades
     jsonCorpo['dates'] = datas
