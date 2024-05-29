@@ -37,7 +37,7 @@ def start_container():
 
 if __name__ == "__main__":
     if len(sys.argv) < 5 or len(sys.argv[3:]) % 2 != 0:
-        print("Usage: python script.py <db_name> <container_name> <collection_name1> <json_file_path1> [<collection_name2> <json_file_path2> ...]")
+        print("Usage: python generate_docker.py <db_name> <container_name> <collection_name1> <json_file_path1> [<collection_name2> <json_file_path2> ...]")
         sys.exit(1)
 
     db_name = sys.argv[1]

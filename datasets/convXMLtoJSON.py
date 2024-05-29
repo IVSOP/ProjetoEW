@@ -14,7 +14,7 @@ def dumpToJson(jsonArray, filepath):
 ##handlers XML
 def handleMeta(meta):
     jsonMeta = {}
-    jsonMeta['id'] = meta.find('número').text
+    jsonMeta['_id'] = meta.find('número').text
     jsonMeta['name'] = meta.find('nome').text
     return jsonMeta
 
@@ -61,7 +61,7 @@ def handleOldFiguras(figuras):
 
     for figura in figuras:
         jsonFiguras['old_images'].append({
-            'id': figura.get('id'),
+            '_id': figura.get('id'),
             'path': figura.find('imagem').get('path'),
             'subst': figura.find('legenda').text
         })
@@ -101,7 +101,7 @@ def handleCasas(casas):
                 desc.append(text)  
 
         jsonCasas['houses'].append({
-            'id': casa.find('número').text,
+            '_id': casa.find('número').text,
             'enfiteuta': enfiteuta,
             'subst': foro,
             'vista': vista,
@@ -150,8 +150,8 @@ def calc_ids(filesJSON, target_field: str) -> dict:
         #parse places
         for item in file.get(target_field,[]):
             if item not in id_dict:
-                rua_data = {"id": file["id"], "name": file["name"]} # mais tarde meter isto só com id, e fazer query dos nomes das respetivas ruas, mas para já é facil assim para mostrar no UI
-                id_dict[item] = {"id": str(idCounter), "nome": item, "ruas": [rua_data]} 
+                rua_data = {"_id": file["_id"], "name": file["name"]} # mais tarde meter isto só com id, e fazer query dos nomes das respetivas ruas, mas para já é facil assim para mostrar no UI
+                id_dict[item] = {"_id": str(idCounter), "nome": item, "ruas": [rua_data]} 
                 idCounter = idCounter + 1
             else:
                 id_dict[item]["ruas"].append(rua_data)
@@ -160,9 +160,9 @@ def calc_ids(filesJSON, target_field: str) -> dict:
 
 def update_jsons_with_ids(filesJSON: list, places_dict: dict, entities_dict: dict, dates_dict: dict):
     for _, json_data in filesJSON:
-        json_data["places"] = [places_dict[place]["id"] for place in json_data["places"]]
-        json_data["entities"] = [entities_dict[entity]["id"] for entity in json_data["entities"]]
-        json_data["dates"] = [dates_dict[date]["id"] for date in json_data["dates"]]
+        json_data["places"] = [places_dict[place]["_id"] for place in json_data["places"]]
+        json_data["entities"] = [entities_dict[entity]["_id"] for entity in json_data["entities"]]
+        json_data["dates"] = [dates_dict[date]["_id"] for date in json_data["dates"]]
 
 #main func
 if __name__ == '__main__':
@@ -201,7 +201,7 @@ if __name__ == '__main__':
 
     #escrever só para um ficheiro as entradas todas
     jsonsOnly = [tup[1] for tup in filesJSON]
-    sorted_jsonsOnly = sorted(jsonsOnly, key=lambda x: int(x['id']))
+    sorted_jsonsOnly = sorted(jsonsOnly, key=lambda x: int(x['_id']))
     dumpToJson(sorted_jsonsOnly, './parsed/streets.json')
     
     #write places, entities, dates
