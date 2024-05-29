@@ -1,0 +1,17 @@
+extends layout
+
+block content
+
+    .container.d-flex.justify-content-center.flex-column.vh-100.mt-3.w-50
+
+        h1.text-center Login
+
+        form
+            .form-group
+                input.form-control.mt-3(type='email', id='InputEmail1', placeholder='Inserir Email')
+            .form-group
+                input.form-control.mt-3(type='password', id='InputPassword1', placeholder='Password')
+                small.form-text.text-muted.mt-1
+                    | Ainda não tens conta? 
+                    a(href="/registar") Registar  
+            button.btn.btn-secondary.btn-block.w-100.mt-3(type='submit') Entrar

@@ -1,6 +1,21 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  a(href="/pessoas") Pessoas
+
+    .container.d-flex.justify-content-center.flex-column.vh-100.mt-3
+
+        .d-inline-flex.gap-3.mt-0
+            a(href="/ruas").w-100
+                button.btn.btn-secondary.btn-lg.btn-block.w-100.p-4(style="font-size: 50px;")
+                    | Índice das Ruas
+            a(href="/lugares").w-100
+                button.btn.btn-secondary.btn-lg.btn-block.w-100.p-4(style="font-size: 50px;")
+                    | Índice dos Lugares
+
+        .d-inline-flex.gap-3.mt-3.mb-3
+            a(href="/entidades").w-100
+                button.btn.btn-secondary.btn-lg.btn-block.w-100.p-4(style="font-size: 50px;")
+                    | Índice das Entidades
+            a(href="/datas").w-100
+                button.btn.btn-secondary.btn-lg.btn-block.w-100.p-4(style="font-size: 50px;")
+                    | Índice das Datas

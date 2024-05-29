@@ -1,0 +1,115 @@
+extends layout
+
+block content
+
+    // slide show for old and current images
+    .container.d-flex.justify-content-end.flex-column.mt-3
+        #carouselExampleDark.carousel.carousel-dark.slide(data-bs-ride="carousel")
+            .carousel-indicators
+                button(type="button", data-bs-target="#carouselExampleDark", data-bs-slide-to="0", class="active", aria-current="true", aria-label="Slide 1")
+                button(type="button", data-bs-target="#carouselExampleDark", data-bs-slide-to="1", aria-label="Slide 2")
+                button(type="button", data-bs-target="#carouselExampleDark", data-bs-slide-to="2", aria-label="Slide 3")
+            .carousel-inner
+                .carousel-item.active(data-bs-interval="10000")
+                    img.d-block.w-100(src="/images/example.png", alt="image1")
+                    .carousel-caption.d-none.d-md-block
+                        h3 First slide label
+                        h5 Some placeholder.
+                .carousel-item(data-bs-interval="2000")
+                    img.d-block.w-100(src="/images/example.png", alt="image2")
+                    .carousel-caption.d-none.d-md-block
+                        h3 Second slide label
+                        h5 Some placeholder.
+                .carousel-item
+                    img.d-block.w-100(src="/images/example.png", alt="image3")
+                    .carousel-caption.d-none.d-md-block
+                        h3 Third slide label
+                        h5 Some placeholder.
+            button.carousel-control-prev(type="button", data-bs-target="#carouselExampleDark", data-bs-slide="prev")
+                span.carousel-control-prev-icon(aria-hidden="true")
+                span.visually-hidden Previous
+            button.carousel-control-next(type="button", data-bs-target="#carouselExampleDark", data-bs-slide="next")
+                span.carousel-control-next-icon(aria-hidden="true")
+                span.visually-hidden Next
+
+        // edit button
+        .button.btn.btn-secondary.btn-lg.btn-block.mt-3
+                | Editar
+
+        // delete button
+        .button.btn.btn-danger.btn-lg.btn-block.mt-3
+                | Eliminar
+
+        // collapsing buttons for locals, entities and dates
+        p.d-inline-flex.gap-3.mt-3
+            button.btn.btn-secondary.btn-lg.btn-block.w-100(data-bs-toggle='collapse', href='#collapsePlaces', role='button', aria-expanded='false', aria-controls='collapsePlaces')
+                | Lugares Referidos
+            button.btn.btn-secondary.btn-lg.btn-block.w-100(data-bs-toggle='collapse', href='#collapseEntities', role='button', aria-expanded='false', aria-controls='collapseEntities')
+                | Entidades Referidos
+            button.btn.btn-secondary.btn-lg.btn-block.w-100(type='button', data-bs-toggle='collapse', data-bs-target='#collapseDates', aria-expanded='false', aria-controls='collapseDates')
+                | Datas Referidas
+        
+        // list of locals
+        .collapse#collapsePlaces
+            .card.card-body
+                .row
+                    for lugar, index in lugares
+                        if index > 0 && index % 4 == 0 
+                            .w-100
+                        .col.text-left= lugar.name 
+
+        // list of entities
+        .collapse#collapseEntities
+            .card.card-body
+                .row
+                    for entidade, index in entidades
+                        if index > 0 && index % 4 == 0 
+                            .w-100
+                        .col.text-left= entidade.name 
+        
+        // list of dates
+        .collapse#collapseDates
+            .card.card-body
+                .row
+                    for data, index in datas
+                        if index > 0 && index % 4 == 0 
+                            .w-100
+                        .col.text-left= data.name 
+
+        // street description
+        .card.card-body.mt-3(style="text-align: justify;")
+            for paragraph in rua.description
+                p.m-1= paragraph
+
+        // table of houses
+        table.table.table-hover.table-responsive.mt-3
+            thead
+                tr(class="table-secondary")
+                    th(scope='col') ID
+                    th(scope='col') Enfiteuta
+                    th(scope='col') Pagamento
+                    th(scope='col') Vista
+                    th(scope='col') Descrição
+            tbody
+                for casa in rua.houses
+                    tr
+                        th(scope='row')= casa['_id']
+                        td= casa.enfiteuta
+                        td= casa.subst
+                        td= casa.vista
+                        td= casa.desc[0]
+
+        .card.card-body.mb-3
+            
+            // comment text-area
+            .form.d-flex.justify-content-between.flex-row.mb-3
+                div.mr-3.form-group(style="width: 84%")
+                        textarea#commentContent.form-control(rows="2", placeholder="Inserir comentário")
+                button.btn.btn-secondary.btn-lg.btn-block(style="width: 15%")(type="submit")
+                        | Submeter
+
+            // user and comment
+            .card.border-dark.mb-0.w-100
+                b.card-header Username
+                .card-body.text-dark
+                    p.card-text This is a comment!!!

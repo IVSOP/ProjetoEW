@@ -3,8 +3,6 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 
-var skeletonRouter = require('./routes/skeleton'); // #####################################################################
-
 var app = express();
 
 // view engine setup
@@ -16,7 +14,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/skeleton', skeletonRouter); // #####################################################################
+// add routes
+app.use('/', require('./routes/index'));
+app.use('/ruas', require('./routes/ruas'));
+app.use('/entidades', require('./routes/entidades'));
+app.use('/lugares', require('./routes/lugares'));
+app.use('/datas', require('./routes/datas'));
+app.use('/login', require('./routes/login'))
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

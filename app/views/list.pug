@@ -1,0 +1,15 @@
+extends layout
+
+block content
+
+    .container.d-flex.justify-content-end.flex-column.mt-3
+
+        h1.m-0.font-weight-bold.alert.alert-dark(style="text-align: center;")= title
+
+        ul.list-group.mb-3(style="font-size: 20px;")
+            each element in listElements
+                a(href='/ruas/' + element['_id'] style="text-decoration: none;")
+                    li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.mt-3= element.name
+
+            a(href=voltar style="text-decoration: none;")
+                li.list-group-item.list-group-item-action.list-group-item-dark.text-center.mt-3 Voltar
