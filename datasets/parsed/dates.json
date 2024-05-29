@@ -1,514 +1,6 @@
 [
     {
         "_id": "1",
-        "nome": "1725",
-        "ruas": [
-            {
-                "_id": "46",
-                "name": "Rua de Santo André"
-            },
-            {
-                "_id": "32",
-                "name": "Rua dos Pelames"
-            },
-            {
-                "_id": "3",
-                "name": "Rua dos Açougues velhos"
-            },
-            {
-                "_id": "10",
-                "name": "Travessa da Rua de S. João para a do Forno"
-            },
-            {
-                "_id": "60",
-                "name": "Cangosta da Rua das Águas"
-            },
-            {
-                "_id": "52",
-                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
-            },
-            {
-                "_id": "45",
-                "name": "Rua dos Chãos de Baixo"
-            }
-        ]
-    },
-    {
-        "_id": "2",
-        "nome": "1750",
-        "ruas": [
-            {
-                "_id": "46",
-                "name": "Rua de Santo André"
-            },
-            {
-                "_id": "2",
-                "name": "Rua Nova"
-            },
-            {
-                "_id": "2",
-                "name": "Rua Nova"
-            },
-            {
-                "_id": "22",
-                "name": "Rua de Maximinos"
-            },
-            {
-                "_id": "22",
-                "name": "Rua de Maximinos"
-            },
-            {
-                "_id": "22",
-                "name": "Rua de Maximinos"
-            },
-            {
-                "_id": "11",
-                "name": "Rua dos Cegos ou do Forno"
-            },
-            {
-                "_id": "59",
-                "name": "Rua dos Biscaínhos"
-            },
-            {
-                "_id": "36",
-                "name": "Rua das Águas"
-            },
-            {
-                "_id": "36",
-                "name": "Rua das Águas"
-            },
-            {
-                "_id": "41",
-                "name": "Campo de Santa Ana"
-            },
-            {
-                "_id": "44",
-                "name": "Rua da Fonte da Carcova"
-            },
-            {
-                "_id": "44",
-                "name": "Rua da Fonte da Carcova"
-            },
-            {
-                "_id": "33",
-                "name": "Campo de S. Tiago"
-            },
-            {
-                "_id": "33",
-                "name": "Campo de S. Tiago"
-            },
-            {
-                "_id": "43",
-                "name": "Campo de Nossa Senhora a Branca. Rua da Régua. Rua Nova da Seara"
-            },
-            {
-                "_id": "53",
-                "name": "Rua dos Chãos de Cima"
-            },
-            {
-                "_id": "7",
-                "name": " Loura e Terreiro do Castelo  "
-            },
-            {
-                "_id": "32",
-                "name": "Rua dos Pelames"
-            },
-            {
-                "_id": "6",
-                "name": " Rua do Souto Porta do Souto "
-            },
-            {
-                "_id": "4",
-                "name": "Praça do Pão"
-            },
-            {
-                "_id": "3",
-                "name": "Rua dos Açougues velhos"
-            },
-            {
-                "_id": "3",
-                "name": "Rua dos Açougues velhos"
-            },
-            {
-                "_id": "12",
-                "name": "Travessa Da Rua Do Forno Para A Do Poco"
-            },
-            {
-                "_id": "24",
-                "name": "Rua da Vielinha"
-            },
-            {
-                "_id": "21",
-                "name": "Rua Verde"
-            },
-            {
-                "_id": "21",
-                "name": "Rua Verde"
-            },
-            {
-                "_id": "37",
-                "name": "Rua de S. Lázaro"
-            },
-            {
-                "_id": "58",
-                "name": "Rua da Cónega"
-            },
-            {
-                "_id": "10",
-                "name": "Travessa da Rua de S. João para a do Forno"
-            },
-            {
-                "_id": "47",
-                "name": "Rua de S. Barnabé"
-            },
-            {
-                "_id": "27",
-                "name": "Rua Da Cruz De Pedra"
-            },
-            {
-                "_id": "27",
-                "name": "Rua Da Cruz De Pedra"
-            },
-            {
-                "_id": "54",
-                "name": "Rua das Palhotas"
-            },
-            {
-                "_id": "54",
-                "name": "Rua das Palhotas"
-            },
-            {
-                "_id": "42",
-                "name": "Campo e Calçada de Nossa Senhora a Branca"
-            },
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            },
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            },
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            }
-        ]
-    },
-    {
-        "_id": "3",
-        "nome": "1772",
-        "ruas": [
-            {
-                "_id": "2",
-                "name": "Rua Nova"
-            }
-        ]
-    },
-    {
-        "_id": "4",
-        "nome": "1613",
-        "ruas": [
-            {
-                "_id": "22",
-                "name": "Rua de Maximinos"
-            }
-        ]
-    },
-    {
-        "_id": "5",
-        "nome": "1868",
-        "ruas": [
-            {
-                "_id": "22",
-                "name": "Rua de Maximinos"
-            },
-            {
-                "_id": "4",
-                "name": "Praça do Pão"
-            }
-        ]
-    },
-    {
-        "_id": "6",
-        "nome": "1826",
-        "ruas": [
-            {
-                "_id": "22",
-                "name": "Rua de Maximinos"
-            }
-        ]
-    },
-    {
-        "_id": "7",
-        "nome": "1925",
-        "ruas": [
-            {
-                "_id": "22",
-                "name": "Rua de Maximinos"
-            }
-        ]
-    },
-    {
-        "_id": "8",
-        "nome": "séc. XIV",
-        "ruas": [
-            {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
-            }
-        ]
-    },
-    {
-        "_id": "9",
-        "nome": "séc. XV",
-        "ruas": [
-            {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
-            },
-            {
-                "_id": "6",
-                "name": " Rua do Souto Porta do Souto "
-            }
-        ]
-    },
-    {
-        "_id": "10",
-        "nome": "1465",
-        "ruas": [
-            {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
-            },
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            }
-        ]
-    },
-    {
-        "_id": "11",
-        "nome": "séc. XVIII",
-        "ruas": [
-            {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
-            },
-            {
-                "_id": "59",
-                "name": "Rua dos Biscaínhos"
-            },
-            {
-                "_id": "6",
-                "name": " Rua do Souto Porta do Souto "
-            },
-            {
-                "_id": "4",
-                "name": "Praça do Pão"
-            },
-            {
-                "_id": "42",
-                "name": "Campo e Calçada de Nossa Senhora a Branca"
-            }
-        ]
-    },
-    {
-        "_id": "12",
-        "nome": "séc. XIX",
-        "ruas": [
-            {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
-            },
-            {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
-            },
-            {
-                "_id": "6",
-                "name": " Rua do Souto Porta do Souto "
-            }
-        ]
-    },
-    {
-        "_id": "13",
-        "nome": "24 de Fevereiro de 1944",
-        "ruas": [
-            {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
-            }
-        ]
-    },
-    {
-        "_id": "14",
-        "nome": "finais do séc. XVI",
-        "ruas": [
-            {
-                "_id": "9",
-                "name": "Rua de S.João"
-            }
-        ]
-    },
-    {
-        "_id": "15",
-        "nome": "1369-1380",
-        "ruas": [
-            {
-                "_id": "11",
-                "name": "Rua dos Cegos ou do Forno"
-            },
-            {
-                "_id": "53",
-                "name": "Rua dos Chãos de Cima"
-            }
-        ]
-    },
-    {
-        "_id": "16",
-        "nome": "20-06-1896",
-        "ruas": [
-            {
-                "_id": "11",
-                "name": "Rua dos Cegos ou do Forno"
-            }
-        ]
-    },
-    {
-        "_id": "17",
-        "nome": "séc. XVI",
-        "ruas": [
-            {
-                "_id": "59",
-                "name": "Rua dos Biscaínhos"
-            },
-            {
-                "_id": "13",
-                "name": "Rua Pequena"
-            },
-            {
-                "_id": "20",
-                "name": "Terreiro de Sto. António e Postigo"
-            }
-        ]
-    },
-    {
-        "_id": "18",
-        "nome": "séc.XVI",
-        "ruas": [
-            {
-                "_id": "59",
-                "name": "Rua dos Biscaínhos"
-            },
-            {
-                "_id": "58",
-                "name": "Rua da Cónega"
-            }
-        ]
-    },
-    {
-        "_id": "19",
-        "nome": "1881-1884",
-        "ruas": [
-            {
-                "_id": "29",
-                "name": "Rua do Beco"
-            }
-        ]
-    },
-    {
-        "_id": "20",
-        "nome": "1478",
-        "ruas": [
-            {
-                "_id": "36",
-                "name": "Rua das Águas"
-            }
-        ]
-    },
-    {
-        "_id": "21",
-        "nome": "1620",
-        "ruas": [
-            {
-                "_id": "13",
-                "name": "Rua Pequena"
-            }
-        ]
-    },
-    {
-        "_id": "22",
-        "nome": "1500",
-        "ruas": [
-            {
-                "_id": "41",
-                "name": "Campo de Santa Ana"
-            }
-        ]
-    },
-    {
-        "_id": "23",
-        "nome": "1652",
-        "ruas": [
-            {
-                "_id": "41",
-                "name": "Campo de Santa Ana"
-            }
-        ]
-    },
-    {
-        "_id": "24",
-        "nome": "1720",
-        "ruas": [
-            {
-                "_id": "41",
-                "name": "Campo de Santa Ana"
-            }
-        ]
-    },
-    {
-        "_id": "25",
-        "nome": "1689",
-        "ruas": [
-            {
-                "_id": "41",
-                "name": "Campo de Santa Ana"
-            }
-        ]
-    },
-    {
-        "_id": "26",
-        "nome": "1739-1766",
-        "ruas": [
-            {
-                "_id": "41",
-                "name": "Campo de Santa Ana"
-            }
-        ]
-    },
-    {
-        "_id": "27",
-        "nome": "1722",
-        "ruas": [
-            {
-                "_id": "41",
-                "name": "Campo de Santa Ana"
-            }
-        ]
-    },
-    {
-        "_id": "28",
-        "nome": "segunda metade do séc.XIX",
-        "ruas": [
-            {
-                "_id": "41",
-                "name": "Campo de Santa Ana"
-            }
-        ]
-    },
-    {
-        "_id": "29",
         "nome": "1759",
         "ruas": [
             {
@@ -522,7 +14,359 @@
         ]
     },
     {
-        "_id": "30",
+        "_id": "2",
+        "nome": "séc. XVII",
+        "ruas": [
+            {
+                "_id": "39",
+                "name": "Ponte de Guimarães"
+            },
+            {
+                "_id": "44",
+                "name": "Rua da Fonte da Carcova"
+            },
+            {
+                "_id": "58",
+                "name": "Rua da Cónega"
+            },
+            {
+                "_id": "6",
+                "name": " Rua do Souto Porta do Souto "
+            }
+        ]
+    },
+    {
+        "_id": "3",
+        "nome": "1750",
+        "ruas": [
+            {
+                "_id": "29",
+                "name": "Rua do Beco"
+            },
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            },
+            {
+                "_id": "44",
+                "name": "Rua da Fonte da Carcova"
+            },
+            {
+                "_id": "44",
+                "name": "Rua da Fonte da Carcova"
+            },
+            {
+                "_id": "7",
+                "name": " Loura e Terreiro do Castelo  "
+            },
+            {
+                "_id": "7",
+                "name": " Loura e Terreiro do Castelo  "
+            },
+            {
+                "_id": "54",
+                "name": "Rua das Palhotas"
+            },
+            {
+                "_id": "58",
+                "name": "Rua da Cónega"
+            },
+            {
+                "_id": "52",
+                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
+            },
+            {
+                "_id": "24",
+                "name": "Rua da Vielinha"
+            },
+            {
+                "_id": "42",
+                "name": "Campo e Calçada de Nossa Senhora a Branca"
+            },
+            {
+                "_id": "33",
+                "name": "Campo de S. Tiago"
+            },
+            {
+                "_id": "33",
+                "name": "Campo de S. Tiago"
+            },
+            {
+                "_id": "33",
+                "name": "Campo de S. Tiago"
+            },
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            },
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            },
+            {
+                "_id": "36",
+                "name": "Rua das Águas"
+            },
+            {
+                "_id": "43",
+                "name": "Campo de Nossa Senhora a Branca. Rua da Régua. Rua Nova da Seara"
+            },
+            {
+                "_id": "3",
+                "name": "Rua dos Açougues velhos"
+            },
+            {
+                "_id": "3",
+                "name": "Rua dos Açougues velhos"
+            },
+            {
+                "_id": "21",
+                "name": "Rua Verde"
+            },
+            {
+                "_id": "21",
+                "name": "Rua Verde"
+            },
+            {
+                "_id": "21",
+                "name": "Rua Verde"
+            },
+            {
+                "_id": "21",
+                "name": "Rua Verde"
+            },
+            {
+                "_id": "60",
+                "name": "Cangosta da Rua das Águas"
+            },
+            {
+                "_id": "37",
+                "name": "Rua de S. Lázaro"
+            },
+            {
+                "_id": "45",
+                "name": "Rua dos Chãos de Baixo"
+            },
+            {
+                "_id": "32",
+                "name": "Rua dos Pelames"
+            },
+            {
+                "_id": "22",
+                "name": "Rua de Maximinos"
+            },
+            {
+                "_id": "22",
+                "name": "Rua de Maximinos"
+            },
+            {
+                "_id": "22",
+                "name": "Rua de Maximinos"
+            },
+            {
+                "_id": "2",
+                "name": "Rua Nova"
+            },
+            {
+                "_id": "2",
+                "name": "Rua Nova"
+            },
+            {
+                "_id": "2",
+                "name": "Rua Nova"
+            },
+            {
+                "_id": "2",
+                "name": "Rua Nova"
+            },
+            {
+                "_id": "6",
+                "name": " Rua do Souto Porta do Souto "
+            },
+            {
+                "_id": "6",
+                "name": " Rua do Souto Porta do Souto "
+            },
+            {
+                "_id": "1",
+                "name": "Rua do Campo"
+            },
+            {
+                "_id": "1",
+                "name": "Rua do Campo"
+            }
+        ]
+    },
+    {
+        "_id": "4",
+        "nome": "séc. XVIII",
+        "ruas": [
+            {
+                "_id": "29",
+                "name": "Rua do Beco"
+            },
+            {
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            },
+            {
+                "_id": "42",
+                "name": "Campo e Calçada de Nossa Senhora a Branca"
+            },
+            {
+                "_id": "3",
+                "name": "Rua dos Açougues velhos"
+            },
+            {
+                "_id": "3",
+                "name": "Rua dos Açougues velhos"
+            }
+        ]
+    },
+    {
+        "_id": "5",
+        "nome": "1881-1884",
+        "ruas": [
+            {
+                "_id": "29",
+                "name": "Rua do Beco"
+            }
+        ]
+    },
+    {
+        "_id": "6",
+        "nome": "séc. XVI",
+        "ruas": [
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            },
+            {
+                "_id": "51",
+                "name": "Rua Da Oliveira"
+            },
+            {
+                "_id": "1",
+                "name": "Rua do Campo"
+            }
+        ]
+    },
+    {
+        "_id": "7",
+        "nome": "1500",
+        "ruas": [
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            }
+        ]
+    },
+    {
+        "_id": "8",
+        "nome": "1652",
+        "ruas": [
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            }
+        ]
+    },
+    {
+        "_id": "9",
+        "nome": "1720",
+        "ruas": [
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            }
+        ]
+    },
+    {
+        "_id": "10",
+        "nome": "1689",
+        "ruas": [
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            }
+        ]
+    },
+    {
+        "_id": "11",
+        "nome": "1739-1766",
+        "ruas": [
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            }
+        ]
+    },
+    {
+        "_id": "12",
+        "nome": "1722",
+        "ruas": [
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            }
+        ]
+    },
+    {
+        "_id": "13",
+        "nome": "segunda metade do séc.XIX",
+        "ruas": [
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            }
+        ]
+    },
+    {
+        "_id": "14",
+        "nome": "1743",
+        "ruas": [
+            {
+                "_id": "47",
+                "name": "Rua de S. Barnabé"
+            }
+        ]
+    },
+    {
+        "_id": "15",
+        "nome": "1725",
+        "ruas": [
+            {
+                "_id": "51",
+                "name": "Rua Da Oliveira"
+            },
+            {
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            },
+            {
+                "_id": "53",
+                "name": "Rua dos Chãos de Cima"
+            },
+            {
+                "_id": "33",
+                "name": "Campo de S. Tiago"
+            },
+            {
+                "_id": "60",
+                "name": "Cangosta da Rua das Águas"
+            },
+            {
+                "_id": "13",
+                "name": "Rua Pequena"
+            },
+            {
+                "_id": "32",
+                "name": "Rua dos Pelames"
+            }
+        ]
+    },
+    {
+        "_id": "16",
         "nome": "1531",
         "ruas": [
             {
@@ -532,7 +376,7 @@
         ]
     },
     {
-        "_id": "31",
+        "_id": "17",
         "nome": "1865",
         "ruas": [
             {
@@ -544,13 +388,13 @@
                 "name": "Campo de Nossa Senhora a Branca. Rua da Régua. Rua Nova da Seara"
             },
             {
-                "_id": "37",
-                "name": "Rua de S. Lázaro"
+                "_id": "25",
+                "name": "Campo de S. Sebastião e em Frente do Açougue"
             }
         ]
     },
     {
-        "_id": "32",
+        "_id": "18",
         "nome": "1369-80",
         "ruas": [
             {
@@ -558,27 +402,185 @@
                 "name": "Rua da Fonte da Carcova"
             },
             {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            }
+        ]
+    },
+    {
+        "_id": "19",
+        "nome": "séc. XIV",
+        "ruas": [
+            {
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            }
+        ]
+    },
+    {
+        "_id": "20",
+        "nome": "séc. XV",
+        "ruas": [
+            {
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            },
+            {
+                "_id": "3",
+                "name": "Rua dos Açougues velhos"
+            }
+        ]
+    },
+    {
+        "_id": "21",
+        "nome": "1465",
+        "ruas": [
+            {
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            },
+            {
+                "_id": "1",
+                "name": "Rua do Campo"
+            }
+        ]
+    },
+    {
+        "_id": "22",
+        "nome": "séc. XIX",
+        "ruas": [
+            {
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            },
+            {
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            },
+            {
+                "_id": "3",
+                "name": "Rua dos Açougues velhos"
+            }
+        ]
+    },
+    {
+        "_id": "23",
+        "nome": "24 de Fevereiro de 1944",
+        "ruas": [
+            {
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            }
+        ]
+    },
+    {
+        "_id": "24",
+        "nome": "1690",
+        "ruas": [
+            {
+                "_id": "7",
+                "name": " Loura e Terreiro do Castelo  "
+            }
+        ]
+    },
+    {
+        "_id": "25",
+        "nome": "1733",
+        "ruas": [
+            {
+                "_id": "7",
+                "name": " Loura e Terreiro do Castelo  "
+            }
+        ]
+    },
+    {
+        "_id": "26",
+        "nome": "1758",
+        "ruas": [
+            {
+                "_id": "7",
+                "name": " Loura e Terreiro do Castelo  "
+            }
+        ]
+    },
+    {
+        "_id": "27",
+        "nome": "1824",
+        "ruas": [
+            {
+                "_id": "7",
+                "name": " Loura e Terreiro do Castelo  "
+            }
+        ]
+    },
+    {
+        "_id": "28",
+        "nome": "1905",
+        "ruas": [
+            {
+                "_id": "7",
+                "name": " Loura e Terreiro do Castelo  "
+            }
+        ]
+    },
+    {
+        "_id": "29",
+        "nome": "1860",
+        "ruas": [
+            {
                 "_id": "54",
                 "name": "Rua das Palhotas"
             }
         ]
     },
     {
-        "_id": "33",
-        "nome": "séc. XVII",
+        "_id": "30",
+        "nome": "1836",
         "ruas": [
             {
-                "_id": "44",
-                "name": "Rua da Fonte da Carcova"
+                "_id": "54",
+                "name": "Rua das Palhotas"
+            }
+        ]
+    },
+    {
+        "_id": "31",
+        "nome": "1742",
+        "ruas": [
+            {
+                "_id": "54",
+                "name": "Rua das Palhotas"
+            }
+        ]
+    },
+    {
+        "_id": "32",
+        "nome": "1369-1380",
+        "ruas": [
+            {
+                "_id": "11",
+                "name": "Rua dos Cegos ou do Forno"
             },
             {
-                "_id": "53",
-                "name": "Rua dos Chãos de Cima"
-            },
+                "_id": "21",
+                "name": "Rua Verde"
+            }
+        ]
+    },
+    {
+        "_id": "33",
+        "nome": "20-06-1896",
+        "ruas": [
             {
-                "_id": "3",
-                "name": "Rua dos Açougues velhos"
-            },
+                "_id": "11",
+                "name": "Rua dos Cegos ou do Forno"
+            }
+        ]
+    },
+    {
+        "_id": "34",
+        "nome": "séc.XII, séc. XVI)",
+        "ruas": [
             {
                 "_id": "58",
                 "name": "Rua da Cónega"
@@ -586,89 +588,31 @@
         ]
     },
     {
-        "_id": "34",
-        "nome": "1560-1570",
-        "ruas": [
-            {
-                "_id": "33",
-                "name": "Campo de S. Tiago"
-            }
-        ]
-    },
-    {
         "_id": "35",
-        "nome": "1623",
+        "nome": "séc.XVI",
         "ruas": [
             {
-                "_id": "33",
-                "name": "Campo de S. Tiago"
+                "_id": "58",
+                "name": "Rua da Cónega"
+            },
+            {
+                "_id": "1",
+                "name": "Rua do Campo"
             }
         ]
     },
     {
         "_id": "36",
-        "nome": "1745",
+        "nome": "1735",
         "ruas": [
             {
-                "_id": "33",
-                "name": "Campo de S. Tiago"
-            },
-            {
-                "_id": "42",
-                "name": "Campo e Calçada de Nossa Senhora a Branca"
+                "_id": "58",
+                "name": "Rua da Cónega"
             }
         ]
     },
     {
         "_id": "37",
-        "nome": "1703",
-        "ruas": [
-            {
-                "_id": "33",
-                "name": "Campo de S. Tiago"
-            }
-        ]
-    },
-    {
-        "_id": "38",
-        "nome": "1540",
-        "ruas": [
-            {
-                "_id": "33",
-                "name": "Campo de S. Tiago"
-            },
-            {
-                "_id": "32",
-                "name": "Rua dos Pelames"
-            }
-        ]
-    },
-    {
-        "_id": "39",
-        "nome": "1594",
-        "ruas": [
-            {
-                "_id": "33",
-                "name": "Campo de S. Tiago"
-            },
-            {
-                "_id": "47",
-                "name": "Rua de S. Barnabé"
-            }
-        ]
-    },
-    {
-        "_id": "40",
-        "nome": "(1677-1690)",
-        "ruas": [
-            {
-                "_id": "43",
-                "name": "Campo de Nossa Senhora a Branca. Rua da Régua. Rua Nova da Seara"
-            }
-        ]
-    },
-    {
-        "_id": "41",
         "nome": "1860-70",
         "ruas": [
             {
@@ -678,7 +622,27 @@
         ]
     },
     {
-        "_id": "42",
+        "_id": "38",
+        "nome": "Na década de 60 do séc. XVIII",
+        "ruas": [
+            {
+                "_id": "52",
+                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
+            }
+        ]
+    },
+    {
+        "_id": "39",
+        "nome": "5 de Junho de 1880",
+        "ruas": [
+            {
+                "_id": "52",
+                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
+            }
+        ]
+    },
+    {
+        "_id": "40",
         "nome": "1857",
         "ruas": [
             {
@@ -692,93 +656,125 @@
         ]
     },
     {
-        "_id": "43",
-        "nome": "1690",
+        "_id": "41",
+        "nome": "1515",
         "ruas": [
             {
-                "_id": "7",
-                "name": " Loura e Terreiro do Castelo  "
+                "_id": "24",
+                "name": "Rua da Vielinha"
+            },
+            {
+                "_id": "1",
+                "name": "Rua do Campo"
+            }
+        ]
+    },
+    {
+        "_id": "42",
+        "nome": "1319",
+        "ruas": [
+            {
+                "_id": "42",
+                "name": "Campo e Calçada de Nossa Senhora a Branca"
+            }
+        ]
+    },
+    {
+        "_id": "43",
+        "nome": "1745",
+        "ruas": [
+            {
+                "_id": "42",
+                "name": "Campo e Calçada de Nossa Senhora a Branca"
+            },
+            {
+                "_id": "33",
+                "name": "Campo de S. Tiago"
             }
         ]
     },
     {
         "_id": "44",
-        "nome": "1733",
+        "nome": "1782",
         "ruas": [
             {
-                "_id": "7",
-                "name": " Loura e Terreiro do Castelo  "
+                "_id": "42",
+                "name": "Campo e Calçada de Nossa Senhora a Branca"
             }
         ]
     },
     {
         "_id": "45",
-        "nome": "1758",
+        "nome": "1756-57",
         "ruas": [
             {
-                "_id": "7",
-                "name": " Loura e Terreiro do Castelo  "
+                "_id": "42",
+                "name": "Campo e Calçada de Nossa Senhora a Branca"
             }
         ]
     },
     {
         "_id": "46",
-        "nome": "1824",
+        "nome": "1771",
         "ruas": [
             {
-                "_id": "7",
-                "name": " Loura e Terreiro do Castelo  "
+                "_id": "42",
+                "name": "Campo e Calçada de Nossa Senhora a Branca"
             }
         ]
     },
     {
         "_id": "47",
-        "nome": "1905",
+        "nome": "1882",
         "ruas": [
             {
-                "_id": "7",
-                "name": " Loura e Terreiro do Castelo  "
+                "_id": "42",
+                "name": "Campo e Calçada de Nossa Senhora a Branca"
+            },
+            {
+                "_id": "25",
+                "name": "Campo de S. Sebastião e em Frente do Açougue"
             }
         ]
     },
     {
         "_id": "48",
-        "nome": "1533",
+        "nome": "1560-1570",
         "ruas": [
             {
-                "_id": "32",
-                "name": "Rua dos Pelames"
+                "_id": "33",
+                "name": "Campo de S. Tiago"
             }
         ]
     },
     {
         "_id": "49",
-        "nome": "1618",
+        "nome": "1623",
         "ruas": [
             {
-                "_id": "32",
-                "name": "Rua dos Pelames"
+                "_id": "33",
+                "name": "Campo de S. Tiago"
             }
         ]
     },
     {
         "_id": "50",
-        "nome": "1509",
+        "nome": "1703",
         "ruas": [
             {
-                "_id": "32",
-                "name": "Rua dos Pelames"
-            },
-            {
-                "_id": "47",
-                "name": "Rua de S. Barnabé"
+                "_id": "33",
+                "name": "Campo de S. Tiago"
             }
         ]
     },
     {
         "_id": "51",
-        "nome": "1625",
+        "nome": "1540",
         "ruas": [
+            {
+                "_id": "33",
+                "name": "Campo de S. Tiago"
+            },
             {
                 "_id": "32",
                 "name": "Rua dos Pelames"
@@ -787,140 +783,80 @@
     },
     {
         "_id": "52",
-        "nome": "1565",
+        "nome": "1594",
         "ruas": [
             {
-                "_id": "6",
-                "name": " Rua do Souto Porta do Souto "
+                "_id": "33",
+                "name": "Campo de S. Tiago"
+            },
+            {
+                "_id": "1",
+                "name": "Rua do Campo"
             }
         ]
     },
     {
         "_id": "53",
-        "nome": "1923",
+        "nome": "12 de Fevereiro de 1445",
         "ruas": [
             {
-                "_id": "6",
-                "name": " Rua do Souto Porta do Souto "
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
             }
         ]
     },
     {
         "_id": "54",
-        "nome": "1954",
+        "nome": "1459",
         "ruas": [
             {
-                "_id": "6",
-                "name": " Rua do Souto Porta do Souto "
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
             }
         ]
     },
     {
         "_id": "55",
-        "nome": "1853",
+        "nome": "1754",
         "ruas": [
             {
-                "_id": "6",
-                "name": " Rua do Souto Porta do Souto "
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
             }
         ]
     },
     {
         "_id": "56",
-        "nome": "(1755)",
+        "nome": "1890",
         "ruas": [
             {
-                "_id": "4",
-                "name": "Praça do Pão"
+                "_id": "23",
+                "name": "Rua dos Sapateiros e Rossio da Praça"
             }
         ]
     },
     {
         "_id": "57",
-        "nome": "26/11/1925",
+        "nome": "14 de Setembro de 1885",
         "ruas": [
             {
-                "_id": "4",
-                "name": "Praça do Pão"
+                "_id": "56",
+                "name": "Cangosta da Escoura"
             }
         ]
     },
     {
         "_id": "58",
-        "nome": "sec. XV",
+        "nome": "finais do séc. XVI",
         "ruas": [
             {
-                "_id": "3",
-                "name": "Rua dos Açougues velhos"
+                "_id": "9",
+                "name": "Rua de S.João"
             }
         ]
     },
     {
         "_id": "59",
-        "nome": "1839",
-        "ruas": [
-            {
-                "_id": "25",
-                "name": "Campo de S. Sebastião e em Frente do Açougue"
-            }
-        ]
-    },
-    {
-        "_id": "60",
-        "nome": "1787",
-        "ruas": [
-            {
-                "_id": "25",
-                "name": "Campo de S. Sebastião e em Frente do Açougue"
-            }
-        ]
-    },
-    {
-        "_id": "61",
-        "nome": "séc. XIX e XX",
-        "ruas": [
-            {
-                "_id": "25",
-                "name": "Campo de S. Sebastião e em Frente do Açougue"
-            }
-        ]
-    },
-    {
-        "_id": "62",
-        "nome": "1882",
-        "ruas": [
-            {
-                "_id": "25",
-                "name": "Campo de S. Sebastião e em Frente do Açougue"
-            },
-            {
-                "_id": "42",
-                "name": "Campo e Calçada de Nossa Senhora a Branca"
-            }
-        ]
-    },
-    {
-        "_id": "63",
-        "nome": "1621",
-        "ruas": [
-            {
-                "_id": "25",
-                "name": "Campo de S. Sebastião e em Frente do Açougue"
-            }
-        ]
-    },
-    {
-        "_id": "64",
-        "nome": "1915",
-        "ruas": [
-            {
-                "_id": "25",
-                "name": "Campo de S. Sebastião e em Frente do Açougue"
-            }
-        ]
-    },
-    {
-        "_id": "65",
         "nome": "1892",
         "ruas": [
             {
@@ -934,31 +870,71 @@
         ]
     },
     {
-        "_id": "66",
-        "nome": "1593",
+        "_id": "60",
+        "nome": "1478",
         "ruas": [
             {
-                "_id": "18",
-                "name": "Rua das Chagas"
+                "_id": "36",
+                "name": "Rua das Águas"
             }
         ]
     },
     {
-        "_id": "67",
-        "nome": "1515",
+        "_id": "61",
+        "nome": "(1677-1690)",
         "ruas": [
             {
-                "_id": "24",
-                "name": "Rua da Vielinha"
+                "_id": "43",
+                "name": "Campo de Nossa Senhora a Branca. Rua da Régua. Rua Nova da Seara"
+            }
+        ]
+    },
+    {
+        "_id": "62",
+        "nome": "sec. XV",
+        "ruas": [
+            {
+                "_id": "3",
+                "name": "Rua dos Açougues velhos"
+            }
+        ]
+    },
+    {
+        "_id": "63",
+        "nome": "(1755)",
+        "ruas": [
+            {
+                "_id": "4",
+                "name": "Praça do Pão"
+            }
+        ]
+    },
+    {
+        "_id": "64",
+        "nome": "1868",
+        "ruas": [
+            {
+                "_id": "4",
+                "name": "Praça do Pão"
             },
             {
-                "_id": "47",
-                "name": "Rua de S. Barnabé"
+                "_id": "22",
+                "name": "Rua de Maximinos"
             }
         ]
     },
     {
-        "_id": "68",
+        "_id": "65",
+        "nome": "26/11/1925",
+        "ruas": [
+            {
+                "_id": "4",
+                "name": "Praça do Pão"
+            }
+        ]
+    },
+    {
+        "_id": "66",
         "nome": "1880",
         "ruas": [
             {
@@ -968,107 +944,7 @@
         ]
     },
     {
-        "_id": "69",
-        "nome": "14 de Setembro de 1885",
-        "ruas": [
-            {
-                "_id": "56",
-                "name": "Cangosta da Escoura"
-            }
-        ]
-    },
-    {
-        "_id": "70",
-        "nome": "1451",
-        "ruas": [
-            {
-                "_id": "37",
-                "name": "Rua de S. Lázaro"
-            }
-        ]
-    },
-    {
-        "_id": "71",
-        "nome": "sec. XVIII",
-        "ruas": [
-            {
-                "_id": "1",
-                "name": "Rua do Campo"
-            }
-        ]
-    },
-    {
-        "_id": "72",
-        "nome": "sec. XVI",
-        "ruas": [
-            {
-                "_id": "1",
-                "name": "Rua do Campo"
-            }
-        ]
-    },
-    {
-        "_id": "73",
-        "nome": "28.07.1890",
-        "ruas": [
-            {
-                "_id": "1",
-                "name": "Rua do Campo"
-            }
-        ]
-    },
-    {
-        "_id": "74",
-        "nome": "séc.XII, séc. XVI)",
-        "ruas": [
-            {
-                "_id": "58",
-                "name": "Rua da Cónega"
-            }
-        ]
-    },
-    {
-        "_id": "75",
-        "nome": "1735",
-        "ruas": [
-            {
-                "_id": "58",
-                "name": "Rua da Cónega"
-            }
-        ]
-    },
-    {
-        "_id": "76",
-        "nome": "19/12/1892",
-        "ruas": [
-            {
-                "_id": "10",
-                "name": "Travessa da Rua de S. João para a do Forno"
-            }
-        ]
-    },
-    {
-        "_id": "77",
-        "nome": "24 de Fevereiro de  1944",
-        "ruas": [
-            {
-                "_id": "10",
-                "name": "Travessa da Rua de S. João para a do Forno"
-            }
-        ]
-    },
-    {
-        "_id": "78",
-        "nome": "1743",
-        "ruas": [
-            {
-                "_id": "47",
-                "name": "Rua de S. Barnabé"
-            }
-        ]
-    },
-    {
-        "_id": "79",
+        "_id": "67",
         "nome": "1891",
         "ruas": [
             {
@@ -1078,115 +954,17 @@
         ]
     },
     {
-        "_id": "80",
-        "nome": "Na década de 60 do séc. XVIII",
+        "_id": "68",
+        "nome": "1620",
         "ruas": [
             {
-                "_id": "52",
-                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
+                "_id": "13",
+                "name": "Rua Pequena"
             }
         ]
     },
     {
-        "_id": "81",
-        "nome": "5 de Junho de 1880",
-        "ruas": [
-            {
-                "_id": "52",
-                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
-            }
-        ]
-    },
-    {
-        "_id": "82",
-        "nome": "1384",
-        "ruas": [
-            {
-                "_id": "27",
-                "name": "Rua Da Cruz De Pedra"
-            },
-            {
-                "_id": "45",
-                "name": "Rua dos Chãos de Baixo"
-            },
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            }
-        ]
-    },
-    {
-        "_id": "83",
-        "nome": "1860",
-        "ruas": [
-            {
-                "_id": "54",
-                "name": "Rua das Palhotas"
-            }
-        ]
-    },
-    {
-        "_id": "84",
-        "nome": "1836",
-        "ruas": [
-            {
-                "_id": "54",
-                "name": "Rua das Palhotas"
-            }
-        ]
-    },
-    {
-        "_id": "85",
-        "nome": "1742",
-        "ruas": [
-            {
-                "_id": "54",
-                "name": "Rua das Palhotas"
-            }
-        ]
-    },
-    {
-        "_id": "86",
-        "nome": "1890",
-        "ruas": [
-            {
-                "_id": "23",
-                "name": "Rua dos Sapateiros e Rossio da Praça"
-            }
-        ]
-    },
-    {
-        "_id": "87",
-        "nome": "1281",
-        "ruas": [
-            {
-                "_id": "45",
-                "name": "Rua dos Chãos de Baixo"
-            }
-        ]
-    },
-    {
-        "_id": "88",
-        "nome": "XVII",
-        "ruas": [
-            {
-                "_id": "45",
-                "name": "Rua dos Chãos de Baixo"
-            }
-        ]
-    },
-    {
-        "_id": "89",
-        "nome": "XVIII",
-        "ruas": [
-            {
-                "_id": "45",
-                "name": "Rua dos Chãos de Baixo"
-            }
-        ]
-    },
-    {
-        "_id": "90",
+        "_id": "69",
         "nome": "1775",
         "ruas": [
             {
@@ -1196,7 +974,7 @@
         ]
     },
     {
-        "_id": "91",
+        "_id": "70",
         "nome": "1871",
         "ruas": [
             {
@@ -1206,7 +984,7 @@
         ]
     },
     {
-        "_id": "92",
+        "_id": "71",
         "nome": "1872",
         "ruas": [
             {
@@ -1216,7 +994,7 @@
         ]
     },
     {
-        "_id": "93",
+        "_id": "72",
         "nome": "século XVIII",
         "ruas": [
             {
@@ -1226,82 +1004,304 @@
         ]
     },
     {
-        "_id": "94",
-        "nome": "1319",
+        "_id": "73",
+        "nome": "1451",
         "ruas": [
             {
-                "_id": "42",
-                "name": "Campo e Calçada de Nossa Senhora a Branca"
+                "_id": "37",
+                "name": "Rua de S. Lázaro"
             }
         ]
     },
     {
-        "_id": "95",
-        "nome": "1782",
+        "_id": "74",
+        "nome": "1281",
         "ruas": [
             {
-                "_id": "42",
-                "name": "Campo e Calçada de Nossa Senhora a Branca"
+                "_id": "45",
+                "name": "Rua dos Chãos de Baixo"
             }
         ]
     },
     {
-        "_id": "96",
-        "nome": "1756-57",
+        "_id": "75",
+        "nome": "1384",
         "ruas": [
             {
-                "_id": "42",
-                "name": "Campo e Calçada de Nossa Senhora a Branca"
+                "_id": "45",
+                "name": "Rua dos Chãos de Baixo"
+            },
+            {
+                "_id": "2",
+                "name": "Rua Nova"
+            },
+            {
+                "_id": "1",
+                "name": "Rua do Campo"
             }
         ]
     },
     {
-        "_id": "97",
-        "nome": "1771",
+        "_id": "76",
+        "nome": "XVII",
         "ruas": [
             {
-                "_id": "42",
-                "name": "Campo e Calçada de Nossa Senhora a Branca"
+                "_id": "45",
+                "name": "Rua dos Chãos de Baixo"
             }
         ]
     },
     {
-        "_id": "98",
-        "nome": "12 de Fevereiro de 1445",
+        "_id": "77",
+        "nome": "XVIII",
         "ruas": [
             {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
+                "_id": "45",
+                "name": "Rua dos Chãos de Baixo"
             }
         ]
     },
     {
-        "_id": "99",
-        "nome": "1459",
-        "ruas": [
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            }
-        ]
-    },
-    {
-        "_id": "100",
-        "nome": "1754",
-        "ruas": [
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            }
-        ]
-    },
-    {
-        "_id": "101",
+        "_id": "78",
         "nome": "1747",
         "ruas": [
             {
                 "_id": "38",
                 "name": "Rua da Ponte de Guimarães"
+            }
+        ]
+    },
+    {
+        "_id": "79",
+        "nome": "1533",
+        "ruas": [
+            {
+                "_id": "32",
+                "name": "Rua dos Pelames"
+            }
+        ]
+    },
+    {
+        "_id": "80",
+        "nome": "1618",
+        "ruas": [
+            {
+                "_id": "32",
+                "name": "Rua dos Pelames"
+            }
+        ]
+    },
+    {
+        "_id": "81",
+        "nome": "1509",
+        "ruas": [
+            {
+                "_id": "32",
+                "name": "Rua dos Pelames"
+            },
+            {
+                "_id": "1",
+                "name": "Rua do Campo"
+            }
+        ]
+    },
+    {
+        "_id": "82",
+        "nome": "1625",
+        "ruas": [
+            {
+                "_id": "32",
+                "name": "Rua dos Pelames"
+            }
+        ]
+    },
+    {
+        "_id": "83",
+        "nome": "1613",
+        "ruas": [
+            {
+                "_id": "22",
+                "name": "Rua de Maximinos"
+            }
+        ]
+    },
+    {
+        "_id": "84",
+        "nome": "1826",
+        "ruas": [
+            {
+                "_id": "22",
+                "name": "Rua de Maximinos"
+            }
+        ]
+    },
+    {
+        "_id": "85",
+        "nome": "1925",
+        "ruas": [
+            {
+                "_id": "22",
+                "name": "Rua de Maximinos"
+            }
+        ]
+    },
+    {
+        "_id": "86",
+        "nome": "1593",
+        "ruas": [
+            {
+                "_id": "18",
+                "name": "Rua das Chagas"
+            }
+        ]
+    },
+    {
+        "_id": "87",
+        "nome": "1772",
+        "ruas": [
+            {
+                "_id": "2",
+                "name": "Rua Nova"
+            }
+        ]
+    },
+    {
+        "_id": "88",
+        "nome": "19/12/1892",
+        "ruas": [
+            {
+                "_id": "10",
+                "name": "Travessa da Rua de S. João para a do Forno"
+            }
+        ]
+    },
+    {
+        "_id": "89",
+        "nome": "24 de Fevereiro de  1944",
+        "ruas": [
+            {
+                "_id": "10",
+                "name": "Travessa da Rua de S. João para a do Forno"
+            }
+        ]
+    },
+    {
+        "_id": "90",
+        "nome": "1565",
+        "ruas": [
+            {
+                "_id": "6",
+                "name": " Rua do Souto Porta do Souto "
+            }
+        ]
+    },
+    {
+        "_id": "91",
+        "nome": "1923",
+        "ruas": [
+            {
+                "_id": "6",
+                "name": " Rua do Souto Porta do Souto "
+            }
+        ]
+    },
+    {
+        "_id": "92",
+        "nome": "1954",
+        "ruas": [
+            {
+                "_id": "6",
+                "name": " Rua do Souto Porta do Souto "
+            }
+        ]
+    },
+    {
+        "_id": "93",
+        "nome": "1853",
+        "ruas": [
+            {
+                "_id": "6",
+                "name": " Rua do Souto Porta do Souto "
+            }
+        ]
+    },
+    {
+        "_id": "94",
+        "nome": "1839",
+        "ruas": [
+            {
+                "_id": "25",
+                "name": "Campo de S. Sebastião e em Frente do Açougue"
+            }
+        ]
+    },
+    {
+        "_id": "95",
+        "nome": "1787",
+        "ruas": [
+            {
+                "_id": "25",
+                "name": "Campo de S. Sebastião e em Frente do Açougue"
+            }
+        ]
+    },
+    {
+        "_id": "96",
+        "nome": "séc. XIX e XX",
+        "ruas": [
+            {
+                "_id": "25",
+                "name": "Campo de S. Sebastião e em Frente do Açougue"
+            }
+        ]
+    },
+    {
+        "_id": "97",
+        "nome": "1621",
+        "ruas": [
+            {
+                "_id": "25",
+                "name": "Campo de S. Sebastião e em Frente do Açougue"
+            }
+        ]
+    },
+    {
+        "_id": "98",
+        "nome": "1915",
+        "ruas": [
+            {
+                "_id": "25",
+                "name": "Campo de S. Sebastião e em Frente do Açougue"
+            }
+        ]
+    },
+    {
+        "_id": "99",
+        "nome": "sec. XVIII",
+        "ruas": [
+            {
+                "_id": "1",
+                "name": "Rua do Campo"
+            }
+        ]
+    },
+    {
+        "_id": "100",
+        "nome": "sec. XVI",
+        "ruas": [
+            {
+                "_id": "1",
+                "name": "Rua do Campo"
+            }
+        ]
+    },
+    {
+        "_id": "101",
+        "nome": "28.07.1890",
+        "ruas": [
+            {
+                "_id": "1",
+                "name": "Rua do Campo"
             }
         ]
     }

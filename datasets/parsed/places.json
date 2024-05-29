@@ -1,54 +1,752 @@
 [
     {
         "_id": "1",
+        "nome": "terreiro de S. Tiago",
+        "ruas": [
+            {
+                "_id": "20",
+                "name": "Terreiro de Sto. António e Postigo"
+            }
+        ]
+    },
+    {
+        "_id": "2",
+        "nome": "Postigo de S.Sebastião",
+        "ruas": [
+            {
+                "_id": "20",
+                "name": "Terreiro de Sto. António e Postigo"
+            }
+        ]
+    },
+    {
+        "_id": "3",
+        "nome": "rua Travessa",
+        "ruas": [
+            {
+                "_id": "20",
+                "name": "Terreiro de Sto. António e Postigo"
+            }
+        ]
+    },
+    {
+        "_id": "4",
+        "nome": "rua do Postigo",
+        "ruas": [
+            {
+                "_id": "20",
+                "name": "Terreiro de Sto. António e Postigo"
+            }
+        ]
+    },
+    {
+        "_id": "5",
+        "nome": "rua do Terreiro de Santo António",
+        "ruas": [
+            {
+                "_id": "20",
+                "name": "Terreiro de Sto. António e Postigo"
+            }
+        ]
+    },
+    {
+        "_id": "6",
+        "nome": "«postigo»  da muralha",
+        "ruas": [
+            {
+                "_id": "20",
+                "name": "Terreiro de Sto. António e Postigo"
+            }
+        ]
+    },
+    {
+        "_id": "7",
+        "nome": "rua de S. Paulo",
+        "ruas": [
+            {
+                "_id": "20",
+                "name": "Terreiro de Sto. António e Postigo"
+            },
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            }
+        ]
+    },
+    {
+        "_id": "8",
+        "nome": "Arcada",
+        "ruas": [
+            {
+                "_id": "39",
+                "name": "Ponte de Guimarães"
+            },
+            {
+                "_id": "36",
+                "name": "Rua das Águas"
+            },
+            {
+                "_id": "36",
+                "name": "Rua das Águas"
+            },
+            {
+                "_id": "48",
+                "name": "Praça do Gavião"
+            },
+            {
+                "_id": "37",
+                "name": "Rua de S. Lázaro"
+            },
+            {
+                "_id": "38",
+                "name": "Rua da Ponte de Guimarães"
+            },
+            {
+                "_id": "2",
+                "name": "Rua Nova"
+            }
+        ]
+    },
+    {
+        "_id": "9",
+        "nome": "ponte sobre o rio Este",
+        "ruas": [
+            {
+                "_id": "39",
+                "name": "Ponte de Guimarães"
+            }
+        ]
+    },
+    {
+        "_id": "10",
+        "nome": "largo do Senhor dos Aflitos",
+        "ruas": [
+            {
+                "_id": "39",
+                "name": "Ponte de Guimarães"
+            }
+        ]
+    },
+    {
+        "_id": "11",
+        "nome": "Latinhas",
+        "ruas": [
+            {
+                "_id": "39",
+                "name": "Ponte de Guimarães"
+            }
+        ]
+    },
+    {
+        "_id": "12",
+        "nome": "avenida da Liberdade",
+        "ruas": [
+            {
+                "_id": "39",
+                "name": "Ponte de Guimarães"
+            },
+            {
+                "_id": "36",
+                "name": "Rua das Águas"
+            },
+            {
+                "_id": "37",
+                "name": "Rua de S. Lázaro"
+            }
+        ]
+    },
+    {
+        "_id": "13",
+        "nome": "Rua Conselheiro Lobato",
+        "ruas": [
+            {
+                "_id": "39",
+                "name": "Ponte de Guimarães"
+            }
+        ]
+    },
+    {
+        "_id": "14",
+        "nome": "enfiamento da Cangosta de S.Sebastião",
+        "ruas": [
+            {
+                "_id": "29",
+                "name": "Rua do Beco"
+            }
+        ]
+    },
+    {
+        "_id": "15",
+        "nome": "Maximinos",
+        "ruas": [
+            {
+                "_id": "29",
+                "name": "Rua do Beco"
+            },
+            {
+                "_id": "23",
+                "name": "Rua dos Sapateiros e Rossio da Praça"
+            },
+            {
+                "_id": "21",
+                "name": "Rua Verde"
+            }
+        ]
+    },
+    {
+        "_id": "16",
+        "nome": "rua do Caires",
+        "ruas": [
+            {
+                "_id": "29",
+                "name": "Rua do Beco"
+            },
+            {
+                "_id": "27",
+                "name": "Rua Da Cruz De Pedra"
+            }
+        ]
+    },
+    {
+        "_id": "17",
+        "nome": "Beco",
+        "ruas": [
+            {
+                "_id": "29",
+                "name": "Rua do Beco"
+            },
+            {
+                "_id": "30",
+                "name": "Cangosta De S. Sebastião"
+            }
+        ]
+    },
+    {
+        "_id": "18",
+        "nome": "rua das Travessas",
+        "ruas": [
+            {
+                "_id": "17",
+                "name": "Travessa da Rua de D.Gualdim até ao Couto do Arvoredo"
+            },
+            {
+                "_id": "17",
+                "name": "Travessa da Rua de D.Gualdim até ao Couto do Arvoredo"
+            },
+            {
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            },
+            {
+                "_id": "9",
+                "name": "Rua de S.João"
+            },
+            {
+                "_id": "21",
+                "name": "Rua Verde"
+            },
+            {
+                "_id": "22",
+                "name": "Rua de Maximinos"
+            },
+            {
+                "_id": "28",
+                "name": "Rua Direita"
+            }
+        ]
+    },
+    {
+        "_id": "19",
+        "nome": "rua Verde",
+        "ruas": [
+            {
+                "_id": "17",
+                "name": "Travessa da Rua de D.Gualdim até ao Couto do Arvoredo"
+            },
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            },
+            {
+                "_id": "21",
+                "name": "Rua Verde"
+            }
+        ]
+    },
+    {
+        "_id": "20",
+        "nome": "Couto do Arvoredo",
+        "ruas": [
+            {
+                "_id": "17",
+                "name": "Travessa da Rua de D.Gualdim até ao Couto do Arvoredo"
+            },
+            {
+                "_id": "21",
+                "name": "Rua Verde"
+            },
+            {
+                "_id": "21",
+                "name": "Rua Verde"
+            }
+        ]
+    },
+    {
+        "_id": "21",
+        "nome": "muralha",
+        "ruas": [
+            {
+                "_id": "17",
+                "name": "Travessa da Rua de D.Gualdim até ao Couto do Arvoredo"
+            },
+            {
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            }
+        ]
+    },
+    {
+        "_id": "22",
+        "nome": "campo das Carvalheiras",
+        "ruas": [
+            {
+                "_id": "17",
+                "name": "Travessa da Rua de D.Gualdim até ao Couto do Arvoredo"
+            },
+            {
+                "_id": "25",
+                "name": "Campo de S. Sebastião e em Frente do Açougue"
+            }
+        ]
+    },
+    {
+        "_id": "23",
+        "nome": "S.Miguel o Anjo",
+        "ruas": [
+            {
+                "_id": "17",
+                "name": "Travessa da Rua de D.Gualdim até ao Couto do Arvoredo"
+            }
+        ]
+    },
+    {
+        "_id": "24",
+        "nome": "rua de D. Gualdim",
+        "ruas": [
+            {
+                "_id": "17",
+                "name": "Travessa da Rua de D.Gualdim até ao Couto do Arvoredo"
+            },
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            },
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            }
+        ]
+    },
+    {
+        "_id": "25",
+        "nome": "rua D. Afonso Henriques",
+        "ruas": [
+            {
+                "_id": "17",
+                "name": "Travessa da Rua de D.Gualdim até ao Couto do Arvoredo"
+            },
+            {
+                "_id": "33",
+                "name": "Campo de S. Tiago"
+            },
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            },
+            {
+                "_id": "12",
+                "name": "Travessa Da Rua Do Forno Para A Do Poco"
+            },
+            {
+                "_id": "10",
+                "name": "Travessa da Rua de S. João para a do Forno"
+            }
+        ]
+    },
+    {
+        "_id": "26",
+        "nome": "porta de Souto",
+        "ruas": [
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            }
+        ]
+    },
+    {
+        "_id": "27",
+        "nome": "Corredoura",
+        "ruas": [
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            }
+        ]
+    },
+    {
+        "_id": "28",
+        "nome": "Senhora a Branca",
+        "ruas": [
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            }
+        ]
+    },
+    {
+        "_id": "29",
+        "nome": "S.Victor",
+        "ruas": [
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            }
+        ]
+    },
+    {
+        "_id": "30",
+        "nome": "Chaves",
+        "ruas": [
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            },
+            {
+                "_id": "36",
+                "name": "Rua das Águas"
+            }
+        ]
+    },
+    {
+        "_id": "31",
+        "nome": "Bom Jesus",
+        "ruas": [
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            },
+            {
+                "_id": "43",
+                "name": "Campo de Nossa Senhora a Branca. Rua da Régua. Rua Nova da Seara"
+            }
+        ]
+    },
+    {
+        "_id": "32",
+        "nome": "porta do Souto",
+        "ruas": [
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            },
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            }
+        ]
+    },
+    {
+        "_id": "33",
+        "nome": "Santa Maria a Branca",
+        "ruas": [
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            }
+        ]
+    },
+    {
+        "_id": "34",
+        "nome": "rua da Corredoura",
+        "ruas": [
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            },
+            {
+                "_id": "36",
+                "name": "Rua das Águas"
+            }
+        ]
+    },
+    {
+        "_id": "35",
+        "nome": "campo de Santa Ana",
+        "ruas": [
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            },
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            },
+            {
+                "_id": "60",
+                "name": "Cangosta da Rua das Águas"
+            },
+            {
+                "_id": "49",
+                "name": "Rua de S. Gonçalo"
+            }
+        ]
+    },
+    {
+        "_id": "36",
+        "nome": "rua de Águas",
+        "ruas": [
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            },
+            {
+                "_id": "37",
+                "name": "Rua de S. Lázaro"
+            }
+        ]
+    },
+    {
+        "_id": "37",
+        "nome": "avenida Central",
+        "ruas": [
+            {
+                "_id": "41",
+                "name": "Campo de Santa Ana"
+            }
+        ]
+    },
+    {
+        "_id": "38",
         "nome": "praça do Gavião",
         "ruas": [
             {
-                "_id": "46",
-                "name": "Rua de Santo André"
-            },
-            {
-                "_id": "46",
-                "name": "Rua de Santo André"
-            },
-            {
-                "_id": "50",
-                "name": "Rua de Nossa Senhora de Guadalupe"
-            },
-            {
-                "_id": "49",
-                "name": "Rua de S. Gonçalo"
-            },
-            {
-                "_id": "49",
-                "name": "Rua de S. Gonçalo"
-            },
-            {
-                "_id": "49",
-                "name": "Rua de S. Gonçalo"
+                "_id": "47",
+                "name": "Rua de S. Barnabé"
             },
             {
                 "_id": "51",
                 "name": "Rua Da Oliveira"
             },
             {
-                "_id": "45",
-                "name": "Rua dos Chãos de Baixo"
+                "_id": "50",
+                "name": "Rua de Nossa Senhora de Guadalupe"
             },
             {
-                "_id": "45",
-                "name": "Rua dos Chãos de Baixo"
+                "_id": "15",
+                "name": "Travessa da Rua do Poço para a de D.Gualdim"
+            },
+            {
+                "_id": "15",
+                "name": "Travessa da Rua do Poço para a de D.Gualdim"
+            },
+            {
+                "_id": "49",
+                "name": "Rua de S. Gonçalo"
+            },
+            {
+                "_id": "49",
+                "name": "Rua de S. Gonçalo"
+            },
+            {
+                "_id": "13",
+                "name": "Rua Pequena"
+            },
+            {
+                "_id": "13",
+                "name": "Rua Pequena"
             }
         ]
     },
     {
-        "_id": "2",
-        "nome": "largo dos Penedos",
+        "_id": "39",
+        "nome": "campo Novo",
         "ruas": [
             {
-                "_id": "46",
-                "name": "Rua de Santo André"
+                "_id": "47",
+                "name": "Rua de S. Barnabé"
             },
+            {
+                "_id": "47",
+                "name": "Rua de S. Barnabé"
+            },
+            {
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            },
+            {
+                "_id": "60",
+                "name": "Cangosta da Rua das Águas"
+            }
+        ]
+    },
+    {
+        "_id": "40",
+        "nome": "rua dos Chãos de Cima",
+        "ruas": [
+            {
+                "_id": "47",
+                "name": "Rua de S. Barnabé"
+            },
+            {
+                "_id": "23",
+                "name": "Rua dos Sapateiros e Rossio da Praça"
+            }
+        ]
+    },
+    {
+        "_id": "41",
+        "nome": "S. Barnabé",
+        "ruas": [
+            {
+                "_id": "47",
+                "name": "Rua de S. Barnabé"
+            }
+        ]
+    },
+    {
+        "_id": "42",
+        "nome": "largo das Teresinhas",
+        "ruas": [
+            {
+                "_id": "51",
+                "name": "Rua Da Oliveira"
+            }
+        ]
+    },
+    {
+        "_id": "43",
+        "nome": "Cangosta",
+        "ruas": [
+            {
+                "_id": "51",
+                "name": "Rua Da Oliveira"
+            }
+        ]
+    },
+    {
+        "_id": "44",
+        "nome": "rua de Santa Margarida",
+        "ruas": [
+            {
+                "_id": "51",
+                "name": "Rua Da Oliveira"
+            },
+            {
+                "_id": "24",
+                "name": "Rua da Vielinha"
+            },
+            {
+                "_id": "42",
+                "name": "Campo e Calçada de Nossa Senhora a Branca"
+            }
+        ]
+    },
+    {
+        "_id": "45",
+        "nome": "igreja de S. Vicente",
+        "ruas": [
+            {
+                "_id": "51",
+                "name": "Rua Da Oliveira"
+            },
+            {
+                "_id": "52",
+                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
+            }
+        ]
+    },
+    {
+        "_id": "46",
+        "nome": "capela de Guadalupe",
+        "ruas": [
+            {
+                "_id": "51",
+                "name": "Rua Da Oliveira"
+            },
+            {
+                "_id": "52",
+                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
+            }
+        ]
+    },
+    {
+        "_id": "47",
+        "nome": "rua das Oliveiras",
+        "ruas": [
+            {
+                "_id": "51",
+                "name": "Rua Da Oliveira"
+            }
+        ]
+    },
+    {
+        "_id": "48",
+        "nome": "Santa Ana",
+        "ruas": [
+            {
+                "_id": "44",
+                "name": "Rua da Fonte da Carcova"
+            },
+            {
+                "_id": "24",
+                "name": "Rua da Vielinha"
+            }
+        ]
+    },
+    {
+        "_id": "49",
+        "nome": "Vinha",
+        "ruas": [
+            {
+                "_id": "44",
+                "name": "Rua da Fonte da Carcova"
+            }
+        ]
+    },
+    {
+        "_id": "50",
+        "nome": "Fonte da  Cárcova ou Cárcoda",
+        "ruas": [
+            {
+                "_id": "44",
+                "name": "Rua da Fonte da Carcova"
+            }
+        ]
+    },
+    {
+        "_id": "51",
+        "nome": "rua dos Mercadores",
+        "ruas": [
+            {
+                "_id": "44",
+                "name": "Rua da Fonte da Carcova"
+            }
+        ]
+    },
+    {
+        "_id": "52",
+        "nome": "rua dos Capelistas",
+        "ruas": [
+            {
+                "_id": "44",
+                "name": "Rua da Fonte da Carcova"
+            }
+        ]
+    },
+    {
+        "_id": "53",
+        "nome": "largo dos Penedos",
+        "ruas": [
             {
                 "_id": "44",
                 "name": "Rua da Fonte da Carcova"
@@ -62,106 +760,110 @@
                 "name": "Rua dos Chãos de Cima"
             },
             {
-                "_id": "28",
-                "name": "Rua Direita"
-            }
-        ]
-    },
-    {
-        "_id": "3",
-        "nome": "rua de Santo André",
-        "ruas": [
-            {
-                "_id": "46",
-                "name": "Rua de Santo André"
-            }
-        ]
-    },
-    {
-        "_id": "4",
-        "nome": "rua do Souto",
-        "ruas": [
-            {
-                "_id": "2",
-                "name": "Rua Nova"
-            },
-            {
-                "_id": "2",
-                "name": "Rua Nova"
-            },
-            {
-                "_id": "22",
-                "name": "Rua de Maximinos"
-            },
-            {
-                "_id": "36",
-                "name": "Rua das Águas"
-            },
-            {
-                "_id": "7",
-                "name": " Loura e Terreiro do Castelo  "
-            },
-            {
-                "_id": "32",
-                "name": "Rua dos Pelames"
-            },
-            {
-                "_id": "6",
-                "name": " Rua do Souto Porta do Souto "
-            },
-            {
-                "_id": "4",
-                "name": "Praça do Pão"
-            },
-            {
                 "_id": "15",
                 "name": "Travessa da Rua do Poço para a de D.Gualdim"
+            },
+            {
+                "_id": "37",
+                "name": "Rua de S. Lázaro"
             }
         ]
     },
     {
-        "_id": "5",
-        "nome": "Braga",
+        "_id": "54",
+        "nome": "rua do Carvalhal",
         "ruas": [
             {
-                "_id": "2",
-                "name": "Rua Nova"
+                "_id": "44",
+                "name": "Rua da Fonte da Carcova"
             },
             {
-                "_id": "9",
-                "name": "Rua de S.João"
+                "_id": "53",
+                "name": "Rua dos Chãos de Cima"
+            }
+        ]
+    },
+    {
+        "_id": "55",
+        "nome": "Catedral",
+        "ruas": [
+            {
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
             },
             {
-                "_id": "36",
-                "name": "Rua das Águas"
-            },
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            }
+        ]
+    },
+    {
+        "_id": "56",
+        "nome": "terreiro de S. Paulo ou de S. Tiago",
+        "ruas": [
             {
-                "_id": "43",
-                "name": "Campo de Nossa Senhora a Branca. Rua da Régua. Rua Nova da Seara"
-            },
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            }
+        ]
+    },
+    {
+        "_id": "57",
+        "nome": "Porta de S. Tiago",
+        "ruas": [
             {
-                "_id": "40",
-                "name": "Rua do Paymanta"
-            },
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            }
+        ]
+    },
+    {
+        "_id": "58",
+        "nome": "Colégio",
+        "ruas": [
             {
-                "_id": "1",
-                "name": "Rua do Campo"
-            },
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            }
+        ]
+    },
+    {
+        "_id": "59",
+        "nome": "rua do Souto-Arcada",
+        "ruas": [
             {
-                "_id": "1",
-                "name": "Rua do Campo"
-            },
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            }
+        ]
+    },
+    {
+        "_id": "60",
+        "nome": "Terreiro de S. Tiago",
+        "ruas": [
             {
-                "_id": "10",
-                "name": "Travessa da Rua de S. João para a do Forno"
-            },
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            }
+        ]
+    },
+    {
+        "_id": "61",
+        "nome": "rua da Erva",
+        "ruas": [
             {
-                "_id": "47",
-                "name": "Rua de S. Barnabé"
-            },
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            }
+        ]
+    },
+    {
+        "_id": "62",
+        "nome": "Igreja de Santiago",
+        "ruas": [
             {
-                "_id": "45",
-                "name": "Rua dos Chãos de Baixo"
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
             },
             {
                 "_id": "16",
@@ -170,135 +872,29 @@
         ]
     },
     {
-        "_id": "6",
-        "nome": "Campo das Hortas",
+        "_id": "63",
+        "nome": "Sinagoga",
         "ruas": [
             {
-                "_id": "2",
-                "name": "Rua Nova"
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
             }
         ]
     },
     {
-        "_id": "7",
-        "nome": "Porta Nova",
+        "_id": "64",
+        "nome": "rua da Judiaria",
         "ruas": [
             {
-                "_id": "2",
-                "name": "Rua Nova"
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
             }
         ]
     },
     {
-        "_id": "8",
-        "nome": "igreja da Misericórdia",
-        "ruas": [
-            {
-                "_id": "2",
-                "name": "Rua Nova"
-            }
-        ]
-    },
-    {
-        "_id": "9",
-        "nome": "casa brasonada de familiares de D. Jorge da Costa",
-        "ruas": [
-            {
-                "_id": "2",
-                "name": "Rua Nova"
-            }
-        ]
-    },
-    {
-        "_id": "10",
-        "nome": "Pracinha",
-        "ruas": [
-            {
-                "_id": "2",
-                "name": "Rua Nova"
-            },
-            {
-                "_id": "2",
-                "name": "Rua Nova"
-            },
-            {
-                "_id": "2",
-                "name": "Rua Nova"
-            }
-        ]
-    },
-    {
-        "_id": "11",
-        "nome": "praça da Hortalice",
-        "ruas": [
-            {
-                "_id": "2",
-                "name": "Rua Nova"
-            }
-        ]
-    },
-    {
-        "_id": "12",
-        "nome": "praça do Pescado",
-        "ruas": [
-            {
-                "_id": "2",
-                "name": "Rua Nova"
-            }
-        ]
-    },
-    {
-        "_id": "13",
-        "nome": "praça do Pão",
-        "ruas": [
-            {
-                "_id": "2",
-                "name": "Rua Nova"
-            },
-            {
-                "_id": "2",
-                "name": "Rua Nova"
-            },
-            {
-                "_id": "22",
-                "name": "Rua de Maximinos"
-            },
-            {
-                "_id": "4",
-                "name": "Praça do Pão"
-            },
-            {
-                "_id": "4",
-                "name": "Praça do Pão"
-            },
-            {
-                "_id": "42",
-                "name": "Campo e Calçada de Nossa Senhora a Branca"
-            },
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            }
-        ]
-    },
-    {
-        "_id": "14",
-        "nome": "centro comercial da cidade",
-        "ruas": [
-            {
-                "_id": "2",
-                "name": "Rua Nova"
-            }
-        ]
-    },
-    {
-        "_id": "15",
+        "_id": "65",
         "nome": "Sé",
         "ruas": [
-            {
-                "_id": "2",
-                "name": "Rua Nova"
-            },
             {
                 "_id": "14",
                 "name": "Rua de Sta. Maria ou do Poço"
@@ -312,187 +908,321 @@
                 "name": "Rua dos Cegos ou do Forno"
             },
             {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            },
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            },
+            {
+                "_id": "43",
+                "name": "Campo de Nossa Senhora a Branca. Rua da Régua. Rua Nova da Seara"
+            },
+            {
+                "_id": "43",
+                "name": "Campo de Nossa Senhora a Branca. Rua da Régua. Rua Nova da Seara"
+            },
+            {
+                "_id": "40",
+                "name": "Rua do Paymanta"
+            },
+            {
                 "_id": "13",
                 "name": "Rua Pequena"
-            },
-            {
-                "_id": "6",
-                "name": " Rua do Souto Porta do Souto "
-            },
-            {
-                "_id": "40",
-                "name": "Rua do Paymanta"
-            },
-            {
-                "_id": "40",
-                "name": "Rua do Paymanta"
-            },
-            {
-                "_id": "15",
-                "name": "Travessa da Rua do Poço para a de D.Gualdim"
-            },
-            {
-                "_id": "10",
-                "name": "Travessa da Rua de S. João para a do Forno"
-            },
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            },
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            }
-        ]
-    },
-    {
-        "_id": "16",
-        "nome": "Arcada",
-        "ruas": [
-            {
-                "_id": "2",
-                "name": "Rua Nova"
-            },
-            {
-                "_id": "36",
-                "name": "Rua das Águas"
-            },
-            {
-                "_id": "36",
-                "name": "Rua das Águas"
-            },
-            {
-                "_id": "53",
-                "name": "Rua dos Chãos de Cima"
-            },
-            {
-                "_id": "56",
-                "name": "Cangosta da Escoura"
-            },
-            {
-                "_id": "28",
-                "name": "Rua Direita"
-            },
-            {
-                "_id": "38",
-                "name": "Rua da Ponte de Guimarães"
-            }
-        ]
-    },
-    {
-        "_id": "17",
-        "nome": "rua Nova",
-        "ruas": [
-            {
-                "_id": "2",
-                "name": "Rua Nova"
-            },
-            {
-                "_id": "6",
-                "name": " Rua do Souto Porta do Souto "
-            },
-            {
-                "_id": "40",
-                "name": "Rua do Paymanta"
-            },
-            {
-                "_id": "37",
-                "name": "Rua de S. Lázaro"
-            },
-            {
-                "_id": "37",
-                "name": "Rua de S. Lázaro"
-            },
-            {
-                "_id": "23",
-                "name": "Rua dos Sapateiros e Rossio da Praça"
-            }
-        ]
-    },
-    {
-        "_id": "18",
-        "nome": "rua de D. Diogo de Sousa",
-        "ruas": [
-            {
-                "_id": "2",
-                "name": "Rua Nova"
-            }
-        ]
-    },
-    {
-        "_id": "19",
-        "nome": "praça Velha",
-        "ruas": [
-            {
-                "_id": "2",
-                "name": "Rua Nova"
-            }
-        ]
-    },
-    {
-        "_id": "20",
-        "nome": "Porta de Maximinos",
-        "ruas": [
-            {
-                "_id": "22",
-                "name": "Rua de Maximinos"
-            }
-        ]
-    },
-    {
-        "_id": "21",
-        "nome": "Nossa Senhora da Ajuda",
-        "ruas": [
-            {
-                "_id": "22",
-                "name": "Rua de Maximinos"
-            },
-            {
-                "_id": "27",
-                "name": "Rua Da Cruz De Pedra"
-            }
-        ]
-    },
-    {
-        "_id": "22",
-        "nome": "rua de Maximinos",
-        "ruas": [
-            {
-                "_id": "22",
-                "name": "Rua de Maximinos"
-            },
-            {
-                "_id": "4",
-                "name": "Praça do Pão"
-            },
-            {
-                "_id": "4",
-                "name": "Praça do Pão"
-            },
-            {
-                "_id": "25",
-                "name": "Campo de S. Sebastião e em Frente do Açougue"
-            },
-            {
-                "_id": "12",
-                "name": "Travessa Da Rua Do Forno Para A Do Poco"
             },
             {
                 "_id": "18",
                 "name": "Rua das Chagas"
             },
             {
-                "_id": "21",
-                "name": "Rua Verde"
+                "_id": "2",
+                "name": "Rua Nova"
             },
             {
-                "_id": "26",
-                "name": "Rua de S.Miguel O Anjo"
+                "_id": "10",
+                "name": "Travessa da Rua de S. João para a do Forno"
             }
         ]
     },
     {
-        "_id": "23",
+        "_id": "66",
+        "nome": "Igreja de Santa Maria de Braga",
+        "ruas": [
+            {
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            }
+        ]
+    },
+    {
+        "_id": "67",
+        "nome": "rua de Santa Maria",
+        "ruas": [
+            {
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            }
+        ]
+    },
+    {
+        "_id": "68",
+        "nome": "Judiaria Velha",
+        "ruas": [
+            {
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            }
+        ]
+    },
+    {
+        "_id": "69",
+        "nome": "terreiro de  S. Tiago",
+        "ruas": [
+            {
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            }
+        ]
+    },
+    {
+        "_id": "70",
+        "nome": "rua do Poço",
+        "ruas": [
+            {
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            },
+            {
+                "_id": "43",
+                "name": "Campo de Nossa Senhora a Branca. Rua da Régua. Rua Nova da Seara"
+            }
+        ]
+    },
+    {
+        "_id": "71",
+        "nome": "rua de S. Tiago",
+        "ruas": [
+            {
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            },
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            }
+        ]
+    },
+    {
+        "_id": "72",
+        "nome": "rua D. Gonçalo Pereira",
+        "ruas": [
+            {
+                "_id": "14",
+                "name": "Rua de Sta. Maria ou do Poço"
+            },
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            },
+            {
+                "_id": "12",
+                "name": "Travessa Da Rua Do Forno Para A Do Poco"
+            },
+            {
+                "_id": "4",
+                "name": "Praça do Pão"
+            }
+        ]
+    },
+    {
+        "_id": "73",
+        "nome": "Capela de Guadalupe",
+        "ruas": [
+            {
+                "_id": "50",
+                "name": "Rua de Nossa Senhora de Guadalupe"
+            }
+        ]
+    },
+    {
+        "_id": "74",
+        "nome": "rua de S. Gonçalo",
+        "ruas": [
+            {
+                "_id": "50",
+                "name": "Rua de Nossa Senhora de Guadalupe"
+            }
+        ]
+    },
+    {
+        "_id": "75",
+        "nome": "rua em Frente de Nossa Senhora de Guadalupe",
+        "ruas": [
+            {
+                "_id": "50",
+                "name": "Rua de Nossa Senhora de Guadalupe"
+            }
+        ]
+    },
+    {
+        "_id": "76",
+        "nome": "rua de Guadalupe",
+        "ruas": [
+            {
+                "_id": "50",
+                "name": "Rua de Nossa Senhora de Guadalupe"
+            },
+            {
+                "_id": "52",
+                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
+            }
+        ]
+    },
+    {
+        "_id": "77",
+        "nome": "igreja dos Terceiros",
+        "ruas": [
+            {
+                "_id": "7",
+                "name": " Loura e Terreiro do Castelo  "
+            }
+        ]
+    },
+    {
+        "_id": "78",
+        "nome": "cidadela",
+        "ruas": [
+            {
+                "_id": "7",
+                "name": " Loura e Terreiro do Castelo  "
+            },
+            {
+                "_id": "7",
+                "name": " Loura e Terreiro do Castelo  "
+            },
+            {
+                "_id": "7",
+                "name": " Loura e Terreiro do Castelo  "
+            }
+        ]
+    },
+    {
+        "_id": "79",
+        "nome": "rua do Souto",
+        "ruas": [
+            {
+                "_id": "7",
+                "name": " Loura e Terreiro do Castelo  "
+            },
+            {
+                "_id": "36",
+                "name": "Rua das Águas"
+            },
+            {
+                "_id": "4",
+                "name": "Praça do Pão"
+            },
+            {
+                "_id": "22",
+                "name": "Rua de Maximinos"
+            },
+            {
+                "_id": "18",
+                "name": "Rua das Chagas"
+            },
+            {
+                "_id": "5",
+                "name": "Rua das Oucias"
+            },
+            {
+                "_id": "5",
+                "name": "Rua das Oucias"
+            },
+            {
+                "_id": "10",
+                "name": "Travessa da Rua de S. João para a do Forno"
+            },
+            {
+                "_id": "6",
+                "name": " Rua do Souto Porta do Souto "
+            }
+        ]
+    },
+    {
+        "_id": "80",
+        "nome": "Terreiro do Castelo",
+        "ruas": [
+            {
+                "_id": "7",
+                "name": " Loura e Terreiro do Castelo  "
+            },
+            {
+                "_id": "7",
+                "name": " Loura e Terreiro do Castelo  "
+            }
+        ]
+    },
+    {
+        "_id": "81",
+        "nome": "Loura",
+        "ruas": [
+            {
+                "_id": "7",
+                "name": " Loura e Terreiro do Castelo  "
+            },
+            {
+                "_id": "7",
+                "name": " Loura e Terreiro do Castelo  "
+            }
+        ]
+    },
+    {
+        "_id": "82",
+        "nome": "Castelo",
+        "ruas": [
+            {
+                "_id": "7",
+                "name": " Loura e Terreiro do Castelo  "
+            },
+            {
+                "_id": "6",
+                "name": " Rua do Souto Porta do Souto "
+            }
+        ]
+    },
+    {
+        "_id": "83",
+        "nome": "igreja do Terceiros",
+        "ruas": [
+            {
+                "_id": "7",
+                "name": " Loura e Terreiro do Castelo  "
+            }
+        ]
+    },
+    {
+        "_id": "84",
+        "nome": "casa do Definitório",
+        "ruas": [
+            {
+                "_id": "7",
+                "name": " Loura e Terreiro do Castelo  "
+            }
+        ]
+    },
+    {
+        "_id": "85",
+        "nome": "rua do Castelo",
+        "ruas": [
+            {
+                "_id": "7",
+                "name": " Loura e Terreiro do Castelo  "
+            }
+        ]
+    },
+    {
+        "_id": "86",
         "nome": "campo de S.Tiago",
         "ruas": [
             {
@@ -502,7 +1232,7 @@
         ]
     },
     {
-        "_id": "24",
+        "_id": "87",
         "nome": "Terreiro de S.Sebastião.",
         "ruas": [
             {
@@ -512,7 +1242,7 @@
         ]
     },
     {
-        "_id": "25",
+        "_id": "88",
         "nome": "Câmara",
         "ruas": [
             {
@@ -538,413 +1268,133 @@
         ]
     },
     {
-        "_id": "26",
-        "nome": "Catedral",
+        "_id": "89",
+        "nome": "rua dos Chãos de Sima",
         "ruas": [
             {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
+                "_id": "54",
+                "name": "Rua das Palhotas"
             },
             {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
-            }
-        ]
-    },
-    {
-        "_id": "27",
-        "nome": "terreiro de S. Paulo ou de S. Tiago",
-        "ruas": [
-            {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
-            }
-        ]
-    },
-    {
-        "_id": "28",
-        "nome": "Porta de S. Tiago",
-        "ruas": [
-            {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
-            }
-        ]
-    },
-    {
-        "_id": "29",
-        "nome": "Colégio",
-        "ruas": [
-            {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
-            }
-        ]
-    },
-    {
-        "_id": "30",
-        "nome": "rua do Souto-Arcada",
-        "ruas": [
-            {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
-            }
-        ]
-    },
-    {
-        "_id": "31",
-        "nome": "muralha",
-        "ruas": [
-            {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
+                "_id": "53",
+                "name": "Rua dos Chãos de Cima"
             },
             {
-                "_id": "35",
-                "name": "Rua de S. Marcos"
+                "_id": "53",
+                "name": "Rua dos Chãos de Cima"
             }
         ]
     },
     {
-        "_id": "32",
-        "nome": "Terreiro de S. Tiago",
+        "_id": "90",
+        "nome": "Alto Minho",
         "ruas": [
             {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
-            }
-        ]
-    },
-    {
-        "_id": "33",
-        "nome": "rua da Erva",
-        "ruas": [
-            {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
-            }
-        ]
-    },
-    {
-        "_id": "34",
-        "nome": "Igreja de Santiago",
-        "ruas": [
-            {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
+                "_id": "54",
+                "name": "Rua das Palhotas"
             },
             {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
+                "_id": "54",
+                "name": "Rua das Palhotas"
             }
         ]
     },
     {
-        "_id": "35",
-        "nome": "Sinagoga",
+        "_id": "91",
+        "nome": "rua Nova do Bico",
         "ruas": [
             {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
+                "_id": "54",
+                "name": "Rua das Palhotas"
             }
         ]
     },
     {
-        "_id": "36",
-        "nome": "rua da Judiaria",
+        "_id": "92",
+        "nome": "Geira",
         "ruas": [
             {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
+                "_id": "54",
+                "name": "Rua das Palhotas"
             }
         ]
     },
     {
-        "_id": "37",
-        "nome": "Igreja de Santa Maria de Braga",
+        "_id": "93",
+        "nome": "Gerês",
         "ruas": [
             {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
+                "_id": "54",
+                "name": "Rua das Palhotas"
             }
         ]
     },
     {
-        "_id": "38",
-        "nome": "rua de Santa Maria",
+        "_id": "94",
+        "nome": "Astorga",
         "ruas": [
             {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
+                "_id": "54",
+                "name": "Rua das Palhotas"
             }
         ]
     },
     {
-        "_id": "39",
-        "nome": "Judiaria Velha",
+        "_id": "95",
+        "nome": "Palmeira",
         "ruas": [
             {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
+                "_id": "54",
+                "name": "Rua das Palhotas"
             }
         ]
     },
     {
-        "_id": "40",
-        "nome": "terreiro de  S. Tiago",
+        "_id": "96",
+        "nome": "Pico de Regalados",
         "ruas": [
             {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
+                "_id": "54",
+                "name": "Rua das Palhotas"
             }
         ]
     },
     {
-        "_id": "41",
-        "nome": "rua do Poço",
+        "_id": "97",
+        "nome": "rua Andrade Corvo",
         "ruas": [
             {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
+                "_id": "54",
+                "name": "Rua das Palhotas"
             },
             {
-                "_id": "40",
-                "name": "Rua do Paymanta"
+                "_id": "55",
+                "name": "Rua de Infias"
             }
         ]
     },
     {
-        "_id": "42",
-        "nome": "rua das Travessas",
+        "_id": "98",
+        "nome": "Infias",
         "ruas": [
             {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
-            },
-            {
-                "_id": "25",
-                "name": "Campo de S. Sebastião e em Frente do Açougue"
-            },
-            {
-                "_id": "12",
-                "name": "Travessa Da Rua Do Forno Para A Do Poco"
-            },
-            {
-                "_id": "21",
-                "name": "Rua Verde"
-            },
-            {
-                "_id": "35",
-                "name": "Rua de S. Marcos"
-            },
-            {
-                "_id": "35",
-                "name": "Rua de S. Marcos"
-            },
-            {
-                "_id": "26",
-                "name": "Rua de S.Miguel O Anjo"
+                "_id": "54",
+                "name": "Rua das Palhotas"
             }
         ]
     },
     {
-        "_id": "43",
-        "nome": "rua de S. Tiago",
+        "_id": "99",
+        "nome": "Nova do Bico",
         "ruas": [
             {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
-            },
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
+                "_id": "54",
+                "name": "Rua das Palhotas"
             }
         ]
     },
     {
-        "_id": "44",
-        "nome": "rua D. Gonçalo Pereira",
-        "ruas": [
-            {
-                "_id": "14",
-                "name": "Rua de Sta. Maria ou do Poço"
-            },
-            {
-                "_id": "4",
-                "name": "Praça do Pão"
-            },
-            {
-                "_id": "12",
-                "name": "Travessa Da Rua Do Forno Para A Do Poco"
-            },
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            }
-        ]
-    },
-    {
-        "_id": "45",
-        "nome": "igreja de S. João do Souto",
-        "ruas": [
-            {
-                "_id": "8",
-                "name": "Rua de Janes "
-            }
-        ]
-    },
-    {
-        "_id": "46",
-        "nome": "Porta de Souto",
-        "ruas": [
-            {
-                "_id": "8",
-                "name": "Rua de Janes "
-            }
-        ]
-    },
-    {
-        "_id": "47",
-        "nome": "Jano",
-        "ruas": [
-            {
-                "_id": "8",
-                "name": "Rua de Janes "
-            }
-        ]
-    },
-    {
-        "_id": "48",
-        "nome": "Janoas",
-        "ruas": [
-            {
-                "_id": "8",
-                "name": "Rua de Janes "
-            }
-        ]
-    },
-    {
-        "_id": "49",
-        "nome": "porta de S. João",
-        "ruas": [
-            {
-                "_id": "8",
-                "name": "Rua de Janes "
-            },
-            {
-                "_id": "9",
-                "name": "Rua de S.João"
-            },
-            {
-                "_id": "47",
-                "name": "Rua de S. Barnabé"
-            }
-        ]
-    },
-    {
-        "_id": "50",
-        "nome": "igreja de S. João de Souto",
-        "ruas": [
-            {
-                "_id": "8",
-                "name": "Rua de Janes "
-            }
-        ]
-    },
-    {
-        "_id": "51",
-        "nome": "Rua ampla",
-        "ruas": [
-            {
-                "_id": "9",
-                "name": "Rua de S.João"
-            }
-        ]
-    },
-    {
-        "_id": "52",
-        "nome": "rua de S. Marcos",
-        "ruas": [
-            {
-                "_id": "9",
-                "name": "Rua de S.João"
-            }
-        ]
-    },
-    {
-        "_id": "53",
-        "nome": "Cappella maior da Sé",
-        "ruas": [
-            {
-                "_id": "9",
-                "name": "Rua de S.João"
-            }
-        ]
-    },
-    {
-        "_id": "54",
-        "nome": "capela mor da Sé",
-        "ruas": [
-            {
-                "_id": "9",
-                "name": "Rua de S.João"
-            },
-            {
-                "_id": "5",
-                "name": "Rua das Oucias"
-            }
-        ]
-    },
-    {
-        "_id": "55",
-        "nome": "Campo dos Remédios e Granginhos",
-        "ruas": [
-            {
-                "_id": "9",
-                "name": "Rua de S.João"
-            }
-        ]
-    },
-    {
-        "_id": "56",
-        "nome": "rua da Ponte de Guimarães",
-        "ruas": [
-            {
-                "_id": "9",
-                "name": "Rua de S.João"
-            },
-            {
-                "_id": "4",
-                "name": "Praça do Pão"
-            },
-            {
-                "_id": "47",
-                "name": "Rua de S. Barnabé"
-            }
-        ]
-    },
-    {
-        "_id": "57",
-        "nome": "casa dos Paivas",
-        "ruas": [
-            {
-                "_id": "9",
-                "name": "Rua de S.João"
-            }
-        ]
-    },
-    {
-        "_id": "58",
-        "nome": "Florença",
-        "ruas": [
-            {
-                "_id": "9",
-                "name": "Rua de S.João"
-            }
-        ]
-    },
-    {
-        "_id": "59",
+        "_id": "100",
         "nome": "igreja do Colégio da Companhia de Jesus",
         "ruas": [
             {
@@ -954,7 +1404,7 @@
         ]
     },
     {
-        "_id": "60",
+        "_id": "101",
         "nome": "rua de S. João",
         "ruas": [
             {
@@ -972,7 +1422,7 @@
         ]
     },
     {
-        "_id": "61",
+        "_id": "102",
         "nome": "rua das  Oucias",
         "ruas": [
             {
@@ -982,7 +1432,7 @@
         ]
     },
     {
-        "_id": "62",
+        "_id": "103",
         "nome": "rua Pay Manta",
         "ruas": [
             {
@@ -992,7 +1442,7 @@
         ]
     },
     {
-        "_id": "63",
+        "_id": "104",
         "nome": "rua de Pay Manta",
         "ruas": [
             {
@@ -1002,7 +1452,7 @@
         ]
     },
     {
-        "_id": "64",
+        "_id": "105",
         "nome": "rua do Forno",
         "ruas": [
             {
@@ -1016,264 +1466,48 @@
         ]
     },
     {
-        "_id": "65",
-        "nome": "rua da Escoura",
+        "_id": "106",
+        "nome": "Braga",
         "ruas": [
             {
-                "_id": "55",
-                "name": "Rua de Infias"
+                "_id": "58",
+                "name": "Rua da Cónega"
+            },
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            },
+            {
+                "_id": "9",
+                "name": "Rua de S.João"
+            },
+            {
+                "_id": "43",
+                "name": "Campo de Nossa Senhora a Branca. Rua da Régua. Rua Nova da Seara"
+            },
+            {
+                "_id": "40",
+                "name": "Rua do Paymanta"
             },
             {
                 "_id": "55",
                 "name": "Rua de Infias"
             },
             {
-                "_id": "56",
-                "name": "Cangosta da Escoura"
-            }
-        ]
-    },
-    {
-        "_id": "66",
-        "nome": "casal do Lagarto",
-        "ruas": [
-            {
-                "_id": "55",
-                "name": "Rua de Infias"
-            }
-        ]
-    },
-    {
-        "_id": "67",
-        "nome": "rua Conselheiro Januário",
-        "ruas": [
-            {
-                "_id": "55",
-                "name": "Rua de Infias"
-            }
-        ]
-    },
-    {
-        "_id": "68",
-        "nome": "campo da Vinha com o campo das Hortas",
-        "ruas": [
-            {
-                "_id": "59",
-                "name": "Rua dos Biscaínhos"
-            }
-        ]
-    },
-    {
-        "_id": "69",
-        "nome": "Cabido",
-        "ruas": [
-            {
-                "_id": "59",
-                "name": "Rua dos Biscaínhos"
+                "_id": "13",
+                "name": "Rua Pequena"
             },
             {
-                "_id": "59",
-                "name": "Rua dos Biscaínhos"
+                "_id": "5",
+                "name": "Rua das Oucias"
             },
             {
-                "_id": "57",
-                "name": "Estrada de Real"
+                "_id": "10",
+                "name": "Travessa da Rua de S. João para a do Forno"
             },
             {
-                "_id": "60",
-                "name": "Cangosta da Rua das Águas"
-            },
-            {
-                "_id": "60",
-                "name": "Cangosta da Rua das Águas"
-            }
-        ]
-    },
-    {
-        "_id": "70",
-        "nome": "rua dos Biscaínhos",
-        "ruas": [
-            {
-                "_id": "59",
-                "name": "Rua dos Biscaínhos"
-            }
-        ]
-    },
-    {
-        "_id": "71",
-        "nome": "enfiamento da Cangosta de S.Sebastião",
-        "ruas": [
-            {
-                "_id": "29",
-                "name": "Rua do Beco"
-            }
-        ]
-    },
-    {
-        "_id": "72",
-        "nome": "Maximinos",
-        "ruas": [
-            {
-                "_id": "29",
-                "name": "Rua do Beco"
-            },
-            {
-                "_id": "21",
-                "name": "Rua Verde"
-            },
-            {
-                "_id": "23",
-                "name": "Rua dos Sapateiros e Rossio da Praça"
-            }
-        ]
-    },
-    {
-        "_id": "73",
-        "nome": "rua do Caires",
-        "ruas": [
-            {
-                "_id": "29",
-                "name": "Rua do Beco"
-            },
-            {
-                "_id": "27",
-                "name": "Rua Da Cruz De Pedra"
-            }
-        ]
-    },
-    {
-        "_id": "74",
-        "nome": "Beco",
-        "ruas": [
-            {
-                "_id": "29",
-                "name": "Rua do Beco"
-            },
-            {
-                "_id": "30",
-                "name": "Cangosta De S. Sebastião"
-            }
-        ]
-    },
-    {
-        "_id": "75",
-        "nome": "S. Lázaro",
-        "ruas": [
-            {
-                "_id": "36",
-                "name": "Rua das Águas"
-            },
-            {
-                "_id": "35",
-                "name": "Rua de S. Marcos"
-            },
-            {
-                "_id": "38",
-                "name": "Rua da Ponte de Guimarães"
-            }
-        ]
-    },
-    {
-        "_id": "76",
-        "nome": "Porta de Guimarães",
-        "ruas": [
-            {
-                "_id": "36",
-                "name": "Rua das Águas"
-            }
-        ]
-    },
-    {
-        "_id": "77",
-        "nome": "ponte de Guimarães",
-        "ruas": [
-            {
-                "_id": "36",
-                "name": "Rua das Águas"
-            },
-            {
-                "_id": "38",
-                "name": "Rua da Ponte de Guimarães"
-            }
-        ]
-    },
-    {
-        "_id": "78",
-        "nome": "convento dos Remédios",
-        "ruas": [
-            {
-                "_id": "36",
-                "name": "Rua das Águas"
-            }
-        ]
-    },
-    {
-        "_id": "79",
-        "nome": "rua das Águas",
-        "ruas": [
-            {
-                "_id": "36",
-                "name": "Rua das Águas"
-            },
-            {
-                "_id": "36",
-                "name": "Rua das Águas"
-            },
-            {
-                "_id": "17",
-                "name": "Travessa da Rua de D.Gualdim até ao Couto do Arvoredo"
-            }
-        ]
-    },
-    {
-        "_id": "80",
-        "nome": "avenida da Liberdade",
-        "ruas": [
-            {
-                "_id": "36",
-                "name": "Rua das Águas"
-            },
-            {
-                "_id": "39",
-                "name": "Ponte de Guimarães"
-            },
-            {
-                "_id": "37",
-                "name": "Rua de S. Lázaro"
-            }
-        ]
-    },
-    {
-        "_id": "81",
-        "nome": "Rechicho",
-        "ruas": [
-            {
-                "_id": "36",
-                "name": "Rua das Águas"
-            }
-        ]
-    },
-    {
-        "_id": "82",
-        "nome": "rua Andrade Corvo",
-        "ruas": [
-            {
-                "_id": "57",
-                "name": "Estrada de Real"
-            },
-            {
-                "_id": "54",
-                "name": "Rua das Palhotas"
-            }
-        ]
-    },
-    {
-        "_id": "83",
-        "nome": "S.Jerónimo de Real",
-        "ruas": [
-            {
-                "_id": "57",
-                "name": "Estrada de Real"
+                "_id": "1",
+                "name": "Rua do Campo"
             },
             {
                 "_id": "1",
@@ -1282,383 +1516,113 @@
         ]
     },
     {
-        "_id": "84",
-        "nome": "Quinta da Cónega",
-        "ruas": [
-            {
-                "_id": "57",
-                "name": "Estrada de Real"
-            }
-        ]
-    },
-    {
-        "_id": "85",
-        "nome": "rua das Oucias",
-        "ruas": [
-            {
-                "_id": "13",
-                "name": "Rua Pequena"
-            }
-        ]
-    },
-    {
-        "_id": "86",
-        "nome": "travessa da rua do Forno para a do Poço",
-        "ruas": [
-            {
-                "_id": "13",
-                "name": "Rua Pequena"
-            }
-        ]
-    },
-    {
-        "_id": "87",
-        "nome": "bairro medieval",
-        "ruas": [
-            {
-                "_id": "13",
-                "name": "Rua Pequena"
-            }
-        ]
-    },
-    {
-        "_id": "88",
-        "nome": "catedral",
-        "ruas": [
-            {
-                "_id": "13",
-                "name": "Rua Pequena"
-            }
-        ]
-    },
-    {
-        "_id": "89",
-        "nome": "mercado da olaria",
-        "ruas": [
-            {
-                "_id": "13",
-                "name": "Rua Pequena"
-            }
-        ]
-    },
-    {
-        "_id": "90",
-        "nome": "rua do Teive",
-        "ruas": [
-            {
-                "_id": "13",
-                "name": "Rua Pequena"
-            }
-        ]
-    },
-    {
-        "_id": "91",
-        "nome": "rua Pequena",
-        "ruas": [
-            {
-                "_id": "13",
-                "name": "Rua Pequena"
-            }
-        ]
-    },
-    {
-        "_id": "92",
-        "nome": "rua Painsalvos",
-        "ruas": [
-            {
-                "_id": "13",
-                "name": "Rua Pequena"
-            }
-        ]
-    },
-    {
-        "_id": "93",
-        "nome": "porta de Souto",
-        "ruas": [
-            {
-                "_id": "41",
-                "name": "Campo de Santa Ana"
-            }
-        ]
-    },
-    {
-        "_id": "94",
-        "nome": "Corredoura",
-        "ruas": [
-            {
-                "_id": "41",
-                "name": "Campo de Santa Ana"
-            }
-        ]
-    },
-    {
-        "_id": "95",
-        "nome": "Senhora a Branca",
-        "ruas": [
-            {
-                "_id": "41",
-                "name": "Campo de Santa Ana"
-            }
-        ]
-    },
-    {
-        "_id": "96",
-        "nome": "S.Victor",
-        "ruas": [
-            {
-                "_id": "41",
-                "name": "Campo de Santa Ana"
-            }
-        ]
-    },
-    {
-        "_id": "97",
-        "nome": "Chaves",
-        "ruas": [
-            {
-                "_id": "41",
-                "name": "Campo de Santa Ana"
-            },
-            {
-                "_id": "33",
-                "name": "Campo de S. Tiago"
-            }
-        ]
-    },
-    {
-        "_id": "98",
-        "nome": "Bom Jesus",
-        "ruas": [
-            {
-                "_id": "41",
-                "name": "Campo de Santa Ana"
-            },
-            {
-                "_id": "43",
-                "name": "Campo de Nossa Senhora a Branca. Rua da Régua. Rua Nova da Seara"
-            }
-        ]
-    },
-    {
-        "_id": "99",
-        "nome": "porta do Souto",
-        "ruas": [
-            {
-                "_id": "41",
-                "name": "Campo de Santa Ana"
-            },
-            {
-                "_id": "41",
-                "name": "Campo de Santa Ana"
-            }
-        ]
-    },
-    {
-        "_id": "100",
-        "nome": "Santa Maria a Branca",
-        "ruas": [
-            {
-                "_id": "41",
-                "name": "Campo de Santa Ana"
-            }
-        ]
-    },
-    {
-        "_id": "101",
-        "nome": "rua da Corredoura",
-        "ruas": [
-            {
-                "_id": "41",
-                "name": "Campo de Santa Ana"
-            },
-            {
-                "_id": "33",
-                "name": "Campo de S. Tiago"
-            }
-        ]
-    },
-    {
-        "_id": "102",
-        "nome": "campo de Santa Ana",
-        "ruas": [
-            {
-                "_id": "41",
-                "name": "Campo de Santa Ana"
-            },
-            {
-                "_id": "41",
-                "name": "Campo de Santa Ana"
-            },
-            {
-                "_id": "10",
-                "name": "Travessa da Rua de S. João para a do Forno"
-            },
-            {
-                "_id": "49",
-                "name": "Rua de S. Gonçalo"
-            }
-        ]
-    },
-    {
-        "_id": "103",
-        "nome": "rua de Águas",
-        "ruas": [
-            {
-                "_id": "41",
-                "name": "Campo de Santa Ana"
-            },
-            {
-                "_id": "37",
-                "name": "Rua de S. Lázaro"
-            }
-        ]
-    },
-    {
-        "_id": "104",
-        "nome": "avenida Central",
-        "ruas": [
-            {
-                "_id": "41",
-                "name": "Campo de Santa Ana"
-            }
-        ]
-    },
-    {
-        "_id": "105",
-        "nome": "terreiro de S. Tiago",
-        "ruas": [
-            {
-                "_id": "20",
-                "name": "Terreiro de Sto. António e Postigo"
-            }
-        ]
-    },
-    {
-        "_id": "106",
-        "nome": "Postigo de S.Sebastião",
-        "ruas": [
-            {
-                "_id": "20",
-                "name": "Terreiro de Sto. António e Postigo"
-            }
-        ]
-    },
-    {
         "_id": "107",
-        "nome": "rua Travessa",
+        "nome": "S.Jerónimo de Real",
         "ruas": [
             {
-                "_id": "20",
-                "name": "Terreiro de Sto. António e Postigo"
+                "_id": "58",
+                "name": "Rua da Cónega"
+            },
+            {
+                "_id": "55",
+                "name": "Rua de Infias"
             }
         ]
     },
     {
         "_id": "108",
-        "nome": "rua do Postigo",
+        "nome": "Braga-Lugo",
         "ruas": [
             {
-                "_id": "20",
-                "name": "Terreiro de Sto. António e Postigo"
+                "_id": "58",
+                "name": "Rua da Cónega"
             }
         ]
     },
     {
         "_id": "109",
-        "nome": "rua do Terreiro de Santo António",
+        "nome": "Nova da Cónega",
         "ruas": [
             {
-                "_id": "20",
-                "name": "Terreiro de Sto. António e Postigo"
+                "_id": "58",
+                "name": "Rua da Cónega"
             }
         ]
     },
     {
         "_id": "110",
-        "nome": "«postigo»  da muralha",
+        "nome": "Cónega",
         "ruas": [
             {
-                "_id": "20",
-                "name": "Terreiro de Sto. António e Postigo"
+                "_id": "58",
+                "name": "Rua da Cónega"
             }
         ]
     },
     {
         "_id": "111",
-        "nome": "rua de S. Paulo",
+        "nome": "Boavista",
         "ruas": [
             {
-                "_id": "20",
-                "name": "Terreiro de Sto. António e Postigo"
-            },
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
+                "_id": "58",
+                "name": "Rua da Cónega"
             }
         ]
     },
     {
         "_id": "112",
-        "nome": "Santa Ana",
+        "nome": "rua dos Chãos de Baixo",
         "ruas": [
             {
-                "_id": "44",
-                "name": "Rua da Fonte da Carcova"
-            },
-            {
-                "_id": "48",
-                "name": "Praça do Gavião"
+                "_id": "53",
+                "name": "Rua dos Chãos de Cima"
             }
         ]
     },
     {
         "_id": "113",
-        "nome": "Vinha",
+        "nome": "Igreja de S. Vicente.",
         "ruas": [
             {
-                "_id": "44",
-                "name": "Rua da Fonte da Carcova"
+                "_id": "53",
+                "name": "Rua dos Chãos de Cima"
             }
         ]
     },
     {
         "_id": "114",
-        "nome": "Fonte da  Cárcova ou Cárcoda",
+        "nome": "S. Barnabé e Oliveiras",
         "ruas": [
             {
-                "_id": "44",
-                "name": "Rua da Fonte da Carcova"
+                "_id": "53",
+                "name": "Rua dos Chãos de Cima"
             }
         ]
     },
     {
         "_id": "115",
-        "nome": "rua dos Mercadores",
+        "nome": "rua de Espanha",
         "ruas": [
             {
-                "_id": "44",
-                "name": "Rua da Fonte da Carcova"
+                "_id": "53",
+                "name": "Rua dos Chãos de Cima"
             }
         ]
     },
     {
         "_id": "116",
-        "nome": "rua dos Capelistas",
+        "nome": "casal das Oliveiras e leira da Agra da Escoura",
         "ruas": [
             {
-                "_id": "44",
-                "name": "Rua da Fonte da Carcova"
+                "_id": "53",
+                "name": "Rua dos Chãos de Cima"
             }
         ]
     },
     {
         "_id": "117",
-        "nome": "rua do Carvalhal",
+        "nome": "casal dos Chãos ou do Quinteiro,",
         "ruas": [
-            {
-                "_id": "44",
-                "name": "Rua da Fonte da Carcova"
-            },
             {
                 "_id": "53",
                 "name": "Rua dos Chãos de Cima"
@@ -1667,6 +1631,172 @@
     },
     {
         "_id": "118",
+        "nome": "ruas de S. Barnabé e Oliveiras",
+        "ruas": [
+            {
+                "_id": "53",
+                "name": "Rua dos Chãos de Cima"
+            }
+        ]
+    },
+    {
+        "_id": "119",
+        "nome": "rua de S. Vicente",
+        "ruas": [
+            {
+                "_id": "53",
+                "name": "Rua dos Chãos de Cima"
+            }
+        ]
+    },
+    {
+        "_id": "120",
+        "nome": "Cangosta de Guadalupe",
+        "ruas": [
+            {
+                "_id": "52",
+                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
+            }
+        ]
+    },
+    {
+        "_id": "121",
+        "nome": "rua de Nossa Senhora de Guadalupe",
+        "ruas": [
+            {
+                "_id": "52",
+                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
+            }
+        ]
+    },
+    {
+        "_id": "122",
+        "nome": "Rua de arrabalde",
+        "ruas": [
+            {
+                "_id": "52",
+                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
+            }
+        ]
+    },
+    {
+        "_id": "123",
+        "nome": "monte de Santa Margarida",
+        "ruas": [
+            {
+                "_id": "52",
+                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
+            }
+        ]
+    },
+    {
+        "_id": "124",
+        "nome": "convento e capela das Teresinhas",
+        "ruas": [
+            {
+                "_id": "52",
+                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
+            }
+        ]
+    },
+    {
+        "_id": "125",
+        "nome": "rua de Camões",
+        "ruas": [
+            {
+                "_id": "52",
+                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
+            }
+        ]
+    },
+    {
+        "_id": "126",
+        "nome": "Campo de S. Tiago",
+        "ruas": [
+            {
+                "_id": "34",
+                "name": "Cangosta das Cruzes"
+            },
+            {
+                "_id": "34",
+                "name": "Cangosta das Cruzes"
+            }
+        ]
+    },
+    {
+        "_id": "127",
+        "nome": "hospital de S. Marcos",
+        "ruas": [
+            {
+                "_id": "34",
+                "name": "Cangosta das Cruzes"
+            },
+            {
+                "_id": "1",
+                "name": "Rua do Campo"
+            }
+        ]
+    },
+    {
+        "_id": "128",
+        "nome": "campo de S. Tiago",
+        "ruas": [
+            {
+                "_id": "34",
+                "name": "Cangosta das Cruzes"
+            },
+            {
+                "_id": "33",
+                "name": "Campo de S. Tiago"
+            },
+            {
+                "_id": "33",
+                "name": "Campo de S. Tiago"
+            }
+        ]
+    },
+    {
+        "_id": "129",
+        "nome": "Rua de Maximinos",
+        "ruas": [
+            {
+                "_id": "24",
+                "name": "Rua da Vielinha"
+            }
+        ]
+    },
+    {
+        "_id": "130",
+        "nome": "rexio da Praça",
+        "ruas": [
+            {
+                "_id": "24",
+                "name": "Rua da Vielinha"
+            }
+        ]
+    },
+    {
+        "_id": "131",
+        "nome": "rua do Sardoal",
+        "ruas": [
+            {
+                "_id": "42",
+                "name": "Campo e Calçada de Nossa Senhora a Branca"
+            }
+        ]
+    },
+    {
+        "_id": "132",
+        "nome": "ruas de Restauração e 31 de Janeiro",
+        "ruas": [
+            {
+                "_id": "42",
+                "name": "Campo e Calçada de Nossa Senhora a Branca"
+            }
+        ]
+    },
+    {
+        "_id": "133",
         "nome": "Porto",
         "ruas": [
             {
@@ -1680,7 +1810,7 @@
         ]
     },
     {
-        "_id": "119",
+        "_id": "134",
         "nome": "rua dos Pelames",
         "ruas": [
             {
@@ -1690,7 +1820,7 @@
         ]
     },
     {
-        "_id": "120",
+        "_id": "135",
         "nome": "Colégio de S. Paulo",
         "ruas": [
             {
@@ -1700,7 +1830,7 @@
         ]
     },
     {
-        "_id": "121",
+        "_id": "136",
         "nome": "Seminário de Santiago",
         "ruas": [
             {
@@ -1710,7 +1840,7 @@
         ]
     },
     {
-        "_id": "122",
+        "_id": "137",
         "nome": "ruas dos Pelames",
         "ruas": [
             {
@@ -1720,7 +1850,7 @@
         ]
     },
     {
-        "_id": "123",
+        "_id": "138",
         "nome": "rua S. Paulo",
         "ruas": [
             {
@@ -1730,7 +1860,7 @@
         ]
     },
     {
-        "_id": "124",
+        "_id": "139",
         "nome": "largo de S. Paulo",
         "ruas": [
             {
@@ -1740,25 +1870,7 @@
         ]
     },
     {
-        "_id": "125",
-        "nome": "campo de S. Tiago",
-        "ruas": [
-            {
-                "_id": "33",
-                "name": "Campo de S. Tiago"
-            },
-            {
-                "_id": "33",
-                "name": "Campo de S. Tiago"
-            },
-            {
-                "_id": "34",
-                "name": "Cangosta das Cruzes"
-            }
-        ]
-    },
-    {
-        "_id": "126",
+        "_id": "140",
         "nome": "rua dos Pellames",
         "ruas": [
             {
@@ -1768,7 +1880,7 @@
         ]
     },
     {
-        "_id": "127",
+        "_id": "141",
         "nome": "casa dos Falcões Cota",
         "ruas": [
             {
@@ -1778,7 +1890,7 @@
         ]
     },
     {
-        "_id": "128",
+        "_id": "142",
         "nome": "campo dos Remédios",
         "ruas": [
             {
@@ -1786,13 +1898,13 @@
                 "name": "Campo de S. Tiago"
             },
             {
-                "_id": "47",
-                "name": "Rua de S. Barnabé"
+                "_id": "1",
+                "name": "Rua do Campo"
             }
         ]
     },
     {
-        "_id": "129",
+        "_id": "143",
         "nome": "igreja de Santa Cruz",
         "ruas": [
             {
@@ -1802,7 +1914,481 @@
         ]
     },
     {
-        "_id": "130",
+        "_id": "144",
+        "nome": "ruas D. Gonçalo Pereira e D. Gualdim Pais",
+        "ruas": [
+            {
+                "_id": "15",
+                "name": "Travessa da Rua do Poço para a de D.Gualdim"
+            }
+        ]
+    },
+    {
+        "_id": "145",
+        "nome": "rua de Santo André",
+        "ruas": [
+            {
+                "_id": "46",
+                "name": "Rua de Santo André"
+            }
+        ]
+    },
+    {
+        "_id": "146",
+        "nome": "praça do Pão",
+        "ruas": [
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            },
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            },
+            {
+                "_id": "4",
+                "name": "Praça do Pão"
+            },
+            {
+                "_id": "4",
+                "name": "Praça do Pão"
+            },
+            {
+                "_id": "32",
+                "name": "Rua dos Pelames"
+            },
+            {
+                "_id": "22",
+                "name": "Rua de Maximinos"
+            },
+            {
+                "_id": "2",
+                "name": "Rua Nova"
+            }
+        ]
+    },
+    {
+        "_id": "147",
+        "nome": "Terreiro de Sto. António",
+        "ruas": [
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            }
+        ]
+    },
+    {
+        "_id": "148",
+        "nome": "bairro das Travessas",
+        "ruas": [
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            }
+        ]
+    },
+    {
+        "_id": "149",
+        "nome": "Arquivo da Câmara Municipal de Braga",
+        "ruas": [
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            }
+        ]
+    },
+    {
+        "_id": "150",
+        "nome": "rua de D. Gualdím",
+        "ruas": [
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            }
+        ]
+    },
+    {
+        "_id": "151",
+        "nome": "cidade medieval",
+        "ruas": [
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            }
+        ]
+    },
+    {
+        "_id": "152",
+        "nome": "a Igreja de Santiago",
+        "ruas": [
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            }
+        ]
+    },
+    {
+        "_id": "153",
+        "nome": "Igreja da Cividade",
+        "ruas": [
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            }
+        ]
+    },
+    {
+        "_id": "154",
+        "nome": "palácio",
+        "ruas": [
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            }
+        ]
+    },
+    {
+        "_id": "155",
+        "nome": "rua dos Burgueses",
+        "ruas": [
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            }
+        ]
+    },
+    {
+        "_id": "156",
+        "nome": "Souto",
+        "ruas": [
+            {
+                "_id": "16",
+                "name": "Rua de D. Gualdim"
+            }
+        ]
+    },
+    {
+        "_id": "157",
+        "nome": "rua de  Maximinos",
+        "ruas": [
+            {
+                "_id": "23",
+                "name": "Rua dos Sapateiros e Rossio da Praça"
+            }
+        ]
+    },
+    {
+        "_id": "158",
+        "nome": "rua Nova",
+        "ruas": [
+            {
+                "_id": "23",
+                "name": "Rua dos Sapateiros e Rossio da Praça"
+            },
+            {
+                "_id": "43",
+                "name": "Campo de Nossa Senhora a Branca. Rua da Régua. Rua Nova da Seara"
+            },
+            {
+                "_id": "2",
+                "name": "Rua Nova"
+            },
+            {
+                "_id": "6",
+                "name": " Rua do Souto Porta do Souto "
+            },
+            {
+                "_id": "25",
+                "name": "Campo de S. Sebastião e em Frente do Açougue"
+            },
+            {
+                "_id": "25",
+                "name": "Campo de S. Sebastião e em Frente do Açougue"
+            }
+        ]
+    },
+    {
+        "_id": "159",
+        "nome": "Rossio da Praça",
+        "ruas": [
+            {
+                "_id": "23",
+                "name": "Rua dos Sapateiros e Rossio da Praça"
+            },
+            {
+                "_id": "23",
+                "name": "Rua dos Sapateiros e Rossio da Praça"
+            },
+            {
+                "_id": "23",
+                "name": "Rua dos Sapateiros e Rossio da Praça"
+            }
+        ]
+    },
+    {
+        "_id": "160",
+        "nome": "rua dos Sapateiros",
+        "ruas": [
+            {
+                "_id": "23",
+                "name": "Rua dos Sapateiros e Rossio da Praça"
+            }
+        ]
+    },
+    {
+        "_id": "161",
+        "nome": "rua D. Frei Caetano Brandão",
+        "ruas": [
+            {
+                "_id": "23",
+                "name": "Rua dos Sapateiros e Rossio da Praça"
+            },
+            {
+                "_id": "18",
+                "name": "Rua das Chagas"
+            }
+        ]
+    },
+    {
+        "_id": "162",
+        "nome": "rua Gabriel Pereira de Castro",
+        "ruas": [
+            {
+                "_id": "56",
+                "name": "Cangosta da Escoura"
+            }
+        ]
+    },
+    {
+        "_id": "163",
+        "nome": "rua da Escoura",
+        "ruas": [
+            {
+                "_id": "56",
+                "name": "Cangosta da Escoura"
+            },
+            {
+                "_id": "21",
+                "name": "Rua Verde"
+            },
+            {
+                "_id": "55",
+                "name": "Rua de Infias"
+            }
+        ]
+    },
+    {
+        "_id": "164",
+        "nome": "Rua ampla",
+        "ruas": [
+            {
+                "_id": "9",
+                "name": "Rua de S.João"
+            }
+        ]
+    },
+    {
+        "_id": "165",
+        "nome": "rua de S. Marcos",
+        "ruas": [
+            {
+                "_id": "9",
+                "name": "Rua de S.João"
+            }
+        ]
+    },
+    {
+        "_id": "166",
+        "nome": "Cappella maior da Sé",
+        "ruas": [
+            {
+                "_id": "9",
+                "name": "Rua de S.João"
+            }
+        ]
+    },
+    {
+        "_id": "167",
+        "nome": "porta de S. João",
+        "ruas": [
+            {
+                "_id": "9",
+                "name": "Rua de S.João"
+            },
+            {
+                "_id": "8",
+                "name": "Rua de Janes "
+            },
+            {
+                "_id": "1",
+                "name": "Rua do Campo"
+            }
+        ]
+    },
+    {
+        "_id": "168",
+        "nome": "capela mor da Sé",
+        "ruas": [
+            {
+                "_id": "9",
+                "name": "Rua de S.João"
+            },
+            {
+                "_id": "5",
+                "name": "Rua das Oucias"
+            }
+        ]
+    },
+    {
+        "_id": "169",
+        "nome": "Campo dos Remédios e Granginhos",
+        "ruas": [
+            {
+                "_id": "9",
+                "name": "Rua de S.João"
+            }
+        ]
+    },
+    {
+        "_id": "170",
+        "nome": "rua da Ponte de Guimarães",
+        "ruas": [
+            {
+                "_id": "9",
+                "name": "Rua de S.João"
+            },
+            {
+                "_id": "3",
+                "name": "Rua dos Açougues velhos"
+            },
+            {
+                "_id": "1",
+                "name": "Rua do Campo"
+            }
+        ]
+    },
+    {
+        "_id": "171",
+        "nome": "casa dos Paivas",
+        "ruas": [
+            {
+                "_id": "9",
+                "name": "Rua de S.João"
+            }
+        ]
+    },
+    {
+        "_id": "172",
+        "nome": "Florença",
+        "ruas": [
+            {
+                "_id": "9",
+                "name": "Rua de S.João"
+            }
+        ]
+    },
+    {
+        "_id": "173",
+        "nome": "velho bairro medieval",
+        "ruas": [
+            {
+                "_id": "12",
+                "name": "Travessa Da Rua Do Forno Para A Do Poco"
+            }
+        ]
+    },
+    {
+        "_id": "174",
+        "nome": "velha rua romana",
+        "ruas": [
+            {
+                "_id": "12",
+                "name": "Travessa Da Rua Do Forno Para A Do Poco"
+            }
+        ]
+    },
+    {
+        "_id": "175",
+        "nome": "S. Lázaro",
+        "ruas": [
+            {
+                "_id": "36",
+                "name": "Rua das Águas"
+            },
+            {
+                "_id": "38",
+                "name": "Rua da Ponte de Guimarães"
+            },
+            {
+                "_id": "35",
+                "name": "Rua de S. Marcos"
+            }
+        ]
+    },
+    {
+        "_id": "176",
+        "nome": "Porta de Guimarães",
+        "ruas": [
+            {
+                "_id": "36",
+                "name": "Rua das Águas"
+            }
+        ]
+    },
+    {
+        "_id": "177",
+        "nome": "ponte de Guimarães",
+        "ruas": [
+            {
+                "_id": "36",
+                "name": "Rua das Águas"
+            },
+            {
+                "_id": "38",
+                "name": "Rua da Ponte de Guimarães"
+            }
+        ]
+    },
+    {
+        "_id": "178",
+        "nome": "convento dos Remédios",
+        "ruas": [
+            {
+                "_id": "36",
+                "name": "Rua das Águas"
+            }
+        ]
+    },
+    {
+        "_id": "179",
+        "nome": "rua das Águas",
+        "ruas": [
+            {
+                "_id": "36",
+                "name": "Rua das Águas"
+            },
+            {
+                "_id": "36",
+                "name": "Rua das Águas"
+            },
+            {
+                "_id": "8",
+                "name": "Rua de Janes "
+            }
+        ]
+    },
+    {
+        "_id": "180",
+        "nome": "Rechicho",
+        "ruas": [
+            {
+                "_id": "36",
+                "name": "Rua das Águas"
+            }
+        ]
+    },
+    {
+        "_id": "181",
         "nome": "Régua",
         "ruas": [
             {
@@ -1812,7 +2398,7 @@
         ]
     },
     {
-        "_id": "131",
+        "_id": "182",
         "nome": "rua Nova da Seara",
         "ruas": [
             {
@@ -1830,7 +2416,7 @@
         ]
     },
     {
-        "_id": "132",
+        "_id": "183",
         "nome": "Barroso",
         "ruas": [
             {
@@ -1840,7 +2426,7 @@
         ]
     },
     {
-        "_id": "133",
+        "_id": "184",
         "nome": "campo de Nossa Senhora a Branca",
         "ruas": [
             {
@@ -1850,7 +2436,7 @@
         ]
     },
     {
-        "_id": "134",
+        "_id": "185",
         "nome": "rua da Régua",
         "ruas": [
             {
@@ -1864,7 +2450,7 @@
         ]
     },
     {
-        "_id": "135",
+        "_id": "186",
         "nome": "Campo de Nossa Senhora a Branca",
         "ruas": [
             {
@@ -1878,7 +2464,7 @@
         ]
     },
     {
-        "_id": "136",
+        "_id": "187",
         "nome": "ruas da Régua e Nova da Seara",
         "ruas": [
             {
@@ -1888,7 +2474,7 @@
         ]
     },
     {
-        "_id": "137",
+        "_id": "188",
         "nome": "rua de S. Victor",
         "ruas": [
             {
@@ -1898,145 +2484,275 @@
         ]
     },
     {
-        "_id": "138",
-        "nome": "rua dos Chãos de Baixo",
+        "_id": "189",
+        "nome": "rua do Cabido",
         "ruas": [
             {
-                "_id": "53",
-                "name": "Rua dos Chãos de Cima"
+                "_id": "3",
+                "name": "Rua dos Açougues velhos"
             }
         ]
     },
     {
-        "_id": "139",
-        "nome": "Igreja de S. Vicente.",
+        "_id": "190",
+        "nome": "Travessa dos Açougues Velhos",
         "ruas": [
             {
-                "_id": "53",
-                "name": "Rua dos Chãos de Cima"
+                "_id": "3",
+                "name": "Rua dos Açougues velhos"
             }
         ]
     },
     {
-        "_id": "140",
-        "nome": "S. Barnabé e Oliveiras",
+        "_id": "191",
+        "nome": "pontilhão das Lages",
         "ruas": [
             {
-                "_id": "53",
-                "name": "Rua dos Chãos de Cima"
+                "_id": "40",
+                "name": "Rua do Paymanta"
             }
         ]
     },
     {
-        "_id": "141",
-        "nome": "rua de Espanha",
+        "_id": "192",
+        "nome": "Pai Amante",
         "ruas": [
             {
-                "_id": "53",
-                "name": "Rua dos Chãos de Cima"
+                "_id": "40",
+                "name": "Rua do Paymanta"
             }
         ]
     },
     {
-        "_id": "142",
-        "nome": "casal das Oliveiras e leira da Agra da Escoura",
+        "_id": "193",
+        "nome": "Conselheiro Lobato",
         "ruas": [
             {
-                "_id": "53",
-                "name": "Rua dos Chãos de Cima"
+                "_id": "40",
+                "name": "Rua do Paymanta"
             }
         ]
     },
     {
-        "_id": "143",
-        "nome": "casal dos Chãos ou do Quinteiro,",
+        "_id": "194",
+        "nome": "rua dos Açougues",
         "ruas": [
             {
-                "_id": "53",
-                "name": "Rua dos Chãos de Cima"
+                "_id": "4",
+                "name": "Praça do Pão"
             }
         ]
     },
     {
-        "_id": "144",
-        "nome": "rua dos Chãos de Sima",
+        "_id": "195",
+        "nome": "D. Gualdim Pais",
         "ruas": [
             {
-                "_id": "53",
-                "name": "Rua dos Chãos de Cima"
+                "_id": "4",
+                "name": "Praça do Pão"
+            }
+        ]
+    },
+    {
+        "_id": "196",
+        "nome": "Praça do Pão",
+        "ruas": [
+            {
+                "_id": "4",
+                "name": "Praça do Pão"
+            }
+        ]
+    },
+    {
+        "_id": "197",
+        "nome": "D. Diogo de Sousa",
+        "ruas": [
+            {
+                "_id": "4",
+                "name": "Praça do Pão"
+            }
+        ]
+    },
+    {
+        "_id": "198",
+        "nome": "rua de Maximinos",
+        "ruas": [
+            {
+                "_id": "4",
+                "name": "Praça do Pão"
             },
             {
-                "_id": "53",
-                "name": "Rua dos Chãos de Cima"
+                "_id": "4",
+                "name": "Praça do Pão"
             },
             {
-                "_id": "27",
-                "name": "Rua Da Cruz De Pedra"
+                "_id": "21",
+                "name": "Rua Verde"
+            },
+            {
+                "_id": "22",
+                "name": "Rua de Maximinos"
+            },
+            {
+                "_id": "22",
+                "name": "Rua de Maximinos"
+            },
+            {
+                "_id": "18",
+                "name": "Rua das Chagas"
+            },
+            {
+                "_id": "25",
+                "name": "Campo de S. Sebastião e em Frente do Açougue"
+            },
+            {
+                "_id": "26",
+                "name": "Rua de S.Miguel O Anjo"
             }
         ]
     },
     {
-        "_id": "145",
-        "nome": "ruas de S. Barnabé e Oliveiras",
+        "_id": "199",
+        "nome": "D. Gualdim",
         "ruas": [
             {
-                "_id": "53",
-                "name": "Rua dos Chãos de Cima"
+                "_id": "4",
+                "name": "Praça do Pão"
             }
         ]
     },
     {
-        "_id": "146",
-        "nome": "rua de S. Vicente",
+        "_id": "200",
+        "nome": "Palácio dos Arcebispos",
         "ruas": [
             {
-                "_id": "53",
-                "name": "Rua dos Chãos de Cima"
+                "_id": "4",
+                "name": "Praça do Pão"
             }
         ]
     },
     {
-        "_id": "147",
-        "nome": "ponte sobre o rio Este",
+        "_id": "201",
+        "nome": "rua D. Paio Mendes",
         "ruas": [
             {
-                "_id": "39",
-                "name": "Ponte de Guimarães"
+                "_id": "4",
+                "name": "Praça do Pão"
             }
         ]
     },
     {
-        "_id": "148",
-        "nome": "largo do Senhor dos Aflitos",
+        "_id": "202",
+        "nome": "postigo de S. Sebastião",
         "ruas": [
             {
-                "_id": "39",
-                "name": "Ponte de Guimarães"
+                "_id": "21",
+                "name": "Rua Verde"
             }
         ]
     },
     {
-        "_id": "149",
-        "nome": "Latinhas",
+        "_id": "203",
+        "nome": "Porta de S. Francisco",
         "ruas": [
             {
-                "_id": "39",
-                "name": "Ponte de Guimarães"
+                "_id": "21",
+                "name": "Rua Verde"
+            },
+            {
+                "_id": "25",
+                "name": "Campo de S. Sebastião e em Frente do Açougue"
             }
         ]
     },
     {
-        "_id": "150",
-        "nome": "Rua Conselheiro Lobato",
+        "_id": "204",
+        "nome": "ruas dos Sapateiros e do Campo",
         "ruas": [
             {
-                "_id": "39",
-                "name": "Ponte de Guimarães"
+                "_id": "21",
+                "name": "Rua Verde"
             }
         ]
     },
     {
-        "_id": "151",
+        "_id": "205",
+        "nome": "capela de S. Sebastião",
+        "ruas": [
+            {
+                "_id": "21",
+                "name": "Rua Verde"
+            }
+        ]
+    },
+    {
+        "_id": "206",
+        "nome": "campo de S. Miguel o Anjo",
+        "ruas": [
+            {
+                "_id": "21",
+                "name": "Rua Verde"
+            }
+        ]
+    },
+    {
+        "_id": "207",
+        "nome": "casal do Lagarto",
+        "ruas": [
+            {
+                "_id": "55",
+                "name": "Rua de Infias"
+            }
+        ]
+    },
+    {
+        "_id": "208",
+        "nome": "rua Conselheiro Januário",
+        "ruas": [
+            {
+                "_id": "55",
+                "name": "Rua de Infias"
+            }
+        ]
+    },
+    {
+        "_id": "209",
+        "nome": "Cabido",
+        "ruas": [
+            {
+                "_id": "57",
+                "name": "Estrada de Real"
+            },
+            {
+                "_id": "60",
+                "name": "Cangosta da Rua das Águas"
+            },
+            {
+                "_id": "60",
+                "name": "Cangosta da Rua das Águas"
+            },
+            {
+                "_id": "59",
+                "name": "Rua dos Biscaínhos"
+            },
+            {
+                "_id": "59",
+                "name": "Rua dos Biscaínhos"
+            }
+        ]
+    },
+    {
+        "_id": "210",
+        "nome": "Quinta da Cónega",
+        "ruas": [
+            {
+                "_id": "57",
+                "name": "Estrada de Real"
+            }
+        ]
+    },
+    {
+        "_id": "211",
         "nome": "Cividade",
         "ruas": [
             {
@@ -2046,7 +2762,7 @@
         ]
     },
     {
-        "_id": "152",
+        "_id": "212",
         "nome": "Terreiro de S. Sebastião",
         "ruas": [
             {
@@ -2056,7 +2772,7 @@
         ]
     },
     {
-        "_id": "153",
+        "_id": "213",
         "nome": "capela de S.Sebastião das Carvalheiras)",
         "ruas": [
             {
@@ -2066,7 +2782,7 @@
         ]
     },
     {
-        "_id": "154",
+        "_id": "214",
         "nome": "igreja paroquial de Maximinos",
         "ruas": [
             {
@@ -2076,7 +2792,7 @@
         ]
     },
     {
-        "_id": "155",
+        "_id": "215",
         "nome": "rua dos Marchantes",
         "ruas": [
             {
@@ -2086,135 +2802,365 @@
         ]
     },
     {
-        "_id": "156",
-        "nome": "Campo de S. Tiago",
+        "_id": "216",
+        "nome": "igreja de S. João do Souto",
         "ruas": [
             {
-                "_id": "34",
-                "name": "Cangosta das Cruzes"
+                "_id": "8",
+                "name": "Rua de Janes "
+            }
+        ]
+    },
+    {
+        "_id": "217",
+        "nome": "Porta de Souto",
+        "ruas": [
+            {
+                "_id": "8",
+                "name": "Rua de Janes "
+            }
+        ]
+    },
+    {
+        "_id": "218",
+        "nome": "Jano",
+        "ruas": [
+            {
+                "_id": "8",
+                "name": "Rua de Janes "
+            }
+        ]
+    },
+    {
+        "_id": "219",
+        "nome": "Janoas",
+        "ruas": [
+            {
+                "_id": "8",
+                "name": "Rua de Janes "
+            }
+        ]
+    },
+    {
+        "_id": "220",
+        "nome": "igreja de S. João de Souto",
+        "ruas": [
+            {
+                "_id": "8",
+                "name": "Rua de Janes "
+            }
+        ]
+    },
+    {
+        "_id": "221",
+        "nome": "Palha",
+        "ruas": [
+            {
+                "_id": "60",
+                "name": "Cangosta da Rua das Águas"
+            }
+        ]
+    },
+    {
+        "_id": "222",
+        "nome": "(o Rechicho)",
+        "ruas": [
+            {
+                "_id": "60",
+                "name": "Cangosta da Rua das Águas"
+            }
+        ]
+    },
+    {
+        "_id": "223",
+        "nome": "rua do Raio e largo João Penha (ou do Rechicho).",
+        "ruas": [
+            {
+                "_id": "60",
+                "name": "Cangosta da Rua das Águas"
+            }
+        ]
+    },
+    {
+        "_id": "224",
+        "nome": "Recolhimento das Convertidas",
+        "ruas": [
+            {
+                "_id": "49",
+                "name": "Rua de S. Gonçalo"
+            }
+        ]
+    },
+    {
+        "_id": "225",
+        "nome": "Mosteiro de Vilar de Frades",
+        "ruas": [
+            {
+                "_id": "49",
+                "name": "Rua de S. Gonçalo"
+            }
+        ]
+    },
+    {
+        "_id": "226",
+        "nome": "rua de S. Gonçalo.",
+        "ruas": [
+            {
+                "_id": "49",
+                "name": "Rua de S. Gonçalo"
+            }
+        ]
+    },
+    {
+        "_id": "227",
+        "nome": "rua das Oucias",
+        "ruas": [
+            {
+                "_id": "13",
+                "name": "Rua Pequena"
+            }
+        ]
+    },
+    {
+        "_id": "228",
+        "nome": "travessa da rua do Forno para a do Poço",
+        "ruas": [
+            {
+                "_id": "13",
+                "name": "Rua Pequena"
+            }
+        ]
+    },
+    {
+        "_id": "229",
+        "nome": "bairro medieval",
+        "ruas": [
+            {
+                "_id": "13",
+                "name": "Rua Pequena"
+            }
+        ]
+    },
+    {
+        "_id": "230",
+        "nome": "catedral",
+        "ruas": [
+            {
+                "_id": "13",
+                "name": "Rua Pequena"
+            }
+        ]
+    },
+    {
+        "_id": "231",
+        "nome": "mercado da olaria",
+        "ruas": [
+            {
+                "_id": "13",
+                "name": "Rua Pequena"
+            }
+        ]
+    },
+    {
+        "_id": "232",
+        "nome": "rua do Teive",
+        "ruas": [
+            {
+                "_id": "13",
+                "name": "Rua Pequena"
+            }
+        ]
+    },
+    {
+        "_id": "233",
+        "nome": "rua Pequena",
+        "ruas": [
+            {
+                "_id": "13",
+                "name": "Rua Pequena"
+            }
+        ]
+    },
+    {
+        "_id": "234",
+        "nome": "rua Painsalvos",
+        "ruas": [
+            {
+                "_id": "13",
+                "name": "Rua Pequena"
+            }
+        ]
+    },
+    {
+        "_id": "235",
+        "nome": "praça Mouzinho de Albuquerque",
+        "ruas": [
+            {
+                "_id": "48",
+                "name": "Praça do Gavião"
+            }
+        ]
+    },
+    {
+        "_id": "236",
+        "nome": "Guimarães",
+        "ruas": [
+            {
+                "_id": "37",
+                "name": "Rua de S. Lázaro"
+            }
+        ]
+    },
+    {
+        "_id": "237",
+        "nome": "terreiro de S. Lázaro",
+        "ruas": [
+            {
+                "_id": "37",
+                "name": "Rua de S. Lázaro"
+            }
+        ]
+    },
+    {
+        "_id": "238",
+        "nome": "rua de S. Lázaro",
+        "ruas": [
+            {
+                "_id": "37",
+                "name": "Rua de S. Lázaro"
             },
             {
-                "_id": "34",
-                "name": "Cangosta das Cruzes"
+                "_id": "38",
+                "name": "Rua da Ponte de Guimarães"
             }
         ]
     },
     {
-        "_id": "157",
-        "nome": "hospital de S. Marcos",
+        "_id": "239",
+        "nome": "largo do Rechicho",
         "ruas": [
             {
-                "_id": "34",
-                "name": "Cangosta das Cruzes"
+                "_id": "37",
+                "name": "Rua de S. Lázaro"
+            }
+        ]
+    },
+    {
+        "_id": "240",
+        "nome": "rua 25 de Abril",
+        "ruas": [
+            {
+                "_id": "37",
+                "name": "Rua de S. Lázaro"
             },
             {
-                "_id": "47",
-                "name": "Rua de S. Barnabé"
+                "_id": "38",
+                "name": "Rua da Ponte de Guimarães"
             }
         ]
     },
     {
-        "_id": "158",
-        "nome": "igreja dos Terceiros",
+        "_id": "241",
+        "nome": "largo do Eyrado",
         "ruas": [
             {
-                "_id": "7",
-                "name": " Loura e Terreiro do Castelo  "
+                "_id": "45",
+                "name": "Rua dos Chãos de Baixo"
             }
         ]
     },
     {
-        "_id": "159",
-        "nome": "cidadela",
+        "_id": "242",
+        "nome": "rua dos Chaos de Baixo",
         "ruas": [
             {
-                "_id": "7",
-                "name": " Loura e Terreiro do Castelo  "
-            },
-            {
-                "_id": "7",
-                "name": " Loura e Terreiro do Castelo  "
-            },
-            {
-                "_id": "7",
-                "name": " Loura e Terreiro do Castelo  "
+                "_id": "45",
+                "name": "Rua dos Chãos de Baixo"
             }
         ]
     },
     {
-        "_id": "160",
-        "nome": "Terreiro do Castelo",
+        "_id": "243",
+        "nome": "Rua dos Chãos",
         "ruas": [
             {
-                "_id": "7",
-                "name": " Loura e Terreiro do Castelo  "
-            },
-            {
-                "_id": "7",
-                "name": " Loura e Terreiro do Castelo  "
+                "_id": "45",
+                "name": "Rua dos Chãos de Baixo"
             }
         ]
     },
     {
-        "_id": "161",
-        "nome": "Loura",
+        "_id": "244",
+        "nome": "Eyrado",
         "ruas": [
             {
-                "_id": "7",
-                "name": " Loura e Terreiro do Castelo  "
-            },
-            {
-                "_id": "7",
-                "name": " Loura e Terreiro do Castelo  "
+                "_id": "45",
+                "name": "Rua dos Chãos de Baixo"
             }
         ]
     },
     {
-        "_id": "162",
-        "nome": "Castelo",
+        "_id": "245",
+        "nome": "largo de S. Francisco",
         "ruas": [
             {
-                "_id": "7",
-                "name": " Loura e Terreiro do Castelo  "
-            },
-            {
-                "_id": "6",
-                "name": " Rua do Souto Porta do Souto "
+                "_id": "45",
+                "name": "Rua dos Chãos de Baixo"
             }
         ]
     },
     {
-        "_id": "163",
-        "nome": "igreja do Terceiros",
+        "_id": "246",
+        "nome": "Ágoas",
         "ruas": [
             {
-                "_id": "7",
-                "name": " Loura e Terreiro do Castelo  "
+                "_id": "38",
+                "name": "Rua da Ponte de Guimarães"
             }
         ]
     },
     {
-        "_id": "164",
-        "nome": "casa do Definitório",
+        "_id": "247",
+        "nome": "rua da Ponte",
         "ruas": [
             {
-                "_id": "7",
-                "name": " Loura e Terreiro do Castelo  "
+                "_id": "38",
+                "name": "Rua da Ponte de Guimarães"
             }
         ]
     },
     {
-        "_id": "165",
-        "nome": "rua do Castelo",
+        "_id": "248",
+        "nome": "capela de S. Lázaro",
         "ruas": [
             {
-                "_id": "7",
-                "name": " Loura e Terreiro do Castelo  "
+                "_id": "38",
+                "name": "Rua da Ponte de Guimarães"
             }
         ]
     },
     {
-        "_id": "166",
+        "_id": "249",
+        "nome": "troço da avenida da Liberdade",
+        "ruas": [
+            {
+                "_id": "38",
+                "name": "Rua da Ponte de Guimarães"
+            }
+        ]
+    },
+    {
+        "_id": "250",
+        "nome": "largo das Latinhas ou do Senhor dos Aflitos",
+        "ruas": [
+            {
+                "_id": "38",
+                "name": "Rua da Ponte de Guimarães"
+            }
+        ]
+    },
+    {
+        "_id": "251",
         "nome": "largo de S.Tiago",
         "ruas": [
             {
@@ -2224,7 +3170,7 @@
         ]
     },
     {
-        "_id": "167",
+        "_id": "252",
         "nome": "ponte dos Pelames",
         "ruas": [
             {
@@ -2234,7 +3180,7 @@
         ]
     },
     {
-        "_id": "168",
+        "_id": "253",
         "nome": "rua do Infante",
         "ruas": [
             {
@@ -2244,7 +3190,7 @@
         ]
     },
     {
-        "_id": "169",
+        "_id": "254",
         "nome": "de Pelames",
         "ruas": [
             {
@@ -2254,7 +3200,7 @@
         ]
     },
     {
-        "_id": "170",
+        "_id": "255",
         "nome": "rua de S.Geraldo",
         "ruas": [
             {
@@ -2264,7 +3210,7 @@
         ]
     },
     {
-        "_id": "171",
+        "_id": "256",
         "nome": "Convento da Conceição",
         "ruas": [
             {
@@ -2278,7 +3224,425 @@
         ]
     },
     {
-        "_id": "172",
+        "_id": "257",
+        "nome": "Porta de Maximinos",
+        "ruas": [
+            {
+                "_id": "22",
+                "name": "Rua de Maximinos"
+            }
+        ]
+    },
+    {
+        "_id": "258",
+        "nome": "Nossa Senhora da Ajuda",
+        "ruas": [
+            {
+                "_id": "22",
+                "name": "Rua de Maximinos"
+            },
+            {
+                "_id": "27",
+                "name": "Rua Da Cruz De Pedra"
+            }
+        ]
+    },
+    {
+        "_id": "259",
+        "nome": "Triparia",
+        "ruas": [
+            {
+                "_id": "18",
+                "name": "Rua das Chagas"
+            }
+        ]
+    },
+    {
+        "_id": "260",
+        "nome": "rua das Chagas",
+        "ruas": [
+            {
+                "_id": "18",
+                "name": "Rua das Chagas"
+            }
+        ]
+    },
+    {
+        "_id": "261",
+        "nome": "fonte de S. Geraldo",
+        "ruas": [
+            {
+                "_id": "5",
+                "name": "Rua das Oucias"
+            }
+        ]
+    },
+    {
+        "_id": "262",
+        "nome": "Capela da Glória",
+        "ruas": [
+            {
+                "_id": "5",
+                "name": "Rua das Oucias"
+            }
+        ]
+    },
+    {
+        "_id": "263",
+        "nome": "casa do Conselho Municipal",
+        "ruas": [
+            {
+                "_id": "5",
+                "name": "Rua das Oucias"
+            }
+        ]
+    },
+    {
+        "_id": "264",
+        "nome": "Porta de S. João",
+        "ruas": [
+            {
+                "_id": "5",
+                "name": "Rua das Oucias"
+            },
+            {
+                "_id": "10",
+                "name": "Travessa da Rua de S. João para a do Forno"
+            }
+        ]
+    },
+    {
+        "_id": "265",
+        "nome": "lado Sul da Sé, entre o braço do transepto e a fachada",
+        "ruas": [
+            {
+                "_id": "5",
+                "name": "Rua das Oucias"
+            }
+        ]
+    },
+    {
+        "_id": "266",
+        "nome": "Rocio da Sé",
+        "ruas": [
+            {
+                "_id": "5",
+                "name": "Rua das Oucias"
+            },
+            {
+                "_id": "5",
+                "name": "Rua das Oucias"
+            }
+        ]
+    },
+    {
+        "_id": "267",
+        "nome": "edifício do Tribunal do Trabalho/Delegação Escolar",
+        "ruas": [
+            {
+                "_id": "5",
+                "name": "Rua das Oucias"
+            }
+        ]
+    },
+    {
+        "_id": "268",
+        "nome": "Residência Académica",
+        "ruas": [
+            {
+                "_id": "5",
+                "name": "Rua das Oucias"
+            }
+        ]
+    },
+    {
+        "_id": "269",
+        "nome": "rua de Nossa Senhora do Leite",
+        "ruas": [
+            {
+                "_id": "5",
+                "name": "Rua das Oucias"
+            }
+        ]
+    },
+    {
+        "_id": "270",
+        "nome": "escola coimbrã",
+        "ruas": [
+            {
+                "_id": "5",
+                "name": "Rua das Oucias"
+            }
+        ]
+    },
+    {
+        "_id": "271",
+        "nome": "Campo das Hortas",
+        "ruas": [
+            {
+                "_id": "2",
+                "name": "Rua Nova"
+            }
+        ]
+    },
+    {
+        "_id": "272",
+        "nome": "Porta Nova",
+        "ruas": [
+            {
+                "_id": "2",
+                "name": "Rua Nova"
+            }
+        ]
+    },
+    {
+        "_id": "273",
+        "nome": "igreja da Misericórdia",
+        "ruas": [
+            {
+                "_id": "2",
+                "name": "Rua Nova"
+            }
+        ]
+    },
+    {
+        "_id": "274",
+        "nome": "casa brasonada de familiares de D. Jorge da Costa",
+        "ruas": [
+            {
+                "_id": "2",
+                "name": "Rua Nova"
+            }
+        ]
+    },
+    {
+        "_id": "275",
+        "nome": "Pracinha",
+        "ruas": [
+            {
+                "_id": "2",
+                "name": "Rua Nova"
+            },
+            {
+                "_id": "2",
+                "name": "Rua Nova"
+            },
+            {
+                "_id": "2",
+                "name": "Rua Nova"
+            }
+        ]
+    },
+    {
+        "_id": "276",
+        "nome": "praça da Hortalice",
+        "ruas": [
+            {
+                "_id": "2",
+                "name": "Rua Nova"
+            }
+        ]
+    },
+    {
+        "_id": "277",
+        "nome": "praça do Pescado",
+        "ruas": [
+            {
+                "_id": "2",
+                "name": "Rua Nova"
+            }
+        ]
+    },
+    {
+        "_id": "278",
+        "nome": "centro comercial da cidade",
+        "ruas": [
+            {
+                "_id": "2",
+                "name": "Rua Nova"
+            }
+        ]
+    },
+    {
+        "_id": "279",
+        "nome": "rua de D. Diogo de Sousa",
+        "ruas": [
+            {
+                "_id": "2",
+                "name": "Rua Nova"
+            }
+        ]
+    },
+    {
+        "_id": "280",
+        "nome": "praça Velha",
+        "ruas": [
+            {
+                "_id": "2",
+                "name": "Rua Nova"
+            }
+        ]
+    },
+    {
+        "_id": "281",
+        "nome": "rua de S. Miguel o Anjo",
+        "ruas": [
+            {
+                "_id": "27",
+                "name": "Rua Da Cruz De Pedra"
+            },
+            {
+                "_id": "25",
+                "name": "Campo de S. Sebastião e em Frente do Açougue"
+            }
+        ]
+    },
+    {
+        "_id": "282",
+        "nome": "Beco e Direita",
+        "ruas": [
+            {
+                "_id": "27",
+                "name": "Rua Da Cruz De Pedra"
+            }
+        ]
+    },
+    {
+        "_id": "283",
+        "nome": "Igreja de Maximinos",
+        "ruas": [
+            {
+                "_id": "27",
+                "name": "Rua Da Cruz De Pedra"
+            }
+        ]
+    },
+    {
+        "_id": "284",
+        "nome": "largo do Beco",
+        "ruas": [
+            {
+                "_id": "27",
+                "name": "Rua Da Cruz De Pedra"
+            }
+        ]
+    },
+    {
+        "_id": "285",
+        "nome": "Igreja  de S. João de Souto",
+        "ruas": [
+            {
+                "_id": "10",
+                "name": "Travessa da Rua de S. João para a do Forno"
+            }
+        ]
+    },
+    {
+        "_id": "286",
+        "nome": "«Rexio de S. João»",
+        "ruas": [
+            {
+                "_id": "10",
+                "name": "Travessa da Rua de S. João para a do Forno"
+            },
+            {
+                "_id": "10",
+                "name": "Travessa da Rua de S. João para a do Forno"
+            }
+        ]
+    },
+    {
+        "_id": "287",
+        "nome": "Bairro das Travessas",
+        "ruas": [
+            {
+                "_id": "10",
+                "name": "Travessa da Rua de S. João para a do Forno"
+            }
+        ]
+    },
+    {
+        "_id": "288",
+        "nome": "«Travessa para a rua de S. João»",
+        "ruas": [
+            {
+                "_id": "10",
+                "name": "Travessa da Rua de S. João para a do Forno"
+            }
+        ]
+    },
+    {
+        "_id": "289",
+        "nome": "rua da Carrapata",
+        "ruas": [
+            {
+                "_id": "10",
+                "name": "Travessa da Rua de S. João para a do Forno"
+            }
+        ]
+    },
+    {
+        "_id": "290",
+        "nome": "rua de Paio Manta",
+        "ruas": [
+            {
+                "_id": "10",
+                "name": "Travessa da Rua de S. João para a do Forno"
+            }
+        ]
+    },
+    {
+        "_id": "291",
+        "nome": "rua Coelho",
+        "ruas": [
+            {
+                "_id": "10",
+                "name": "Travessa da Rua de S. João para a do Forno"
+            }
+        ]
+    },
+    {
+        "_id": "292",
+        "nome": "rua de «Coelho»",
+        "ruas": [
+            {
+                "_id": "10",
+                "name": "Travessa da Rua de S. João para a do Forno"
+            }
+        ]
+    },
+    {
+        "_id": "293",
+        "nome": "«Travessa para o Rexio  de S. João»",
+        "ruas": [
+            {
+                "_id": "10",
+                "name": "Travessa da Rua de S. João para a do Forno"
+            }
+        ]
+    },
+    {
+        "_id": "294",
+        "nome": "largo de S. João de Souto",
+        "ruas": [
+            {
+                "_id": "10",
+                "name": "Travessa da Rua de S. João para a do Forno"
+            }
+        ]
+    },
+    {
+        "_id": "295",
+        "nome": "Largo de  S. João de Souto",
+        "ruas": [
+            {
+                "_id": "10",
+                "name": "Travessa da Rua de S. João para a do Forno"
+            }
+        ]
+    },
+    {
+        "_id": "296",
         "nome": "muralhas de Braga",
         "ruas": [
             {
@@ -2288,7 +3652,7 @@
         ]
     },
     {
-        "_id": "173",
+        "_id": "297",
         "nome": "Paço dos Arcebispos",
         "ruas": [
             {
@@ -2298,7 +3662,7 @@
         ]
     },
     {
-        "_id": "174",
+        "_id": "298",
         "nome": "porta da muralha",
         "ruas": [
             {
@@ -2308,7 +3672,7 @@
         ]
     },
     {
-        "_id": "175",
+        "_id": "299",
         "nome": "largo do Paço",
         "ruas": [
             {
@@ -2318,7 +3682,7 @@
         ]
     },
     {
-        "_id": "176",
+        "_id": "300",
         "nome": "rua Justino Cruz",
         "ruas": [
             {
@@ -2328,7 +3692,7 @@
         ]
     },
     {
-        "_id": "177",
+        "_id": "301",
         "nome": "Campo da Vinha",
         "ruas": [
             {
@@ -2338,7 +3702,7 @@
         ]
     },
     {
-        "_id": "178",
+        "_id": "302",
         "nome": "rua Francisco Sanches",
         "ruas": [
             {
@@ -2348,7 +3712,7 @@
         ]
     },
     {
-        "_id": "179",
+        "_id": "303",
         "nome": "largo de S. João do Souto",
         "ruas": [
             {
@@ -2358,7 +3722,7 @@
         ]
     },
     {
-        "_id": "180",
+        "_id": "304",
         "nome": "Casa do Passadiço",
         "ruas": [
             {
@@ -2368,7 +3732,7 @@
         ]
     },
     {
-        "_id": "181",
+        "_id": "305",
         "nome": "Porta do Souto",
         "ruas": [
             {
@@ -2376,13 +3740,13 @@
                 "name": " Rua do Souto Porta do Souto "
             },
             {
-                "_id": "47",
-                "name": "Rua de S. Barnabé"
+                "_id": "1",
+                "name": "Rua do Campo"
             }
         ]
     },
     {
-        "_id": "182",
+        "_id": "306",
         "nome": "Largo Barão de S. Martinho",
         "ruas": [
             {
@@ -2392,7 +3756,7 @@
         ]
     },
     {
-        "_id": "183",
+        "_id": "307",
         "nome": "rua dos Janes",
         "ruas": [
             {
@@ -2402,7 +3766,7 @@
         ]
     },
     {
-        "_id": "184",
+        "_id": "308",
         "nome": "arco da Porta do Souto",
         "ruas": [
             {
@@ -2412,193 +3776,7 @@
         ]
     },
     {
-        "_id": "185",
-        "nome": "rua dos Açougues",
-        "ruas": [
-            {
-                "_id": "4",
-                "name": "Praça do Pão"
-            }
-        ]
-    },
-    {
-        "_id": "186",
-        "nome": "D. Gualdim Pais",
-        "ruas": [
-            {
-                "_id": "4",
-                "name": "Praça do Pão"
-            }
-        ]
-    },
-    {
-        "_id": "187",
-        "nome": "Praça do Pão",
-        "ruas": [
-            {
-                "_id": "4",
-                "name": "Praça do Pão"
-            }
-        ]
-    },
-    {
-        "_id": "188",
-        "nome": "D. Diogo de Sousa",
-        "ruas": [
-            {
-                "_id": "4",
-                "name": "Praça do Pão"
-            }
-        ]
-    },
-    {
-        "_id": "189",
-        "nome": "D. Gualdim",
-        "ruas": [
-            {
-                "_id": "4",
-                "name": "Praça do Pão"
-            }
-        ]
-    },
-    {
-        "_id": "190",
-        "nome": "Palácio dos Arcebispos",
-        "ruas": [
-            {
-                "_id": "4",
-                "name": "Praça do Pão"
-            }
-        ]
-    },
-    {
-        "_id": "191",
-        "nome": "rua D. Paio Mendes",
-        "ruas": [
-            {
-                "_id": "4",
-                "name": "Praça do Pão"
-            }
-        ]
-    },
-    {
-        "_id": "192",
-        "nome": "pontilhão das Lages",
-        "ruas": [
-            {
-                "_id": "40",
-                "name": "Rua do Paymanta"
-            }
-        ]
-    },
-    {
-        "_id": "193",
-        "nome": "Pai Amante",
-        "ruas": [
-            {
-                "_id": "40",
-                "name": "Rua do Paymanta"
-            }
-        ]
-    },
-    {
-        "_id": "194",
-        "nome": "Conselheiro Lobato",
-        "ruas": [
-            {
-                "_id": "40",
-                "name": "Rua do Paymanta"
-            }
-        ]
-    },
-    {
-        "_id": "195",
-        "nome": "rua do Cabido",
-        "ruas": [
-            {
-                "_id": "3",
-                "name": "Rua dos Açougues velhos"
-            }
-        ]
-    },
-    {
-        "_id": "196",
-        "nome": "Travessa dos Açougues Velhos",
-        "ruas": [
-            {
-                "_id": "3",
-                "name": "Rua dos Açougues velhos"
-            }
-        ]
-    },
-    {
-        "_id": "197",
-        "nome": "campo Novo",
-        "ruas": [
-            {
-                "_id": "50",
-                "name": "Rua de Nossa Senhora de Guadalupe"
-            },
-            {
-                "_id": "10",
-                "name": "Travessa da Rua de S. João para a do Forno"
-            },
-            {
-                "_id": "49",
-                "name": "Rua de S. Gonçalo"
-            },
-            {
-                "_id": "52",
-                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
-            }
-        ]
-    },
-    {
-        "_id": "198",
-        "nome": "Capela de Guadalupe",
-        "ruas": [
-            {
-                "_id": "50",
-                "name": "Rua de Nossa Senhora de Guadalupe"
-            }
-        ]
-    },
-    {
-        "_id": "199",
-        "nome": "rua de S. Gonçalo",
-        "ruas": [
-            {
-                "_id": "50",
-                "name": "Rua de Nossa Senhora de Guadalupe"
-            }
-        ]
-    },
-    {
-        "_id": "200",
-        "nome": "rua em Frente de Nossa Senhora de Guadalupe",
-        "ruas": [
-            {
-                "_id": "50",
-                "name": "Rua de Nossa Senhora de Guadalupe"
-            }
-        ]
-    },
-    {
-        "_id": "201",
-        "nome": "rua de Guadalupe",
-        "ruas": [
-            {
-                "_id": "50",
-                "name": "Rua de Nossa Senhora de Guadalupe"
-            },
-            {
-                "_id": "52",
-                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
-            }
-        ]
-    },
-    {
-        "_id": "202",
+        "_id": "309",
         "nome": "campo das Hortas",
         "ruas": [
             {
@@ -2616,7 +3794,7 @@
         ]
     },
     {
-        "_id": "203",
+        "_id": "310",
         "nome": "campo de S. Sebastião",
         "ruas": [
             {
@@ -2642,7 +3820,7 @@
         ]
     },
     {
-        "_id": "204",
+        "_id": "311",
         "nome": "Em Frente do Açougue",
         "ruas": [
             {
@@ -2660,7 +3838,7 @@
         ]
     },
     {
-        "_id": "205",
+        "_id": "312",
         "nome": "rua de S.Miguel o Anjo",
         "ruas": [
             {
@@ -2670,7 +3848,7 @@
         ]
     },
     {
-        "_id": "206",
+        "_id": "313",
         "nome": "capela de S. Miguel o Anjo",
         "ruas": [
             {
@@ -2684,21 +3862,7 @@
         ]
     },
     {
-        "_id": "207",
-        "nome": "rua de S. Miguel o Anjo",
-        "ruas": [
-            {
-                "_id": "25",
-                "name": "Campo de S. Sebastião e em Frente do Açougue"
-            },
-            {
-                "_id": "51",
-                "name": "Rua Da Oliveira"
-            }
-        ]
-    },
-    {
-        "_id": "208",
+        "_id": "314",
         "nome": "cruzeiro",
         "ruas": [
             {
@@ -2708,7 +3872,7 @@
         ]
     },
     {
-        "_id": "209",
+        "_id": "315",
         "nome": "avenida de S. Miguel o Anjo",
         "ruas": [
             {
@@ -2718,7 +3882,7 @@
         ]
     },
     {
-        "_id": "210",
+        "_id": "316",
         "nome": "campo de  S. Sebastião",
         "ruas": [
             {
@@ -2728,21 +3892,7 @@
         ]
     },
     {
-        "_id": "211",
-        "nome": "campo das Carvalheiras",
-        "ruas": [
-            {
-                "_id": "25",
-                "name": "Campo de S. Sebastião e em Frente do Açougue"
-            },
-            {
-                "_id": "35",
-                "name": "Rua de S. Marcos"
-            }
-        ]
-    },
-    {
-        "_id": "212",
+        "_id": "317",
         "nome": "rua do Matadouro Velho",
         "ruas": [
             {
@@ -2752,397 +3902,7 @@
         ]
     },
     {
-        "_id": "213",
-        "nome": "velho bairro medieval",
-        "ruas": [
-            {
-                "_id": "12",
-                "name": "Travessa Da Rua Do Forno Para A Do Poco"
-            }
-        ]
-    },
-    {
-        "_id": "214",
-        "nome": "velha rua romana",
-        "ruas": [
-            {
-                "_id": "12",
-                "name": "Travessa Da Rua Do Forno Para A Do Poco"
-            }
-        ]
-    },
-    {
-        "_id": "215",
-        "nome": "rua D. Afonso Henriques",
-        "ruas": [
-            {
-                "_id": "12",
-                "name": "Travessa Da Rua Do Forno Para A Do Poco"
-            },
-            {
-                "_id": "21",
-                "name": "Rua Verde"
-            },
-            {
-                "_id": "10",
-                "name": "Travessa da Rua de S. João para a do Forno"
-            },
-            {
-                "_id": "17",
-                "name": "Travessa da Rua de D.Gualdim até ao Couto do Arvoredo"
-            },
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            }
-        ]
-    },
-    {
-        "_id": "216",
-        "nome": "Triparia",
-        "ruas": [
-            {
-                "_id": "18",
-                "name": "Rua das Chagas"
-            }
-        ]
-    },
-    {
-        "_id": "217",
-        "nome": "rua das Chagas",
-        "ruas": [
-            {
-                "_id": "18",
-                "name": "Rua das Chagas"
-            }
-        ]
-    },
-    {
-        "_id": "218",
-        "nome": "rua D. Frei Caetano Brandão",
-        "ruas": [
-            {
-                "_id": "18",
-                "name": "Rua das Chagas"
-            },
-            {
-                "_id": "23",
-                "name": "Rua dos Sapateiros e Rossio da Praça"
-            }
-        ]
-    },
-    {
-        "_id": "219",
-        "nome": "Rua de Maximinos",
-        "ruas": [
-            {
-                "_id": "24",
-                "name": "Rua da Vielinha"
-            }
-        ]
-    },
-    {
-        "_id": "220",
-        "nome": "rexio da Praça",
-        "ruas": [
-            {
-                "_id": "24",
-                "name": "Rua da Vielinha"
-            }
-        ]
-    },
-    {
-        "_id": "221",
-        "nome": "postigo de S. Sebastião",
-        "ruas": [
-            {
-                "_id": "21",
-                "name": "Rua Verde"
-            }
-        ]
-    },
-    {
-        "_id": "222",
-        "nome": "Porta de S. Francisco",
-        "ruas": [
-            {
-                "_id": "21",
-                "name": "Rua Verde"
-            },
-            {
-                "_id": "37",
-                "name": "Rua de S. Lázaro"
-            }
-        ]
-    },
-    {
-        "_id": "223",
-        "nome": "ruas dos Sapateiros e do Campo",
-        "ruas": [
-            {
-                "_id": "21",
-                "name": "Rua Verde"
-            }
-        ]
-    },
-    {
-        "_id": "224",
-        "nome": "capela de S. Sebastião",
-        "ruas": [
-            {
-                "_id": "21",
-                "name": "Rua Verde"
-            }
-        ]
-    },
-    {
-        "_id": "225",
-        "nome": "campo de S. Miguel o Anjo",
-        "ruas": [
-            {
-                "_id": "21",
-                "name": "Rua Verde"
-            }
-        ]
-    },
-    {
-        "_id": "226",
-        "nome": "Couto do Arvoredo",
-        "ruas": [
-            {
-                "_id": "21",
-                "name": "Rua Verde"
-            },
-            {
-                "_id": "21",
-                "name": "Rua Verde"
-            },
-            {
-                "_id": "35",
-                "name": "Rua de S. Marcos"
-            }
-        ]
-    },
-    {
-        "_id": "227",
-        "nome": "rua Verde",
-        "ruas": [
-            {
-                "_id": "21",
-                "name": "Rua Verde"
-            },
-            {
-                "_id": "35",
-                "name": "Rua de S. Marcos"
-            },
-            {
-                "_id": "54",
-                "name": "Rua das Palhotas"
-            }
-        ]
-    },
-    {
-        "_id": "228",
-        "nome": "ruas D. Gonçalo Pereira e D. Gualdim Pais",
-        "ruas": [
-            {
-                "_id": "15",
-                "name": "Travessa da Rua do Poço para a de D.Gualdim"
-            }
-        ]
-    },
-    {
-        "_id": "229",
-        "nome": "fonte de S. Geraldo",
-        "ruas": [
-            {
-                "_id": "5",
-                "name": "Rua das Oucias"
-            }
-        ]
-    },
-    {
-        "_id": "230",
-        "nome": "Capela da Glória",
-        "ruas": [
-            {
-                "_id": "5",
-                "name": "Rua das Oucias"
-            }
-        ]
-    },
-    {
-        "_id": "231",
-        "nome": "casa do Conselho Municipal",
-        "ruas": [
-            {
-                "_id": "5",
-                "name": "Rua das Oucias"
-            }
-        ]
-    },
-    {
-        "_id": "232",
-        "nome": "Porta de S. João",
-        "ruas": [
-            {
-                "_id": "5",
-                "name": "Rua das Oucias"
-            },
-            {
-                "_id": "10",
-                "name": "Travessa da Rua de S. João para a do Forno"
-            }
-        ]
-    },
-    {
-        "_id": "233",
-        "nome": "lado Sul da Sé, entre o braço do transepto e a fachada",
-        "ruas": [
-            {
-                "_id": "5",
-                "name": "Rua das Oucias"
-            }
-        ]
-    },
-    {
-        "_id": "234",
-        "nome": "Rocio da Sé",
-        "ruas": [
-            {
-                "_id": "5",
-                "name": "Rua das Oucias"
-            },
-            {
-                "_id": "5",
-                "name": "Rua das Oucias"
-            }
-        ]
-    },
-    {
-        "_id": "235",
-        "nome": "edifício do Tribunal do Trabalho/Delegação Escolar",
-        "ruas": [
-            {
-                "_id": "5",
-                "name": "Rua das Oucias"
-            }
-        ]
-    },
-    {
-        "_id": "236",
-        "nome": "Residência Académica",
-        "ruas": [
-            {
-                "_id": "5",
-                "name": "Rua das Oucias"
-            }
-        ]
-    },
-    {
-        "_id": "237",
-        "nome": "rua de Nossa Senhora do Leite",
-        "ruas": [
-            {
-                "_id": "5",
-                "name": "Rua das Oucias"
-            }
-        ]
-    },
-    {
-        "_id": "238",
-        "nome": "escola coimbrã",
-        "ruas": [
-            {
-                "_id": "5",
-                "name": "Rua das Oucias"
-            }
-        ]
-    },
-    {
-        "_id": "239",
-        "nome": "rua dos Chãos de Cima",
-        "ruas": [
-            {
-                "_id": "56",
-                "name": "Cangosta da Escoura"
-            },
-            {
-                "_id": "49",
-                "name": "Rua de S. Gonçalo"
-            }
-        ]
-    },
-    {
-        "_id": "240",
-        "nome": "rua Gabriel Pereira de Castro",
-        "ruas": [
-            {
-                "_id": "56",
-                "name": "Cangosta da Escoura"
-            }
-        ]
-    },
-    {
-        "_id": "241",
-        "nome": "Guimarães",
-        "ruas": [
-            {
-                "_id": "37",
-                "name": "Rua de S. Lázaro"
-            }
-        ]
-    },
-    {
-        "_id": "242",
-        "nome": "terreiro de S. Lázaro",
-        "ruas": [
-            {
-                "_id": "37",
-                "name": "Rua de S. Lázaro"
-            }
-        ]
-    },
-    {
-        "_id": "243",
-        "nome": "rua de S. Lázaro",
-        "ruas": [
-            {
-                "_id": "37",
-                "name": "Rua de S. Lázaro"
-            },
-            {
-                "_id": "38",
-                "name": "Rua da Ponte de Guimarães"
-            }
-        ]
-    },
-    {
-        "_id": "244",
-        "nome": "largo do Rechicho",
-        "ruas": [
-            {
-                "_id": "37",
-                "name": "Rua de S. Lázaro"
-            }
-        ]
-    },
-    {
-        "_id": "245",
-        "nome": "rua 25 de Abril",
-        "ruas": [
-            {
-                "_id": "37",
-                "name": "Rua de S. Lázaro"
-            },
-            {
-                "_id": "38",
-                "name": "Rua da Ponte de Guimarães"
-            }
-        ]
-    },
-    {
-        "_id": "246",
+        "_id": "318",
         "nome": "porta de S. Francisco",
         "ruas": [
             {
@@ -3152,7 +3912,7 @@
         ]
     },
     {
-        "_id": "247",
+        "_id": "319",
         "nome": "edificio da Camara Municipal",
         "ruas": [
             {
@@ -3162,7 +3922,7 @@
         ]
     },
     {
-        "_id": "248",
+        "_id": "320",
         "nome": "Prado",
         "ruas": [
             {
@@ -3172,7 +3932,7 @@
         ]
     },
     {
-        "_id": "249",
+        "_id": "321",
         "nome": "Ponte de Lima",
         "ruas": [
             {
@@ -3182,7 +3942,7 @@
         ]
     },
     {
-        "_id": "250",
+        "_id": "322",
         "nome": "Valença",
         "ruas": [
             {
@@ -3192,7 +3952,7 @@
         ]
     },
     {
-        "_id": "251",
+        "_id": "323",
         "nome": "rua da Conega",
         "ruas": [
             {
@@ -3202,7 +3962,7 @@
         ]
     },
     {
-        "_id": "252",
+        "_id": "324",
         "nome": "Campo",
         "ruas": [
             {
@@ -3212,7 +3972,7 @@
         ]
     },
     {
-        "_id": "253",
+        "_id": "325",
         "nome": "primeiro quartel",
         "ruas": [
             {
@@ -3222,7 +3982,7 @@
         ]
     },
     {
-        "_id": "254",
+        "_id": "326",
         "nome": "campo da Vinha",
         "ruas": [
             {
@@ -3232,7 +3992,7 @@
         ]
     },
     {
-        "_id": "255",
+        "_id": "327",
         "nome": "rua do Campo",
         "ruas": [
             {
@@ -3242,7 +4002,7 @@
         ]
     },
     {
-        "_id": "256",
+        "_id": "328",
         "nome": "rua D. Frei Caetano Brandao",
         "ruas": [
             {
@@ -3252,7 +4012,7 @@
         ]
     },
     {
-        "_id": "257",
+        "_id": "329",
         "nome": "rua D. Diogo de Sousa",
         "ruas": [
             {
@@ -3262,7 +4022,7 @@
         ]
     },
     {
-        "_id": "258",
+        "_id": "330",
         "nome": "largo Conselheiro Torres e Almeida",
         "ruas": [
             {
@@ -3272,201 +4032,7 @@
         ]
     },
     {
-        "_id": "259",
-        "nome": "Braga-Lugo",
-        "ruas": [
-            {
-                "_id": "58",
-                "name": "Rua da Cónega"
-            }
-        ]
-    },
-    {
-        "_id": "260",
-        "nome": "Nova da Cónega",
-        "ruas": [
-            {
-                "_id": "58",
-                "name": "Rua da Cónega"
-            }
-        ]
-    },
-    {
-        "_id": "261",
-        "nome": "Cónega",
-        "ruas": [
-            {
-                "_id": "58",
-                "name": "Rua da Cónega"
-            }
-        ]
-    },
-    {
-        "_id": "262",
-        "nome": "Boavista",
-        "ruas": [
-            {
-                "_id": "58",
-                "name": "Rua da Cónega"
-            }
-        ]
-    },
-    {
-        "_id": "263",
-        "nome": "Igreja  de S. João de Souto",
-        "ruas": [
-            {
-                "_id": "10",
-                "name": "Travessa da Rua de S. João para a do Forno"
-            }
-        ]
-    },
-    {
-        "_id": "264",
-        "nome": "«Rexio de S. João»",
-        "ruas": [
-            {
-                "_id": "10",
-                "name": "Travessa da Rua de S. João para a do Forno"
-            },
-            {
-                "_id": "10",
-                "name": "Travessa da Rua de S. João para a do Forno"
-            }
-        ]
-    },
-    {
-        "_id": "265",
-        "nome": "Bairro das Travessas",
-        "ruas": [
-            {
-                "_id": "10",
-                "name": "Travessa da Rua de S. João para a do Forno"
-            }
-        ]
-    },
-    {
-        "_id": "266",
-        "nome": "«Travessa para a rua de S. João»",
-        "ruas": [
-            {
-                "_id": "10",
-                "name": "Travessa da Rua de S. João para a do Forno"
-            }
-        ]
-    },
-    {
-        "_id": "267",
-        "nome": "rua da Carrapata",
-        "ruas": [
-            {
-                "_id": "10",
-                "name": "Travessa da Rua de S. João para a do Forno"
-            }
-        ]
-    },
-    {
-        "_id": "268",
-        "nome": "rua de Paio Manta",
-        "ruas": [
-            {
-                "_id": "10",
-                "name": "Travessa da Rua de S. João para a do Forno"
-            }
-        ]
-    },
-    {
-        "_id": "269",
-        "nome": "rua Coelho",
-        "ruas": [
-            {
-                "_id": "10",
-                "name": "Travessa da Rua de S. João para a do Forno"
-            }
-        ]
-    },
-    {
-        "_id": "270",
-        "nome": "rua de «Coelho»",
-        "ruas": [
-            {
-                "_id": "10",
-                "name": "Travessa da Rua de S. João para a do Forno"
-            }
-        ]
-    },
-    {
-        "_id": "271",
-        "nome": "«Travessa para o Rexio  de S. João»",
-        "ruas": [
-            {
-                "_id": "10",
-                "name": "Travessa da Rua de S. João para a do Forno"
-            }
-        ]
-    },
-    {
-        "_id": "272",
-        "nome": "largo de S. João de Souto",
-        "ruas": [
-            {
-                "_id": "10",
-                "name": "Travessa da Rua de S. João para a do Forno"
-            }
-        ]
-    },
-    {
-        "_id": "273",
-        "nome": "Largo de  S. João de Souto",
-        "ruas": [
-            {
-                "_id": "10",
-                "name": "Travessa da Rua de S. João para a do Forno"
-            }
-        ]
-    },
-    {
-        "_id": "274",
-        "nome": "Recolhimento das Convertidas",
-        "ruas": [
-            {
-                "_id": "49",
-                "name": "Rua de S. Gonçalo"
-            }
-        ]
-    },
-    {
-        "_id": "275",
-        "nome": "Mosteiro de Vilar de Frades",
-        "ruas": [
-            {
-                "_id": "49",
-                "name": "Rua de S. Gonçalo"
-            }
-        ]
-    },
-    {
-        "_id": "276",
-        "nome": "rua de S. Gonçalo.",
-        "ruas": [
-            {
-                "_id": "49",
-                "name": "Rua de S. Gonçalo"
-            }
-        ]
-    },
-    {
-        "_id": "277",
-        "nome": "S. Barnabé",
-        "ruas": [
-            {
-                "_id": "47",
-                "name": "Rua de S. Barnabé"
-            }
-        ]
-    },
-    {
-        "_id": "278",
+        "_id": "331",
         "nome": "rua dos Granjinhos",
         "ruas": [
             {
@@ -3476,7 +4042,7 @@
         ]
     },
     {
-        "_id": "279",
+        "_id": "332",
         "nome": "Granjinhos",
         "ruas": [
             {
@@ -3486,363 +4052,67 @@
         ]
     },
     {
-        "_id": "280",
-        "nome": "S.Miguel o Anjo",
+        "_id": "333",
+        "nome": "rua Em Frente dos Açogues",
         "ruas": [
             {
-                "_id": "17",
-                "name": "Travessa da Rua de D.Gualdim até ao Couto do Arvoredo"
+                "_id": "26",
+                "name": "Rua de S.Miguel O Anjo"
             }
         ]
     },
     {
-        "_id": "281",
-        "nome": "rua de D. Gualdim",
+        "_id": "334",
+        "nome": "rua de Cruz de Pedra",
         "ruas": [
             {
-                "_id": "17",
-                "name": "Travessa da Rua de D.Gualdim até ao Couto do Arvoredo"
-            },
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            },
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
+                "_id": "26",
+                "name": "Rua de S.Miguel O Anjo"
             }
         ]
     },
     {
-        "_id": "282",
-        "nome": "Palha",
+        "_id": "335",
+        "nome": "capela de S.Miguel o Anjo",
         "ruas": [
             {
-                "_id": "60",
-                "name": "Cangosta da Rua das Águas"
+                "_id": "26",
+                "name": "Rua de S.Miguel O Anjo"
             }
         ]
     },
     {
-        "_id": "283",
-        "nome": "(o Rechicho)",
+        "_id": "336",
+        "nome": "rua Visconde Pindela",
         "ruas": [
             {
-                "_id": "60",
-                "name": "Cangosta da Rua das Águas"
+                "_id": "26",
+                "name": "Rua de S.Miguel O Anjo"
             }
         ]
     },
     {
-        "_id": "284",
-        "nome": "rua do Raio e largo João Penha (ou do Rechicho).",
+        "_id": "337",
+        "nome": "campo da Vinha com o campo das Hortas",
         "ruas": [
             {
-                "_id": "60",
-                "name": "Cangosta da Rua das Águas"
+                "_id": "59",
+                "name": "Rua dos Biscaínhos"
             }
         ]
     },
     {
-        "_id": "285",
-        "nome": "Cangosta de Guadalupe",
+        "_id": "338",
+        "nome": "rua dos Biscaínhos",
         "ruas": [
             {
-                "_id": "52",
-                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
+                "_id": "59",
+                "name": "Rua dos Biscaínhos"
             }
         ]
     },
     {
-        "_id": "286",
-        "nome": "rua de Nossa Senhora de Guadalupe",
-        "ruas": [
-            {
-                "_id": "52",
-                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
-            }
-        ]
-    },
-    {
-        "_id": "287",
-        "nome": "igreja de S. Vicente",
-        "ruas": [
-            {
-                "_id": "52",
-                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
-            },
-            {
-                "_id": "51",
-                "name": "Rua Da Oliveira"
-            }
-        ]
-    },
-    {
-        "_id": "288",
-        "nome": "capela de Guadalupe",
-        "ruas": [
-            {
-                "_id": "52",
-                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
-            },
-            {
-                "_id": "51",
-                "name": "Rua Da Oliveira"
-            }
-        ]
-    },
-    {
-        "_id": "289",
-        "nome": "Rua de arrabalde",
-        "ruas": [
-            {
-                "_id": "52",
-                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
-            }
-        ]
-    },
-    {
-        "_id": "290",
-        "nome": "monte de Santa Margarida",
-        "ruas": [
-            {
-                "_id": "52",
-                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
-            }
-        ]
-    },
-    {
-        "_id": "291",
-        "nome": "convento e capela das Teresinhas",
-        "ruas": [
-            {
-                "_id": "52",
-                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
-            }
-        ]
-    },
-    {
-        "_id": "292",
-        "nome": "rua de Camões",
-        "ruas": [
-            {
-                "_id": "52",
-                "name": "Rua em Frente de Nossa Senhora de Guadalupe"
-            }
-        ]
-    },
-    {
-        "_id": "293",
-        "nome": "largo das Teresinhas",
-        "ruas": [
-            {
-                "_id": "51",
-                "name": "Rua Da Oliveira"
-            }
-        ]
-    },
-    {
-        "_id": "294",
-        "nome": "Cangosta",
-        "ruas": [
-            {
-                "_id": "51",
-                "name": "Rua Da Oliveira"
-            }
-        ]
-    },
-    {
-        "_id": "295",
-        "nome": "rua de Santa Margarida",
-        "ruas": [
-            {
-                "_id": "51",
-                "name": "Rua Da Oliveira"
-            },
-            {
-                "_id": "48",
-                "name": "Praça do Gavião"
-            },
-            {
-                "_id": "42",
-                "name": "Campo e Calçada de Nossa Senhora a Branca"
-            }
-        ]
-    },
-    {
-        "_id": "296",
-        "nome": "rua das Oliveiras",
-        "ruas": [
-            {
-                "_id": "51",
-                "name": "Rua Da Oliveira"
-            }
-        ]
-    },
-    {
-        "_id": "297",
-        "nome": "Beco e Direita",
-        "ruas": [
-            {
-                "_id": "27",
-                "name": "Rua Da Cruz De Pedra"
-            }
-        ]
-    },
-    {
-        "_id": "298",
-        "nome": "Igreja de Maximinos",
-        "ruas": [
-            {
-                "_id": "27",
-                "name": "Rua Da Cruz De Pedra"
-            }
-        ]
-    },
-    {
-        "_id": "299",
-        "nome": "largo do Beco",
-        "ruas": [
-            {
-                "_id": "27",
-                "name": "Rua Da Cruz De Pedra"
-            }
-        ]
-    },
-    {
-        "_id": "300",
-        "nome": "Alto Minho",
-        "ruas": [
-            {
-                "_id": "54",
-                "name": "Rua das Palhotas"
-            },
-            {
-                "_id": "54",
-                "name": "Rua das Palhotas"
-            }
-        ]
-    },
-    {
-        "_id": "301",
-        "nome": "rua Nova do Bico",
-        "ruas": [
-            {
-                "_id": "54",
-                "name": "Rua das Palhotas"
-            }
-        ]
-    },
-    {
-        "_id": "302",
-        "nome": "Geira",
-        "ruas": [
-            {
-                "_id": "54",
-                "name": "Rua das Palhotas"
-            }
-        ]
-    },
-    {
-        "_id": "303",
-        "nome": "Gerês",
-        "ruas": [
-            {
-                "_id": "54",
-                "name": "Rua das Palhotas"
-            }
-        ]
-    },
-    {
-        "_id": "304",
-        "nome": "Astorga",
-        "ruas": [
-            {
-                "_id": "54",
-                "name": "Rua das Palhotas"
-            }
-        ]
-    },
-    {
-        "_id": "305",
-        "nome": "Palmeira",
-        "ruas": [
-            {
-                "_id": "54",
-                "name": "Rua das Palhotas"
-            }
-        ]
-    },
-    {
-        "_id": "306",
-        "nome": "Pico de Regalados",
-        "ruas": [
-            {
-                "_id": "54",
-                "name": "Rua das Palhotas"
-            }
-        ]
-    },
-    {
-        "_id": "307",
-        "nome": "Infias",
-        "ruas": [
-            {
-                "_id": "54",
-                "name": "Rua das Palhotas"
-            }
-        ]
-    },
-    {
-        "_id": "308",
-        "nome": "Nova do Bico",
-        "ruas": [
-            {
-                "_id": "54",
-                "name": "Rua das Palhotas"
-            }
-        ]
-    },
-    {
-        "_id": "309",
-        "nome": "rua de  Maximinos",
-        "ruas": [
-            {
-                "_id": "23",
-                "name": "Rua dos Sapateiros e Rossio da Praça"
-            }
-        ]
-    },
-    {
-        "_id": "310",
-        "nome": "Rossio da Praça",
-        "ruas": [
-            {
-                "_id": "23",
-                "name": "Rua dos Sapateiros e Rossio da Praça"
-            },
-            {
-                "_id": "23",
-                "name": "Rua dos Sapateiros e Rossio da Praça"
-            },
-            {
-                "_id": "23",
-                "name": "Rua dos Sapateiros e Rossio da Praça"
-            }
-        ]
-    },
-    {
-        "_id": "311",
-        "nome": "rua dos Sapateiros",
-        "ruas": [
-            {
-                "_id": "23",
-                "name": "Rua dos Sapateiros e Rossio da Praça"
-            }
-        ]
-    },
-    {
-        "_id": "312",
+        "_id": "339",
         "nome": "rua Cruz de Pedra",
         "ruas": [
             {
@@ -3852,7 +4122,7 @@
         ]
     },
     {
-        "_id": "313",
+        "_id": "340",
         "nome": "Monte das Penas",
         "ruas": [
             {
@@ -3866,7 +4136,7 @@
         ]
     },
     {
-        "_id": "314",
+        "_id": "341",
         "nome": "largo de Maximinos",
         "ruas": [
             {
@@ -3876,7 +4146,7 @@
         ]
     },
     {
-        "_id": "315",
+        "_id": "342",
         "nome": "praça do Condestável",
         "ruas": [
             {
@@ -3886,227 +4156,7 @@
         ]
     },
     {
-        "_id": "316",
-        "nome": "largo do Eyrado",
-        "ruas": [
-            {
-                "_id": "45",
-                "name": "Rua dos Chãos de Baixo"
-            }
-        ]
-    },
-    {
-        "_id": "317",
-        "nome": "rua dos Chaos de Baixo",
-        "ruas": [
-            {
-                "_id": "45",
-                "name": "Rua dos Chãos de Baixo"
-            }
-        ]
-    },
-    {
-        "_id": "318",
-        "nome": "Rua dos Chãos",
-        "ruas": [
-            {
-                "_id": "45",
-                "name": "Rua dos Chãos de Baixo"
-            }
-        ]
-    },
-    {
-        "_id": "319",
-        "nome": "Eyrado",
-        "ruas": [
-            {
-                "_id": "45",
-                "name": "Rua dos Chãos de Baixo"
-            }
-        ]
-    },
-    {
-        "_id": "320",
-        "nome": "largo de S. Francisco",
-        "ruas": [
-            {
-                "_id": "45",
-                "name": "Rua dos Chãos de Baixo"
-            }
-        ]
-    },
-    {
-        "_id": "321",
-        "nome": "praça Mouzinho de Albuquerque",
-        "ruas": [
-            {
-                "_id": "48",
-                "name": "Praça do Gavião"
-            }
-        ]
-    },
-    {
-        "_id": "322",
-        "nome": "rua do Sardoal",
-        "ruas": [
-            {
-                "_id": "42",
-                "name": "Campo e Calçada de Nossa Senhora a Branca"
-            }
-        ]
-    },
-    {
-        "_id": "323",
-        "nome": "ruas de Restauração e 31 de Janeiro",
-        "ruas": [
-            {
-                "_id": "42",
-                "name": "Campo e Calçada de Nossa Senhora a Branca"
-            }
-        ]
-    },
-    {
-        "_id": "324",
-        "nome": "Terreiro de Sto. António",
-        "ruas": [
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            }
-        ]
-    },
-    {
-        "_id": "325",
-        "nome": "bairro das Travessas",
-        "ruas": [
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            }
-        ]
-    },
-    {
-        "_id": "326",
-        "nome": "Arquivo da Câmara Municipal de Braga",
-        "ruas": [
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            }
-        ]
-    },
-    {
-        "_id": "327",
-        "nome": "rua de D. Gualdím",
-        "ruas": [
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            }
-        ]
-    },
-    {
-        "_id": "328",
-        "nome": "cidade medieval",
-        "ruas": [
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            }
-        ]
-    },
-    {
-        "_id": "329",
-        "nome": "a Igreja de Santiago",
-        "ruas": [
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            }
-        ]
-    },
-    {
-        "_id": "330",
-        "nome": "Igreja da Cividade",
-        "ruas": [
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            }
-        ]
-    },
-    {
-        "_id": "331",
-        "nome": "palácio",
-        "ruas": [
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            }
-        ]
-    },
-    {
-        "_id": "332",
-        "nome": "rua dos Burgueses",
-        "ruas": [
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            }
-        ]
-    },
-    {
-        "_id": "333",
-        "nome": "Souto",
-        "ruas": [
-            {
-                "_id": "16",
-                "name": "Rua de D. Gualdim"
-            }
-        ]
-    },
-    {
-        "_id": "334",
-        "nome": "rua Em Frente dos Açogues",
-        "ruas": [
-            {
-                "_id": "26",
-                "name": "Rua de S.Miguel O Anjo"
-            }
-        ]
-    },
-    {
-        "_id": "335",
-        "nome": "rua de Cruz de Pedra",
-        "ruas": [
-            {
-                "_id": "26",
-                "name": "Rua de S.Miguel O Anjo"
-            }
-        ]
-    },
-    {
-        "_id": "336",
-        "nome": "capela de S.Miguel o Anjo",
-        "ruas": [
-            {
-                "_id": "26",
-                "name": "Rua de S.Miguel O Anjo"
-            }
-        ]
-    },
-    {
-        "_id": "337",
-        "nome": "rua Visconde Pindela",
-        "ruas": [
-            {
-                "_id": "26",
-                "name": "Rua de S.Miguel O Anjo"
-            }
-        ]
-    },
-    {
-        "_id": "338",
+        "_id": "343",
         "nome": "Terreiro de Santo António",
         "ruas": [
             {
@@ -4116,62 +4166,12 @@
         ]
     },
     {
-        "_id": "339",
+        "_id": "344",
         "nome": "Judiaria Nova",
         "ruas": [
             {
                 "_id": "19",
                 "name": "Rua de Sto. António"
-            }
-        ]
-    },
-    {
-        "_id": "340",
-        "nome": "Ágoas",
-        "ruas": [
-            {
-                "_id": "38",
-                "name": "Rua da Ponte de Guimarães"
-            }
-        ]
-    },
-    {
-        "_id": "341",
-        "nome": "rua da Ponte",
-        "ruas": [
-            {
-                "_id": "38",
-                "name": "Rua da Ponte de Guimarães"
-            }
-        ]
-    },
-    {
-        "_id": "342",
-        "nome": "capela de S. Lázaro",
-        "ruas": [
-            {
-                "_id": "38",
-                "name": "Rua da Ponte de Guimarães"
-            }
-        ]
-    },
-    {
-        "_id": "343",
-        "nome": "troço da avenida da Liberdade",
-        "ruas": [
-            {
-                "_id": "38",
-                "name": "Rua da Ponte de Guimarães"
-            }
-        ]
-    },
-    {
-        "_id": "344",
-        "nome": "largo das Latinhas ou do Senhor dos Aflitos",
-        "ruas": [
-            {
-                "_id": "38",
-                "name": "Rua da Ponte de Guimarães"
             }
         ]
     }

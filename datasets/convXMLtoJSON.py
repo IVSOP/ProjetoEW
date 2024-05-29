@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+
+# python3 convert.py MapaRuas-materialBase/texto/ MapaRuas-materialBase/atual/
+
 import json
 import re as regex
 from sys import argv
