@@ -155,7 +155,7 @@ def calc_ids(filesJSON, target_field: str) -> dict:
         for item in file.get(target_field,[]):
             if item not in id_dict:
                 rua_data = {"_id": file["_id"], "name": file["name"]} # mais tarde meter isto só com id, e fazer query dos nomes das respetivas ruas, mas para já é facil assim para mostrar no UI
-                id_dict[item] = {"_id": str(idCounter), "nome": item, "ruas": [rua_data]} 
+                id_dict[item] = {"_id": str(idCounter), "name": item, "ruas": [rua_data]} 
                 idCounter = idCounter + 1
             else:
                 id_dict[item]["ruas"].append(rua_data)
