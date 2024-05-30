@@ -47,16 +47,16 @@ block content
                 span.carousel-control-next-icon(aria-hidden="true")
                 span.visually-hidden Next
 
-        // edit button
-        .button.btn.btn-secondary.btn-lg.btn-block.mt-3
+        p.d-inline-flex.gap-3.mt-3
+            a.button.btn.btn-secondary.btn-lg.btn-block.w-100(href='/ruas', style="text-decoration: none;") 
+                | Voltar
+            a.button.btn.btn-success.btn-lg.btn-block.w-100(href='/ruas/editar/' + rua['_id'] , style="text-decoration: none;")
                 | Editar
-
-        // delete button
-        .button.btn.btn-danger.btn-lg.btn-block.mt-3
+            a.button.btn.btn-danger.btn-lg.btn-block.w-100(href='/ruas/eliminar/' + rua['_id'] , style="text-decoration: none;")
                 | Eliminar
 
         // collapsing buttons for locals, entities and dates
-        p.d-inline-flex.gap-3.mt-3
+        p.d-inline-flex.gap-3
             button.btn.btn-secondary.btn-lg.btn-block.w-100(data-bs-toggle='collapse', href='#collapsePlaces', role='button', aria-expanded='false', aria-controls='collapsePlaces')
                 | Lugares Referidos
             button.btn.btn-secondary.btn-lg.btn-block.w-100(data-bs-toggle='collapse', href='#collapseEntities', role='button', aria-expanded='false', aria-controls='collapseEntities')
@@ -66,7 +66,7 @@ block content
         
         // list of locals
         .collapse#collapsePlaces
-            .card.card-body
+            .card.card-body.mb-3
                 .row
                     for lugar, index in lugares
                         if index > 0 && index % 4 == 0 
@@ -75,7 +75,7 @@ block content
 
         // list of entities
         .collapse#collapseEntities
-            .card.card-body
+            .card.card-body.mb-3
                 .row
                     for entidade, index in entidades
                         if index > 0 && index % 4 == 0 
@@ -84,7 +84,7 @@ block content
         
         // list of dates
         .collapse#collapseDates
-            .card.card-body
+            .card.card-body.mb-3
                 .row
                     for data, index in datas
                         if index > 0 && index % 4 == 0 
@@ -92,7 +92,7 @@ block content
                         .col.text-left= data.name 
 
         // street description
-        .card.card-body.mt-3(style="text-align: justify;")
+        .card.card-body(style="text-align: justify;")
             for paragraph in rua.description
                 p.m-1= paragraph
 
@@ -116,11 +116,10 @@ block content
 
         .card.card-body.mb-3
             
-            // comment text-area
-            .form.d-flex.justify-content-between.flex-row.mb-3
+            form.form.d-flex.justify-content-between.flex-row.mb-3(method="post" action="/ruas/comentario/" + rua['_id'])
                 div.mr-3.form-group(style="width: 84%")
-                        textarea#commentContent.form-control(rows="2", placeholder="Inserir comentário")
-                button.btn.btn-secondary.btn-lg.btn-block(style="width: 15%", type="submit")
+                        textarea#commentContent.form-control(rows="3", placeholder="Inserir comentário")
+                button.btn.btn-success.btn-lg.btn-block(style="width: 15%", type="submit")
                         | Submeter
 
             // user and comment
