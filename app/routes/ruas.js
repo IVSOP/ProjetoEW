@@ -14,6 +14,11 @@ router.get('/', function(req, res, next){
 });
 
 
+router.get('/registar', function(req, res, next){
+    res.render('streetForm', {title: 'Registar - Rua'})
+})
+
+
 router.get('/:id', function(req, res, next){
     axios.get('http://localhost:3000/ruas/' + req.params.id)
         .then(async response => {

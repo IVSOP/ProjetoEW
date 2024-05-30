@@ -1,0 +1,51 @@
+extends layout
+
+block content
+
+    .container.d-flex.justify-content-end.flex-column.mt-3
+
+        form(method="post")
+            .card.mb-3
+                h5.card-header.fw-bold Informações
+                .card-body
+                    input.form-control(type='text', name='nome', placeholder='Nome', required)
+                    textarea.form-control.mt-3(rows="3", name="descricao", placeholder="Inserir descrição", required)
+
+            .card.mt-3.mb-3
+                .card-header.d-flex.justify-content-between
+                    h5.fw-bold.align-items-center.mb-0 Casas
+                    img#addHouse(src="/icons/plus-circle-fill.svg", type="button")
+                .card-body#housesContainer
+                    .card.mb-0.w-100.p-3.border-dark#house1
+                        .row.g-3
+                            .col
+                                input.form-control(type='text', name='enfiteuta1', placeholder='Enfiteuta', required)
+                            .col
+                                input.form-control(type='text', name='subst1', placeholder='Pagamento', required)
+                            .col
+                                input.form-control(type='text', name='vista1', placeholder='Vista', required)
+                            .col
+                                button.btn.btn-danger.w-100.deleteHouse(data-field-id="house1") Eliminar
+                        textarea.form-control.mt-3(rows="3", name="descricao1", placeholder="Inserir descrição", required)
+
+            .card.mt-3.mb-3
+                .card-header.d-flex.justify-content-between
+                    h5.fw-bold.align-items-center.mb-0 Imagens Antigas
+                    img#addOldImage(src="/icons/plus-circle-fill.svg", type="button")
+                .card-body#oldImagesContainer
+                    .row.g-3#oldImage1
+                        .col
+                            input.form-control(type='text', name='oldImageSubst1', placeholder='Referência', required)
+                        .col
+                            input.form-control(type="file", name="oldImageFile1", required)
+                        .col
+                            button.btn.btn-danger.w-100.deleteOldImage(data-field-id="oldImage1") Eliminar
+
+            .card.mt-3.mb-3
+                h5.card-header.fw-bold Imagens Novas
+                .card-body
+                    input.form-control(type="file", id="newImageFiles", multiple, required)
+
+            button.btn.btn-success.btn-lg.btn-block.w-100.mb-3 Registar
+
+    script(src="/js/fields.js")
