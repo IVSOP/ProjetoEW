@@ -8,7 +8,6 @@ router.get('/', function(req, res, next){
         .then(response => {
             res.render('list', {
                 title: 'Índice das Ruas',
-                voltar: '/',
                 listElements: response.data})
         })
         .catch(error => res.render('error', {error: error}))

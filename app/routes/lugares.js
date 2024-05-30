@@ -6,9 +6,8 @@ var router = express.Router();
 router.get('/', function(req, res, next){
     axios.get('http://localhost:3000/lugares')
         .then(response => {
-            res.render('list', {
+            res.render('collapsedList', {
                 title: 'Índice dos Lugares',
-                voltar: '/',
                 listElements: response.data})
         })
         .catch(error => res.render('error', {error: error}))
