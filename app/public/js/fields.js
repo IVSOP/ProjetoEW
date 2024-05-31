@@ -28,7 +28,7 @@ $(document).ready(function(){
                     <input class="form-control" type="text" name="subst" placeholder="Pagamento" required>
                 </div>
                 <div class="col">
-                    <input class="form-control" type="text" name="vista" placeholder="Vista" required>
+                    <input class="form-control" type="text" name="vista" placeholder="Vista">
                 </div>
                 <div class="col">
                     <button class="btn btn-danger w-100 deleteHouse" data-field-id="house__INDEX__">
@@ -36,7 +36,7 @@ $(document).ready(function(){
                     </button>
                 </div>
             </div>
-            <textarea class="form-control mt-3" rows="3" name="descricao" placeholder="Inserir descrição" required></textarea>
+            <textarea class="form-control mt-3" rows="3" name="desc" placeholder="Descrição" required></textarea>
         </div>`;
 
 
@@ -46,15 +46,21 @@ $(document).ready(function(){
     }
 
 
+    $('#addHouse').click(function(){
+        lastHouseId++;
+        addField($("#housesContainer"),houseTemplate,lastHouseId);
+    });
+
+
     $('#addOldImage').click(function(){
         lastOldImageId++;
         addField($("#oldImagesContainer"),oldImageTemplate,lastOldImageId);
     });
-    
-    
-    $('#addHouse').click(function(){
-        lastHouseId++;
-        addField($("#housesContainer"),houseTemplate,lastHouseId);
+
+
+    $('#housesContainer').on('click', '.deleteHouse', function() {
+        var fieldId = $(this).data('field-id');
+        $('#' + fieldId).remove();
     });
 
 
@@ -64,7 +70,7 @@ $(document).ready(function(){
     });
 
 
-    $('#housesContainer').on('click', '.deleteHouse', function() {
+    $('#newImagesContainer').on('click', '.deleteNewImage', function() {
         var fieldId = $(this).data('field-id');
         $('#' + fieldId).remove();
     });

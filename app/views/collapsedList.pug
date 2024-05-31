@@ -4,7 +4,12 @@ block content
 
     .container.d-flex.justify-content-end.flex-column.mt-3
 
-        h1.m-0.font-weight-bold.alert.alert-dark(style="text-align: center;")= title
+        .row.m-0.p-0
+            .col-8.pr-3(style="padding-left: 0px")
+                h1.m-0.font-weight-bold.alert.alert-secondary(style="text-align: center;")= title
+            .col-4.p-0
+                a.btn.btn-secondary.btn-lg.btn-block.p-2.w-100.h-100(href="/" style="font-size: 32px; align-content: center;") Voltar
+
 
         ul.list-group.mb-3(style="font-size: 20px;")
             each element, index in listElements
@@ -19,6 +24,3 @@ block content
                                     .w-100
                                 .col.text-left
                                     a.text-dark(href="/ruas/" + rua['_id'], style="text-decoration: none;")= rua.name
-
-            a(href="/" style="text-decoration: none;")
-                li.list-group-item.list-group-item-action.list-group-item-dark.text-center.mt-3 Voltar

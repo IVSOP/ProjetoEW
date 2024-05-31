@@ -9,24 +9,24 @@ block content
 
             .carousel-indicators
                 - var slide = 0
-                - while (slide < imagens_antigas.length + imagens_atuais.length)
+                - while (slide < rua.old_images.length + rua.new_images.length)
                     if (slide === 0)
-                        button(type="button", data-bs-target="#carouselExampleDark", data-bs-slide-to=slide, class="active", aria-current="true", aria-label="Slide " + slide)
+                        button(data-bs-target="#carouselExampleDark", data-bs-slide-to=slide, class="active", aria-current="true", aria-label="Slide " + slide)
                     else
-                        button(type="button", data-bs-target="#carouselExampleDark", data-bs-slide-to=slide, aria-label="Slide " + slide)
+                        button(data-bs-target="#carouselExampleDark", data-bs-slide-to=slide, aria-label="Slide " + slide)
                     - slide++
 
             .carousel-inner(style="aspect-ratio: 16 / 9;")
 
-                each imagem_antiga, index in imagens_antigas 
+                each old_image, index in rua.old_images
                     .carousel-item(class={active: index === 0, 'mt-30': index === 0} data-bs-interval="5000")
-                        img.d-block.w-100.rounded(style="aspect-ratio: 16 / 9;", src="http://localhost:3000/imagens/antigo/" + imagem_antiga.path)
+                        img.d-block.w-100.rounded(style="aspect-ratio: 16 / 9;", src=`http://localhost:3000/imagens/antigo/${old_image.path.split('/').pop()}`)
                         .carousel-caption.d-none.d-md-block
-                            h3= imagem_antiga.subst
+                            h3= old_image.subst
 
-                each imagem_atual in imagens_atuais 
+                each new_image in rua.new_images 
                     .carousel-item(data-bs-interval="5000")
-                        img.w-100.rounded(style=" aspect-ratio: 16 / 9;", src="http://localhost:3000/imagens/atual/" + imagem_atual)
+                        img.w-100.rounded(style=" aspect-ratio: 16 / 9;", src=`http://localhost:3000/imagens/atual/${new_image.split('/').pop()}`)
                         .carousel-caption.d-none.d-md-block
                             h3 #{rua.name} - Vista Atual
 
@@ -106,15 +106,17 @@ block content
                         td= casa.desc[0]
 
         .card.card-body.mb-3
-
-            form.form.d-flex.justify-content-between.flex-row.mb-3(method="post" action="/ruas/comentarios/" + rua['_id'])
-                .form-group(style="width: 84%")
-                    textarea.form-control(rows="3", placeholder="Inserir comentário", name="comentario", required)
-                button.btn.btn-success.btn-lg.btn-block(style="width: 15%", type="submit")
-                        | Submeter
+            form.form(method="post" action="/ruas/comentarios/" + rua['_id'])
+                .row.m-0.p-0
+                    .col-12.col-sm-4.col-md-9.p-0
+                        .form-group
+                            textarea.form-control(rows="3", placeholder="Inserir comentário", name="comment", required)
+                    .col-3.col-md-3.pr-3(style="padding-right: 0px")
+                        button.btn.btn-success.btn-lg.btn-block.w-100.h-100(style="width: 15%", type="submit")
+                            | Submeter
 
             // user and comment
-            .card.border-dark.mb-0.w-100
+            .card.border-dark.mb-0.mt-3.w-100
                 b.card-header Username
                 .card-body.text-dark
                     p.card-text This is a comment!!!

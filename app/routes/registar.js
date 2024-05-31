@@ -3,7 +3,7 @@ var router = express.Router();
 
 
 router.get('/', function(req, res, next){
-    res.render('auth', {title: 'Registar'})
+    res.status(200).render('auth', {title: 'Registar'})
 });
 
 
