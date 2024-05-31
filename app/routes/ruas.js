@@ -1,22 +1,50 @@
 var express = require('express');
-var axios = require('axios')
+var axios = require('axios');   
+var multer = require('multer');
 var router = express.Router();
+
+var upload = multer({dest: 'uploads'}) 
 
 
 router.get('/', function(req, res, next){
     axios.get('http://localhost:3000/ruas')
         .then(response => {
-            res.render('list', {
+            res.status(200).render('list', {
                 title: 'Índice das Ruas',
                 listElements: response.data})
         })
-        .catch(error => res.render('error', {error: error}))
+        .catch(error => res.status(500).render('error', {error: error}))
 });
 
 
 router.get('/registar', function(req, res, next){
-    res.render('streetForm', {title: 'Registar - Rua'})
+    res.status(201).render('streetCreationForm', {title: 'Registar - Rua'})
 })
+
+
+router.post('/registar', upload.fields([{ name: 'oldImageFiles' }, { name: 'newImageFiles' }]), function(req, res, next) {
+    console.log(req.body);
+    console.log(req.files);
+    res.end();
+});
+
+
+router.get('/editar/:id', function(req, res, next){
+    axios.get('http://localhost:3000/ruas/' + req.params.id)
+        .then(response => {
+            res.status(202).render('streetUpdateForm', {
+                title: 'Editar - ' + req.params.id,
+                rua: response.data})
+        })
+        .catch(error => res.status(502).render('error', {error: error}))
+})
+
+
+router.post('/editar/:id', function(req, res, next){
+    console.log(req.body)
+    res.status(333).end()
+})
+
 
 
 router.get('/:id', function(req, res, next){
@@ -38,7 +66,7 @@ router.get('/:id', function(req, res, next){
                 imagens_atuais.push(x.split('/').pop())
             });
 
-            res.render('street', {
+            res.status(203).render('street', {
                 title: response.data.name,
                 datas: datas.filter(x => response.data.dates.includes(x['_id'])),
                 lugares: lugares.filter(x => response.data.places.includes(x['_id'])),
@@ -47,7 +75,7 @@ router.get('/:id', function(req, res, next){
                 imagens_atuais: imagens_atuais,
                 rua: response.data})
         })
-        .catch(error => res.render('error', {error: error}))
+        .catch(error => res.status(503).render('error', {error: error}))
 });
 
 

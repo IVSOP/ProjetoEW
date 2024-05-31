@@ -4,19 +4,19 @@ block content
 
     .container.d-flex.justify-content-end.flex-column.mt-3
 
-        form(method="post")
+        form(method="post", id="updateForm", enctype='multipart/form-data')
             .card.mb-3
                 h5.card-header.fw-bold Informações
                 .card-body
-                    input.form-control(type='text', name='nome', placeholder='Nome', required)
-                    textarea.form-control.mt-3(rows="3", name="descricao", placeholder="Inserir descrição", required)
+                    input.form-control(type='text', name='nome', placeholder="Nome", value=rua.name, required)
+                    textarea.form-control.mt-3(rows="4", name="descricao", placeholder="Inserir descrição", required)= rua.description.join('\n')
 
             .card.mt-3.mb-3
                 .card-header.d-flex.justify-content-between
                     h5.fw-bold.align-items-center.mb-0 Casas
                     img#addHouse(src="/icons/plus-circle-fill.svg", type="button")
-                .card-body#housesContainer
-                    .card.mb-0.w-100.p-3.border-dark#house1
+                .card-body.pb-0#housesContainer
+                    .card.mb-3.w-100.p-3.border-dark#house1
                         .row.g-3
                             .col
                                 input.form-control(type='text', name='enfiteuta1', placeholder='Enfiteuta', required)
@@ -32,8 +32,8 @@ block content
                 .card-header.d-flex.justify-content-between
                     h5.fw-bold.align-items-center.mb-0 Imagens Antigas
                     img#addOldImage(src="/icons/plus-circle-fill.svg", type="button")
-                .card-body#oldImagesContainer
-                    .row.g-3#oldImage1
+                .card-body.pb-0#oldImagesContainer
+                    .row.g-3.mb-3#oldImage1
                         .col
                             input.form-control(type='text', name='oldImageSubst1', placeholder='Referência', required)
                         .col
@@ -41,11 +41,33 @@ block content
                         .col
                             button.btn.btn-danger.w-100.deleteOldImage(data-field-id="oldImage1") Eliminar
 
+
+            // Imagens Atuais Form
             .card.mt-3.mb-3
-                h5.card-header.fw-bold Imagens Novas
+                h5.card-header.fw-bold Imagens Atuais
                 .card-body
+                    .row.g-3.mb-3
+                        each imagemAtual, index in rua.new_images
+                            .col
+                                button.btn.btn-secondary.w-100(type='button', data-bs-toggle='modal', data-bs-target=`#imagemAtualModal${index}`)
+                                    | #{imagemAtual.split('/').pop()} 
                     input.form-control(type="file", id="newImageFiles", multiple, required)
 
-            button.btn.btn-success.btn-lg.btn-block.w-100.mb-3 Registar
+            button.btn.btn-success.btn-lg.btn-block.w-100.mb-3(type='submit') Atualizar
+
+
+        // Imagens Atuais Modal
+        each imagemAtual, index in rua.new_images
+            .modal.fade(id=`imagemAtualModal${index}`, tabindex='-1', role='dialog', aria-hidden='true')
+                .modal-dialog.modal-dialog-centered(role='document')
+                    .modal-content
+                        .modal-header
+                            h5.modal-title#exampleModalCenterTitle
+                                | #{imagemAtual.split('/').pop()} 
+                        .modal-body
+                        img.rounded(src="http://localhost:3000/imagens/atual/" + imagemAtual.split('/').pop(), style="width:100%")
+                        .modal-footer
+                            button.btn.btn-secondary(type='button', data-bs-dismiss='modal') Sair
+                            button.btn.btn-danger(type='button') Eliminar
 
     script(src="/js/fields.js")
