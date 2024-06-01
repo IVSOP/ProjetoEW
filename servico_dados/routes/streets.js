@@ -77,16 +77,20 @@ router.delete('/:id', (req,res) => {
 async function validateAndConvert(ids, model) {
   const validIds = [];
   for (let id of ids) {
-      if (isNaN(id)) {
-          let existingEntry = await model.findOne({ name: id }).exec();
+      if (isNaN(id)) { // se valor é não numérico
+          let existingEntry = await model.findOne({ name: id }).exec(); // se já existir id correspondente para esse nome, substituir
           if (!existingEntry) {
-              existingEntry = await model.create({ name: id });
+              existingEntry = await model.create({ name: id }); // senão existir id correspondente, criar novo
             }
           id = existingEntry._id
-      } 
+      } else { // se valor for numérico
+        const existingEntry = await model.findOne({ _id: id }).exec(); // garantir que existe na db esse id, senão dá erro
+        if (!existingEntry) {
+            throw new Error("Entry with id: " + id + " does not exist in the database.");
+        }
+      }
       validIds.push(id);
   }
-  console.log(validIds);
   return validIds;
 }
 

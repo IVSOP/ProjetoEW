@@ -20,36 +20,30 @@ module.exports.insert = async (street) => {
     try {
         const streetObj = await Street.create(street)
 
-        // add street to places collection
-        if (streetObj.places) {
-            await Promise.all(streetObj.places.map(async (placeId) => {
-                await Place.updateOne(
-                    {_id: placeId},
-                    {$addToSet: {ruas: {_id: streetObj._id}}}
-                );
-            }));
+        // add street id to places collection
+        if (streetObj.places && streetObj.places.length > 0) {
+            await Place.updateMany(
+                { _id: { $in: streetObj.places } },
+                { $addToSet: { ruas: streetObj._id } }
+            );
         }
 
-        // add street to entities collection
-        if (streetObj.entities) {
-            await Promise.all(streetObj.entities.map(async (entityId) => {
-                await Entity.updateOne(
-                    {_id: entityId},
-                    {$addToSet: {ruas: {_id: streetObj._id}}}
-                );
-            }));
+        // add street id to places collection
+        if (streetObj.entities && streetObj.entities.length > 0) {
+            await Entity.updateMany(
+                { _id: { $in: streetObj.entities } },
+                { $addToSet: { ruas: streetObj._id } }
+            );
         }
 
-        // add street to dates collection
-        if (streetObj.dates) {
-            await Promise.all(streetObj.dates.map(async (dateId) => {
-                await Date.updateOne(
-                    {_id: dateId},
-                    {$addToSet: {ruas: {_id: streetObj._id}}}
-                );
-            }));
+        // add street id to dates collection
+        if (streetObj.dates && streetObj.dates.length > 0) {
+            await Date.updateMany(
+                { _id: { $in: streetObj.dates } },
+                { $addToSet: { ruas: streetObj._id } }
+            );
         }
-
+        
         return streetObj
     } catch (error) {
         console.error(error);
@@ -57,9 +51,75 @@ module.exports.insert = async (street) => {
     }
 }
 
-module.exports.updateStreet = (street_id, street) => {
-    return Street.findOneAndUpdate({_id: street_id}, street, {new: true})
-}
+module.exports.updateStreet = async (street_id, updatedStreet) => {
+    try {
+        const previousStreet = await Street.findOne({ _id: street_id }).exec();
+        if (!previousStreet) {
+            throw new Error("Street not found");
+        }
+
+        // helper func para obter ids onde adicionar/remover o id desta rua
+        const getDifferences = (prev, updated) => {
+            const toAdd = updated.filter(id => !prev.includes(id)); // que estão na versão updated mas não estavam antes
+            const toRemove = prev.filter(id => !updated.includes(id)); // que desparacerem na versão updated mas havia antes
+            return { toAdd, toRemove };
+        };
+
+        const placesDiff = getDifferences(previousStreet.places, updatedStreet.places);
+        const entitiesDiff = getDifferences(previousStreet.entities, updatedStreet.entities);
+        const datesDiff = getDifferences(previousStreet.dates, updatedStreet.dates);
+
+        // update places collection
+        if (placesDiff.toAdd.length > 0) {
+            await Place.updateMany(
+                { _id: { $in: placesDiff.toAdd } },
+                { $addToSet: { ruas: street_id } }
+            );
+        }
+        if (placesDiff.toRemove.length > 0) {
+            await Place.updateMany(
+                { _id: { $in: placesDiff.toRemove } },
+                { $pull: { ruas: street_id } }
+            );
+        }
+
+        // update entities collection
+        if (entitiesDiff.toAdd.length > 0) {
+            await Entity.updateMany(
+                { _id: { $in: entitiesDiff.toAdd } },
+                { $addToSet: { ruas: street_id } }
+            );
+        }
+        if (entitiesDiff.toRemove.length > 0) {
+            await Entity.updateMany(
+                { _id: { $in: entitiesDiff.toRemove } },
+                { $pull: { ruas: street_id } }
+            );
+        }
+
+        // update dates collection
+        if (datesDiff.toAdd.length > 0) {
+            await Date.updateMany(
+                { _id: { $in: datesDiff.toAdd } },
+                { $addToSet: { ruas: street_id } }
+            );
+        }
+        
+        if (datesDiff.toRemove.length > 0) {
+            await Date.updateMany(
+                { _id: { $in: datesDiff.toRemove } },
+                { $pull: { ruas: street_id } }
+            );
+        }
+
+        const updated = await Street.findOneAndUpdate({ _id: street_id }, updatedStreet, { new: true });
+
+        return updated;
+    } catch (error) {
+        console.error(error);
+        throw new Error("Error updating street and related references");
+    }
+};
 
 module.exports.deleteStreetById = async (id) => {
     try {
@@ -70,33 +130,28 @@ module.exports.deleteStreetById = async (id) => {
         }
 
         // remove street from places collection
-        if (street.places) {
-            await Promise.all(street.places.map(async (placeId) => {
-                await Place.updateOne(
-                    {_id: placeId},
-                    {$pull: {ruas: {_id: id}}}
-                );
-            }));
+        if (street.places && street.places.length > 0) {
+            await Place.updateMany(
+                { _id: { $in: street.places } },
+                { $pull: { ruas: id } }
+            );
         }
 
-        // remove street from the entities collection
-        if (street.entities) {
-            await Promise.all(street.entities.map(async (entityId) => {
-                await Entity.updateOne(
-                    {_id: entityId},
-                    {$pull: {ruas: {_id: id}}}
-                );
-            }));
+
+        // remove street from entities collection
+        if (street.entities && street.entities.length > 0) {
+            await Entity.updateMany(
+                { _id: { $in: street.entities } },
+                { $pull: { ruas: id } }
+            );
         }
 
-        // Remove street from the dates collection
-        if (street.dates) {
-            await Promise.all(street.dates.map(async (dateId) => {
-                await Date.updateOne(
-                    {_id: dateId},
-                    {$pull: {ruas: {_id: id}}}
-                );
-            }));
+        // remove street from dates collection
+        if (street.dates && street.dates.length > 0) {
+            await Date.updateMany(
+                { _id: { $in: street.dates } },
+                { $pull: { ruas: id } }
+            );
         }
 
         // delete street entry
