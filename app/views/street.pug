@@ -106,7 +106,7 @@ block content
                         td= casa.desc[0]
 
         .card.card-body.mb-3
-            form.form(method="post" action="/ruas/comentarios/" + rua['_id'])
+            form.form(method="post" action=`/ruas/comentarios/{$rua['_id']}`)
                 .row.m-0.p-0
                     .col-12.col-sm-4.col-md-9.p-0
                         .form-group

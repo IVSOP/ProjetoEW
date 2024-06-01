@@ -1,60 +1,71 @@
+import { houseTemplate } from "./templates.js";
+import { dateTemplate } from "./templates.js";
+import { placeTemplate } from "./templates.js";
+import { entityTemplate } from "./templates.js";
+import { oldImageTemplate } from "./templates.js";
+
+
 $(document).ready(function(){
 
-    var lastOldImageId = ($('#oldImagesContainer .row').length);
     var lastHouseId = ($('#housesContainer .card').length);
-
-    var oldImageTemplate = `
-        <div class="row g-3 mb-3" id="oldImage__INDEX__">
-            <div class="col">
-                <input class="form-control" type='text' name='oldImageSubst' placeholder='Referência' required/>
-            </div>
-            <div class="col">
-                <input class="form-control" type="file" name="oldImageFiles" required/>
-            </div>
-            <div class="col">
-                <button class="btn btn-danger w-100 deleteOldImage" type="button" data-field-id="oldImage__INDEX__">
-                    Eliminar
-                </button>
-            </div>
-        </div>`;
-
-    var houseTemplate = `
-        <div class="card mb-3 w-100 p-3 border-dark" id="house__INDEX__">
-            <div class="row g-3">
-                <div class="col">
-                    <input class="form-control" type="text" name="enfiteuta" placeholder="Enfiteuta" required>
-                </div>
-                <div class="col">
-                    <input class="form-control" type="text" name="subst" placeholder="Pagamento" required>
-                </div>
-                <div class="col">
-                    <input class="form-control" type="text" name="vista" placeholder="Vista">
-                </div>
-                <div class="col">
-                    <button class="btn btn-danger w-100 deleteHouse" data-field-id="house__INDEX__">
-                        Eliminar
-                    </button>
-                </div>
-            </div>
-            <textarea class="form-control mt-3" rows="3" name="desc" placeholder="Descrição" required></textarea>
-        </div>`;
+    var lastDateId = ($('#datesContainer .row').length);
+    var lastPlaceId = ($('#placesContainer .row').length);
+    var lastEntityId = ($('#entitiesContainer .row').length);
+    var lastOldImageId = ($('#oldImagesContainer .row').length);
 
 
-    function addField(container,fieldTemplate,counter) {
-        var newField = fieldTemplate.replace(/__INDEX__/g, counter);
+    function addField(container,fieldTemplate,id) {
+        var newField = fieldTemplate.replace(/__ID__/g,id);
         container.append(newField);
     }
 
 
+    $('#addDate').click(function(){
+        lastDateId++;
+        console.log(lastDateId)
+        addField($("#datesContainer"),dateTemplate,`date${lastDateId}`);
+    });
+
+
+    $('#addPlace').click(function(){
+        lastPlaceId++;
+        addField($("#placesContainer"),placeTemplate,`place${lastPlaceId}`);
+    });
+
+
+    $('#addEntity').click(function(){
+        lastEntityId++;
+        addField($("#entitiesContainer"),entityTemplate,`entity${lastEntityId}`);
+    });
+
+
     $('#addHouse').click(function(){
         lastHouseId++;
-        addField($("#housesContainer"),houseTemplate,lastHouseId);
+        addField($("#housesContainer"),houseTemplate,`house${lastHouseId}`);
     });
 
 
     $('#addOldImage').click(function(){
         lastOldImageId++;
-        addField($("#oldImagesContainer"),oldImageTemplate,lastOldImageId);
+        addField($("#oldImagesContainer"),oldImageTemplate,`oldImage${lastOldImageId}`);
+    });
+
+
+    $('#datesContainer').on('click', '.deleteDate', function() {
+        var fieldId = $(this).data('field-id');
+        $('#' + fieldId).remove();
+    });
+
+
+    $('#placesContainer').on('click', '.deletePlace', function() {
+        var fieldId = $(this).data('field-id');
+        $('#' + fieldId).remove();
+    });
+
+
+    $('#entitiesContainer').on('click', '.deleteEntity', function() {
+        var fieldId = $(this).data('field-id');
+        $('#' + fieldId).remove();
     });
 
 

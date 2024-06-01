@@ -10,7 +10,40 @@ block content
                 h5.card-header.fw-bold Informações
                 .card-body
                     input.form-control(type='text', name='name', placeholder='Nome', required)
-                    textarea.form-control.mt-3(rows="4", name="description", placeholder="Descrição", required)
+                    textarea.form-control.mt-3(rows="3", name="description", placeholder="Descrição", required)
+
+                    .card.mb-0.mt-3.w-100.border-dark
+                        .card-header.d-flex.justify-content-between
+                            h5.fw-bold.align-items-center.mb-0 Datas Referidas
+                            img#addDate(src="/icons/plus-circle-fill.svg", type="button")
+                        .card-body.pb-0.overflow-scroll#datesContainer(style="max-height: 165px;")
+                            .row.g-3.mb-3#date1
+                                .col
+                                    input.form-control(type='text', name='dates', placeholder='Data', required)
+                                .col
+                                    button.btn.btn-danger.w-100.deleteDate(data-field-id="date1") Eliminar
+
+                    .card.mb-0.mt-3.w-100.border-dark
+                        .card-header.d-flex.justify-content-between
+                            h5.fw-bold.align-items-center.mb-0 Lugares Referidas
+                            img#addPlace(src="/icons/plus-circle-fill.svg", type="button")
+                        .card-body.pb-0.overflow-scroll#placesContainer(style="max-height: 165px;")
+                            .row.g-3.mb-3#place1
+                                .col
+                                    input.form-control(type='text', name='places', placeholder='Lugar', required)
+                                .col
+                                    button.btn.btn-danger.w-100.deletePlace(data-field-id="place1") Eliminar
+
+                    .card.mb-0.mt-3.w-100.border-dark
+                        .card-header.d-flex.justify-content-between
+                            h5.fw-bold.align-items-center.mb-0 Entidades Referidas
+                            img#addEntity(src="/icons/plus-circle-fill.svg", type="button")
+                        .card-body.pb-0.overflow-scroll#entitiesContainer(style="max-height: 165px;")
+                            .row.g-3.mb-3#entity1
+                                .col
+                                    input.form-control(type='text', name='entities', placeholder='Entidade', required)
+                                .col
+                                    button.btn.btn-danger.w-100.deleteEntity(data-field-id="entity1") Eliminar
 
             .card.mt-3.mb-3.border-dark
                 .card-header.d-flex.justify-content-between
@@ -53,4 +86,4 @@ block content
                 .col
                     button.btn.btn-success.btn-lg.btn-block.w-100(type='submit') Registar
 
-    script(src="/js/fields.js")
+    script(src="/js/fields.js", type="module")

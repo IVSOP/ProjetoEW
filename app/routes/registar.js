@@ -3,7 +3,17 @@ var router = express.Router();
 
 
 router.get('/', function(req, res, next){
-    res.status(200).render('auth', {title: 'Registar'})
+    res.status(200).render('auth', {
+        title: 'Registar',
+        error: false,
+        errorMessage: "Credenciais Inválidas"})
+});
+
+
+// Not implemented
+router.post('/', function(req, res, next){
+    console.log(req.body)
+    res.status(201).end()
 });
 
 

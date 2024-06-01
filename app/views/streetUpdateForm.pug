@@ -10,8 +10,44 @@ block content
                 h5.card-header.fw-bold Informações
                 .card-body
                     input.form-control(type='text', name='name', placeholder="Nome", value=rua.name, required)
-                    textarea.form-control.mt-3(rows="4", name="description", placeholder="Descrição", required)
+                    textarea.form-control.mt-3(rows="3", name="description", placeholder="Descrição", required)
                         | #{rua.description.join('\n')}
+
+                    .card.mb-0.mt-3.w-100.border-dark
+                        .card-header.d-flex.justify-content-between
+                            h5.fw-bold.align-items-center.mb-0 Datas Referidas
+                            img#addDate(src="/icons/plus-circle-fill.svg", type="button")
+                        .card-body.pb-0.overflow-scroll#datesContainer(style="max-height: 165px;")
+                            each data, index in datas
+                                .row.g-3.mb-3(id=`date${index}`)
+                                    .col
+                                        input.form-control(type='text', name='dates', placeholder='Data', value=data.name, required)
+                                    .col
+                                        button.btn.btn-danger.w-100.deleteDate(data-field-id=`date${index}`) Eliminar
+
+                    .card.mb-0.mt-3.w-100.border-dark
+                        .card-header.d-flex.justify-content-between
+                            h5.fw-bold.align-items-center.mb-0 Lugares Referidas
+                            img#addPlace(src="/icons/plus-circle-fill.svg", type="button")
+                        .card-body.pb-0.overflow-scroll#placesContainer(style="max-height: 165px;")
+                            each lugar, index in lugares
+                                .row.g-3.mb-3(id=`place${index}`)
+                                    .col
+                                        input.form-control(type='text', name='places', placeholder='Lugar', value=lugar.name, required)
+                                    .col
+                                        button.btn.btn-danger.w-100.deletePlace(data-field-id=`place${index}`) Eliminar
+
+                    .card.mb-0.mt-3.w-100.border-dark
+                        .card-header.d-flex.justify-content-between
+                            h5.fw-bold.align-items-center.mb-0 Entidades Referidas
+                            img#addEntity(src="/icons/plus-circle-fill.svg", type="button")
+                        .card-body.pb-0.overflow-scroll#entitiesContainer(style="max-height: 165px;")
+                            each entidade, index in entidades
+                                .row.g-3.mb-3(id=`entity${index}`)
+                                    .col
+                                        input.form-control(type='text', name='entities', placeholder='Entidade', value=entidade.name, required)
+                                    .col
+                                        button.btn.btn-danger.w-100.deleteEntity(data-field-id=`entity${index}`) Eliminar
 
             .card.mt-3.mb-3.border-dark
                 .card-header.d-flex.justify-content-between
@@ -31,7 +67,7 @@ block content
                                     button.btn.btn-danger.w-100.deleteHouse(data-field-id=`house${index}`) Eliminar
                             textarea.form-control.mt-3(rows="3", name="desc", placeholder="Descrição", required)
                                 | #{house.desc.join('\n')}
-            
+
             .card.mt-3.mb-3.border-dark
                 .card-header.d-flex.justify-content-between
                     h5.fw-bold.align-items-center.mb-0 Imagens Antigas
@@ -77,10 +113,10 @@ block content
                         .modal-header.d-flex.justify-content-between
                             h5.modal-title
                                 | #{old_image.path.split('/').pop()}
-                            button.btn.btn-secondary(type='button', data-bs-dismiss='modal') &#10005;
+                            button.btn.btn-close(type='button', data-bs-dismiss='modal')
                         .modal-body
                             img.rounded(src=`http://localhost:3000/imagens/antigo/${old_image.path.split('/').pop()}`, style="width:100%")
-        
+
         // Imagens Atuais Modal
         each new_image, index in rua.new_images
             .modal.fade(id=`newImageModal${index}`, tabindex='-1', role='dialog', aria-hidden='true')
@@ -89,8 +125,8 @@ block content
                         .modal-header.d-flex.justify-content-between
                             h5.modal-title
                                 | #{new_image.split('/').pop()}
-                            button.btn.btn-secondary(type='button', data-bs-dismiss='modal') &#10005;
+                            button.btn.btn-close(type='button', data-bs-dismiss='modal')
                         .modal-body
                             img.rounded(src=`http://localhost:3000/imagens/atual/${new_image.split('/').pop()}`, style="width:100%")
 
-    script(src="/js/fields.js")
+    script(src="/js/fields.js", type="module")
