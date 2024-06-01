@@ -1,16 +1,47 @@
 var Entity = require("../models/entity")
+var Street = require("../models/street");
 
-module.exports.list = () => { // query 
-    return Entity
-        .find()
-        .sort({name:1}) // sort dos resultados devolvidos por nome crescente
-        .exec()
+module.exports.list = async () => { // query 
+    try {
+        let entities = await Entity.find().sort({ name: 1 }).exec();
+        // tentei usar "populate" do mongoose, mas não funciona para _ids String
+        // acrescentar em cada entrada os dados adicionais de rua para mostrar
+        for (let i = 0; i < entities.length; i++) {
+            let entity = entities[i].toObject(); // converter mongoose document para JS para ser modificável
+
+            entity.ruas = await Promise.all(entity.ruas.map(async (ruaId) => {
+                const street = await Street.findOne({ _id: ruaId }, { _id: 1, name: 1 }).exec();
+                return street;
+            }));
+
+            entities[i] = entity; // precisar das assign explicitamente para array original ser modificado
+        }
+
+        return entities;
+    } catch (error) {
+        console.error(error);
+        throw new Error("Error fetching entities");
+    }
 }
 
-module.exports.findById = id => {
-    return Entity
-        .findOne({_id: id})
-        .exec()
+module.exports.findById = async (id) => {
+    try {
+        let entity = await Entity.findOne({ _id: id }).exec();
+        entity = entity.toObject() // preciso converter de mongoose document para javascript para poder modificar!!
+
+        // tentei usar "populate" do mongoose, mas não funciona para _ids String
+        // acrescentar dados adicionais de rua para mostrar
+        if (entity) {
+            entity.ruas = await Promise.all(entity.ruas.map(async ruaId => {
+                return Street.findOne({ _id: ruaId }, {_id: 1, name:1}).exec();
+            }));
+        }
+        return entity;
+        
+    } catch (error) {
+        console.error(error);
+        throw new Error("Error fetching entity");
+    }
 }
 
 module.exports.insert = entity => {

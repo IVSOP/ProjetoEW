@@ -16,8 +16,45 @@ module.exports.findById = id => {
         .exec()
 }
 
-module.exports.insert = street => {
-    return Street.create(street)
+module.exports.insert = async (street) => {
+    try {
+        const streetObj = await Street.create(street)
+
+        // add street to places collection
+        if (streetObj.places) {
+            await Promise.all(streetObj.places.map(async (placeId) => {
+                await Place.updateOne(
+                    {_id: placeId},
+                    {$addToSet: {ruas: {_id: streetObj._id}}}
+                );
+            }));
+        }
+
+        // add street to entities collection
+        if (streetObj.entities) {
+            await Promise.all(streetObj.entities.map(async (entityId) => {
+                await Entity.updateOne(
+                    {_id: entityId},
+                    {$addToSet: {ruas: {_id: streetObj._id}}}
+                );
+            }));
+        }
+
+        // add street to dates collection
+        if (streetObj.dates) {
+            await Promise.all(streetObj.dates.map(async (dateId) => {
+                await Date.updateOne(
+                    {_id: dateId},
+                    {$addToSet: {ruas: {_id: streetObj._id}}}
+                );
+            }));
+        }
+
+        return streetObj
+    } catch (error) {
+        console.error(error);
+        throw new Error("Error adding new street" + error);
+    }
 }
 
 module.exports.updateStreet = (street_id, street) => {

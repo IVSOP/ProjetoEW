@@ -152,19 +152,22 @@ def calc_ids(filesJSON, target_field: str) -> dict:
         #parse places
         for item in file.get(target_field,[]):
             if item not in id_dict:
-                rua_data = {"_id": file["_id"], "name": file["name"]} # mais tarde meter isto só com id, e fazer query dos nomes das respetivas ruas, mas para já é facil assim para mostrar no UI
-                id_dict[item] = {"_id": str(idCounter), "name": item, "ruas": [rua_data]} 
+                rua_data = file["_id"]
+                id_dict[item] = {"_id": str(idCounter), "name": item, "ruas": {rua_data}} 
                 idCounter = idCounter + 1
             else:
-                id_dict[item]["ruas"].append(rua_data)
-    
+                id_dict[item]["ruas"].add(rua_data)
+
+    for (_,val) in id_dict.items():
+        val["ruas"] = sorted(list(val["ruas"]), key=lambda x: int(x)) # converter sets de ids de ruas em lista, para ser serializável
+
     return id_dict
 
 def update_jsons_with_ids(filesJSON: list, places_dict: dict, entities_dict: dict, dates_dict: dict):
     for _, json_data in filesJSON:
-        json_data["places"] = [places_dict[place]["_id"] for place in json_data["places"]]
-        json_data["entities"] = [entities_dict[entity]["_id"] for entity in json_data["entities"]]
-        json_data["dates"] = [dates_dict[date]["_id"] for date in json_data["dates"]]
+        json_data["places"] = sorted(set([places_dict[place]["_id"] for place in json_data["places"]]), key=lambda x: int(x))
+        json_data["entities"] = sorted(set([entities_dict[entity]["_id"] for entity in json_data["entities"]]), key=lambda x: int(x))
+        json_data["dates"] = sorted(set([dates_dict[date]["_id"] for date in json_data["dates"]]), key=lambda x: int(x))
 
 #main func
 if __name__ == '__main__':
