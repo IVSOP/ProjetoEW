@@ -20,30 +20,13 @@ module.exports.insert = async (street) => {
     try {
         const streetObj = await Street.create(street)
 
-        // add street id to places collection
-        if (streetObj.places && streetObj.places.length > 0) {
-            await Place.updateMany(
-                { _id: { $in: streetObj.places } },
-                { $addToSet: { ruas: streetObj._id } }
-            );
-        }
+        // add street ID to related collections
+        await addStreetToCollections(streetObj._id, {
+            places: streetObj.places,
+            entities: streetObj.entities,
+            dates: streetObj.dates
+        });
 
-        // add street id to places collection
-        if (streetObj.entities && streetObj.entities.length > 0) {
-            await Entity.updateMany(
-                { _id: { $in: streetObj.entities } },
-                { $addToSet: { ruas: streetObj._id } }
-            );
-        }
-
-        // add street id to dates collection
-        if (streetObj.dates && streetObj.dates.length > 0) {
-            await Date.updateMany(
-                { _id: { $in: streetObj.dates } },
-                { $addToSet: { ruas: streetObj._id } }
-            );
-        }
-        
         return streetObj
     } catch (error) {
         console.error(error);
@@ -57,7 +40,7 @@ module.exports.updateStreet = async (street_id, updatedStreet) => {
         if (!previousStreet) {
             throw new Error("Street not found");
         }
-
+        
         // helper func para obter ids onde adicionar/remover o id desta rua
         const getDifferences = (prev, updated) => {
             const toAdd = updated.filter(id => !prev.includes(id)); // que estão na versão updated mas não estavam antes
@@ -69,52 +52,21 @@ module.exports.updateStreet = async (street_id, updatedStreet) => {
         const entitiesDiff = getDifferences(previousStreet.entities, updatedStreet.entities);
         const datesDiff = getDifferences(previousStreet.dates, updatedStreet.dates);
 
-        // update places collection
-        if (placesDiff.toAdd.length > 0) {
-            await Place.updateMany(
-                { _id: { $in: placesDiff.toAdd } },
-                { $addToSet: { ruas: street_id } }
-            );
-        }
-        if (placesDiff.toRemove.length > 0) {
-            await Place.updateMany(
-                { _id: { $in: placesDiff.toRemove } },
-                { $pull: { ruas: street_id } }
-            );
-        }
+        // add street ID to related collections
+        await addStreetToCollections(street_id, {
+            places: placesDiff.toAdd,
+            entities: entitiesDiff.toAdd,
+            dates: datesDiff.toAdd
+        });
 
-        // update entities collection
-        if (entitiesDiff.toAdd.length > 0) {
-            await Entity.updateMany(
-                { _id: { $in: entitiesDiff.toAdd } },
-                { $addToSet: { ruas: street_id } }
-            );
-        }
-        if (entitiesDiff.toRemove.length > 0) {
-            await Entity.updateMany(
-                { _id: { $in: entitiesDiff.toRemove } },
-                { $pull: { ruas: street_id } }
-            );
-        }
-
-        // update dates collection
-        if (datesDiff.toAdd.length > 0) {
-            await Date.updateMany(
-                { _id: { $in: datesDiff.toAdd } },
-                { $addToSet: { ruas: street_id } }
-            );
-        }
+        await removeStreetFromCollections(street_id, {
+            places: placesDiff.toRemove,
+            entities: entitiesDiff.toRemove,
+            dates: datesDiff.toRemove
+        })
         
-        if (datesDiff.toRemove.length > 0) {
-            await Date.updateMany(
-                { _id: { $in: datesDiff.toRemove } },
-                { $pull: { ruas: street_id } }
-            );
-        }
+        return Street.findOneAndUpdate({ _id: street_id }, updatedStreet, { new: true });
 
-        const updated = await Street.findOneAndUpdate({ _id: street_id }, updatedStreet, { new: true });
-
-        return updated;
     } catch (error) {
         console.error(error);
         throw new Error("Error updating street and related references");
@@ -129,30 +81,12 @@ module.exports.deleteStreetById = async (id) => {
             throw new Error("Street not found");
         }
 
-        // remove street from places collection
-        if (street.places && street.places.length > 0) {
-            await Place.updateMany(
-                { _id: { $in: street.places } },
-                { $pull: { ruas: id } }
-            );
-        }
-
-
-        // remove street from entities collection
-        if (street.entities && street.entities.length > 0) {
-            await Entity.updateMany(
-                { _id: { $in: street.entities } },
-                { $pull: { ruas: id } }
-            );
-        }
-
-        // remove street from dates collection
-        if (street.dates && street.dates.length > 0) {
-            await Date.updateMany(
-                { _id: { $in: street.dates } },
-                { $pull: { ruas: id } }
-            );
-        }
+        // remove street ID from related collections
+        await removeStreetFromCollections(id, {
+            places: street.places,
+            entities: street.entities,
+            dates: street.dates
+        });
 
         // delete street entry
        return Street.findOneAndDelete({_id: id}).exec();
@@ -160,5 +94,57 @@ module.exports.deleteStreetById = async (id) => {
     } catch (error) {
         console.error(error);
         throw new Error("Error deleting street and related references");
+    }
+};
+
+//Aux funcs
+
+const addStreetToCollections = async (streetId, collections) => {
+    const { places, entities, dates } = collections;
+
+    if (places && places.length > 0) {
+        await Place.updateMany(
+            { _id: { $in: places } },
+            { $addToSet: { ruas: streetId } }
+        );
+    }
+
+    if (entities && entities.length > 0) {
+        await Entity.updateMany(
+            { _id: { $in: entities } },
+            { $addToSet: { ruas: streetId } }
+        );
+    }
+
+    if (dates && dates.length > 0) {
+        await Date.updateMany(
+            { _id: { $in: dates } },
+            { $addToSet: { ruas: streetId } }
+        );
+    }
+};
+
+const removeStreetFromCollections = async (streetId, collections) => {
+    const { places, entities, dates } = collections;
+
+    if (places && places.length > 0) {
+        await Place.updateMany(
+            { _id: { $in: places } },
+            { $pull: { ruas: streetId } }
+        );
+    }
+
+    if (entities && entities.length > 0) {
+        await Entity.updateMany(
+            { _id: { $in: entities } },
+            { $pull: { ruas: streetId } }
+        );
+    }
+
+    if (dates && dates.length > 0) {
+        await Date.updateMany(
+            { _id: { $in: dates } },
+            { $pull: { ruas: streetId } }
+        );
     }
 };
