@@ -209,6 +209,11 @@ def update_jsons_with_ids(filesJSON: list, places_dict: dict, entities_dict: dic
             image = loadImage("atual", image_path, new_image_path)
             old_image = {"_id" : image["_id"]}
 
+def insert_mongo(collection, data):
+    col = mongo['proj_ruas'][collection]
+    inserted = len(col.insert_many(data).inserted_ids)
+    print(f"{collection} -> OK: {inserted} ERROR: {len(data) - inserted}")
+
 #main func
 if __name__ == '__main__':
 
@@ -246,9 +251,19 @@ if __name__ == '__main__':
     #escrever só para um ficheiro as entradas todas
     jsonsOnly = [tup[1] for tup in filesJSON]
     sorted_jsonsOnly = sorted(jsonsOnly, key=lambda x: int(x['_id']))
-    dumpToJson(sorted_jsonsOnly, './parsed/streets.json')
+    # dumpToJson(sorted_jsonsOnly, './parsed/streets.json')
     
     #write places, entities, dates
-    dumpToJson(list(places_dict.values()), './parsed/places.json')
-    dumpToJson(list(entities_dict.values()), './parsed/entities.json')
-    dumpToJson(list(dates_dict.values()), './parsed/dates.json')
+    # dumpToJson(list(places_dict.values()), './parsed/places.json')
+    # dumpToJson(list(entities_dict.values()), './parsed/entities.json')
+    # dumpToJson(list(dates_dict.values()), './parsed/dates.json')
+    
+	# import these jsons into mongo
+    # places = mongo["proj_ruas"][collection]
+    # entities = mongo["proj_ruas"][collection]
+    # dates = mongo["proj_ruas"][collection]
+
+    insert_mongo('streets', sorted_jsonsOnly)
+    insert_mongo('places', list(places_dict.values()))
+    insert_mongo('entities', list(entities_dict.values()))
+    insert_mongo('dates', list(dates_dict.values()))
