@@ -5,10 +5,40 @@
 import json
 import re as regex
 from sys import argv
-from os import mkdir 
+from os import mkdir
+from os import rename
+from os import path
 from lxml import etree
 from pathlib import Path
-import re 
+import re
+import subprocess
+# import json
+import pymongo
+
+mongo = pymongo.MongoClient("mongodb://localhost:27017/")
+
+
+
+def loadImage(collection, filepath, subst):
+    filename, file_extension = path.splitext(filepath)
+
+    # json da imagem
+    image = {
+        'subst': subst,
+        'extension': file_extension[1:]
+    }
+
+    imagens = mongo["proj_ruas"][collection]
+    
+	# carregar para o mongo
+    # import_cmd = f"""bash -c 'mongoimport -d proj_ruas -c {collection} <(echo '{json.dumps(image)}')'""" desisto isto nao funciona
+    result = imagens.insert_one(image)
+    
+    image["_id"] = result.inserted_id
+    
+    rename(filepath, f"""parsed/{collection}/{image["_id"]}.{image['extension']}""")
+
+    return image
 
 def dumpToJson(jsonArray, filepath):
     with open(filepath,"w") as jsonFile:
@@ -171,12 +201,20 @@ def update_jsons_with_ids(filesJSON: list, places_dict: dict, entities_dict: dic
 
 #main func
 if __name__ == '__main__':
+    
+    loadImage('imagem_antigo', 'MapaRuas-materialBase/antigo/MRB-16-RuaDeDGualdim-Nascente.jpg', 'uma imagem')
+    
+    exit(0)
 
     inFile = argv[1]
     filesJSON = [] # lista com filenames e jsons correspondentes
     atualImages = [file for file in Path(argv[2]).iterdir() if file.is_file()]
     XMLFiles = [file for file in Path(argv[1]).iterdir() if file.is_file()]
     Path('parsed').mkdir(parents=True,exist_ok=True)
+    
+	# dicionario nome : dicionario da imagem
+    imagens_atuais = {}
+    imagens_antigas = {}
 
 
     # initial convert from xml to json
