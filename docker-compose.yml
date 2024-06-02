@@ -1,19 +1,23 @@
-
-version: '3.8'
+version: '2'
 services:
+  
+  python-seed:
+    image: python:latest
+    depends_on:
+      - mongodb
+    links:
+      - mongodb
+    volumes:
+      - ./datasets:/datasets
+    command: >
+      /bin/bash -c "
+      cd datasets/ &&
+      pip install lxml &&
+      pip install pymongo &&
+      python3 convXMLtoJSON.py MapaRuas-materialBase/texto/ MapaRuas-materialBase/atual/"
+
   mongodb:
+    container_name: mongodbContainer
     image: mongo:latest
     ports:
       - "27017:27017"
-    depends_on:
-      - mongo-seed
-  mongo-seed:
-    container_name: container_ruas-mongo-seed
-    image: mongo:latest
-    volumes:
-      - /Users/peters/Desktop/ProjetoEW/datasets/parsed/streets.json:/datasets//Users/peters/Desktop/ProjetoEW/datasets/parsed/streets.json
-      - /Users/peters/Desktop/ProjetoEW/datasets/parsed/places.json:/datasets//Users/peters/Desktop/ProjetoEW/datasets/parsed/places.json
-      - /Users/peters/Desktop/ProjetoEW/datasets/parsed/entities.json:/datasets//Users/peters/Desktop/ProjetoEW/datasets/parsed/entities.json
-      - /Users/peters/Desktop/ProjetoEW/datasets/parsed/dates.json:/datasets//Users/peters/Desktop/ProjetoEW/datasets/parsed/dates.json
-
-    command: /bin/bash -c "mongoimport --host mongodb -d proj_ruas -c streets --type json --file /datasets//Users/peters/Desktop/ProjetoEW/datasets/parsed/streets.json --jsonArray && mongoimport --host mongodb -d proj_ruas -c places --type json --file /datasets//Users/peters/Desktop/ProjetoEW/datasets/parsed/places.json --jsonArray && mongoimport --host mongodb -d proj_ruas -c entities --type json --file /datasets//Users/peters/Desktop/ProjetoEW/datasets/parsed/entities.json --jsonArray && mongoimport --host mongodb -d proj_ruas -c dates --type json --file /datasets//Users/peters/Desktop/ProjetoEW/datasets/parsed/dates.json --jsonArray"

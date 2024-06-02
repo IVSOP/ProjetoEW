@@ -15,7 +15,8 @@ import json
 import pymongo
 import shutil
 
-mongo = pymongo.MongoClient("mongodb://localhost:27017/")
+#mongo = pymongo.MongoClient("mongodb://localhost:27017/")
+mongo = pymongo.MongoClient("mongodb://mongodb:27017/")
 
 # loadImage('antigo', 'MapaRuas-materialBase/antigo/MRB-16-RuaDeDGualdim-Nascente.jpg', 'uma imagem')
 def loadImage(collection, filepath, subst):
@@ -227,6 +228,8 @@ if __name__ == '__main__':
     atualImages = [file for file in Path(argv[2]).iterdir() if file.is_file()]
     XMLFiles = [file for file in Path(argv[1]).iterdir() if file.is_file()]
     Path('parsed').mkdir(parents=True,exist_ok=True)
+    Path('parsed/antigo').mkdir(parents=True,exist_ok=True)
+    Path('parsed/atual').mkdir(parents=True,exist_ok=True)
 
     # initial convert from xml to json
     for XMLFile in XMLFiles:
