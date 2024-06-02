@@ -11,3 +11,11 @@ Para processamento inicial de dados:
     - De seguida, percorrem todos os jsons de ruas e criamos dicionários de todos os lugares, entidades, datas encontrados nas várias ruas, e associamos-lhes um id único.
     - Depois, substituímos nas várias ruas as lugares, entidades, datas pelo seu id único criado.
     - Exportamos as ruas, entidades, lugares e datas para ficheiros json diferentes, de modo a serem facilmente importados como jsonArrays no mongoDB
+
+
+
+novo tratamento das imagens:
+passamos a ignorar o nome como identificador e usar o id do mongo
+assim, no script de conv, fazemos ja a insercao das imagens para associar as ruas ao seu id
+logo decidimos usar ja esse script para inserir todos os dados para alem de converted
+problema: nomes das imagens estavam mal com ma conversao de caracteres portugueses, tivemos de corrigir a mao

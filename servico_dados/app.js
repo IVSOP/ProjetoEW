@@ -19,7 +19,8 @@ var ruasRouter = require('./routes/streets');
 var datasRouter = require('./routes/dates');
 var entidadesRouter = require('./routes/entities');
 var lugaresRouter = require('./routes/places');
-var imagensRouter = require('./routes/images');
+var antigoRouter = require('./routes/antigo');
+var atualRouter = require('./routes/atual');
 
 const { exit } = require('process');
 
@@ -33,7 +34,8 @@ app.use('/ruas', ruasRouter);
 app.use('/datas', datasRouter);
 app.use('/entidades', entidadesRouter);
 app.use('/lugares', lugaresRouter);
-app.use('/imagens', imagensRouter);
+app.use('/antigo', antigoRouter);
+app.use('/atual', atualRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
