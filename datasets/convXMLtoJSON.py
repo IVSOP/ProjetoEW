@@ -6,19 +6,18 @@ import json
 import re as regex
 from sys import argv
 from os import mkdir
-from os import rename
 from os import path
 from lxml import etree
 from pathlib import Path
 import re
 import subprocess
-# import json
+import json
 import pymongo
+import shutil
 
 mongo = pymongo.MongoClient("mongodb://localhost:27017/")
 
-
-
+# loadImage('antigo', 'MapaRuas-materialBase/antigo/MRB-16-RuaDeDGualdim-Nascente.jpg', 'uma imagem')
 def loadImage(collection, filepath, subst):
     filename, file_extension = path.splitext(filepath)
 
@@ -36,7 +35,7 @@ def loadImage(collection, filepath, subst):
     
     image["_id"] = result.inserted_id
     
-    rename(filepath, f"""parsed/{collection}/{image["_id"]}.{image['extension']}""")
+    shutil.copy('MapaRuas-materialBase/' + collection + '/' + filepath, f"""parsed/{collection}/{image["_id"]}.{image['extension']}""") # or use os.rename
 
     return image
 
@@ -199,23 +198,25 @@ def update_jsons_with_ids(filesJSON: list, places_dict: dict, entities_dict: dic
         json_data["entities"] = sorted(set([entities_dict[entity]["_id"] for entity in json_data["entities"]]), key=lambda x: int(x))
         json_data["dates"] = sorted(set([dates_dict[date]["_id"] for date in json_data["dates"]]), key=lambda x: int(x))
 
+		# translate imagens das ruas, aqui por simplicidade
+        for old_image in json_data["old_images"]:
+            image_path = path.basename(old_image["path"])
+            image = loadImage("antigo", image_path, old_image["subst"])
+            old_image = image["_id"]
+
+        for new_image_path in json_data["new_images"]:
+            image_path = path.basename(new_image_path)
+            image = loadImage("atual", image_path, new_image_path)
+            old_image = image["_id"]
+
 #main func
 if __name__ == '__main__':
-    
-    loadImage('imagem_antigo', 'MapaRuas-materialBase/antigo/MRB-16-RuaDeDGualdim-Nascente.jpg', 'uma imagem')
-    
-    exit(0)
 
     inFile = argv[1]
     filesJSON = [] # lista com filenames e jsons correspondentes
     atualImages = [file for file in Path(argv[2]).iterdir() if file.is_file()]
     XMLFiles = [file for file in Path(argv[1]).iterdir() if file.is_file()]
     Path('parsed').mkdir(parents=True,exist_ok=True)
-    
-	# dicionario nome : dicionario da imagem
-    imagens_atuais = {}
-    imagens_antigas = {}
-
 
     # initial convert from xml to json
     for XMLFile in XMLFiles:
