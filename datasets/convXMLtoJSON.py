@@ -202,12 +202,12 @@ def update_jsons_with_ids(filesJSON: list, places_dict: dict, entities_dict: dic
         for old_image in json_data["old_images"]:
             image_path = path.basename(old_image["path"])
             image = loadImage("antigo", image_path, old_image["subst"])
-            old_image = image["_id"]
+            old_image = {"_id" : image["_id"]}
 
         for new_image_path in json_data["new_images"]:
             image_path = path.basename(new_image_path)
             image = loadImage("atual", image_path, new_image_path)
-            old_image = image["_id"]
+            old_image = {"_id" : image["_id"]}
 
 #main func
 if __name__ == '__main__':
