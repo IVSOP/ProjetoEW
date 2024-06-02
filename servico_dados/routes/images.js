@@ -5,6 +5,13 @@ const fs = require('fs');
 const mime = require('mime-types');
 
 
+// NOTA rota e suposto ser muito simples, so para mostrar imagens
+// apagar, alterar etc vai ser feito aqui no servico de dados mas noutras rotas
+// porque como os dados estao desnormalizados tem de se gerir aonde for preciso
+// esta rota basicamente serve para poder mostrar imagens sem o frontend ter de fazer download delas
+
+
+
 // router.get('/', function(req, res, next) {
 
 // });
