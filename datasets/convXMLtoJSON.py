@@ -198,16 +198,21 @@ def update_jsons_with_ids(filesJSON: list, places_dict: dict, entities_dict: dic
         json_data["entities"] = sorted(set([entities_dict[entity]["_id"] for entity in json_data["entities"]]), key=lambda x: int(x))
         json_data["dates"] = sorted(set([dates_dict[date]["_id"] for date in json_data["dates"]]), key=lambda x: int(x))
 
+        old_images = []
 		# translate imagens das ruas, aqui por simplicidade
         for old_image in json_data["old_images"]:
             image_path = path.basename(old_image["path"])
             image = loadImage("antigo", image_path, old_image["subst"])
-            old_image = {"_id" : image["_id"]}
+            old_images.append({"_id" : image["_id"]})
 
+        new_images = []
         for new_image_path in json_data["new_images"]:
             image_path = path.basename(new_image_path)
             image = loadImage("atual", image_path, new_image_path)
-            old_image = {"_id" : image["_id"]}
+            new_images.append({"_id" : image["_id"]})
+
+        json_data["old_images"] = old_images
+        json_data["new_images"] = new_images
 
 def insert_mongo(collection, data):
     col = mongo['proj_ruas'][collection]
