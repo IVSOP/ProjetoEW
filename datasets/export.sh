@@ -8,6 +8,7 @@
 
 DB="proj_ruas"
 EXPORT_DIR="export"
+EXPORT_FILENAME="export.tar.xz"
 
 mkdir -p "$EXPORT_DIR"
 mkdir -p "$EXPORT_DIR/atual"
@@ -61,7 +62,12 @@ SIZE=$(du --bytes --total "$EXPORT_DIR/" | tail -n 1 | cut -f 1)
 
 # a lista de ficheiros de imagens nao fica no manifesto pois ja esta no json das imagens antigas e atuais
 
-echo "{\"size\": $SIZE}" | jq > "$EXPORT_DIR/manifest.json"
+echo "{\"size\": $SIZE}" | jq > "manifest.json"
 
 # por fim, fazemos o tar.xz ja com acesso ao pv e xz
-tar -c -f - --owner=0 --group=0 --no-same-owner --no-same-permissions "$EXPORT_DIR/" | pv -s $SIZE | xz --threads=0 --stdout > "export.tar.xz"
+(cd "$EXPORT_DIR/" && tar -c -f - --owner=0 --group=0 --no-same-owner --no-same-permissions * | pv -s $SIZE | xz --threads=0 --stdout > "../files.tar.xz")
+
+# fazer um tar para poder meter o manifesto la dentro (nao o comprimimos)
+tar -c -f "$EXPORT_FILENAME" --owner=0 --group=0 --no-same-owner --no-same-permissions "manifest.json" "files.tar.xz"
+
+rm "files.tar.xz"
