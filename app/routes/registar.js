@@ -15,6 +15,17 @@ router.get('/', function(req, res, next){
 router.post('/', async function(req, res, next){
     axios.post('http://localhost:3000/users/register', req.body)
         .then(resposta => {
+            // const token = resposta.data.token;
+            // const decoded = jwt.decode(token);
+            // const userId = decoded.userId;
+            
+            // // se quiser criar uma cookie só com o jwt token para acesso mais fácil
+            // res.cookie('userId', userId, {
+            //     httpOnly: true,
+            //     secure: false,
+            //     maxAge: 1000 * 60 * 60 // 1 hour
+            // });
+
             res.cookie('token', resposta.data.token, { 
                 httpOnly: true, 
                 secure: false, 

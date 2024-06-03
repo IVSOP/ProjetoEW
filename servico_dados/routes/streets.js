@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var jwt = require('jsonwebtoken')
 var auth = require('../auth/auth')
 var Street = require('../controllers/street');
 var Place = require("../models/place");
@@ -21,6 +22,12 @@ router.get('/:id', auth.verificaAcesso(['USER', 'ADMIN']), function(req,res) {
 router.post('/', auth.verificaAcesso(['USER', 'ADMIN']), async function(req,res) {
   try {
     let street = req.body;
+
+    // add userId as owner of streetObject
+    const token = req.headers.authorization || req.query.token;
+    const decodedToken = jwt.decode(token, {complete: true});
+    const userId = decodedToken.payload.userId;
+    street.owner = userId;
 
     if (street.places) {
       street.places = await validateAndConvert(street.places,Place)

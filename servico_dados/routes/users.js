@@ -26,29 +26,41 @@ router.get('/:id', auth.verificaAcesso(['USER', 'ADMIN']), function(req, res){ /
 
 router.post('/register', /*auth.verificaAcesso,*/ function(req, res) {
   var d = new Date().toISOString().substring(0,19)
-  userModel.register(new userModel({ username: req.body.username, name: req.body.name, 
-                                      level: 'USER', active: true, dateCreated: d }), 
-                req.body.password, 
-                function(err, user) {
-                  if (err) 
-                    res.jsonp({error: err, message: "Register error: " + err})
-                  else{
-                    passport.authenticate("local")(req,res,function(){
-                      jwt.sign({ username: req.user.username, level: req.user.level, 
-                        sub: 'Projeto de ruas'}, 
-                        "Proj_ruas",
-                        {expiresIn: 3600},
-                        function(e, token) {
-                          if(e) res.status(500).jsonp({error: "Erro na geração do token: " + e}) 
-                          else res.status(201).jsonp({token: token})
-                        });
-                    })
-                  }     
+  userModel.register(new userModel({ 
+    username: req.body.username, 
+    name: req.body.name, 
+    level: 'USER', active: true, dateCreated: d }), 
+    req.body.password, 
+    function(err, user) {
+      if (err) 
+        res.jsonp({error: err, message: "Register error: " + err})
+      else{
+        passport.authenticate("local")(req,res,function(){
+          const userId = req.user._id;
+          const userLevel = req.user.level;
+          jwt.sign({ 
+            userId: userId,
+            username: req.user.username, 
+            level: req.user.level, 
+            sub: 'Projeto de ruas'}, 
+            "Proj_ruas",
+            {expiresIn: 3600},
+            function(e, token) {
+              if(e) res.status(500).jsonp({error: "Erro na geração do token: " + e}) 
+              else res.status(201).jsonp({ token: token})
+            });
+        })
+      }     
   })
 })
 
 router.post('/login', passport.authenticate('local'), function(req, res){
-  jwt.sign({ username: req.user.username, level: req.user.level, 
+  const userId = req.user._id;
+  const userLevel = req.user.level;
+  jwt.sign({ 
+    userId: userId,
+    username: req.user.username, 
+    level: req.user.level, 
     sub: 'Projeto de ruas'}, 
     "Proj_ruas",
     {expiresIn: 3600},
