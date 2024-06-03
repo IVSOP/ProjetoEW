@@ -3,8 +3,10 @@ var axios = require('axios');
 var multer = require('multer');
 var router = express.Router();
 var upload = multer({dest: 'uploads'}) 
+const Utils = require('../forms/rua.js')
 var isLogged = require('../auth/auth'); // verificar se user tem token de login, senão redireciona para /login
 const addTokenToHeaders = require('../auth/headerToken'); // acrescentar o token ao header, para ter acesso aos recursos do backend
+
 
 router.get('/', isLogged, addTokenToHeaders, function(req, res, next){
     axios.get('http://localhost:3000/ruas')
@@ -16,22 +18,33 @@ router.get('/', isLogged, addTokenToHeaders, function(req, res, next){
         .catch(error => res.status(500).render('error', {error: error}))
 });
 
-// Not implemented
+
 router.get('/eliminar/:id', isLogged, addTokenToHeaders, function(req, res, next){
-    console.log(req.params.id)
-    res.status(200).end()
+    axios.delete('http://localhost:3000/ruas/' + req.params.id)
+        .then(() => res.redirect('/ruas'))
+        .catch(error => res.status(500).render('error', {error, error}))
 });
 
-// Not implemented
+
 router.get('/registar', isLogged, addTokenToHeaders, function(req, res, next){
     res.status(200).render('streetCreationForm', {title: 'Registar - Rua'})
 })
 
-// Not implemented
+
 router.post('/registar', isLogged, addTokenToHeaders, upload.fields([{ name: 'oldImageFiles' }, { name: 'newImageFiles' }]), function(req, res, next) {
-    console.log(req.body);
-    console.log(req.files);
-    res.status(201).end();
+    var formData = Utils.getRuaForm(req)
+    Utils.postImagensAntigas(req)
+        .then(ids_imagens_antigas => {
+            formData['old_images'] = ids_imagens_antigas
+            Utils.postImagensAtuais(req)
+                .then(ids_imagens_atuais => {
+                    formData['new_images'] = ids_imagens_atuais
+                    axios.post('http://localhost:3000/ruas/', formData)
+                        .then(() => res.redirect('/ruas'))
+                        .catch(error => res.status(500).render('error', {error: error}))
+                })
+        })
+        .catch(error => res.render('error', {error: error}))
 });
 
 
@@ -81,15 +94,16 @@ router.get('/:id', isLogged, addTokenToHeaders, function(req, res, next){
 
             imagens_antigas = []
             imagens_atuais = []
-            datas = (await axios.get('http://localhost:3000/datas', addTokenToHeaders)).data
-            lugares = (await axios.get('http://localhost:3000/lugares', addTokenToHeaders)).data
-            entidades = (await axios.get('http://localhost:3000/entidades', addTokenToHeaders)).data
+            datas = (await axios.get('http://localhost:3000/datas')).data
+            lugares = (await axios.get('http://localhost:3000/lugares')).data
+            entidades = (await axios.get('http://localhost:3000/entidades')).data
 
-            for (const x of response.data.old_images)
-                imagens_antigas.push((await axios.get(`http://localhost:3000/antigo/${x['_id']}`, addTokenToHeaders)).data);
+            for (const x of response.data.old_images){
+                imagens_antigas.push((await axios.get(`http://localhost:3000/antigo/${x['_id']}`)).data);
+            }
 
             for (const x of response.data.new_images)
-                imagens_atuais.push((await axios.get(`http://localhost:3000/atual/${x['_id']}`, addTokenToHeaders)).data);
+                imagens_atuais.push((await axios.get(`http://localhost:3000/atual/${x['_id']}`)).data);
 
             res.status(200).render('street', {
                 title: response.data.name,
@@ -98,9 +112,7 @@ router.get('/:id', isLogged, addTokenToHeaders, function(req, res, next){
                 entidades: entidades.filter(x => response.data.entities.includes(x['_id'])),
                 imagens_antigas: imagens_antigas,
                 imagens_atuais: imagens_atuais,
-                rua: response.data,
-                token: req.cookies.token
-            })
+                rua: response.data})
         })
         .catch(error => res.status(500).render('error', {error: error}))
 });

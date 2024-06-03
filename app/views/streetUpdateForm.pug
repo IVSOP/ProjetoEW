@@ -27,7 +27,7 @@ block content
 
                     .card.mb-0.mt-3.w-100.border-dark
                         .card-header.d-flex.justify-content-between
-                            h5.fw-bold.align-items-center.mb-0 Lugares Referidas
+                            h5.fw-bold.align-items-center.mb-0 Lugares Referidos
                             img#addPlace(src="/icons/plus-circle-fill.svg", type="button")
                         .card-body.pb-0.overflow-scroll#placesContainer(style="max-height: 165px;")
                             each lugar, index in lugares
@@ -118,9 +118,7 @@ block content
                                 | #{imagem_antiga.subst}
                             button.btn.btn-close(type='button', data-bs-dismiss='modal')
                         .modal-body
-                            script.
-                                var token = "#{token}";
-                            img.rounded(src=`http://localhost:3000/antigo/show/${imagem_antiga['_id']}?token=${token}`, style="width:100%")
+                            img.rounded(src=`http://localhost:3000/antigo/show/${imagem_antiga['_id']}`, style="width:100%")
 
         // Imagens Atuais Modal
         each imagem_atual, index in imagens_atuais
@@ -132,8 +130,6 @@ block content
                                 | #{imagem_atual.subst.split('/').pop()}
                             button.btn.btn-close(type='button', data-bs-dismiss='modal')
                         .modal-body
-                            script.
-                                var token = "#{token}";
-                            img.rounded(src=`http://localhost:3000/atual/show/${imagem_atual['_id']}?token=${token}`, style="width:100%")
+                            img.rounded(src=`http://localhost:3000/atual/show/${imagem_atual['_id']}`, style="width:100%")
 
     script(src="/js/fields.js", type="module")
