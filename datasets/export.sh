@@ -1,11 +1,5 @@
 #!/usr/bin/bash
 
-# if [[ -z $1 ]]
-# then
-# 	echo "args are <db>"
-# 	exit 1
-# fi
-
 DB="proj_ruas"
 EXPORT_DIR="export"
 EXPORT_FILENAME="export.tar.xz"
@@ -71,3 +65,4 @@ echo "{\"size\": $SIZE}" | jq > "manifest.json"
 tar -c -f "$EXPORT_FILENAME" --owner=0 --group=0 --no-same-owner --no-same-permissions "manifest.json" "files.tar.xz"
 
 rm "files.tar.xz"
+rm "manifest.json"
