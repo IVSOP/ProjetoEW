@@ -94,16 +94,16 @@ router.get('/:id', isLogged, addTokenToHeaders, function(req, res, next){
 
             imagens_antigas = []
             imagens_atuais = []
-            datas = (await axios.get('http://localhost:3000/datas')).data
-            lugares = (await axios.get('http://localhost:3000/lugares')).data
-            entidades = (await axios.get('http://localhost:3000/entidades')).data
+            datas = (await axios.get('http://localhost:3000/datas', addTokenToHeaders)).data
+            lugares = (await axios.get('http://localhost:3000/lugares', addTokenToHeaders)).data
+            entidades = (await axios.get('http://localhost:3000/entidades', addTokenToHeaders)).data
 
             for (const x of response.data.old_images){
-                imagens_antigas.push((await axios.get(`http://localhost:3000/antigo/${x['_id']}`)).data);
+                imagens_antigas.push((await axios.get(`http://localhost:3000/antigo/${x['_id']}`, addTokenToHeaders)).data);
             }
 
             for (const x of response.data.new_images)
-                imagens_atuais.push((await axios.get(`http://localhost:3000/atual/${x['_id']}`)).data);
+                imagens_atuais.push((await axios.get(`http://localhost:3000/atual/${x['_id']}`, addTokenToHeaders)).data);
 
             res.status(200).render('street', {
                 title: response.data.name,
