@@ -9,7 +9,7 @@ block content
 
             .carousel-indicators
                 - var slide = 0
-                - while (slide < rua.old_images.length + rua.new_images.length)
+                - while (slide < imagens_antigas.length + imagens_atuais.length)
                     if (slide === 0)
                         button(data-bs-target="#carouselExampleDark", data-bs-slide-to=slide, class="active", aria-current="true", aria-label="Slide " + slide)
                     else
@@ -18,17 +18,17 @@ block content
 
             .carousel-inner(style="aspect-ratio: 16 / 9;")
 
-                each old_image, index in rua.old_images
+                each imagem_antiga, index in imagens_antigas
                     .carousel-item(class={active: index === 0, 'mt-30': index === 0} data-bs-interval="5000")
-                        img.d-block.w-100.rounded(style="aspect-ratio: 16 / 9;", src=`http://localhost:3000/imagens/antigo/${old_image.path.split('/').pop()}`)
+                        img.d-block.w-100.rounded(style="aspect-ratio: 16 / 9;", src=`http://localhost:3000/antigo/show/${imagem_antiga['_id']}`)
                         .carousel-caption.d-none.d-md-block
-                            h3= old_image.subst
+                            h3= imagem_antiga.subst
 
-                each new_image in rua.new_images 
+                each imagem_atual in imagens_atuais 
                     .carousel-item(data-bs-interval="5000")
-                        img.w-100.rounded(style=" aspect-ratio: 16 / 9;", src=`http://localhost:3000/imagens/atual/${new_image.split('/').pop()}`)
+                        img.w-100.rounded(style=" aspect-ratio: 16 / 9;", src=`http://localhost:3000/atual/show/${imagem_atual['_id']}`)
                         .carousel-caption.d-none.d-md-block
-                            h3 #{rua.name} - Vista Atual
+                            h3= imagem_atual.subst.split('/').pop()
 
             button.carousel-control-prev(type="button", data-bs-target="#carouselExampleDark", data-bs-slide="prev")
                 span.carousel-control-prev-icon(aria-hidden="true")

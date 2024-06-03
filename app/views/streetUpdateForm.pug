@@ -73,28 +73,28 @@ block content
                     h5.fw-bold.align-items-center.mb-0 Imagens Antigas
                     img#addOldImage(src="/icons/plus-circle-fill.svg", type="button")
                 .card-body.pb-0#oldImagesContainer
-                    each old_image, index in rua.old_images
+                    each imagem_antiga, index in imagens_antigas
                         .row.g-3.mb-3(id=`oldImage${index}`)
                             .col
-                                input.form-control.h-100(type='text', name='oldImageSubst', placeholder='Referência', value=old_image.subst, required)
+                                input.form-control.h-100(type='text', name='oldImageSubst', placeholder='Referência', value=imagem_antiga.subst, required)
                             .col 
                                 button.btn.btn-secondary.w-100(type='button', data-bs-toggle='modal', data-bs-target=`#oldImageModal${index}`)
-                                    | #{old_image.path.split('/').pop()} 
+                                    | #{imagem_antiga.subst} 
                             .col(hidden)
-                                input.form-control(type="hidden", name="oldImageFiles", value=old_image.path, required)
+                                input.form-control(type="hidden", name="oldImageFiles", value=imagem_antiga['_id'], required)
                             .col
                                 button.btn.btn-danger.w-100.h-100.deleteOldImage(data-field-id=`oldImage${index}`) Eliminar
 
             .card.mt-3.mb-3.border-dark
                 h5.card-header.fw-bold Imagens Atuais
                 .card-body#newImagesContainer
-                    each new_image, index in rua.new_images
+                    each imagem_atual, index in imagens_atuais
                         .row.g-3.mb-3(id=`newImage${index}`)
                             .col
                                 button.btn.btn-secondary.w-100(type='button', data-bs-toggle='modal', data-bs-target=`#newImageModal${index}`)
-                                    | #{new_image.split('/').pop()} 
+                                    | #{imagem_atual.subst.split('/').pop()} 
                             .col(hidden)
-                                input.form-control(type="hidden", name="newImageFiles", value=new_image, required)
+                                input.form-control(type="hidden", name="newImageFiles", value=imagem_atual['_id'], required)
                             .col
                                 button.btn.btn-danger.w-100.h-100.deleteNewImage(data-field-id=`newImage${index}`) Eliminar
                     input.form-control(type="file" name="newImageFiles" multiple)
@@ -106,27 +106,27 @@ block content
                     button.btn.btn-success.btn-lg.btn-block.w-100(type='submit') Atualizar
 
         // Imagens Antigas Modal
-        each old_image, index in rua.old_images
+        each imagem_antiga, index in imagens_antigas
             .modal.fade(id=`oldImageModal${index}`, tabindex='-1', role='dialog', aria-hidden='true')
                 .modal-dialog.modal-dialog-centered(role='document')
                     .modal-content
                         .modal-header.d-flex.justify-content-between
                             h5.modal-title
-                                | #{old_image.path.split('/').pop()}
+                                | #{imagem_antiga.subst}
                             button.btn.btn-close(type='button', data-bs-dismiss='modal')
                         .modal-body
-                            img.rounded(src=`http://localhost:3000/imagens/antigo/${old_image.path.split('/').pop()}`, style="width:100%")
+                            img.rounded(src=`http://localhost:3000/antigo/show/${imagem_antiga['_id']}`, style="width:100%")
 
         // Imagens Atuais Modal
-        each new_image, index in rua.new_images
+        each imagem_atual, index in imagens_atuais
             .modal.fade(id=`newImageModal${index}`, tabindex='-1', role='dialog', aria-hidden='true')
                 .modal-dialog.modal-dialog-centered(role='document')
                     .modal-content
                         .modal-header.d-flex.justify-content-between
                             h5.modal-title
-                                | #{new_image.split('/').pop()}
+                                | #{imagem_atual.subst.split('/').pop()}
                             button.btn.btn-close(type='button', data-bs-dismiss='modal')
                         .modal-body
-                            img.rounded(src=`http://localhost:3000/imagens/atual/${new_image.split('/').pop()}`, style="width:100%")
+                            img.rounded(src=`http://localhost:3000/atual/show/${imagem_atual['_id']}`, style="width:100%")
 
     script(src="/js/fields.js", type="module")

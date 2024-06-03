@@ -41,15 +41,25 @@ router.get('/editar/:id', function(req, res, next){
     axios.get('http://localhost:3000/ruas/' + req.params.id)
         .then(async response => {
 
+            imagens_antigas = []
+            imagens_atuais = []
             datas = (await axios.get('http://localhost:3000/datas')).data
             lugares = (await axios.get('http://localhost:3000/lugares')).data
             entidades = (await axios.get('http://localhost:3000/entidades')).data
-            
+
+            for (const x of response.data.old_images)
+                imagens_antigas.push((await axios.get(`http://localhost:3000/antigo/${x['_id']}`)).data);
+
+            for (const x of response.data.new_images)
+                imagens_atuais.push((await axios.get(`http://localhost:3000/atual/${x['_id']}`)).data);
+
             res.status(200).render('streetUpdateForm', {
                 title: 'Editar - ' + req.params.id,
                 datas: datas.filter(x => response.data.dates.includes(x['_id'])),
                 lugares: lugares.filter(x => response.data.places.includes(x['_id'])),
                 entidades: entidades.filter(x => response.data.entities.includes(x['_id'])),
+                imagens_antigas: imagens_antigas,
+                imagens_atuais: imagens_atuais,
                 rua: response.data})
         })
         .catch(error => res.status(500).render('error', {error: error}))
@@ -68,15 +78,25 @@ router.get('/:id', function(req, res, next){
     axios.get('http://localhost:3000/ruas/' + req.params.id)
         .then(async response => {
 
+            imagens_antigas = []
+            imagens_atuais = []
             datas = (await axios.get('http://localhost:3000/datas')).data
             lugares = (await axios.get('http://localhost:3000/lugares')).data
             entidades = (await axios.get('http://localhost:3000/entidades')).data
+
+            for (const x of response.data.old_images)
+                imagens_antigas.push((await axios.get(`http://localhost:3000/antigo/${x['_id']}`)).data);
+
+            for (const x of response.data.new_images)
+                imagens_atuais.push((await axios.get(`http://localhost:3000/atual/${x['_id']}`)).data);
 
             res.status(200).render('street', {
                 title: response.data.name,
                 datas: datas.filter(x => response.data.dates.includes(x['_id'])),
                 lugares: lugares.filter(x => response.data.places.includes(x['_id'])),
                 entidades: entidades.filter(x => response.data.entities.includes(x['_id'])),
+                imagens_antigas: imagens_antigas,
+                imagens_atuais: imagens_atuais,
                 rua: response.data})
         })
         .catch(error => res.status(500).render('error', {error: error}))
