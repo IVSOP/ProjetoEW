@@ -29,3 +29,14 @@ module.exports.deleteById = async (id) => {
 module.exports.insert = atual => {
     return Atual.create(atual)
 }
+
+module.exports.list = async () => { // query 
+    try {
+        let lista = await Atual.find().sort({ _id: 1 }).exec();
+
+		return lista;
+    } catch (error) {
+        console.error(error);
+        throw new Error("Error fetching dates");
+    }
+}

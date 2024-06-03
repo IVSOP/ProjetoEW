@@ -15,7 +15,9 @@ rm -rf imagens/*
 mongosh --eval "db.dropDatabase()" "$DB"
 
 # extract outer files
-tar -C "$IMPORT_DIR" -x -f "$IMPORT_FILENAME"
+mkdir -p "$IMPORT_DIR"
+mv "$IMPORT_FILENAME" "$IMPORT_DIR"
+(cd "$IMPORT_DIR" && tar -x -f "$IMPORT_FILENAME")
 
 # read manifest
 SIZE=$(jq '.size' "$IMPORT_DIR/manifest.json")
@@ -29,8 +31,9 @@ mongoimport --jsonArray -d $DB -c "places"   "$IMPORT_DIR/places.json"
 mongoimport --jsonArray -d $DB -c "antigo"   "$IMPORT_DIR/antigo.json"
 mongoimport --jsonArray -d $DB -c "atual"    "$IMPORT_DIR/atual.json"
 
-mv "$IMPORT_DIR/imagens/" "imagens/"
+mv "$IMPORT_DIR/atual/" "imagens/"
+mv "$IMPORT_DIR/antigo/" "imagens/"
 
-rm "$IMPORT_DIR/files.tar.xz"
-rm "$IMPORT_DIR/manifest.json"
-rm "$IMPORT_FILENAME"
+# rm "$IMPORT_DIR/files.tar.xz"
+# rm "$IMPORT_DIR/manifest.json"
+rm -r "$IMPORT_DIR"

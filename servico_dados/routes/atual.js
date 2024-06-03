@@ -10,9 +10,11 @@ const upload = multer({ dest: 'uploads/atual' })
 // rotas /show vao devolver a imagem pronta a ser mostrada
 
 
-// router.get('/', function(req, res, next) {
-
-// });
+router.get('/', function(req, res, next) {
+	Atual.list()
+	.then(data => res.status(201).jsonp(data))
+	.catch(erro => res.status(522).jsonp(erro))
+});
 
 router.get('/show/:id', function(req,res) {
 	Atual.findById(req.params.id)
