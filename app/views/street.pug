@@ -20,13 +20,13 @@ block content
 
                 each imagem_antiga, index in imagens_antigas
                     .carousel-item(class={active: index === 0, 'mt-30': index === 0} data-bs-interval="5000")
-                        img.d-block.w-100.rounded(style="aspect-ratio: 16 / 9;", src=`http://localhost:3000/antigo/show/${imagem_antiga['_id']}`)
+                        img.d-block.w-100.rounded(style="aspect-ratio: 16 / 9;", src=`http://localhost:3000/antigo/show/${imagem_antiga['_id']}?token=${token}`)
                         .carousel-caption.d-none.d-md-block
                             h3= imagem_antiga.subst
 
                 each imagem_atual in imagens_atuais 
                     .carousel-item(data-bs-interval="5000")
-                        img.w-100.rounded(style=" aspect-ratio: 16 / 9;", src=`http://localhost:3000/atual/show/${imagem_atual['_id']}`)
+                        img.w-100.rounded(style=" aspect-ratio: 16 / 9;", src=`http://localhost:3000/atual/show/${imagem_atual['_id']}?token=${token}`)
                         .carousel-caption.d-none.d-md-block
                             h3= imagem_atual.subst.split('/').pop()
 

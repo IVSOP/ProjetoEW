@@ -112,7 +112,9 @@ router.get('/:id', isLogged, addTokenToHeaders, function(req, res, next){
                 entidades: entidades.filter(x => response.data.entities.includes(x['_id'])),
                 imagens_antigas: imagens_antigas,
                 imagens_atuais: imagens_atuais,
-                rua: response.data})
+                rua: response.data,
+                token: req.cookies.token
+            })
         })
         .catch(error => res.status(500).render('error', {error: error}))
 });

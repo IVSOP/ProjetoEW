@@ -118,7 +118,7 @@ block content
                                 | #{imagem_antiga.subst}
                             button.btn.btn-close(type='button', data-bs-dismiss='modal')
                         .modal-body
-                            img.rounded(src=`http://localhost:3000/antigo/show/${imagem_antiga['_id']}`, style="width:100%")
+                            img.rounded(src=`http://localhost:3000/antigo/show/${imagem_antiga['_id']}?token=${token}`, style="width:100%")
 
         // Imagens Atuais Modal
         each imagem_atual, index in imagens_atuais
@@ -130,6 +130,6 @@ block content
                                 | #{imagem_atual.subst.split('/').pop()}
                             button.btn.btn-close(type='button', data-bs-dismiss='modal')
                         .modal-body
-                            img.rounded(src=`http://localhost:3000/atual/show/${imagem_atual['_id']}`, style="width:100%")
+                            img.rounded(src=`http://localhost:3000/atual/show/${imagem_atual['_id']}?token=${token}`, style="width:100%")
 
     script(src="/js/fields.js", type="module")
