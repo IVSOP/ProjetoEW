@@ -248,14 +248,6 @@ if __name__ == '__main__':
     #update jsons with respective ids
     update_jsons_with_ids(filesJSON, places_dict, entities_dict, dates_dict)
     
-    # descomentar isto, se preferirem meter em ficheiros separados
-    #write final json contents to new files
-    # Path('parsed/streets').mkdir(parents=True,exist_ok=True)
-    # for (filepath, jsonData) in filesJSON:
-    #     with open(filepath,'w') as jsonFile:
-    #      
-    # jsonFile.write(json.dumps(jsonData,ensure_ascii=False,indent=4))
-
     #escrever só para um ficheiro as entradas todas
     jsonsOnly = [tup[1] for tup in filesJSON]
     sorted_jsonsOnly = sorted(jsonsOnly, key=lambda x: int(x['_id']))
@@ -271,7 +263,12 @@ if __name__ == '__main__':
     # entities = mongo["proj_ruas"][collection]
     # dates = mongo["proj_ruas"][collection]
 
+    # ler users
+    with open('./parsed/users.json', 'r') as file:
+        users_data = json.load(file)
+
     insert_mongo('streets', sorted_jsonsOnly)
     insert_mongo('places', list(places_dict.values()))
     insert_mongo('entities', list(entities_dict.values()))
     insert_mongo('dates', list(dates_dict.values()))
+    insert_mongo('users', users_data)

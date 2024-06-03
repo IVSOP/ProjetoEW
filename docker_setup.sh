@@ -1,4 +1,9 @@
-#!/usr/bin/bash
+#!/bin/bash
+
+mkdir -p datasets/parsed/atual
+mkdir -p datasets/parsed/antigo
+mkdir -p servico_dados/imagens/atual
+mkdir -p servico_dados/imagens/antigo
 
 rm datasets/parsed/atual/*
 rm datasets/parsed/antigo/*

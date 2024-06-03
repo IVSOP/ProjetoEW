@@ -1,23 +1,24 @@
 var express = require('express');
 var router = express.Router();
+var auth = require('../auth/auth')
 var Street = require('../controllers/street');
 var Place = require("../models/place");
 var Entity = require("../models/entity");
 var Date = require("../models/date");
 
-router.get('/', function(req, res, next) {
+router.get('/', auth.verificaAcesso(['USER', 'ADMIN']), function(req, res, next) {
   Street.list()
     .then(data => res.status(201).jsonp(data))
     .catch(erro => res.status(523).jsonp(erro))
 });
 
-router.get('/:id', function(req,res) {
+router.get('/:id', auth.verificaAcesso(['USER', 'ADMIN']), function(req,res) {
   Street.findById(req.params.id)
     .then(data => res.status(201).jsonp(data))
     .catch(erro => res.status(522).jsonp(erro))
 });
 
-router.post('/', async function(req,res) {
+router.post('/', auth.verificaAcesso(['USER', 'ADMIN']), async function(req,res) {
   try {
     let street = req.body;
 
@@ -40,7 +41,7 @@ router.post('/', async function(req,res) {
   }
 });
 
-router.put('/:id', async (req,res) => {
+router.put('/:id', auth.verificaAcesso(['ADMIN'],true), async (req,res) => {
   try {
     let street = req.body;
 
@@ -64,7 +65,7 @@ router.put('/:id', async (req,res) => {
   }
 });
 
-router.delete('/:id', (req,res) => {
+router.delete('/:id', auth.verificaAcesso(['ADMIN'],true), (req,res) => {
   Street.deleteStreetById(req.params.id, req.body)
   .then(data => res.status(201).jsonp(data))
   .catch(erro => res.status(529).jsonp(erro))

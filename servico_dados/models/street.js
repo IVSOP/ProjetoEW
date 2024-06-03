@@ -22,6 +22,7 @@ var streetSchema = new mongoose.Schema({
         type: String,
         default: uuidv4
     },
+    owner: String,
     name: String,
     description: [String],
     places: [String],

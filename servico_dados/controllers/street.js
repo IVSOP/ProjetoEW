@@ -16,6 +16,24 @@ module.exports.findById = id => {
         .exec()
 }
 
+module.exports.isOwner = async (street_id, user_id) => {
+    try {
+        const street = await Street.findOne({_id: street_id}, { owner: 1 }).exec();
+        if (!street) {
+            throw new Error("Street not found");
+        }
+        
+        if (!street.owner) {
+            return false
+        }
+        
+        return street.owner === user_id;
+    } catch (error) {
+        console.error("Error checking ownership:", error);
+        throw error;
+    }
+};
+
 module.exports.insert = async (street) => {
     try {
         const streetObj = await Street.create(street)

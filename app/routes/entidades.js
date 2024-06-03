@@ -1,9 +1,10 @@
 var express = require('express');
-var axios = require('axios')
+var axios = require('axios');
 var router = express.Router();
+var isLogged = require('../auth/auth');
+const addTokenToHeaders = require('../auth/headerToken');
 
-
-router.get('/', function(req, res, next){
+router.get('/', isLogged, addTokenToHeaders, function(req, res, next){
     axios.get('http://localhost:3000/entidades')
         .then(response => {
             res.status(200).render('collapsedList', {
