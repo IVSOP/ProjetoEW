@@ -1,12 +1,12 @@
 services:
 
-  backend:
-    container_name: proj_ruas_servico_dados
+  parser:
+    container_name: proj_ruas_parser
     build:
-      context: ./servico_dados
+      context: ./datasets
       dockerfile: Dockerfile
-    ports:
-      - "3000:3000"
+    volumes:
+      - ./datasets:/datasets
     depends_on:
       - mongodb
 

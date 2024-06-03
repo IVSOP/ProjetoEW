@@ -4,7 +4,7 @@ var path = require('path');
 var logger = require('morgan');
 var mongoose = require('mongoose')
 
-var mongoDB = 'mongodb://127.0.0.1/proj_ruas'
+var mongoDB = 'mongodb://proj_ruas_mongodb/proj_ruas'
 mongoose.connect(mongoDB)
 var db = mongoose.connection
 
