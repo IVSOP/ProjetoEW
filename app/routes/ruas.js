@@ -23,7 +23,6 @@ router.get('/eliminar/:id', function(req, res, next){
 });
 
 
-// Not implemented
 router.get('/registar', function(req, res, next){
     res.status(200).render('streetCreationForm', {title: 'Registar - Rua'})
 })

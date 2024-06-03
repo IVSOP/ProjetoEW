@@ -3,6 +3,7 @@ import { dateTemplate } from "./templates.js";
 import { placeTemplate } from "./templates.js";
 import { entityTemplate } from "./templates.js";
 import { oldImageTemplate } from "./templates.js";
+import { newImageTemplate } from "./templates.js";
 
 
 $(document).ready(function(){
@@ -12,6 +13,7 @@ $(document).ready(function(){
     var lastPlaceId = ($('#placesContainer .row').length);
     var lastEntityId = ($('#entitiesContainer .row').length);
     var lastOldImageId = ($('#oldImagesContainer .row').length);
+    var lastNewImageId = ($('#newImagesContainer .row').length);
 
 
     function addField(container,fieldTemplate,id) {
@@ -48,6 +50,12 @@ $(document).ready(function(){
     $('#addOldImage').click(function(){
         lastOldImageId++;
         addField($("#oldImagesContainer"),oldImageTemplate,`oldImage${lastOldImageId}`);
+    });
+
+
+    $('#addNewImage').click(function(){
+        lastNewImageId++;
+        addField($("#newImagesContainer"),newImageTemplate,`newImage${lastNewImageId}`);
     });
 
 

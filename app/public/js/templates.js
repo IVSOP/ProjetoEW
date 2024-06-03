@@ -53,6 +53,22 @@ export const oldImageTemplate = `
     </div>`;
 
 
+export const newImageTemplate = `
+    <div class="row g-3 mb-3" id="__ID__">
+        <div class="col">
+            <input class="form-control" type='text' name='newImageSubst' placeholder='Referência' required/>
+        </div>
+        <div class="col">
+            <input class="form-control" type="file" name="newImageFiles" required/>
+        </div>
+        <div class="col">
+            <button class="btn btn-danger w-100 deleteNewImage" type="button" data-field-id="__ID__">
+                Eliminar
+            </button>
+        </div>
+    </div>`;
+
+
 export const houseTemplate = `
     <div class="card mb-3 w-100 p-3 border-dark" id="__ID__">
         <div class="row g-3">

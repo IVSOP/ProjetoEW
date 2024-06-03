@@ -86,18 +86,21 @@ block content
                                 button.btn.btn-danger.w-100.h-100.deleteOldImage(data-field-id=`oldImage${index}`) Eliminar
 
             .card.mt-3.mb-3.border-dark
-                h5.card-header.fw-bold Imagens Atuais
-                .card-body#newImagesContainer
-                    each imagem_atual, index in imagens_atuais
-                        .row.g-3.mb-3(id=`newImage${index}`)
-                            .col
-                                button.btn.btn-secondary.w-100(type='button', data-bs-toggle='modal', data-bs-target=`#newImageModal${index}`)
-                                    | #{imagem_atual.subst.split('/').pop()} 
-                            .col(hidden)
-                                input.form-control(type="hidden", name="newImageFiles", value=imagem_atual['_id'], required)
-                            .col
-                                button.btn.btn-danger.w-100.h-100.deleteNewImage(data-field-id=`newImage${index}`) Eliminar
-                    input.form-control(type="file" name="newImageFiles" multiple)
+                    .card-header.d-flex.justify-content-between
+                        h5.fw-bold.align-items-center.mb-0 Imagens Atuais
+                        img#addNewImage(src="/icons/plus-circle-fill.svg", type="button")
+                    .card-body#newImagesContainer
+                        each imagem_atual, index in imagens_atuais
+                            .row.g-3.mb-3(id=`newImage${index}`)
+                                .col
+                                    input.form-control.h-100(type='text', name='newImageSubst', placeholder='Referência', value=imagem_atual.subst.split('/').pop(), required)
+                                .col
+                                    button.btn.btn-secondary.w-100(type='button', data-bs-toggle='modal', data-bs-target=`#newImageModal${index}`)
+                                        | #{imagem_atual.subst.split('/').pop()} 
+                                .col(hidden)
+                                    input.form-control(type="hidden", name="newImageFiles", value=imagem_atual['_id'], required)
+                                .col
+                                    button.btn.btn-danger.w-100.h-100.deleteNewImage(data-field-id=`newImage${index}`) Eliminar
 
             .row.g-3.mb-3
                 .col

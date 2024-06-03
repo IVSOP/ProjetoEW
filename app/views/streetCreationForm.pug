@@ -74,11 +74,19 @@ block content
                             input.form-control(type="file", name="oldImageFiles", required)
                         .col
                             button.btn.btn-danger.w-100.deleteOldImage(data-field-id="oldImage1") Eliminar
- 
+
             .card.mt-3.mb-3.border-dark
-                h5.card-header.fw-bold Imagens Atuais
-                .card-body
-                    input.form-control(type="file" name="newImageFiles" multiple required)
+                .card-header.d-flex.justify-content-between
+                    h5.fw-bold.align-items-center.mb-0 Imagens Atuais
+                    img#addNewImage(src="/icons/plus-circle-fill.svg", type="button")
+                .card-body.pb-0#newImagesContainer
+                    .row.g-3.mb-3#newImage1
+                        .col
+                            input.form-control(type='text', name='newImageSubst', placeholder='Referência', required)
+                        .col
+                            input.form-control(type="file", name="newImageFiles", required)
+                        .col
+                            button.btn.btn-danger.w-100.deleteNewImage(data-field-id="newImage1") Eliminar
 
             .row.g-3.mb-3
                 .col
