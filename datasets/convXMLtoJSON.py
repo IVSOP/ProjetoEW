@@ -15,7 +15,7 @@ import json
 import pymongo
 import shutil
 
-#mongo = pymongo.MongoClient("mongodb://localhost:27017/")
+# mongo = pymongo.MongoClient("mongodb://localhost:27017/")
 mongo = pymongo.MongoClient("mongodb://mongodb:27017/")
 
 # loadImage('antigo', 'MapaRuas-materialBase/antigo/MRB-16-RuaDeDGualdim-Nascente.jpg', 'uma imagem')

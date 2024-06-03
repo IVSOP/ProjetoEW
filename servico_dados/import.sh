@@ -1,10 +1,18 @@
 #!/usr/bin/bash
 
+if [[ -z $1 ]]
+then
+	echo "Please enter name of the tar file to backup from"
+	exit 1
+fi
+
 DB="proj_ruas"
 IMPORT_DIR="import"
-IMPORT_FILENAME="export.tar.xz"
+IMPORT_FILENAME="$1"
 
-mkdir -p "$IMPORT_DIR"
+# reset da BD, apagar imagens
+rm -rf imagens/*
+mongosh --eval "db.dropDatabase()" "$DB"
 
 # extract outer files
 tar -C "$IMPORT_DIR" -x -f "$IMPORT_FILENAME"
@@ -20,6 +28,8 @@ mongoimport --jsonArray -d $DB -c "entities" "$IMPORT_DIR/entities.json"
 mongoimport --jsonArray -d $DB -c "places"   "$IMPORT_DIR/places.json"
 mongoimport --jsonArray -d $DB -c "antigo"   "$IMPORT_DIR/antigo.json"
 mongoimport --jsonArray -d $DB -c "atual"    "$IMPORT_DIR/atual.json"
+
+mv "$IMPORT_DIR/imagens/" "imagens/"
 
 rm "$IMPORT_DIR/files.tar.xz"
 rm "$IMPORT_DIR/manifest.json"

@@ -2,7 +2,7 @@
 
 DB="proj_ruas"
 EXPORT_DIR="export"
-EXPORT_FILENAME="export.tar.xz"
+EXPORT_FILENAME="export.tar"
 
 mkdir -p "$EXPORT_DIR"
 mkdir -p "$EXPORT_DIR/atual"
@@ -17,17 +17,17 @@ mongoexport --jsonArray -d $DB -c "atual"    -o "$EXPORT_DIR/atual.json"
 
 # para as imagens, temos de exportar tambem as imagens em si
 # mas so vamos considerar aquelas que existirem na colecao das imagens
-# assume que imagens estao em parsed/antigo e parsed/atual
+# assume que imagens estao em imagens/antigo e imagens/atual
 
 for i in $(jq '.[]."_id"."$oid"' "$EXPORT_DIR/antigo.json" | tr -d '"')
 do
-	IMAGE="parsed/antigo/$i.*" # fica mais facil do que tar a ir a outro json ir buscar a extension
+	IMAGE="imagens/antigo/$i.*" # fica mais facil do que tar a ir a outro json ir buscar a extension
 	cp $IMAGE "$EXPORT_DIR/antigo/"
 done
 
 for i in $(jq '.[]."_id"."$oid"' "$EXPORT_DIR/atual.json" | tr -d '"')
 do
-	IMAGE="parsed/atual/$i.*" # fica mais facil do que tar a ir a outro json ir buscar a extension
+	IMAGE="imagens/atual/$i.*" # fica mais facil do que tar a ir a outro json ir buscar a extension
 	cp $IMAGE "$EXPORT_DIR/atual/"
 done
 
