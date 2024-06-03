@@ -16,6 +16,12 @@ router.get('/', function(req, res, next) {
 	.catch(erro => res.status(522).jsonp(erro))
 });
 
+router.get('/:id', function(req, res, next) {
+	Atual.findById(req.params.id)
+    	.then(data => res.status(201).jsonp(data))
+	    .catch(erro => res.status(522).jsonp(erro))
+});
+
 router.get('/show/:id', function(req,res) {
 	Atual.findById(req.params.id)
     .then(imagem => {

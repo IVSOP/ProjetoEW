@@ -2,8 +2,8 @@ node_modules/
 package-lock.json
 uploads/atual/*
 uploads/antigo/*
+imagens/*
 imagens/antigo/*
 imagens/atual/*
 export
 *.tar*
-
