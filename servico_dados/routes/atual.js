@@ -4,7 +4,8 @@ const fs = require('fs');
 // const path = require('path');
 const mime = require('mime-types');
 var Atual = require('../controllers/atual');
-
+const multer  = require('multer')
+const upload = multer({ dest: 'uploads/atual' })
 
 // rotas /show vao devolver a imagem pronta a ser mostrada
 
@@ -13,12 +14,10 @@ var Atual = require('../controllers/atual');
 
 // });
 
-// GET para imagens atuais, devolve a imagem
-
 router.get('/show/:id', function(req,res) {
 	Atual.findById(req.params.id)
     .then(imagem => {
-		const imagePath = 'imagens/atual/' + imagem.id + imagem.extension
+		const imagePath = 'imagens/atual/' + imagem.id + '.' + imagem.extension
 		const mimetype = mime.lookup(imagePath);
 		
 		fs.readFile(imagePath, (err, data) => {
@@ -34,15 +33,39 @@ router.get('/show/:id', function(req,res) {
     .catch(erro => res.status(522).jsonp(erro))
 });
 
+router.post('/', upload.single('imagem'), function(req,res) {
 
-// router.delete('/antigo/:nome', (req,res) => {
-// 	fs.unlink('imagens/antigo/' + req.params.nome, (err) => {
-// 		if (err) {
-// 			res.status(500).jsonp("Error: " + err)
-// 			return;
-// 		}
-// 		res.status(201).jsonp("Image deleted")
-// 	})
-// });
+	dados_imagem = {
+		// id so vai ser criado na BD
+		subst: req.body.subst,
+		extension: req.file.originalname.split('.').pop()
+	}
+
+	Atual.insert(dados_imagem)
+	.then(imagem => {
+		// mover imagem para a dir correta
+		fs.rename(req.file.path, "imagens/atual/" + imagem._id + '.' + imagem.extension, function(error){
+			if(error) throw error
+		})
+
+		res.status(201).jsonp(imagem);
+	})
+	.catch(erro => res.status(522).jsonp(erro))
+});
+
+router.delete('/:id', function(req,res) {
+	Atual.deleteById(req.params.id)
+    .then(imagem => {
+		fs.unlink('imagens/atual/' + imagem._id + '.' + imagem.extension, (err) => {
+			if (err) {
+				res.status(500).jsonp("Error: " + err)
+				return;
+			}
+			// res.status(201).jsonp("Image deleted")
+		})
+		res.status(201).jsonp(imagem);
+	})
+    .catch(erro => res.status(522).jsonp(erro))
+});
 
 module.exports = router;
