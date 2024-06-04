@@ -81,8 +81,8 @@ router.get('/editar/:id', isLogged, addTokenToHeaders, function(req, res, next){
 
 // Not implemented
 router.post('/editar/:id', isLogged, addTokenToHeaders, upload.fields([{ name: 'oldImageFiles' }, { name: 'newImageFiles' }]), function(req, res, next){
-    console.log(req.body)
-    console.log(req.files)
+  //  console.log(req.body)
+  //  console.log(req.files)
 
     axios.get(`http://localhost:3000/ruas/${req.params.id}`, addTokenToHeaders)
         .then(async response => {
@@ -109,11 +109,8 @@ router.post('/editar/:id', isLogged, addTokenToHeaders, upload.fields([{ name: '
             axios.put(`http://localhost:3000/ruas/${req.params.id}`, formData, addTokenToHeaders)
                 .then(() => res.redirect('/ruas/' + req.params.id))
                 .catch(error => res.status(500).render('error', {error: error}))
-
-            res.status(201).end()
         })
-
-    res.status(201).end()
+        .catch(error => res.status(500).render('error', {error: error}))
 })
 
 

@@ -1,21 +1,58 @@
 var axios = require('axios');   
 const fs = require('fs');
+const { spawn } = require('child_process');
 const FormData = require('form-data');
 
 
-const postImagem = async (multerFile,subst,rota) => {
+const padImage = (inPath, outPath) => {
+
+    return new Promise((resolve, reject) => {
+
+        const ffmpegArgs = [
+            '-y',
+            '-i', inPath,
+            '-vf', 'scale=iw*min(1500/iw\\,1000/ih):ih*min(1500/iw\\,1000/ih),pad=1500:1000:(1500-iw*min(1500/iw\\,1000/ih))/2:(1000-ih*min(1500/iw\\,1000/ih))/2:color=#fefaed',
+            outPath
+        ];
+
+        const ffmpeg = spawn('ffmpeg', ffmpegArgs);
+
+        ffmpeg.on('error', (error) => {
+            console.error('Error running ffmpeg:', error);
+            reject(error);
+        });
+
+        ffmpeg.on('close', (code) => {
+            if (code === 0){
+                console.log('ffmpeg process completed successfully.');
+                resolve();
+            }
+            else{
+                reject(new Error(`ffmpeg process exited with code ${code}`));
+            }
+        });
+    });
+};
+
+
+const postImagem = async (multerFile,subst,route) => {
 
     try {
-        const data = fs.readFileSync(multerFile.path)
+
+        let outPath = multerFile.path + '.' + multerFile.originalname.split('.').pop()
+        await padImage(multerFile.path,outPath)
+        const data = fs.readFileSync(outPath)
         const formData = new FormData()
 
         formData.append('imagem', data, multerFile.originalname)
         formData.append('subst', subst);
 
-        const response = await axios.post(`http://localhost:3000/${rota}/`, formData, {
+        const response = await axios.post(`http://localhost:3000/${route}/`, formData, {
             headers: { 'Content-Type': 'multipart/form-data' }})
 
         fs.unlinkSync(multerFile.path)
+        fs.unlinkSync(outPath)
+
         return response.data
     }
 
@@ -37,7 +74,7 @@ module.exports.deleteImageIfNotContains = async (past,now,route) => {
         }
         if (!contains){
             console.log('A eliminar: ' + past_element['_id'])
-            axios.delete(`http://localhost:3000/${rota}/${past_element['_id']}`)
+            axios.delete(`http://localhost:3000/${route}/${past_element['_id']}`)
         }
     }
 }
