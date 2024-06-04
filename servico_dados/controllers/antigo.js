@@ -40,3 +40,18 @@ module.exports.list = async () => { // query
         throw new Error("Error fetching dates");
     }
 }
+
+module.exports.update = async (id,antigo) => {
+    try {
+        let updatedAntigo = await Antigo.findOneAndUpdate({_id: id}, antigo, {new: true});
+        if (!updatedAntigo) {
+            throw new Error('antigo not found (update)');
+        }
+    
+        return updatedAntigo;
+    
+    } catch (error) {
+        console.error(error);
+        throw new Error("Error fetching antigo");
+    }
+}

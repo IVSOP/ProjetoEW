@@ -83,23 +83,15 @@ router.delete('/:id', auth.verificaAcesso(['ADMIN'],true), (req,res) => {
 // ver se lista de entidade/data/lugar está em nomes em vez de ids. 
 // Se for o caso, substituir por respetivo id da base de dados, ou criar novo se não existir
 async function validateAndConvert(ids, model) {
-  const validIds = [];
-  for (let id of ids) {
-      if (isNaN(id)) { // se valor é não numérico
-          let existingEntry = await model.findOne({ name: id }).exec(); // se já existir id correspondente para esse nome, substituir
-          if (!existingEntry) {
-              existingEntry = await model.create({ name: id }); // senão existir id correspondente, criar novo
-            }
-          id = existingEntry._id
-      } else { // se valor for numérico
-        const existingEntry = await model.findOne({ _id: id }).exec(); // garantir que existe na db esse id, senão dá erro
-        if (!existingEntry) {
-            throw new Error("Entry with id: " + id + " does not exist in the database.");
+    const validIds = [];
+    for (let id of ids){
+        let existingEntry = await model.findOne({ name: id }).exec(); // se já existir id correspondente para esse nome, substituir
+        if (!existingEntry){
+            existingEntry = await model.create({ name: id }); // senão existir id correspondente, criar novo
         }
-      }
-      validIds.push(id);
-  }
-  return validIds;
+        validIds.push(existingEntry._id);
+    }
+    return validIds;
 }
 
 module.exports = router;

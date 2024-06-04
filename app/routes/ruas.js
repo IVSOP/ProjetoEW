@@ -32,12 +32,15 @@ router.get('/registar', isLogged, addTokenToHeaders, function(req, res, next){
 
 
 router.post('/registar', isLogged, addTokenToHeaders, upload.fields([{ name: 'oldImageFiles' }, { name: 'newImageFiles' }]), function(req, res, next) {
-    Utils.postImagensAntigas(req)
+    Utils.postImagens(req.body.oldImageSubst,req.files.oldImageFiles,'antigo')
         .then(async ids_imagens_antigas => {
 
             var formData = Utils.getRuaForm(req)
             formData['old_images'] = ids_imagens_antigas
-            formData['new_images'] = await Utils.postImagensAtuais(req)
+            formData['new_images'] = await Utils.postImagens(
+                req.body.newImageSubst,
+                req.files.newImageFiles,
+                'atual')
 
             axios.post('http://localhost:3000/ruas/', formData, addTokenToHeaders)
                 .then(() => res.redirect('/ruas'))
@@ -79,21 +82,24 @@ router.get('/editar/:id', isLogged, addTokenToHeaders, function(req, res, next){
 })
 
 
-// Not implemented
 router.post('/editar/:id', isLogged, addTokenToHeaders, upload.fields([{ name: 'oldImageFiles' }, { name: 'newImageFiles' }]), function(req, res, next){
-  //  console.log(req.body)
-  //  console.log(req.files)
-
+    
     axios.get(`http://localhost:3000/ruas/${req.params.id}`, addTokenToHeaders)
         .then(async response => {
 
             var formData = Utils.getRuaForm(req)
-
-            console.log(formData)
-            formData.old_images = formData.old_images.concat(await Utils.postImagensAntigas(req))
-            formData.new_images = formData.new_images.concat(await Utils.postImagensAtuais(req))
-
-            console.log(formData)
+            
+            formData.old_images = formData.old_images.concat(
+                await Utils.postImagens(
+                    req.body.oldImageSubst,
+                    req.files.oldImageFiles,
+                    'antigo'))
+            
+            formData.new_images = formData.new_images.concat(
+                await Utils.postImagens(
+                    req.body.newImageSubst,
+                    req.files.newImageFiles,
+                    'atual'))
 
             await Utils.deleteImageIfNotContains(
                 response.data.old_images,
@@ -105,6 +111,9 @@ router.post('/editar/:id', isLogged, addTokenToHeaders, upload.fields([{ name: '
                 formData.new_images,
                 'atual'
             )
+
+            await Utils.updateImagens(req.body.oldImageSubst,req.body.oldImageFiles,'antigo')
+            await Utils.updateImagens(req.body.newImageSubst,req.body.newImageFiles,'atual')
 
             axios.put(`http://localhost:3000/ruas/${req.params.id}`, formData, addTokenToHeaders)
                 .then(() => res.redirect('/ruas/' + req.params.id))

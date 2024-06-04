@@ -73,63 +73,55 @@ module.exports.deleteImageIfNotContains = async (past,now,route) => {
             }
         }
         if (!contains){
-            console.log('A eliminar: ' + past_element['_id'])
             axios.delete(`http://localhost:3000/${route}/${past_element['_id']}`)
         }
     }
 }
 
 
-module.exports.postImagensAntigas = async (req) => {
+module.exports.updateImagens = async (subs,files,route) => {
+
+    if (subs && files){
+
+        if (!Array.isArray(subs)){
+            subs = [subs]
+        }
+
+        if (!Array.isArray(files)){
+            files = [files]
+        }
+
+        for (var index = 0; index < files.length; index++){
+            let imagem = {
+                _id: files[index],
+                subst: subs[index]
+            }
+            axios.put((`http://localhost:3000/${route}/${imagem['_id']}`), imagem)
+        }
+    }
+}
+
+
+module.exports.postImagens = async (subst,files,route) => {
 
     var ids = []
 
-    if (req.files.oldImageFiles){
+    if (files){
 
-        if (req.body.oldImageSubst && !Array.isArray(req.body.oldImageSubst)){
-            req.body.oldImageSubst = [req.body.oldImageSubst]
+        if (subst && !Array.isArray(subst)){
+            subst = [subst]
         }
 
-        var baseIndex = req.body.oldImageSubst.length - req.files.oldImageFiles.length
+        var baseIndex = subst.length - files.length
 
-        for (let index = 0; index < req.files.oldImageFiles.length; index++){
-            let id = await postImagem(
-                req.files.oldImageFiles[index],
-                req.body.oldImageSubst[baseIndex + index],
-                'antigo')
+        for (let index = 0; index < files.length; index++){
+            let id = await postImagem(files[index],subst[baseIndex+index],route)
             ids.push({_id: id['_id']})
         }
     }
 
     return ids
 }
-
-
-module.exports.postImagensAtuais = async (req) => {
-
-    var ids = []
-
-    if (req.files.newImageFiles){
-
-        if (req.body.newImageSubst && !Array.isArray(req.body.newImageSubst)){
-            req.body.newImageSubst = [req.body.newImageSubst]
-        }
-
-        var baseIndex = req.body.newImageSubst.length - req.files.newImageFiles.length
-
-        for (let index = 0; index < req.files.newImageFiles.length; index++){
-            let id = await postImagem(
-                req.files.newImageFiles[index],
-                req.body.newImageSubst[baseIndex + index],
-                'atual')
-            ids.push({_id: id['_id']})
-        }
-
-    }
-
-    return ids
-}
-
 
 
 module.exports.getRuaForm = (req) => {
