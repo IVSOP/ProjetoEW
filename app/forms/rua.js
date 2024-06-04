@@ -19,11 +19,28 @@ const postImagem = async (multerFile,subst,rota) => {
         return response.data
     }
 
-    catch (err){
-        console.trace()
+    catch (error){
+        console.log(error)
         return -1
     }
 };
+
+
+module.exports.deleteImageIfNotContains = async (past,now,route) => {
+
+    for (past_element of past){
+        var contains = false
+        for (var index = 0; index < now.length && !contains; index++){
+            if (past_element['_id'] == now[index]['_id']){
+                contains = true
+            }
+        }
+        if (!contains){
+            console.log('A eliminar: ' + past_element['_id'])
+            axios.delete(`http://localhost:3000/${rota}/${past_element['_id']}`)
+        }
+    }
+}
 
 
 module.exports.postImagensAntigas = async (req) => {
@@ -36,10 +53,12 @@ module.exports.postImagensAntigas = async (req) => {
             req.body.oldImageSubst = [req.body.oldImageSubst]
         }
 
+        var baseIndex = req.body.oldImageSubst.length - req.files.oldImageFiles.length
+
         for (let index = 0; index < req.files.oldImageFiles.length; index++){
             let id = await postImagem(
                 req.files.oldImageFiles[index],
-                req.body.oldImageSubst[index],
+                req.body.oldImageSubst[baseIndex + index],
                 'antigo')
             ids.push({_id: id['_id']})
         }
@@ -59,10 +78,12 @@ module.exports.postImagensAtuais = async (req) => {
             req.body.newImageSubst = [req.body.newImageSubst]
         }
 
+        var baseIndex = req.body.newImageSubst.length - req.files.newImageFiles.length
+
         for (let index = 0; index < req.files.newImageFiles.length; index++){
             let id = await postImagem(
                 req.files.newImageFiles[index],
-                req.body.newImageSubst[index],
+                req.body.newImageSubst[baseIndex + index],
                 'atual')
             ids.push({_id: id['_id']})
         }
@@ -117,6 +138,27 @@ module.exports.getRuaForm = (req) => {
             vista: req.body.vista,
             desc: req.body.desc.split('\r\n')
         })
+    }
+
+    if (Array.isArray(req.body.oldImageFiles)){
+        for (let index = 0; index < req.body.oldImageFiles.length; index++){
+            formData.old_images.push({_id: req.body.oldImageFiles[index]})
+        }
+    }
+
+    if (req.body.oldImageFiles && !Array.isArray(req.body.oldImageFiles)){
+        formData.old_images.push({_id: req.body.oldImageFiles})
+    }
+
+
+    if (Array.isArray(req.body.newImageFiles)){
+        for (let index = 0; index < req.body.newImageFiles.length; index++){
+            formData.new_images.push({_id: req.body.newImageFiles[index]})
+        }
+    }
+
+    if (req.body.newImageFiles && !Array.isArray(req.body.newImageFiles)){
+        formData.new_images.push({_id: req.body.newImageFiles})
     }
 
     return formData

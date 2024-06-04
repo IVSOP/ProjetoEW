@@ -9,7 +9,7 @@ const addTokenToHeaders = require('../auth/headerToken'); // acrescentar o token
 
 
 router.get('/', isLogged, addTokenToHeaders, function(req, res, next){
-    axios.get('http://localhost:3000/ruas')
+    axios.get('http://localhost:3000/ruas', addTokenToHeaders)
         .then(response => {
             res.status(200).render('streetList', {
                 title: 'Índice das Ruas',
@@ -20,7 +20,7 @@ router.get('/', isLogged, addTokenToHeaders, function(req, res, next){
 
 
 router.get('/eliminar/:id', isLogged, addTokenToHeaders, function(req, res, next){
-    axios.delete('http://localhost:3000/ruas/' + req.params.id)
+    axios.delete(`http://localhost:3000/ruas/${req.params.id}`, addTokenToHeaders)
         .then(() => res.redirect('/ruas'))
         .catch(error => res.status(500).render('error', {error, error}))
 });
@@ -32,24 +32,23 @@ router.get('/registar', isLogged, addTokenToHeaders, function(req, res, next){
 
 
 router.post('/registar', isLogged, addTokenToHeaders, upload.fields([{ name: 'oldImageFiles' }, { name: 'newImageFiles' }]), function(req, res, next) {
-    var formData = Utils.getRuaForm(req)
     Utils.postImagensAntigas(req)
-        .then(ids_imagens_antigas => {
+        .then(async ids_imagens_antigas => {
+
+            var formData = Utils.getRuaForm(req)
             formData['old_images'] = ids_imagens_antigas
-            Utils.postImagensAtuais(req)
-                .then(ids_imagens_atuais => {
-                    formData['new_images'] = ids_imagens_atuais
-                    axios.post('http://localhost:3000/ruas/', formData)
-                        .then(() => res.redirect('/ruas'))
-                        .catch(error => res.status(500).render('error', {error: error}))
-                })
+            formData['new_images'] = await Utils.postImagensAtuais(req)
+
+            axios.post('http://localhost:3000/ruas/', formData, addTokenToHeaders)
+                .then(() => res.redirect('/ruas'))
+                .catch(error => res.status(500).render('error', {error: error}))
         })
         .catch(error => res.render('error', {error: error}))
 });
 
 
 router.get('/editar/:id', isLogged, addTokenToHeaders, function(req, res, next){
-    axios.get('http://localhost:3000/ruas/' + req.params.id)
+    axios.get(`http://localhost:3000/ruas/${req.params.id}`, addTokenToHeaders)
         .then(async response => {
 
             imagens_antigas = []
@@ -84,12 +83,42 @@ router.get('/editar/:id', isLogged, addTokenToHeaders, function(req, res, next){
 router.post('/editar/:id', isLogged, addTokenToHeaders, upload.fields([{ name: 'oldImageFiles' }, { name: 'newImageFiles' }]), function(req, res, next){
     console.log(req.body)
     console.log(req.files)
+
+    axios.get(`http://localhost:3000/ruas/${req.params.id}`, addTokenToHeaders)
+        .then(async response => {
+
+            var formData = Utils.getRuaForm(req)
+
+            console.log(formData)
+            formData.old_images = formData.old_images.concat(await Utils.postImagensAntigas(req))
+            formData.new_images = formData.new_images.concat(await Utils.postImagensAtuais(req))
+
+            console.log(formData)
+
+            await Utils.deleteImageIfNotContains(
+                response.data.old_images,
+                formData.old_images,
+                'antigo')
+
+            await Utils.deleteImageIfNotContains(
+                response.data.new_images,
+                formData.new_images,
+                'atual'
+            )
+
+            axios.put(`http://localhost:3000/ruas/${req.params.id}`, formData, addTokenToHeaders)
+                .then(() => res.redirect('/ruas/' + req.params.id))
+                .catch(error => res.status(500).render('error', {error: error}))
+
+            res.status(201).end()
+        })
+
     res.status(201).end()
 })
 
 
 router.get('/:id', isLogged, addTokenToHeaders, function(req, res, next){
-    axios.get('http://localhost:3000/ruas/' + req.params.id)
+    axios.get(`http://localhost:3000/ruas/${req.params.id}`, addTokenToHeaders)
         .then(async response => {
 
             imagens_antigas = []
