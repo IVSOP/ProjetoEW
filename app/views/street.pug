@@ -36,10 +36,11 @@ block content
         p.d-inline-flex.gap-3
             a.button.btn.btn-secondary.btn-lg.btn-block.w-100(href='/ruas', style="text-decoration: none;") 
                 | Voltar
-            a.button.btn.btn-success.btn-lg.btn-block.w-100(href='/ruas/editar/' + rua['_id'] , style="text-decoration: none;")
-                | Editar
-            a.button.btn.btn-danger.btn-lg.btn-block.w-100(href='/ruas/eliminar/' + rua['_id'] , style="text-decoration: none;")
-                | Eliminar
+            if (nivel == 'ADMIN')
+                a.button.btn.btn-success.btn-lg.btn-block.w-100(href='/ruas/editar/' + rua['_id'] , style="text-decoration: none;")
+                    | Editar
+                a.button.btn.btn-danger.btn-lg.btn-block.w-100(href='/ruas/eliminar/' + rua['_id'] , style="text-decoration: none;")
+                    | Eliminar
 
         // collapsing buttons for locals, entities and dates
         p.d-inline-flex.gap-3

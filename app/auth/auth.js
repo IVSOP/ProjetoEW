@@ -10,6 +10,7 @@ const authMiddleware = (req, res, next) => {
     try {
         const decoded = jwt.verify(token, 'Proj_ruas'); // devo fazer isto, ou só verificar se existe a cookie token. N sei se se costuma verificar no frontend o JWT
         req.user = decoded.userId;
+        req.level = decoded.level;
         next();
     } catch (err) {
         console.error('Token verification failed:', err.message);

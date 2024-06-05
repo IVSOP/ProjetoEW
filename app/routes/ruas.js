@@ -13,6 +13,7 @@ router.get('/', isLogged, addTokenToHeaders, function(req, res, next){
         .then(response => {
             res.status(200).render('streetList', {
                 title: 'Índice das Ruas',
+                nivel: req.level,
                 ruas: response.data})
         })
         .catch(error => res.status(500).render('error', {error: error}))
@@ -151,6 +152,7 @@ router.get('/:id', isLogged, addTokenToHeaders, function(req, res, next){
                 entidades: entidades.filter(x => response.data.entities.includes(x['_id'])),
                 imagens: imagens,
                 rua: response.data,
+                nivel: req.level,
                 token: req.cookies.token
             })
         })

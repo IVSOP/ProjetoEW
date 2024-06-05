@@ -4,13 +4,21 @@ block content
 
     .container.d-flex.justify-content-end.flex-column.mt-3
 
-        .row.m-0.p-0
-            .col-6.pr-3(style="padding-left: 0px")
-                h1.m-0.font-weight-bold.alert.alert-secondary.w-100(style="text-align: center;")= title
-            .col.p-r-3(style="padding-left: 0px")
-                a.btn.btn-secondary.btn-lg.btn-block.p-2.w-100.h-100(href="/ruas/registar" style="font-size: 32px; align-content: center;") Adicionar
-            .col.p-0
-                a.btn.btn-secondary.btn-lg.btn-block.p-2.w-100.h-100(href="/" style="font-size: 32px; align-content: center;") Voltar
+        if (nivel == 'ADMIN')
+            .row.m-0.p-0
+                .col-6.pr-3(style="padding-left: 0px")
+                    h1.m-0.font-weight-bold.alert.alert-secondary.w-100(style="text-align: center;")= title    
+                .col.p-r-3(style="padding-left: 0px")
+                    a.btn.btn-secondary.btn-lg.btn-block.p-2.w-100.h-100(href="/ruas/registar" style="font-size: 32px; align-content: center;") Adicionar
+                .col.p-0
+                    a.btn.btn-secondary.btn-lg.btn-block.p-2.w-100.h-100(href="/" style="font-size: 32px; align-content: center;") Voltar
+
+        else
+            .row.m-0.p-0
+                .col-8.pr-3(style="padding-left: 0px")
+                    h1.m-0.font-weight-bold.alert.alert-secondary(style="text-align: center;")= title
+                .col-4.p-0
+                    a.btn.btn-secondary.btn-lg.btn-block.p-2.w-100.h-100(href="/" style="font-size: 32px; align-content: center;") Voltar
 
         ul.list-group.mb-3(style="font-size: 20px;")
             each rua in ruas

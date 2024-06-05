@@ -2,20 +2,42 @@ extends layout
 
 block content
 
-    .container.d-flex.justify-content-center.flex-column.vh-100.mt-3
+    .container.d-flex.justify-content-center.flex-column.vh-100.mt-3.w-50
 
-        .d-inline-flex.gap-3.mt-0
-            a(href="/ruas").w-100
-                button.btn.btn-secondary.btn-lg.btn-block.w-100.p-4(style="font-size: 50px;")
-                    | Índice das Ruas
-            a(href="/lugares").w-100
-                button.btn.btn-secondary.btn-lg.btn-block.w-100.p-4(style="font-size: 50px;")
-                    | Índice dos Lugares
+        .card.text-center
+            .card-header.d-flex.justify-content-between
+                ul.nav.nav-pills.card-header-pills
+                    li.nav-item
+                        a.nav-link.active(href='/' class=title == 'Login' ? 'active' : '') Logout
+                    if (nivel == 'ADMIN')
+                        li.nav-item(style="margin-left: 8px;")
+                            .dropdown.h-100
+                                button.btn.btn-primary.btn-block.w-100.h-100.dropdown-toggle(type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+                                    | Dados
+                                .dropdown-menu
+                                    a.dropdown-item#dataImportButton(href="#importar") Importar
+                                    a.dropdown-item(href="#exportar") Exportar
+                h4.d-flex.align-items-center.mb-0.fw-bold
+                    | Plataforma das Ruas de Braga
 
-        .d-inline-flex.gap-3.mt-3.mb-3
-            a(href="/entidades").w-100
-                button.btn.btn-secondary.btn-lg.btn-block.w-100.p-4(style="font-size: 50px;")
-                    | Índice das Entidades
-            a(href="/datas").w-100
-                button.btn.btn-secondary.btn-lg.btn-block.w-100.p-4(style="font-size: 50px;")
-                    | Índice das Datas
+            .card-body
+                .container.p-0
+                    .row.gy-3
+                        .col
+                            a(href="/ruas")
+                                button.btn.btn-secondary.btn-lg.btn-block.w-100.h-100.p-4(style="font-size: 50px;") Índice das Ruas
+                        .col
+                            a(href="/lugares")
+                                button.btn.btn-secondary.btn-lg.btn-block.w-100.h-100.p-4(style="font-size: 50px;") Índice dos Lugares
+                    .row.gy-3.mt-0
+                        .col
+                            a(href="/entidades")
+                                button.btn.btn-secondary.btn-lg.btn-block.w-100.h-100.p-4(style="font-size: 50px;") Índice das Entidades
+                        .col
+                            a(href="/datas")
+                                button.btn.btn-secondary.btn-lg.btn-block.w-100.h-100.p-4(style="font-size: 50px;") Índice das Datas
+
+        form#dataImportForm(method="post", enctype='multipart/form-data', style="display: none;")
+            input#dataImportInput(type="file" name="importFile" style="display: none;")
+
+    script(src="/js/data.js", type="module")
