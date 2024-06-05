@@ -127,26 +127,29 @@ router.get('/:id', isLogged, addTokenToHeaders, function(req, res, next){
     axios.get(`http://localhost:3000/ruas/${req.params.id}`, addTokenToHeaders)
         .then(async response => {
 
-            imagens_antigas = []
-            imagens_atuais = []
+            imagens = []
             datas = (await axios.get('http://localhost:3000/datas', addTokenToHeaders)).data
             lugares = (await axios.get('http://localhost:3000/lugares', addTokenToHeaders)).data
             entidades = (await axios.get('http://localhost:3000/entidades', addTokenToHeaders)).data
 
-            for (const x of response.data.old_images){
-                imagens_antigas.push((await axios.get(`http://localhost:3000/antigo/${x['_id']}`, addTokenToHeaders)).data);
+            for (let imagem of response.data.old_images){
+                let imagem_data = (await axios.get(`http://localhost:3000/antigo/${imagem['_id']}`, addTokenToHeaders)).data
+                imagem_data['route'] = 'antigo'
+                imagens.push(imagem_data);
             }
 
-            for (const x of response.data.new_images)
-                imagens_atuais.push((await axios.get(`http://localhost:3000/atual/${x['_id']}`, addTokenToHeaders)).data);
+            for (let imagem of response.data.new_images){
+                let imagem_data = (await axios.get(`http://localhost:3000/atual/${imagem['_id']}`, addTokenToHeaders)).data
+                imagem_data['route'] = 'atual' 
+                imagens.push(imagem_data);
+            }
 
             res.status(200).render('street', {
                 title: response.data.name,
                 datas: datas.filter(x => response.data.dates.includes(x['_id'])),
                 lugares: lugares.filter(x => response.data.places.includes(x['_id'])),
                 entidades: entidades.filter(x => response.data.entities.includes(x['_id'])),
-                imagens_antigas: imagens_antigas,
-                imagens_atuais: imagens_atuais,
+                imagens: imagens,
                 rua: response.data,
                 token: req.cookies.token
             })

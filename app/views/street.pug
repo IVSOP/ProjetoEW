@@ -5,40 +5,35 @@ block content
     .container.d-flex.justify-content-end.flex-column.mt-3
 
         // slide show for old and current images
-        #carouselExampleDark.carousel.carousel-dark.slide(data-bs-ride="carousel")
+        if (imagens.length > 0)
+            #carouselExampleDark.carousel.carousel-dark.slide.mb-3(data-bs-ride="carousel")
 
-            .carousel-indicators
-                - var slide = 0
-                - while (slide < imagens_antigas.length + imagens_atuais.length)
-                    if (slide === 0)
-                        button(data-bs-target="#carouselExampleDark", data-bs-slide-to=slide, class="active", aria-current="true", aria-label="Slide " + slide)
-                    else
-                        button(data-bs-target="#carouselExampleDark", data-bs-slide-to=slide, aria-label="Slide " + slide)
-                    - slide++
+                .carousel-indicators
+                    - var slide = 0
+                    - while (slide < imagens.length)
+                        if (slide === 0)
+                            button(data-bs-target="#carouselExampleDark", data-bs-slide-to=slide, class="active", aria-current="true", aria-label="Slide " + slide)
+                        else
+                            button(data-bs-target="#carouselExampleDark", data-bs-slide-to=slide, aria-label="Slide " + slide)
+                        - slide++
 
-            .carousel-inner(style="aspect-ratio: 16 / 9;")
+                .carousel-inner(style="aspect-ratio: 16 / 10;")
 
-                each imagem_antiga, index in imagens_antigas
-                    .carousel-item(class={active: index === 0, 'mt-30': index === 0} data-bs-interval="5000")
-                        img.d-block.w-100.rounded(style="aspect-ratio: 16 / 9;", src=`http://localhost:3000/antigo/show/${imagem_antiga['_id']}?token=${token}`)
-                        .carousel-caption.d-none.d-md-block
-                            h3= imagem_antiga.subst
+                    each imagem, index in imagens
+                        .carousel-item(class={active: index === 0, 'mt-30': index === 0} data-bs-interval="5000")
+                            img.d-block.w-100.rounded(style="aspect-ratio: 16 / 10;", src=`http://localhost:3000/${imagem.route}/show/${imagem['_id']}?token=${token}`)
+                            .carousel-caption.d-none.d-md-block
+                                h3= imagem.subst.split('/').pop()
 
-                each imagem_atual in imagens_atuais 
-                    .carousel-item(data-bs-interval="5000")
-                        img.w-100.rounded(style=" aspect-ratio: 16 / 9;", src=`http://localhost:3000/atual/show/${imagem_atual['_id']}?token=${token}`)
-                        .carousel-caption.d-none.d-md-block
-                            h3= imagem_atual.subst.split('/').pop()
+                button.carousel-control-prev(type="button", data-bs-target="#carouselExampleDark", data-bs-slide="prev")
+                    span.carousel-control-prev-icon(aria-hidden="true")
+                    span.visually-hidden Previous
 
-            button.carousel-control-prev(type="button", data-bs-target="#carouselExampleDark", data-bs-slide="prev")
-                span.carousel-control-prev-icon(aria-hidden="true")
-                span.visually-hidden Previous
+                button.carousel-control-next(type="button", data-bs-target="#carouselExampleDark", data-bs-slide="next")
+                    span.carousel-control-next-icon(aria-hidden="true")
+                    span.visually-hidden Next
 
-            button.carousel-control-next(type="button", data-bs-target="#carouselExampleDark", data-bs-slide="next")
-                span.carousel-control-next-icon(aria-hidden="true")
-                span.visually-hidden Next
-
-        p.d-inline-flex.gap-3.mt-3
+        p.d-inline-flex.gap-3
             a.button.btn.btn-secondary.btn-lg.btn-block.w-100(href='/ruas', style="text-decoration: none;") 
                 | Voltar
             a.button.btn.btn-success.btn-lg.btn-block.w-100(href='/ruas/editar/' + rua['_id'] , style="text-decoration: none;")
@@ -103,7 +98,7 @@ block content
                         td= casa.enfiteuta
                         td= casa.subst
                         td= casa.vista
-                        td= casa.desc[0]
+                        td= casa.desc.join('\n')
 
         .card.card-body.mb-3
             form.form(method="post" action=`/ruas/comentarios/{$rua['_id']}`)
@@ -116,7 +111,7 @@ block content
                             | Submeter
 
             // user and comment
-            .card.border-dark.mb-0.mt-3.w-100
+            .card.border-dark.bg-light.mb-0.mt-3.w-100
                 b.card-header Username
                 .card-body.text-dark
                     p.card-text This is a comment!!!
