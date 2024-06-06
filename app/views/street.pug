@@ -84,24 +84,25 @@ block content
                 p.m-1= paragraph
 
         // table of houses
-        table.table.table-hover.table-responsive.mt-3
-            thead
-                tr(class="table-secondary")
-                    th(scope='col') ID
-                    th(scope='col') Enfiteuta
-                    th(scope='col') Pagamento
-                    th(scope='col') Vista
-                    th(scope='col') Descrição
-            tbody
-                for casa, index in rua.houses
-                    tr
-                        th(scope='row')= index+1
-                        td= casa.enfiteuta
-                        td= casa.subst
-                        td= casa.vista
-                        td= casa.desc.join('\n')
+        if (rua.houses.length > 0)
+            table.table.table-hover.table-responsive.mt-3.mb-0
+                thead
+                    tr(class="table-secondary")
+                        th(scope='col') ID
+                        th(scope='col') Enfiteuta
+                        th(scope='col') Pagamento
+                        th(scope='col') Vista
+                        th(scope='col') Descrição
+                tbody
+                    for casa, index in rua.houses
+                        tr
+                            th(scope='row')= index+1
+                            td= casa.enfiteuta
+                            td= casa.subst
+                            td= casa.vista
+                            td= casa.desc.join('\n')
 
-        .card.card-body.mb-3
+        .card.card-body.mt-3.mb-3
             form.form(method="post" action=`/ruas/comentarios/{$rua['_id']}`)
                 .row.m-0.p-0
                     .col-12.col-sm-4.col-md-9.p-0

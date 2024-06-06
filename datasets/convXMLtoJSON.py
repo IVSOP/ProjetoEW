@@ -3,17 +3,13 @@
 # python3 convert.py MapaRuas-materialBase/texto/ MapaRuas-materialBase/atual/
 
 import json
+import shutil
+import pymongo
 import re as regex
 from sys import argv
-from os import mkdir
 from os import path
 from lxml import etree
 from pathlib import Path
-import re
-import subprocess
-import json
-import pymongo
-import shutil
 
 # mongo = pymongo.MongoClient("mongodb://localhost:27017/")
 mongo = pymongo.MongoClient("mongodb://mongodb:27017/")
@@ -29,235 +25,237 @@ def loadImage(collection, filepath, subst):
     }
 
     imagens = mongo["proj_ruas"][collection]
-    
+
 	# carregar para o mongo
     # import_cmd = f"""bash -c 'mongoimport -d proj_ruas -c {collection} <(echo '{json.dumps(image)}')'""" desisto isto nao funciona
     result = imagens.insert_one(image)
-    
+
     image["_id"] = result.inserted_id
-    
+
     shutil.copy('MapaRuas-materialBase/' + collection + '/' + filepath, f"""parsed/{collection}/{image["_id"]}.{image['extension']}""") # or use os.rename
 
     return image
 
-def dumpToJson(jsonArray, filepath):
+
+## Write json to file
+def dumpToJson(jsonArray,filepath):
     with open(filepath,"w") as jsonFile:
         json.dump(jsonArray, jsonFile, ensure_ascii=False, indent=4)
 
 
-##handlers XML
-def handleMeta(meta):
+## Insert a given collection in mongodb
+def insert_mongo(collection,data):
+    col = mongo['proj_ruas'][collection]
+    inserted = len(col.insert_many(data).inserted_ids)
+    print(f"{collection} -> OK: {inserted} ERROR: {len(data) - inserted}")
+
+
+## Parse XML meta content
+def parseMeta(root):
     jsonMeta = {}
-    jsonMeta['_id'] = meta.find('número').text
-    jsonMeta['name'] = meta.find('nome').text
+    jsonMeta['_id'] = root.find('meta').find('número').text
+    jsonMeta['name'] = root.find('meta').find('nome').text
     return jsonMeta
 
 
-def handleCorpo(corpo):
+## Parse XML street description
+def parseDescription(root):
 
-    descricao = []
-    lugares = []
-    entidades = []
-    datas = []
+    jsonDescription = {'description': []}
 
-    regex_spaces = re.compile(r'\n|\t|\s{2,}')
-    for corpoElement in corpo.findall('para'):
-        text = ''
-        for textNode in corpoElement.itertext():
-            text += textNode
-        text = text.strip()
-        text = regex_spaces.sub(r'',text)
-        descricao.append(text)
+    for element in root.find('corpo').findall('para'):
+        text = ''.join(element.itertext())
+        text = regex.sub(r'\n|\t|\s{2,}',r' ',text.strip())
+        jsonDescription['description'].append(text)
 
-        #extrair lugar, entidades, datas
-        for lugar in corpoElement.findall('lugar'):
-            lugares.append(regex_spaces.sub(r' ',lugar.text.strip()))
-
-        for entidade in corpoElement.findall('entidade'):
-            entidades.append(regex_spaces.sub(r' ',entidade.text.strip()))
-        
-        for data in corpoElement.findall('data'):
-            datas.append(regex_spaces.sub(r' ',data.text.strip()))
-
-    jsonCorpo = {}
-    jsonCorpo['description'] = descricao
-    jsonCorpo['places'] = lugares
-    jsonCorpo['entities'] = entidades
-    jsonCorpo['dates'] = datas
-
-    return jsonCorpo
+    return jsonDescription
 
 
-def handleOldFiguras(figuras):
+## Parse XML old images
+def parseOldImages(root):
 
-    jsonFiguras = {}
-    jsonFiguras['old_images'] = []
+    jsonOldImages = {'old_images': []}
+    figuras = root.find('corpo').findall('figura')
 
     for figura in figuras:
-        jsonFiguras['old_images'].append({
+        jsonOldImages['old_images'].append({
             '_id': figura.get('id'),
             'path': figura.find('imagem').get('path'),
             'subst': figura.find('legenda').text
         })
 
-    return jsonFiguras
+    return jsonOldImages
 
-def handleCasas(casas):
 
-    jsonCasas = {}
-    jsonCasas['houses'] = []
+## Parse XML houses
+def parseHouses(root):
+
+    casas = []
+    jsonHouses = {'houses': []}
+
+    if root.find('corpo').find('lista-casas') is not None:
+        casas = root.find('corpo').find('lista-casas').findall('casa')
 
     for casa in casas:
 
-        desc = []
-        vista = ''
-        enfiteuta = ''
-        foro = ''
+        house = {
+            'foro': '',
+            'vista': '',
+            'enfiteuta': '',
+            'desc': []
+        }
 
         if casa.find('vista') is not None:
-            vista = casa.find('vista').text
+            house['vista'] = casa.find('vista').text
 
         if casa.find('enfiteuta') is not None:
-            enfiteuta = casa.find('enfiteuta').text
+            house['enfiteuta'] = casa.find('enfiteuta').text
 
         if casa.find('foro') is not None:
-            foro = casa.find('foro').text
+            house['foro'] = casa.find('foro').text
 
         if casa.find('desc') is not None:
-
             for paragraph in casa.find('desc').findall('para'):
-                text = ''
-                for textNode in paragraph.itertext():
-                    text += textNode
-                text = text.strip()
-                text = regex.sub(r'\n|\t|\s{2,}',r'',text)
-                desc.append(text)  
+                text = ''.join(paragraph.itertext())
+                text = regex.sub(r'\n|\t|\s{2,}',r' ',text.strip())
+                house['desc'].append(text)
 
-        jsonCasas['houses'].append({
-            '_id': casa.find('número').text,
-            'enfiteuta': enfiteuta,
-            'subst': foro,
-            'vista': vista,
-            'desc': desc
-        })
+        jsonHouses['houses'].append(house)
 
-    return jsonCasas
+    return jsonHouses
 
 
-def xmlToJson(xmlFile):
+## Get all new images
+def parseNewImages(newImages,id):
 
-    print(xmlFile)
+    jsonFiguras = {'new_images': []}
+
+    for image in newImages:
+        if image.name.startswith(f'{id}-'):
+            jsonFiguras['new_images'].append(f'../atual/{image.name}')
+
+    return jsonFiguras
+
+
+## Parse a given XML file
+def xmlToJson(xmlFile,newImages):
 
     tree = etree.parse(xmlFile)
     root = tree.getroot()
+    id = regex.search(r'[1-9]\d*',xmlFile).group(0)
 
-    jsonDB = handleMeta(root.find('meta'))
-    jsonDB.update(handleCorpo(root.find('corpo')))
-    jsonDB.update(handleOldFiguras(root.find('corpo').findall('figura')))
+    jsonDB = parseMeta(root)
+    jsonDB.update(parseDescription(root))
+    jsonDB.update(parseHouses(root))
+    jsonDB.update(parseOldImages(root))
+    jsonDB.update(parseNewImages(newImages,id))
 
-    if root.find('corpo').find('lista-casas') is not None:
-        jsonDB.update(handleCasas(root.find('corpo').find('lista-casas').findall('casa')))
+    jsonDB['places'] = [regex.sub(r'\n|\t|\s{2,}',r' ',x.text.strip()) for x in tree.xpath("//lugar")]
+    jsonDB['entities'] = [regex.sub(r'\n|\t|\s{2,}',r' ',x.text.strip()) for x in tree.xpath("//entidade")]
+    jsonDB['dates'] = [regex.sub(r'\n|\t|\s{2,}',r' ',x.text.strip()) for x in tree.xpath("//data")]
 
     return jsonDB
 
 
-def handleNewFiguras(files,id):
+## ID's parser
+def calcIDs(streets, target: str) -> dict:
 
-    jsonFiguras = {}
-    jsonFiguras['new_images'] = []
-
-    for file in files:
-        if file.name.startswith(f'{id}-'):
-            jsonFiguras['new_images'].append(f'../atual/{file.name}')
-
-    return jsonFiguras
-
-#id parsers
-def calc_ids(filesJSON, target_field: str) -> dict:
-    id_dict = dict()
-
+    ids = dict()
     idCounter = 1
-    
-    for (_,file) in filesJSON:
-        #parse places
-        for item in file.get(target_field,[]):
-            if item not in id_dict:
-                rua_data = file["_id"]
-                id_dict[item] = {"_id": str(idCounter), "name": item, "ruas": {rua_data}} 
-                idCounter = idCounter + 1
+
+    for street in streets:
+        for item in street[target]:
+            if item not in ids:
+                ids[item] = {
+                    "_id": str(idCounter),
+                    "name": item,
+                    "ruas": {street['_id']}}
+                idCounter += 1
             else:
-                id_dict[item]["ruas"].add(rua_data)
+                ids[item]["ruas"].add(street['_id'])
 
-    for (_,val) in id_dict.items():
-        val["ruas"] = sorted(list(val["ruas"]), key=lambda x: int(x)) # converter sets de ids de ruas em lista, para ser serializável
+    for id in ids:
+        ids[id]['ruas'] = sorted(list(ids[id]['ruas']), key=lambda x: int(x))
 
-    return id_dict
+    return ids
 
-def update_jsons_with_ids(filesJSON: list, places_dict: dict, entities_dict: dict, dates_dict: dict):
-    for _, json_data in filesJSON:
-        json_data["places"] = sorted(set([places_dict[place]["_id"] for place in json_data["places"]]), key=lambda x: int(x))
-        json_data["entities"] = sorted(set([entities_dict[entity]["_id"] for entity in json_data["entities"]]), key=lambda x: int(x))
-        json_data["dates"] = sorted(set([dates_dict[date]["_id"] for date in json_data["dates"]]), key=lambda x: int(x))
+
+## Convert street places, entities, dates to ID's
+def updateStreets(streets,dates,places,entities):
+
+    for street in streets:
+
+        street["dates"] = sorted(set([dates[x]["_id"] for x in street["dates"]]), key=lambda x: int(x))
+        street["places"] = sorted(set([places[x]["_id"] for x in street["places"]]), key=lambda x: int(x))
+        street["entities"] = sorted(set([entities[x]["_id"] for x in street["entities"]]), key=lambda x: int(x))
 
         old_images = []
-		# translate imagens das ruas, aqui por simplicidade
-        for old_image in json_data["old_images"]:
+        new_images = []
+
+        for old_image in street["old_images"]:
             image_path = path.basename(old_image["path"])
             image = loadImage("antigo", image_path, old_image["subst"])
             old_images.append({"_id" : image["_id"]})
 
-        new_images = []
-        for new_image_path in json_data["new_images"]:
+        for new_image_path in street["new_images"]:
             image_path = path.basename(new_image_path)
             image = loadImage("atual", image_path, new_image_path)
             new_images.append({"_id" : image["_id"]})
 
-        json_data["old_images"] = old_images
-        json_data["new_images"] = new_images
+        street["old_images"] = old_images
+        street["new_images"] = new_images
 
-def insert_mongo(collection, data):
-    col = mongo['proj_ruas'][collection]
-    inserted = len(col.insert_many(data).inserted_ids)
-    print(f"{collection} -> OK: {inserted} ERROR: {len(data) - inserted}")
 
-#main func
 if __name__ == '__main__':
 
-    inFile = argv[1]
-    filesJSON = [] # lista com filenames e jsons correspondentes
-    atualImages = [file for file in Path(argv[2]).iterdir() if file.is_file()]
-    XMLFiles = [file for file in Path(argv[1]).iterdir() if file.is_file()]
+    jsonDBs = {
+        'streets': [],
+        'dates': [],
+        'places': [],
+        'entities': []
+    }
+
+    XMLFiles = [file for file in  Path(argv[1]).iterdir() if file.is_file()]
+    newImages = [file for file in Path(argv[2]).iterdir() if file.is_file()]
+
+    ## Create folders if they don't exist
     Path('parsed').mkdir(parents=True,exist_ok=True)
     Path('parsed/antigo').mkdir(parents=True,exist_ok=True)
     Path('parsed/atual').mkdir(parents=True,exist_ok=True)
 
-    # initial convert from xml to json
+    ## Convert from xml to json
     for XMLFile in XMLFiles:
-        #construct initial json files from xml filmes
-        jsonFilePath = './parsed/streets/' + str(XMLFile.name).replace('xml','json')
-        jsonDB = xmlToJson(str(XMLFile.resolve()))
-        jsonDB.update(handleNewFiguras(atualImages,regex.search(r'[1-9]\d*',str(XMLFile.resolve())).group(0)))
+        xmlFileName = str(XMLFile.resolve())
+        jsonDBs['streets'].append(xmlToJson(xmlFileName,newImages))
 
-        filesJSON.append((jsonFilePath,jsonDB))
+    jsonDBs['dates'] = calcIDs(jsonDBs['streets'],'dates')
+    jsonDBs['places'] = calcIDs(jsonDBs['streets'],'places')
+    jsonDBs['entities'] = calcIDs(jsonDBs['streets'],'entities')
 
-    #create ids for places, entities, dates
-    places_dict = calc_ids(filesJSON, "places")
-    entities_dict = calc_ids(filesJSON, "entities")
-    dates_dict = calc_ids(filesJSON, "dates")
+    updateStreets(
+        jsonDBs['streets'],
+        jsonDBs['dates'],
+        jsonDBs['places'],
+        jsonDBs['entities'])
 
-    #update jsons with respective ids
-    update_jsons_with_ids(filesJSON, places_dict, entities_dict, dates_dict)
-    
-    #escrever só para um ficheiro as entradas todas
-    jsonsOnly = [tup[1] for tup in filesJSON]
-    sorted_jsonsOnly = sorted(jsonsOnly, key=lambda x: int(x['_id']))
+    # create ids for places, entities, dates
+    # places_dict = calc_ids(filesJSON, "places")
+    # entities_dict = calc_ids(filesJSON, "entities")
+    # dates_dict = calc_ids(filesJSON, "dates")
+
+    # update jsons with respective ids
+    # update_jsons_with_ids(filesJSON, places_dict, entities_dict, dates_dict)
+
+    # escrever só para um ficheiro as entradas todas
+    # jsonsOnly = [tup[1] for tup in filesJSON]
+    # sorted_jsonsOnly = sorted(jsonsOnly, key=lambda x: int(x['_id']))
     # dumpToJson(sorted_jsonsOnly, './parsed/streets.json')
-    
-    #write places, entities, dates
+
+    # write places, entities, dates
     # dumpToJson(list(places_dict.values()), './parsed/places.json')
     # dumpToJson(list(entities_dict.values()), './parsed/entities.json')
     # dumpToJson(list(dates_dict.values()), './parsed/dates.json')
-    
+
 	# import these jsons into mongo
     # places = mongo["proj_ruas"][collection]
     # entities = mongo["proj_ruas"][collection]
@@ -267,8 +265,8 @@ if __name__ == '__main__':
     with open('./parsed/users.json', 'r') as file:
         users_data = json.load(file)
 
-    insert_mongo('streets', sorted_jsonsOnly)
-    insert_mongo('places', list(places_dict.values()))
-    insert_mongo('entities', list(entities_dict.values()))
-    insert_mongo('dates', list(dates_dict.values()))
-    insert_mongo('users', users_data)
+    insert_mongo('streets',jsonDBs['streets'])
+    insert_mongo('dates',list(list(jsonDBs['dates'].values())))
+    insert_mongo('places',list(list(jsonDBs['places'].values())))
+    insert_mongo('entities',list(list(jsonDBs['entities'].values())))
+    insert_mongo('users',users_data)

@@ -89,7 +89,7 @@ block content
                     .card-header.d-flex.justify-content-between
                         h5.fw-bold.align-items-center.mb-0 Imagens Atuais
                         img#addNewImage(src="/icons/plus-circle-fill.svg", type="button")
-                    .card-body#newImagesContainer
+                    .card-body.pb-0#newImagesContainer
                         each imagem_atual, index in imagens_atuais
                             .row.g-3.mb-3(id=`newImage${index}`)
                                 .col

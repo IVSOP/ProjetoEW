@@ -34,7 +34,12 @@ router.post('/', async function(req, res, next){
             res.redirect('/');
         })
         .catch(erro => {
-            res.status(501).render("error", {"error": erro})
+            // Carregar a página de erro
+            res.status(200).render('login', {
+                title: 'Login',
+                error: true,
+                errorMessage: "Credenciais Inválidas"})
+            console.error(erro)
         })
 });
 

@@ -73,7 +73,7 @@ router.put('/:id', auth.verificaAcesso(['ADMIN'],true), async (req,res) => {
 });
 
 router.delete('/:id', auth.verificaAcesso(['ADMIN'],true), (req,res) => {
-  Street.deleteStreetById(req.params.id, req.body)
+  Street.deleteStreetById(req.params.id)
   .then(data => res.status(201).jsonp(data))
   .catch(erro => res.status(529).jsonp(erro))
 });
