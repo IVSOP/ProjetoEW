@@ -7,7 +7,7 @@ module.exports.verificaAcesso = function (requiredAccessLevel, requireOwnershipC
       console.log("got token: ", token);
 
       const streetId = req.params.id
-      console.log("Using streetId: ", streetId)
+
       if (token) {
           jwt.verify(token, "Proj_ruas", async function(e, payload) {
               if (e) {

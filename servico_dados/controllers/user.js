@@ -5,23 +5,25 @@ var User = require('../models/user')
 module.exports.list = () => {
     return User
             .find()
-            .sort('name')
-            .then(resposta => {
-                return resposta
-            })
-            .catch(erro => {
-                return erro
-            })
+            .sort('name').exec()
+}
+
+module.exports.smallGetUser = id => {
+    return User.findOne({_id:id})
+            .select('_id name level dateCreated')
+            .exec()
 }
 
 module.exports.getUser = id => {
-    return User.findOne({_id:id})
-            .then(resposta => {
-                return resposta
-            })
-            .catch(erro => {
-                return erro
-            })
+    return User.findOne({ _id: id }).exec()
+    .then(user => {
+        console.log('Found User:', user);
+        return user;
+    })
+    .catch(err => {
+        console.error('Error in getUser:', err);
+        throw err;
+    });
 }
 
 module.exports.addUser = u => {

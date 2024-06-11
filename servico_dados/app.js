@@ -30,6 +30,7 @@ var entidadesRouter = require('./routes/entities');
 var lugaresRouter = require('./routes/places');
 var antigoRouter = require('./routes/antigo');
 var atualRouter = require('./routes/atual');
+var commentsRouter = require('./routes/comments');
 
 const { exit } = require('process');
 
@@ -58,6 +59,7 @@ app.use('/entidades', entidadesRouter);
 app.use('/lugares', lugaresRouter);
 app.use('/antigo', antigoRouter);
 app.use('/atual', atualRouter);
+app.use('/comentarios', commentsRouter);
 app.use('/users', usersRouter);
 app.use('/admins', adminsRouter); // só para facilmente adicionar admins à db, pode tirar-se depois!
 

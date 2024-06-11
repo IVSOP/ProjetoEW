@@ -6,19 +6,22 @@ var userModel = require('../models/user')
 var auth = require('../auth/auth')
 var User = require('../controllers/user')
 
-router.get('/', auth.verificaAcesso(['USER', 'ADMIN']), function(req, res){ // ??
+router.get('/', auth.verificaAcesso(['USER', 'ADMIN']), function(req, res){
   User.list()
-    .then(dados => res.status(200).jsonp({dados: dados}))
-    .catch(e => res.status(500).jsonp({error: e}))
+    .then(data => res.status(200).jsonp(data))
+    .catch(e => res.status(500).jsonp(e))
 })
 
-router.get('/:id', auth.verificaAcesso(['USER', 'ADMIN']), function(req, res){ // ??
+router.get('/:id', auth.verificaAcesso(['USER', 'ADMIN']), function(req, res){
   User.getUser(req.params.id)
-    .then(dados => res.status(200).jsonp({dados: dados}))
-    .catch(e => res.status(500).jsonp({error: e}))
+    .then(data => {
+      console.log("ID: ", req.params.id, "Content: ", data)
+      res.status(200).jsonp(data)
+      })
+    .catch(e => res.status(500).jsonp(e))
 })
 
-// router.post('/', auth.verificaAcesso(['ADMIN']), function(req, res){ // ??
+// router.post('/', auth.verificaAcesso(['ADMIN']), function(req, res){
 //   User.addUser(req.body)
 //     .then(dados => res.status(201).jsonp({dados: dados}))
 //     .catch(e => res.status(500).jsonp({error: e}))

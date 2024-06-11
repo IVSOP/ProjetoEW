@@ -3,6 +3,10 @@ var { v4: uuidv4 } = require('uuid');
 var passportLocalMongoose = require('passport-local-mongoose');
 
 var userSchema = new mongoose.Schema({
+    _id: {
+        type: String,
+        default: uuidv4
+    },
     username: String,
     password: String,
     name: String,

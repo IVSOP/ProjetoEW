@@ -52,6 +52,28 @@ module.exports.insert = async (street) => {
     }
 }
 
+module.exports.addComment = async (street_id, comment_id) => {
+    try {
+
+        const street = await Street.findOne({ _id: street_id }).exec();
+        if (!street) {
+            throw new Error("Street not found");
+        }
+
+        const comments =  await Street.update(
+            { _id: street_id},
+            { $push: {comments: comment_id}},
+            done
+        );
+        
+        return comments[comments.length - 1]
+
+    } catch (error) {
+        console.error(error);
+        throw new Error("Error adding comment to street" + error);
+    }
+}
+
 module.exports.updateStreet = async (street_id, updatedStreet) => {
     try {
         const previousStreet = await Street.findOne({ _id: street_id }).exec();
