@@ -8,6 +8,8 @@ const commentSchema = new mongoose.Schema({
     text: String,
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
+    likes: [String],
+    dislikes: [String]
 }, { versionKey: false });
 
 module.exports = mongoose.model('comment', commentSchema, 'comments')

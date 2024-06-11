@@ -38,31 +38,54 @@ module.exports.insert = comment => {
     return Comment.create(comment)
 }
 
-// module.exports.addReply = async (comment_id, reply_id) => {
-//     try {
-
-//         const comment = await Comment.findOne({ _id: comment_id }).exec();
-//         if (!comment) {
-//             throw new Error("Comment not found");
-//         }
-
-//         const allComments =  await Comment.findOneAndUpdate(
-//             { _id: comment_id},
-//             { $push: {replies: reply_id}},
-//         );
-        
-//         console.log("Got final object: ",allComments)
-//         return allComments
-
-//     } catch (error) {
-//         console.error(error);
-//         throw new Error("Error adding reply to comment" + error);
-//     }
-// }
 
 module.exports.updateComment = (comment_id, comment) => {
     return Comment.findOneAndUpdate({_id: comment_id}, comment, {new: true})
 }
+
+module.exports.addLike = async (comment_id, user_id) => {
+    try {
+        const comment = await Comment.findOneAndUpdate(
+            { _id: comment_id },
+            {
+                $pull: { dislikes: user_id },
+                $addToSet: { likes: user_id }
+            },
+            { new: true }
+        ).exec();
+
+        if (!comment) {
+            throw new Error("Comment not found");
+        }
+
+        return comment;
+    } catch (error) {
+        console.error(error);
+        throw new Error("Error adding like: " + error);
+    }
+};
+
+module.exports.addDislike = async (comment_id, user_id) => {
+    try {
+        const comment = await Comment.findOneAndUpdate(
+            { _id: comment_id },
+            {
+                $pull: { likes: user_id },
+                $addToSet: { dislikes: user_id }
+            },
+            { new: true }
+        ).exec();
+
+        if (!comment) {
+            throw new Error("Comment not found");
+        }
+
+        return comment;
+    } catch (error) {
+        console.error(error);
+        throw new Error("Error adding dislike: " + error);
+    }
+};
 
 module.exports.deleteCommentById = async (id) => {
     try {
