@@ -1,0 +1,67 @@
+extends layout
+
+block content
+
+    .container.d-flex.justify-content-end.flex-column.mt-3
+
+        .card.mb-3.border-dark
+            h5.card-header.fw-bold Informações
+            .card-body
+                .input-group.mb-3
+                    span.input-group-text Username
+                    input.form-control(type="text", value=utilizador.username, readonly)
+                .input-group.mb-3
+                    span.input-group-text Nome
+                    input.form-control(type="text", value=utilizador.name, readonly)
+                .input-group.mb-0
+                    span.input-group-text Nível
+                    input.form-control(type="text", value=utilizador.level, readonly)
+
+        .card.mb-3.border-dark
+            h5.card-header.fw-bold Ruas Favoritas
+            .card-body.overflow-scroll.pb-0(style="max-height: 243px;")
+                ul.list-group(style="font-size: 17px;")
+                    a(href='/' style="text-decoration: none;")
+                        li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.mb-3
+                            | Rua do Campo
+                    a(href='/' style="text-decoration: none;")
+                        li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.mb-3
+                            | Rua das Flores
+                    a(href='/' style="text-decoration: none;")
+                        li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.mb-3
+                            | Rua 25 de Março
+                    a(href='/' style="text-decoration: none;")
+                        li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.mb-3
+                            | Rua dos Capitães
+                    a(href='/' style="text-decoration: none;")
+                        li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.mb-3
+                            | Rua de Portugal
+                    a(href='/' style="text-decoration: none;")
+                        li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.mb-3
+                            | Rua dos Alcaides
+
+        .card.mb-3.border-dark
+            h5.card-header.fw-bold Comentários
+            .card-body.overflow-scroll.pb-0(style="max-height: 338px;")
+
+                .card.border-dark.bg-light.mb-3.w-100
+                    b.card-header Rua do Campo
+                    .card-body.text-dark
+                        p.card-text This is a comment!!!
+
+                .card.border-dark.bg-light.mb-3.w-100
+                    b.card-header Rua 25 de Março
+                    .card-body.text-dark
+                        p.card-text This is a comment!!!
+
+                .card.border-dark.bg-light.mb-3.w-100
+                    b.card-header Rua de Portugal
+                    .card-body.text-dark
+                        p.card-text This is a comment!!!
+
+                .card.border-dark.bg-light.mb-3.w-100
+                    b.card-header Rua dos Alcaides
+                    .card-body.text-dark
+                        p.card-text This is a comment!!!
+
+        a.btn.btn-secondary.btn-lg.btn-block.w-100.mb-3(href="/") Voltar

@@ -31,6 +31,7 @@ router.get('/', isLogged, addTokenToHeaders, function(req, res, next) {
     else{
         res.status(200).render('index', {
             title: 'Índice',
+            utilizador: req.user,
             permissao: req.level == 'ADMIN'
         })
     }
@@ -43,7 +44,7 @@ router.post('/', isLogged, addTokenToHeaders, upload.single('importFile'), funct
     const data = fs.readFileSync(req.file.path)
     formData.append('dados', data, req.file.originalname)
 
-    axios.post(`http://localhost:3000/impexp/importar`, formData, {
+    axios.post('http://localhost:3000/impexp/importar', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }})
         .then(() => {
             fs.unlinkSync(req.file.path)

@@ -6,11 +6,13 @@ block content
 
         .card.text-center
             .card-header.d-flex.justify-content-between
-                ul.nav.nav-pills.card-header-pills
+                ul.nav.nav-pills.card-header-pills.gap-2
                     li.nav-item
                         a.nav-link.active(href='/' class=title == 'Login' ? 'active' : '') Logout
+                    li.nav-item
+                        a.nav-link.active(href=`/utilizadores/${utilizador}` class=title == 'Login' ? 'active' : '') Conta
                     if permissao
-                        li.nav-item(style="margin-left: 8px;")
+                        li.nav-item
                             .dropdown.h-100
                                 button.btn.btn-primary.btn-block.w-100.h-100.dropdown-toggle(type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
                                     | Dados
