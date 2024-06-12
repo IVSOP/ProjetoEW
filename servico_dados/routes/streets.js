@@ -79,7 +79,6 @@ router.delete('/:id', auth.verificaAcesso(['ADMIN'],true), (req,res) => {
 });
 
 //Aux functions 
-
 // ver se lista de entidade/data/lugar está em nomes em vez de ids. 
 // Se for o caso, substituir por respetivo id da base de dados, ou criar novo se não existir
 async function validateAndConvert(ids, model) {

@@ -7,7 +7,6 @@ const Utils = require('../forms/rua.js')
 var isLogged = require('../auth/auth'); // verificar se user tem token de login, senão redireciona para /login
 const addTokenToHeaders = require('../auth/headerToken'); // acrescentar o token ao header, para ter acesso aos recursos do backend
 
-
 router.get('/', isLogged, addTokenToHeaders, function(req, res, next){
     axios.get('http://localhost:3000/ruas', addTokenToHeaders)
         .then(response => {
@@ -19,18 +18,15 @@ router.get('/', isLogged, addTokenToHeaders, function(req, res, next){
         .catch(error => res.status(500).render('error', {error: error}))
 });
 
-
 router.get('/eliminar/:id', isLogged, addTokenToHeaders, function(req, res, next){
     axios.delete(`http://localhost:3000/ruas/${req.params.id}`, addTokenToHeaders)
         .then(() => res.redirect('/ruas'))
         .catch(error => res.status(500).render('error', {error, error}))
 });
 
-
 router.get('/registar', isLogged, addTokenToHeaders, function(req, res, next){
     res.status(200).render('streetCreationForm', {title: 'Registar - Rua'})
 })
-
 
 router.post('/registar', isLogged, addTokenToHeaders, upload.fields([{ name: 'oldImageFiles' }, { name: 'newImageFiles' }]), function(req, res, next) {
     Utils.postImagens(req.body.oldImageSubst,req.files.oldImageFiles,'antigo')
@@ -49,7 +45,6 @@ router.post('/registar', isLogged, addTokenToHeaders, upload.fields([{ name: 'ol
         })
         .catch(error => res.render('error', {error: error}))
 });
-
 
 router.get('/editar/:id', isLogged, addTokenToHeaders, function(req, res, next){
     axios.get(`http://localhost:3000/ruas/${req.params.id}`, addTokenToHeaders)
@@ -81,7 +76,6 @@ router.get('/editar/:id', isLogged, addTokenToHeaders, function(req, res, next){
         })
         .catch(error => res.status(500).render('error', {error: error}))
 })
-
 
 router.post('/editar/:id', isLogged, addTokenToHeaders, upload.fields([{ name: 'oldImageFiles' }, { name: 'newImageFiles' }]), function(req, res, next){
     

@@ -2,7 +2,7 @@ var Street = require("../models/street")
 var Place = require("../models/place");
 var Entity = require("../models/entity");
 var Date = require("../models/date");
-
+var Comment = require("../controllers/comment")
 module.exports.list = () => { // query 
     return Street
         .find()
@@ -104,7 +104,7 @@ module.exports.updateStreet = async (street_id, updatedStreet) => {
             entities: entitiesDiff.toRemove,
             dates: datesDiff.toRemove
         })
-        
+
         return Street.findOneAndUpdate({ _id: street_id }, updatedStreet, { new: true });
 
     } catch (error) {
@@ -127,6 +127,8 @@ module.exports.deleteStreetById = async (id) => {
             entities: street.entities,
             dates: street.dates
         });
+
+        await Comment.deleteAllFromStreet(id)
 
         // delete street entry
        return Street.findOneAndDelete({_id: id}).exec();

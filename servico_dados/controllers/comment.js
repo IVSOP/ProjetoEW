@@ -14,7 +14,7 @@ module.exports.findById = async (id) => {
         if (!comment) throw new Error('Comment not found');
         
         comment = comment.toObject()
-        comment.user = await User.getUser(comment.user);
+        comment.owner = await User.getUser(comment.owner);
         comment.replies = await fetchRepliesRecursively(comment);
         
         return comment;
@@ -26,7 +26,7 @@ module.exports.findById = async (id) => {
 
 module.exports.findByStreet = async (street_id) => {
     try {
-        const comments = await Comment.find({ streetId: street_id }).select('_id').exec();
+        const comments = await Comment.find({ streetId: street_id, baseCommentId: null}).select('_id').exec();
         return comments.map(comment => comment._id);
     } catch (error) {
         console.error(error);
@@ -100,6 +100,10 @@ module.exports.deleteCommentById = async (id) => {
     }
 };
 
+module.exports.deleteAllFromStreet = async (id) => {
+    return Comment.deleteMany({streetId: id})
+}
+
 //Aux funcs
 
 //apagar comentario e todos os replies associados 
@@ -120,12 +124,12 @@ const deleteCommentAndReplies = async (comment_id) => {
     return comment
 };
 
-//obter dados extensis de user e replies de comentario, recursivamente
+//obter dados extensos de user e replies de comentario, recursivamente
 const fetchRepliesRecursively = async (comment) => {
     const replies = await Comment.find({ baseCommentId: comment._id}).exec();
     for (let i = 0; i < replies.length; i++) {
         replies[i] = replies[i].toObject();
-        replies[i].user = await User.getUser(replies[i].user);
+        replies[i].owner = await User.getUser(replies[i].owner);
         replies[i].replies = await fetchRepliesRecursively(replies[i]);
     }
     return replies;

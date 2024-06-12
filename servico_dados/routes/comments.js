@@ -4,11 +4,11 @@ var auth = require('../auth/auth')
 var Comment = require('../controllers/comment');
 var jwt = require('jsonwebtoken')
 
-// router.get('/', auth.verificaAcesso(['USER', 'ADMIN']), function(req, res, next) {
-//   Comment.list()
-//     .then(data => res.status(201).jsonp(data))
-//     .catch(erro => res.status(523).jsonp(erro))
-// });
+router.get('/', auth.verificaAcesso(['USER', 'ADMIN']), function(req, res, next) {
+  Comment.list()
+    .then(data => res.status(201).jsonp(data))
+    .catch(erro => res.status(523).jsonp(erro))
+});
 
 router.get('/:id', auth.verificaAcesso(['USER', 'ADMIN']), function(req,res) {
   Comment.findById(req.params.id)
@@ -31,7 +31,7 @@ router.post('/', auth.verificaAcesso(['USER', 'ADMIN']), function(req,res) {
 
   const comment = {
     streetId: req.body.streetId,
-    user: userId,
+    owner: userId,
     text: req.body.text,
     createdAt: new Date(),
     updatedAt: null,
@@ -51,7 +51,8 @@ router.post('/:id/respostas', auth.verificaAcesso(['USER', 'ADMIN']), async (req
     const userId = decodedToken.payload.userId;
 
     const comment = {
-      user: userId,
+      streetId: req.body.streetId,
+      owner: userId,
       text: req.body.text,
       baseCommentId: req.params.id,
       createdAt: new Date(),
