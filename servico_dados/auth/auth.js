@@ -24,6 +24,8 @@ module.exports.verificaAcesso = function (requiredAccessLevel, requireOwnershipC
         const isOwnerOfResource = requireOwnershipCheck ? await isOwner(streetId, userId) : true
         if (hasRequiredAcess || isOwnerOfResource) { // se não bastar ser "user", verificar se é owner do recurso
             console.log(">>>Permission granted");
+            req.user = userId;
+            req.level = userLevel;
             next();
         } else {
             console.log("Previlégios insuficientes");

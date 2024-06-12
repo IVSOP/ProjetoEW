@@ -36,7 +36,7 @@ block content
         p.d-inline-flex.gap-3
             a.button.btn.btn-secondary.btn-lg.btn-block.w-100(href='/ruas', style="text-decoration: none;") 
                 | Voltar
-            if (nivel == 'ADMIN')
+            if permissao
                 a.button.btn.btn-success.btn-lg.btn-block.w-100(href='/ruas/editar/' + rua['_id'] , style="text-decoration: none;")
                     | Editar
                 a.button.btn.btn-danger.btn-lg.btn-block.w-100(href='/ruas/eliminar/' + rua['_id'] , style="text-decoration: none;")

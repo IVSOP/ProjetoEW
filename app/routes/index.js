@@ -31,7 +31,7 @@ router.get('/', isLogged, addTokenToHeaders, function(req, res, next) {
     else{
         res.status(200).render('index', {
             title: 'Índice',
-            nivel: req.level
+            permissao: req.level == 'ADMIN'
         })
     }
 });

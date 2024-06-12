@@ -62,13 +62,13 @@ router.post('/', auth.verificaAcesso(['USER', 'ADMIN']), upload.single('imagem')
 });
 
 // Apenas via alterar o subst
-router.put('/:id', auth.verificaAcesso(['ADMIN']), function(req,res) {
+router.put('/:id', auth.verificaAcesso(['USER', 'ADMIN']), function(req,res) {
 	Atual.update(req.params.id,req.body)
 	    .then(data => res.status(201).jsonp(data))
     	.catch(erro => res.status(522).jsonp(erro))
 });
 
-router.delete('/:id', auth.verificaAcesso(['ADMIN']), function(req,res) {
+router.delete('/:id', auth.verificaAcesso(['USER', 'ADMIN']), function(req,res) {
 	Atual.deleteById(req.params.id)
     .then(imagem => {
 		fs.unlink('imagens/atual/' + imagem._id + '.' + imagem.extension, (err) => {

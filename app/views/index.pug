@@ -9,7 +9,7 @@ block content
                 ul.nav.nav-pills.card-header-pills
                     li.nav-item
                         a.nav-link.active(href='/' class=title == 'Login' ? 'active' : '') Logout
-                    if (nivel == 'ADMIN')
+                    if permissao
                         li.nav-item(style="margin-left: 8px;")
                             .dropdown.h-100
                                 button.btn.btn-primary.btn-block.w-100.h-100.dropdown-toggle(type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false")

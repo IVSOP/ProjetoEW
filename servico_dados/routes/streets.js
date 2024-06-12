@@ -48,16 +48,24 @@ router.post('/', auth.verificaAcesso(['USER', 'ADMIN']), async function(req,res)
   }
 });
 
-router.put('/:id', auth.verificaAcesso(['ADMIN'],true), async (req,res) => {
+router.put('/:id', auth.verificaAcesso(['USER', 'ADMIN']), async (req,res) => {
   try {
+
     let street = req.body;
+    let data = await Street.findById(req.params.id)
+
+    if (req.level != 'ADMIN' && req.user != data.owner){
+        throw new Error('Permission denied')
+    }
 
     if (street.places) {
       street.places = await validateAndConvert(street.places,Place)
     }
+
     if (street.entities) {
       street.entities = await validateAndConvert(street.entities, Entity)
     }
+
     if (street.dates) {
       street.dates = await validateAndConvert(street.dates, Date)
     }
@@ -65,17 +73,30 @@ router.put('/:id', auth.verificaAcesso(['ADMIN'],true), async (req,res) => {
     Street.updateStreet(req.params.id, req.body)
       .then(data => res.status(201).jsonp(data))
       .catch(erro => res.status(528).jsonp(erro))
-      
+
   } catch (error) {
     console.log(error)
     res.status(528).jsonp(error)
   }
 });
 
-router.delete('/:id', auth.verificaAcesso(['ADMIN'],true), (req,res) => {
-  Street.deleteStreetById(req.params.id)
-  .then(data => res.status(201).jsonp(data))
-  .catch(erro => res.status(529).jsonp(erro))
+router.delete('/:id', auth.verificaAcesso(['USER', 'ADMIN']), async (req,res) => {
+  try {
+
+    let data = await Street.findById(req.params.id)
+
+    if (req.level != 'ADMIN' && req.user != data.owner){
+        throw new Error('Permission denied')
+    }
+
+    Street.deleteStreetById(req.params.id)
+      .then(data => res.status(201).jsonp(data))
+      .catch(erro => res.status(529).jsonp(erro))
+
+  } catch (error) {
+    console.log(error)
+    res.status(529).jsonp(error)
+  }
 });
 
 //Aux functions 
