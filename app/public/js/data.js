@@ -2,7 +2,6 @@ $(document).ready(function() {
 
 
     $('#dataImportButton').click(function() {
-        console.log('ola')
         $('#dataImportInput').click();
     });
 

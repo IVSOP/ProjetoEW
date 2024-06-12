@@ -71,7 +71,7 @@ block content
                         .col
                             input.form-control(type='text', name='oldImageSubst', placeholder='Referência', required)
                         .col
-                            input.form-control(type="file", name="oldImageFiles", required)
+                            input.form-control(type="file", name="oldImageFiles", accept="image/*", required)
                         .col
                             button.btn.btn-danger.w-100.deleteOldImage(data-field-id="oldImage1") Eliminar
 
@@ -84,7 +84,7 @@ block content
                         .col
                             input.form-control(type='text', name='newImageSubst', placeholder='Referência', required)
                         .col
-                            input.form-control(type="file", name="newImageFiles", required)
+                            input.form-control(type="file", name="newImageFiles", accept="image/*", required)
                         .col
                             button.btn.btn-danger.w-100.deleteNewImage(data-field-id="newImage1") Eliminar
 

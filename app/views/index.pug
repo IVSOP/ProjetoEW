@@ -16,7 +16,7 @@ block content
                                     | Dados
                                 .dropdown-menu
                                     a.dropdown-item#dataImportButton(href="#importar") Importar
-                                    a.dropdown-item(href="#exportar") Exportar
+                                    a.dropdown-item#dataExportButton(href="/?exportar=true") Exportar
                 h4.d-flex.align-items-center.mb-0.fw-bold
                     | Plataforma das Ruas de Braga
 
@@ -38,6 +38,6 @@ block content
                                 button.btn.btn-secondary.btn-lg.btn-block.w-100.h-100.p-4(style="font-size: 50px;") Índice das Datas
 
         form#dataImportForm(method="post", enctype='multipart/form-data', style="display: none;")
-            input#dataImportInput(type="file" name="importFile" style="display: none;")
+            input#dataImportInput(type="file" accept=".tar.gz, application/gzip" name="importFile" style="display: none;")
 
     script(src="/js/data.js", type="module")

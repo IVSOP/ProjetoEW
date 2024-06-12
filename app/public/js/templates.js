@@ -43,7 +43,7 @@ export const oldImageTemplate = `
             <input class="form-control" type='text' name='oldImageSubst' placeholder='Referência' required/>
         </div>
         <div class="col">
-            <input class="form-control" type="file" name="oldImageFiles" required/>
+            <input class="form-control" type="file" name="oldImageFiles" accept="image/*" required/>
         </div>
         <div class="col">
             <button class="btn btn-danger w-100 deleteOldImage" type="button" data-field-id="__ID__">
@@ -59,7 +59,7 @@ export const newImageTemplate = `
             <input class="form-control" type='text' name='newImageSubst' placeholder='Referência' required/>
         </div>
         <div class="col">
-            <input class="form-control" type="file" name="newImageFiles" required/>
+            <input class="form-control" type="file" name="newImageFiles" accept="image/*" required/>
         </div>
         <div class="col">
             <button class="btn btn-danger w-100 deleteNewImage" type="button" data-field-id="__ID__">
