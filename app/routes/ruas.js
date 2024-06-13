@@ -197,7 +197,6 @@ router.post('/favorito/:id', isLogged, addTokenToHeaders, function(req, res, nex
 
 
 router.delete('/favorito/:id', isLogged, function(req, res, next){
-    console.log(req.user)
     axios.delete(`http://localhost:3000/ruas/favorito/${req.params.id}`, {data: {userId: req.user}}, addTokenToHeaders)
         .then(() => res.status(200).end())
         .catch(error => {
