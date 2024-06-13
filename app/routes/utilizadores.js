@@ -8,10 +8,21 @@ var axios = require('axios');
 router.get('/:id', isLogged, addTokenToHeaders, function(req, res, next) {
 
     axios.get(`http://localhost:3000/users/${req.params.id}`, addTokenToHeaders)
-        .then(response => res.render('user',{
+        .then(async response => {
+
+            comentarios =  (await axios.get(`http://localhost:3000/comentarios`, addTokenToHeaders)).data
+            comentarios = comentarios.filter(x => x.owner = req.params.id)
+
+            for (let comentario of comentarios){
+                street = await axios.get(`http://localhost:3000/ruas/${comentario.streetId}`, addTokenToHeaders)
+                comentario['streetName'] = street.data.name
+            }
+
+            res.render('user',{
                 title: response.data.username,
-                utilizador: response.data
-            }))
+                comentarios: comentarios,
+                utilizador: response.data})
+        })
         .catch(error => res.render('error', {error: error}))
 })
 

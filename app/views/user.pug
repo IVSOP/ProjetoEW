@@ -42,26 +42,12 @@ block content
 
         .card.mb-3.border-dark
             h5.card-header.fw-bold Comentários
-            .card-body.overflow-scroll.pb-0(style="max-height: 338px;")
+            .card-body.overflow-scroll.pb-0(style="max-height: 339px;")
 
-                .card.border-dark.bg-light.mb-3.w-100
-                    b.card-header Rua do Campo
-                    .card-body.text-dark
-                        p.card-text This is a comment!!!
-
-                .card.border-dark.bg-light.mb-3.w-100
-                    b.card-header Rua 25 de Março
-                    .card-body.text-dark
-                        p.card-text This is a comment!!!
-
-                .card.border-dark.bg-light.mb-3.w-100
-                    b.card-header Rua de Portugal
-                    .card-body.text-dark
-                        p.card-text This is a comment!!!
-
-                .card.border-dark.bg-light.mb-3.w-100
-                    b.card-header Rua dos Alcaides
-                    .card-body.text-dark
-                        p.card-text This is a comment!!!
+                each comentario in comentarios
+                    a.card.border-dark.bg-light.mb-3.w-100(href=`/ruas/${comentario.streetId}#comment-text-${comentario['_id']}`, style="text-decoration: none;")
+                        b.card-header= comentario.streetName
+                        .card-body.text-dark
+                            p.card-text= comentario.text
 
         a.btn.btn-secondary.btn-lg.btn-block.w-100.mb-3(href="/") Voltar

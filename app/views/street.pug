@@ -122,12 +122,12 @@ block content
                             button.btn.btn-lg.cancel-button.p-2.d-none(type="button", data-comment-id=comment._id)
                                 i.bi.bi-x-lg
                     .card-body.text-dark
-                        p.card-text(id=`comment-text-${comment._id}` data-original-text=comment.text)= comment.text
+                        p.mb-0.card-text(id=`comment-text-${comment._id}` data-original-text=comment.text)= comment.text
                         textarea.form-control.d-none(id=`comment-textarea-${comment._id}`, name="text", rows="3")= comment.text
                         // Render replies if any
                         if comment.replies.length > 0
-                        .card.border-light.bg-light.mt-3.ml-3
-                            +commentSection(comment.replies,rua)
+                            .card.border-light.bg-light.mt-3.ml-3
+                                +commentSection(comment.replies,rua)
 
         .card.card-body.mt-3.mb-3
             form.new-comment-form(method="post" action=`/ruas/comentarios/${rua._id}`)
