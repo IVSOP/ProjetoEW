@@ -19,30 +19,26 @@ block content
 
         .card.mb-3.border-dark
             h5.card-header.fw-bold Ruas Favoritas
-            .card-body.overflow-scroll.pb-0(style="max-height: 243px;")
+            .card-body.overflow-scroll.pb-0(style="max-height: 245px;")
                 ul.list-group(style="font-size: 17px;")
-                    a(href='/' style="text-decoration: none;")
+
+                    if (ruas.length == 0)
                         li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.mb-3
-                            | Rua do Campo
-                    a(href='/' style="text-decoration: none;")
-                        li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.mb-3
-                            | Rua das Flores
-                    a(href='/' style="text-decoration: none;")
-                        li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.mb-3
-                            | Rua 25 de Março
-                    a(href='/' style="text-decoration: none;")
-                        li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.mb-3
-                            | Rua dos Capitães
-                    a(href='/' style="text-decoration: none;")
-                        li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.mb-3
-                            | Rua de Portugal
-                    a(href='/' style="text-decoration: none;")
-                        li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.mb-3
-                            | Rua dos Alcaides
+                            | Ainda sem ruas favoritas
+
+                    each rua in ruas        
+                       a(href=`/ruas/${rua['_id']}` style="text-decoration: none;")
+                            li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.mb-3
+                                | #{rua.name}
 
         .card.mb-3.border-dark
             h5.card-header.fw-bold Comentários
             .card-body.overflow-scroll.pb-0(style="max-height: 339px;")
+
+                if (comentarios.length == 0)
+                    ul.list-group(style="font-size: 17px;")
+                        li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.mb-3
+                            | Ainda sem comentários
 
                 each comentario in comentarios
                     a.card.border-dark.bg-light.mb-3.w-100(href=`/ruas/${comentario.streetId}#comment-text-${comentario['_id']}`, style="text-decoration: none;")

@@ -36,11 +36,13 @@ block content
         p.d-inline-flex.gap-3
             a.button.btn.btn-secondary.btn-lg.btn-block.w-100(href='/ruas', style="text-decoration: none;") 
                 | Voltar
+            button.btn.btn-lg#favoriteButton(class=isFavorito ? 'btn-warning' : 'btn-outline-warning', data-value=`${isFavorito}`, action=`/ruas/favorito/${rua['_id']}`)
+                i.bi.bi-star-fill
             if permissao
-                a.button.btn.btn-success.btn-lg.btn-block.w-100(href='/ruas/editar/' + rua['_id'] , style="text-decoration: none;")
-                    | Editar
-                a.button.btn.btn-danger.btn-lg.btn-block.w-100(href='/ruas/eliminar/' + rua['_id'] , style="text-decoration: none;")
-                    | Eliminar
+                a.button.btn.btn-success.btn-lg.btn-block(href='/ruas/editar/' + rua['_id'] , style="text-decoration: none;")
+                    i.bi.bi-pencil-fill
+                a.button.btn.btn-danger.btn-lg.btn-block(href='/ruas/eliminar/' + rua['_id'] , style="text-decoration: none;")
+                    i.bi.bi-trash3-fill
 
         // collapsing buttons for locals, entities and dates
         p.d-inline-flex.gap-3
@@ -147,3 +149,4 @@ block content
                 +commentSection(comentarios)
 
     script(src="/js/comments.js")
+    script(src="/js/favorite.js", type="module")

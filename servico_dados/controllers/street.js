@@ -139,6 +139,32 @@ module.exports.deleteStreetById = async (id) => {
     }
 };
 
+module.exports.addFavorite = async (street_id, user_id) => {
+    try{
+        return await Street.findByIdAndUpdate(
+            { _id: street_id },
+            { $addToSet: { favorites: user_id }},
+            { new: true });
+    }
+    catch (error){
+        console.error( error);
+        throw new Error("Error adding favorite", error);
+    }
+};
+
+module.exports.removeFavorite = async (street_id, user_id) => {
+    try {
+        return await Street.findByIdAndUpdate(
+            { _id: street_id },
+            { $pull: { favorites: user_id } },
+            { new: true });
+    }
+    catch (error){
+        console.error( error);
+        throw new Error("Error removing favorite", error);
+    }
+};
+
 //Aux funcs
 
 const addStreetToCollections = async (streetId, collections) => {

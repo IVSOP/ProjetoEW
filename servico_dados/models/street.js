@@ -24,6 +24,7 @@ var streetSchema = new mongoose.Schema({
     },
     owner: String,
     name: String,
+    favorites: [String],
     description: [String],
     places: [String],
     entities: [String],

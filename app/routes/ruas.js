@@ -152,6 +152,7 @@ router.get('/:id', isLogged, addTokenToHeaders, function(req, res, next){
                 entidades: entidades.filter(x => response.data.entities.includes(x['_id'])),
                 imagens: imagens,
                 rua: response.data,
+                isFavorito: response.data.favorites.includes(req.user),
                 permissao: req.level == 'ADMIN' || req.user == response.data.owner,
                 token: req.cookies.token,
                 comentarios: comentarios
@@ -183,5 +184,27 @@ router.post('/comentarios/:id', isLogged, function(req, res, next){
             res.status(500).jsonp(error)
     })
 });
+
+
+router.post('/favorito/:id', isLogged, addTokenToHeaders, function(req, res, next){
+    axios.post(`http://localhost:3000/ruas/favorito/${req.params.id}`, {userId: req.user}, addTokenToHeaders)
+        .then(() => res.status(200).end())
+        .catch(error => {
+            console.log(error)
+            res.status(500).end()
+    })
+});
+
+
+router.delete('/favorito/:id', isLogged, function(req, res, next){
+    console.log(req.user)
+    axios.delete(`http://localhost:3000/ruas/favorito/${req.params.id}`, {data: {userId: req.user}}, addTokenToHeaders)
+        .then(() => res.status(200).end())
+        .catch(error => {
+            console.log(error)
+            res.status(500).end()
+    })
+});
+
 
 module.exports = router;

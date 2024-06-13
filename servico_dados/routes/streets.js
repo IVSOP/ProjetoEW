@@ -28,6 +28,7 @@ router.post('/', auth.verificaAcesso(['USER', 'ADMIN']), async function(req,res)
     const decodedToken = jwt.decode(token, {complete: true});
     const userId = decodedToken.payload.userId;
     street.owner = userId;
+    street.favorits = [];
 
     if (street.places) {
       street.places = await validateAndConvert(street.places,Place)
@@ -97,6 +98,20 @@ router.delete('/:id', auth.verificaAcesso(['USER', 'ADMIN']), async (req,res) =>
     console.log(error)
     res.status(529).jsonp(error)
   }
+});
+
+router.post('/favorito/:id', auth.verificaAcesso(['USER', 'ADMIN']), async (req,res) => {
+    console.log(req.body)
+    Street.addFavorite(req.params.id,req.body.userId)
+        .then(data => res.status(201).jsonp(data))
+        .catch(erro => res.status(530).jsonp(erro))
+});
+
+router.delete('/favorito/:id', auth.verificaAcesso(['USER', 'ADMIN']), async (req,res) => {
+    console.log(req.body)
+    Street.removeFavorite(req.params.id,req.body.userId)
+        .then(data => res.status(201).jsonp(data))
+        .catch(erro => res.status(530).jsonp(erro))
 });
 
 //Aux functions 
