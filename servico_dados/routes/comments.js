@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var auth = require('../auth/auth')
 var Comment = require('../controllers/comment');
+var CommentModel = require("../models/comment")
 var jwt = require('jsonwebtoken')
 
 router.get('/', auth.verificaAcesso(['USER', 'ADMIN']), function(req, res, next) {
@@ -97,7 +98,7 @@ router.put('/:id/desgostos', auth.verificaAcesso(['USER', 'ADMIN']), async (req,
   })
 });
 
-router.put('/:id', auth.verificaAcesso([],true), async (req,res) => {
+router.put('/:id', auth.verificaAcesso([],true, CommentModel), async (req,res) => {
 
   const comment = {
     text: req.body.text,
@@ -109,7 +110,7 @@ router.put('/:id', auth.verificaAcesso([],true), async (req,res) => {
   .catch(erro => res.status(528).jsonp(erro))
 });
 
-router.delete('/:id', auth.verificaAcesso(['ADMIN'],true), (req,res) => {
+router.delete('/:id', auth.verificaAcesso(['ADMIN'],true, CommentModel), (req,res) => {
   Comment.deleteCommentById(req.params.id, req.body)
   .then(data => res.status(201).jsonp(data))
   .catch(erro => res.status(529).jsonp(erro))

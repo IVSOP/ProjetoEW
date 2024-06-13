@@ -1,7 +1,8 @@
 var jwt = require('jsonwebtoken')
 var Street = require('../controllers/street');
+var StreetModel = require("../models/street")
 
-module.exports.verificaAcesso = function (requiredAccessLevel, requireOwnershipCheck = false) {
+module.exports.verificaAcesso = function (requiredAccessLevel, requireOwnershipCheck = false, objectModel= StreetModel) {
   return async function(req, res, next) {
       try {
         const token = req.headers.authorization || req.query.token;
@@ -18,10 +19,10 @@ module.exports.verificaAcesso = function (requiredAccessLevel, requireOwnershipC
         
         const userLevel = payload.level; // nível de acesso do user
         const userId = payload.userId;
-        const streetId = req.params.id
-        
+        const objectId = req.params.id
+
         const hasRequiredAcess = requiredAccessLevel.includes(userLevel)
-        const isOwnerOfResource = requireOwnershipCheck ? await isOwner(streetId, userId) : true
+        const isOwnerOfResource = requireOwnershipCheck ? await isOwner(objectId, userId, objectModel) : true
         if (hasRequiredAcess || isOwnerOfResource) { // se não bastar ser "user", verificar se é owner do recurso
             console.log(">>>Permission granted");
             req.user = userId;
@@ -52,6 +53,6 @@ const jwtVerify = (token, secret) => {
   };
 
 //verificar se user é owner de recurso
-async function isOwner(streetId, userId) {
-  return Street.isOwner(streetId, userId);
+async function isOwner(objectId, userId, objectModel) {
+  return Street.isOwner(objectId, userId, objectModel);
 }

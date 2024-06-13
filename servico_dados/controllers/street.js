@@ -16,18 +16,18 @@ module.exports.findById = id => {
         .exec()
 }
 
-module.exports.isOwner = async (street_id, user_id) => {
+module.exports.isOwner = async (object_id, user_id, objectModel) => {
     try {
-        const street = await Street.findOne({_id: street_id}, { owner: 1 }).exec();
-        if (!street) {
+        const object = await objectModel.findOne({_id: object_id}, { owner: 1 }).exec();
+        if (!object) {
             throw new Error("Street not found");
         }
         
-        if (!street.owner) {
+        if (!object.owner) {a
             return false
         }
         
-        return street.owner === user_id;
+        return object.owner === user_id;
     } catch (error) {
         console.error("Error checking ownership:", error);
         throw error;

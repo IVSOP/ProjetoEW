@@ -125,6 +125,7 @@ router.get('/:id', isLogged, addTokenToHeaders, function(req, res, next){
             datas = (await axios.get('http://localhost:3000/datas', addTokenToHeaders)).data
             lugares = (await axios.get('http://localhost:3000/lugares', addTokenToHeaders)).data
             entidades = (await axios.get('http://localhost:3000/entidades', addTokenToHeaders)).data
+            comentarios = (await axios.get(`http://localhost:3000/comentarios/ruas/${req.params.id}`, addTokenToHeaders)).data
 
             for (let imagem of response.data.old_images){
                 let imagem_data = (await axios.get(`http://localhost:3000/antigo/${imagem['_id']}`, addTokenToHeaders)).data
@@ -138,6 +139,12 @@ router.get('/:id', isLogged, addTokenToHeaders, function(req, res, next){
                 imagens.push(imagem_data);
             }
 
+            //atualizar índices de comentários com o conteúdo do comentário em si
+
+            for (let i = 0; i < comentarios.length; i++) {
+                comentarios[i] = (await axios.get(`http://localhost:3000/comentarios/${comentarios[i]}`)).data
+            }
+
             res.status(200).render('street', {
                 title: response.data.name,
                 datas: datas.filter(x => response.data.dates.includes(x['_id'])),
@@ -146,18 +153,27 @@ router.get('/:id', isLogged, addTokenToHeaders, function(req, res, next){
                 imagens: imagens,
                 rua: response.data,
                 permissao: req.level == 'ADMIN' || req.user == response.data.owner,
-                token: req.cookies.token
+                token: req.cookies.token,
+                comentarios: comentarios
             })
         })
         .catch(error => res.status(500).render('error', {error: error}))
 });
 
 
-// Not implemented
-router.post('/comentarios/:id', isLogged, addTokenToHeaders, function(req, res, next){
+router.post('/comentarios/:id', isLogged, function(req, res, next){
     console.log(req.body)
-    res.status(201).end()
-});
+    req.body["streetId"] = req.params.id
 
+    axios.post(`http://localhost:3000/comentarios`, req.body, addTokenToHeaders)
+        .then( async response => {
+            console.log("Comment submitted successfully")
+            res.status(201).end()
+        })
+        .catch(error => {
+            console.log("Error occurred while submitting the comment: ", error);
+            res.status(500).end()
+    })
+});
 
 module.exports = router;

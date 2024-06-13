@@ -102,8 +102,35 @@ block content
                             td= casa.vista
                             td= casa.desc.join('\n')
 
+        //bloco reutilizavel de codigo para fazer comentarios recursivamente
+        mixin commentSection(comments,rua)
+            each comment in comments
+                form.card.border-dark.bg-light.mb-0.mt-3.w-100(id=`edit-form-${comment._id}`, action=`/comentarios/${comment._id}`, method="post")
+                    .card-header.d-flex.justify-content-between
+                        .header-left 
+                            b= comment.owner.username
+                            br
+                            small.text-muted.ml-2
+                                | #{new Date(comment.createdAt).toLocaleString()}
+                                if comment.updatedAt
+                                    | (edited)
+                        .header-right.align-items-center
+                            button.btn.btn-lg.edit-button.p-2(type="button", data-comment-id=comment._id)
+                                i.bi.bi-pencil-fill
+                            button.btn.btn-lg.submit-button.p-2.d-none(type="button", data-comment-id=comment._id)
+                                i.bi.bi-check-lg
+                            button.btn.btn-lg.cancel-button.p-2.d-none(type="button", data-comment-id=comment._id)
+                                i.bi.bi-x-lg
+                    .card-body.text-dark
+                        p.card-text(id=`comment-text-${comment._id}` data-original-text=comment.text)= comment.text
+                        textarea.form-control.d-none(id=`comment-textarea-${comment._id}`, name="text", rows="3")= comment.text
+                        // Render replies if any
+                        if comment.replies.length > 0
+                        .card.border-light.bg-light.mt-3.ml-3
+                            +commentSection(comment.replies,rua)
+
         .card.card-body.mt-3.mb-3
-            form.form(method="post" action=`/ruas/comentarios/{$rua['_id']}`)
+            form.form(method="post" action=`http://localhost:3000/comentarios`)
                 .row.m-0.p-0
                     .col-12.col-sm-4.col-md-9.p-0
                         .form-group
@@ -112,8 +139,7 @@ block content
                         button.btn.btn-success.btn-lg.btn-block.w-100.h-100(style="width: 15%", type="submit")
                             | Submeter
 
-            // user and comment
-            .card.border-dark.bg-light.mb-0.mt-3.w-100
-                b.card-header Username
-                .card-body.text-dark
-                    p.card-text This is a comment!!!
+            // render comment
+            +commentSection(comentarios,rua)
+
+    script(src="/js/comments.js")
