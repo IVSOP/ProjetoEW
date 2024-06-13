@@ -38,7 +38,7 @@ $(document).ready(function () {
         $.ajax({
             url: form.attr('action'),
             type: 'POST',
-            data: form.serialize(), // serialize form data
+            data: form.serialize(),
             success: function (response) {
                 $(`#comment-text-${commentId}`).text(newText).show();
                 $(`#comment-text-${commentId}`).data('original-text', newText);
@@ -55,30 +55,25 @@ $(document).ready(function () {
         console.log("Finished then")
     });
 
-    // $('.comment-form').on('submit', function (e) {
-    //     e.preventDefault();
+    //submit new comment
+    $('.new-comment-form').on('submit', function (e) {
+        e.preventDefault(); // prevenir refresh da página
     
-    //     const form = $(this);
-    //     const commentId = form.attr('action').split('/').pop(); // obter o comment_id do parâmetro id da rota do form
-    //     const newText = form.find('textarea[name="comment_text"]').val();
+        const form = $(this);
     
-    //     //intercetar form de editar comentario com ajax, para n ter de fazer page reload ou redirect
-    //     $.ajax({
-    //       url: form.attr('action'),
-    //       type: 'PUT',
-    //       data: form.serialize(), // serialize form data
-    //       success: function (response) {
-    //         $(`#comment-text-${commentId}`).text(newText).show();
-    //         $(`#comment-text-${commentId}`).data('original-text', newText);
-    //         $(`#comment-textarea-${commentId}`).addClass('d-none');
-    //         $(`button.submit-button[data-comment-id="${commentId}"]`).addClass('d-none');
-    //         $(`button.cancel-button[data-comment-id="${commentId}"]`).addClass('d-none');
-    //         $(`button.edit-button[data-comment-id="${commentId}"]`).show();
-    //       },
-    //       error: function (error) {
-    //         console.log(error);
-    //         alert('An error occurred while updating the comment.');
-    //       }
-    //     });
-    //   });
+        $.ajax({
+          url: form.attr('action'),
+          type: 'POST',
+          data: form.serialize(),
+          success: function (response) {
+            // se adicionar comentário correr bem
+            console.log(response);
+            form[0].reset();
+          },
+          error: function (error) {
+            console.error(error);
+            alert('An error occurred while submitting the comment.');
+          }
+        });
+      });
 });

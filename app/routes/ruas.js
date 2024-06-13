@@ -163,9 +163,14 @@ router.get('/:id', isLogged, addTokenToHeaders, function(req, res, next){
 
 router.post('/comentarios/:id', isLogged, function(req, res, next){
     console.log(req.body)
-    req.body["streetId"] = req.params.id
 
-    axios.post(`http://localhost:3000/comentarios`, req.body, addTokenToHeaders)
+    const comment = {
+        text: req.body.text,
+        streetId: req.params.id
+    }
+    console.log(comment)
+    
+    axios.post(`http://localhost:3000/comentarios`, comment, addTokenToHeaders)
         .then( async response => {
             console.log("Comment submitted successfully")
             res.status(201).end()

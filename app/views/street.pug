@@ -113,7 +113,7 @@ block content
                             small.text-muted.ml-2
                                 | #{new Date(comment.createdAt).toLocaleString()}
                                 if comment.updatedAt
-                                    | (edited)
+                                    |  (edited)
                         .header-right.align-items-center
                             button.btn.btn-lg.edit-button.p-2(type="button", data-comment-id=comment._id)
                                 i.bi.bi-pencil-fill
@@ -130,13 +130,13 @@ block content
                             +commentSection(comment.replies,rua)
 
         .card.card-body.mt-3.mb-3
-            form.form(method="post" action=`http://localhost:3000/comentarios`)
+            form.new-comment-form(method="post" action=`/ruas/comentarios/${rua._id}`)
                 .row.m-0.p-0
                     .col-12.col-sm-4.col-md-9.p-0
                         .form-group
-                            textarea.form-control(rows="3", placeholder="Inserir comentário", name="comment", required)
+                            textarea.form-control(rows="3", placeholder="Inserir comentário", name="text", required)
                     .col-3.col-md-3.pr-3(style="padding-right: 0px")
-                        button.btn.btn-success.btn-lg.btn-block.w-100.h-100(style="width: 15%", type="submit")
+                        button.btn.btn-success.btn-lg.btn-block.w-100.h-100(style="width: 15%")
                             | Submeter
 
             // render comment
