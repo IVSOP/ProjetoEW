@@ -1,7 +1,7 @@
 extends layout
 
 block content
-
+    meta(name="userId" content=userId)
     .container.d-flex.justify-content-end.flex-column.mt-3
 
         // slide show for old and current images
@@ -105,45 +105,55 @@ block content
                             td= casa.desc.join('\n')
 
         //bloco reutilizavel de codigo para gerar comentarios (e replies recursivamente)
-        mixin commentSection(comments)
+        mixin commentSection(comments, prevCommentOwner = null)
             each comment in comments
-                form.card.border-dark.bg-light.mb-0.mt-3.w-100(id=`edit-form-${comment._id}`, action=`/comentarios/${comment._id}`, method="post")
-                    .card-header.d-flex.justify-content-between
-                        .header-left 
-                            b= comment.owner.username
-                            br
-                            small.text-muted.ml-2
-                                | #{new Date(comment.createdAt).toLocaleString()}
-                                if comment.updatedAt
-                                    |  (edited)
-                        .header-right.align-items-center
-                            button.btn.btn-lg.edit-button.p-2(type="button", data-comment-id=comment._id)
-                                i.bi.bi-pencil-fill
-                            button.btn.btn-lg.remove-button.p-2(type="button", data-comment-id=comment._id)
-                                i.bi.bi-trash-fill
-                            button.btn.btn-lg.submit-button.p-2.d-none(type="button", data-comment-id=comment._id)
-                                i.bi.bi-check-lg
-                            button.btn.btn-lg.cancel-button.p-2.d-none(type="button", data-comment-id=comment._id)
-                                i.bi.bi-x-lg
-                    .card-body.text-dark
-                        p.mb-0.card-text(id=`comment-text-${comment._id}` data-original-text=comment.text)= comment.text
-                        textarea.form-control.d-none(id=`comment-textarea-${comment._id}`, name="text", rows="3")= comment.text
+                // default user icon, could be personal user icon in the future
+                .d-flex.mb-3.align-items-start
+                    img.profile-icon.mt-4.mx-3(src="/images/default_user_icon.svg", alt="Profile Icon",style="width: 4em; height: auto") 
+                    form.card.border-dark.bg-light.mb-0.mt-4.w-100(id=`edit-form-${comment._id}`, action=`/comentarios/${comment._id}`, method="post")
+                        .card-header.d-flex.justify-content-between
+                            .header-left 
+                                b= comment.owner.username
+                                if prevCommentOwner
+                                    i.bi.bi-arrow-right
+                                    span= prevCommentOwner
+                                br
+                                small.text-muted.ml-2(id=`comment-date-${comment._id}`)
+                                    if comment.updatedAt
+                                        | #{new Date(comment.updatedAt).toLocaleString()}
+                                        | (edited)
+                                    else 
+                                        | #{new Date(comment.createdAt).toLocaleString()}
+                            .header-right.align-items-center
+                                button.btn.btn-lg.edit-button.p-2(type="button", data-comment-id=comment._id)
+                                    i.bi.bi-pencil-fill
+                                button.btn.btn-lg.remove-button.p-2(type="button", data-comment-id=comment._id)
+                                    i.bi.bi-trash-fill
+                                button.btn.btn-lg.submit-button.p-2.d-none(type="button", data-comment-id=comment._id)
+                                    i.bi.bi-check-lg
+                                button.btn.btn-lg.cancel-button.p-2.d-none(type="button", data-comment-id=comment._id)
+                                    i.bi.bi-x-lg
+                        .card-body.text-dark
+                            p.mb-0.card-text(id=`comment-text-${comment._id}` data-original-text=comment.text)= comment.text
+                            textarea.form-control.d-none(id=`comment-textarea-${comment._id}`, name="text", rows="3")= comment.text
 
-                        //secção de like/dislike/reply
-                        .card-options.d-flex.justify-content-left.mt-3
-                            button.btn.btn-lg.btn-outline-secondary.like-button(type="button", data-comment-id=comment._id, class=comment.likes.includes(userId) ? 'liked' : '')
-                                i.bi(class=comment.likes.includes(userId) ? 'bi-hand-thumbs-up-fill' : 'bi-hand-thumbs-up')
-                                 span.ml-1= comment.likes.length
-                            button.btn.btn-lg.btn-outline-secondary.dislike-button(type="button", data-comment-id=comment._id, class=comment.dislikes.includes(userId) ? 'disliked' : '')
-                                i.bi(class=comment.dislikes.includes(userId) ? 'bi-hand-thumbs-down-fill' : 'bi-hand-thumbs-down')
-                                 span.ml-1= comment.dislikes.length
-                            button.btn.btn-lg.reply-button.btn-outline-success(type="button", data-comment-id=comment._id)
-                                | Responder
+                            //secção de like/dislike/reply
+                            .card-options.d-flex.justify-content-left.mt-3
+                                button.btn.btn-lg.btn-outline-secondary.like-button(type="button", data-comment-id=comment._id, class=comment.likes.includes(userId) ? 'liked' : '')
+                                    i.bi(class=comment.likes.includes(userId) ? 'bi-hand-thumbs-up-fill' : 'bi-hand-thumbs-up')
+                                    span.ml-1= comment.likes.length
+                                button.btn.btn-lg.btn-outline-secondary.dislike-button(type="button", data-comment-id=comment._id, class=comment.dislikes.includes(userId) ? 'disliked' : '')
+                                    i.bi(class=comment.dislikes.includes(userId) ? 'bi-hand-thumbs-down-fill' : 'bi-hand-thumbs-down')
+                                    span.ml-1= comment.dislikes.length
+                                button.btn.btn-lg.reply-button.btn-outline-success(type="button", data-comment-id=comment._id)
+                                    | Responder
 
-                        // Render replies if any
-                        if comment.replies.length > 0
-                            .card.border-light.bg-light.mt-3.ml-3
-                                +commentSection(comment.replies,rua)
+                // Render replies if any
+                if comment.replies.length > 0
+                    .replies(style="padding-left: 5em; position: relative;")
+                        // desenhar linha vertical relativa a onde ficam os replies
+                        .border-start.border-dark.px-5(style="position: absolute; top: 0; bottom: 0; left: 3em;") 
+                        +commentSection(comment.replies, comment.owner.username)
 
         .card.card-body.mt-3.mb-3
             // adicionar novo comentário
