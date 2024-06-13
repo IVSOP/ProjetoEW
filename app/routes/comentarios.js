@@ -17,4 +17,17 @@ router.post('/:id', isLogged, addTokenToHeaders, function(req, res, next){
     })
 });
 
+router.delete('/:id', isLogged, addTokenToHeaders, function(req, res, next){
+    console.log(req.body)
+    axios.delete(`http://localhost:3000/comentarios/${req.params.id}`, req.body, addTokenToHeaders)
+        .then( response => {
+            console.log("Comment deleted successfully")
+            res.status(201).end()
+        })
+        .catch(error => {
+            console.log("Error occurred while deleting the comment: ", error);
+            res.status(500).end()
+    })
+});
+
 module.exports = router;

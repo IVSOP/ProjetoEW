@@ -11,30 +11,60 @@ $(document).ready(function () {
 
     $('.comments-section').on('click', '.edit-button', function () {
         const commentId = $(this).data('comment-id');
+
         console.log("Entered edit")
-        $(this).hide();
+
         $(`#comment-text-${commentId}`).hide();
         $(`#comment-textarea-${commentId}`).removeClass('d-none');
         $(`button.submit-button[data-comment-id="${commentId}"]`).removeClass('d-none');
         $(`button.cancel-button[data-comment-id="${commentId}"]`).removeClass('d-none');
+        $(`button.edit-button[data-comment-id="${commentId}"]`).hide();
+        $(`button.remove-button[data-comment-id="${commentId}"]`).hide();
     });
-  
+
     $('.comments-section').on('click', '.cancel-button', function () {
         const commentId = $(this).data('comment-id');
+        
+        console.log("Entered cancel edit")
+        
         const originalText = $(`#comment-text-${commentId}`).data('original-text');
-        console.log("Entered cancel")
         $(`#comment-textarea-${commentId}`).val(originalText).addClass('d-none');
         $(`#comment-text-${commentId}`).show();
         $(`button.submit-button[data-comment-id="${commentId}"]`).addClass('d-none');
         $(`button.cancel-button[data-comment-id="${commentId}"]`).addClass('d-none');
         $(`button.edit-button[data-comment-id="${commentId}"]`).show();
+        $(`button.remove-button[data-comment-id="${commentId}"]`).show();
+    });
+  
+    $('.comments-section').on('click', '.remove-button', function () {
+        const commentId = $(this).data('comment-id');
+
+        const confirmed = confirm("Tem a certeza que pretende apagar este comentário?");
+
+        console.log("Entered remove comment")
+
+        if (confirmed) {
+            $.ajax({
+                url: `/comentarios/${commentId}`,
+                type: 'DELETE',
+                success: function (response) {
+                    $(`#edit-form-${commentId}`).remove(); // apagar o comentário todo
+                },
+                error: function (error) {
+                    console.log(error);
+                    alert('Error occurred while deleting the comment.');
+                }
+            });
+        }
     });
   
     $('.comments-section').on('click', '.submit-button', function () {
         const commentId = $(this).data('comment-id');
         const newText = $(`#comment-textarea-${commentId}`).val();
         const form = $(`#edit-form-${commentId}`);
-        console.log("Entered submit")
+
+        console.log("Entered submitomment")
+
         $.ajax({
             url: form.attr('action'),
             type: 'POST',
@@ -46,6 +76,7 @@ $(document).ready(function () {
                 $(`button.submit-button[data-comment-id="${commentId}"]`).addClass('d-none');
                 $(`button.cancel-button[data-comment-id="${commentId}"]`).addClass('d-none');
                 $(`button.edit-button[data-comment-id="${commentId}"]`).show();
+                $(`button.remove-button[data-comment-id="${commentId}"]`).show();
             },
             error: function (error) {
               console.log(error);
@@ -95,6 +126,9 @@ $(document).ready(function () {
             <div class="header-right align-items-center">
                 <button class="btn btn-lg edit-button p-2" type="button" data-comment-id="${comment._id}">
                 <i class="bi bi-pencil-fill"></i>
+                </button>
+                <button class="btn btn-lg remove-button p-2" type="button" data-comment-id="${comment._id}">
+                <i class="bi bi-trash-fill"></i>
                 </button>
                 <button class="btn btn-lg submit-button p-2 d-none" type="button" data-comment-id="${comment._id}">
                 <i class="bi bi-check-lg"></i>
