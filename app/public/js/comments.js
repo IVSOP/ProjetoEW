@@ -86,6 +86,74 @@ $(document).ready(function () {
         console.log("Finished then")
     });
 
+    // dar like
+    $('.comments-section').on('click', '.like-button', function () {
+        const button = $(this);
+        const commentId = button.data('comment-id');
+        const icon = button.find('i');
+        const isLiked = icon.hasClass('bi-hand-thumbs-up-fill');
+        const dislikeButton = $(`button.dislike-button[data-comment-id='${commentId}']`);
+        const isDisliked = dislikeButton.find('i').hasClass('bi-hand-thumbs-down-fill'); // ver se botão de dislike está ativo, para atualizar direito em baixo
+        $.ajax({
+            url: `/comentarios/${commentId}/gostos`,
+            type: 'PUT',
+            data: JSON.stringify({ // é preciso isto para mandar bool em vez de "true" e "false" !!!!
+                "status": !isLiked
+            }),
+            contentType: 'application/json', // é preciso isto para mandar bool em vez de "true" e "false" !!!!
+            success: function (response) {
+                console.log(response)
+                console.log("Likes: ",response.likes.length, " Disklikes: ",response.dislikes.length)
+
+                icon.toggleClass('bi-hand-thumbs-up bi-hand-thumbs-up-fill');
+                button.find('span.ml-1').text(response.likes.length);
+
+                if (isDisliked) { // se antes estava disliked, ao dar like, tenho de atualizar tanto o like como o dislike
+                    dislikeButton.find('i').toggleClass('bi-hand-thumbs-down bi-hand-thumbs-down-fill');
+                    dislikeButton.find('span.ml-1').text(response.dislikes.length);
+                }
+            },
+            error: function (error) {
+                console.log(error);
+                alert('An error occurred while liking the comment.');
+            }
+        });
+    });
+
+    // dar dislike
+    $('.comments-section').on('click', '.dislike-button', function () {
+        const button = $(this);
+        const commentId = button.data('comment-id');
+        const icon = button.find('i');
+        const isDisliked = icon.hasClass('bi-hand-thumbs-down-fill');
+        const likeButton = $(`button.like-button[data-comment-id='${commentId}']`);
+        const isLiked = likeButton.find('i').hasClass('bi-hand-thumbs-up-fill'); // ver se botão de like está ativo, para atualizar direito em baixo
+        $.ajax({
+            url: `/comentarios/${commentId}/desgostos`,
+            type: 'PUT',
+            data: JSON.stringify({ // é preciso isto para mandar bool em vez de "true" e "false" !!!!
+                "status": !isDisliked
+            }),
+            contentType: 'application/json', // é preciso isto para mandar bool em vez de "true" e "false" !!!!
+            success: function (response) {
+                console.log(response)
+                console.log("Likes: ",response.likes.length, " Disklikes: ",response.dislikes.length)
+                icon.toggleClass('bi-hand-thumbs-down bi-hand-thumbs-down-fill');
+                button.find('span.ml-1').text(response.dislikes.length);
+
+                if (isLiked) { // se antes estava liked, ao dar dislike, tenho de atualizar tanto o like como o dislike
+                    likeButton.find('i').toggleClass('bi-hand-thumbs-up bi-hand-thumbs-up-fill');
+                    likeButton.removeClass('liked');
+                    likeButton.find('span.ml-1').text(response.likes.length);
+                }
+            },
+            error: function (error) {
+                console.log(error);
+                alert('An error occurred while liking the comment.');
+            }
+        });
+    });
+
     //submit new comment
     $('.new-comment-form').on('submit', function (e) {
         e.preventDefault(); // prevenir refresh da página

@@ -65,6 +65,27 @@ module.exports.addLike = async (comment_id, user_id) => {
     }
 };
 
+module.exports.removeLike = async (comment_id, user_id) => {
+    try {
+        const comment = await Comment.findOneAndUpdate(
+            { _id: comment_id },
+            {
+                $pull: { likes: user_id },
+            },
+            { new: true }
+        ).exec();
+
+        if (!comment) {
+            throw new Error("Comment not found");
+        }
+
+        return comment;
+    } catch (error) {
+        console.error(error);
+        throw new Error("Error adding like: " + error);
+    }
+};
+
 module.exports.addDislike = async (comment_id, user_id) => {
     try {
         const comment = await Comment.findOneAndUpdate(
@@ -72,6 +93,27 @@ module.exports.addDislike = async (comment_id, user_id) => {
             {
                 $pull: { likes: user_id },
                 $addToSet: { dislikes: user_id }
+            },
+            { new: true }
+        ).exec();
+
+        if (!comment) {
+            throw new Error("Comment not found");
+        }
+
+        return comment;
+    } catch (error) {
+        console.error(error);
+        throw new Error("Error adding dislike: " + error);
+    }
+};
+
+module.exports.removeDislike = async (comment_id, user_id) => {
+    try {
+        const comment = await Comment.findOneAndUpdate(
+            { _id: comment_id },
+            {
+                $pull: { dislikes: user_id },
             },
             { new: true }
         ).exec();

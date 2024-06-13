@@ -155,7 +155,8 @@ router.get('/:id', isLogged, addTokenToHeaders, function(req, res, next){
                 isFavorito: response.data.favorites.includes(req.user),
                 permissao: req.level == 'ADMIN' || req.user == response.data.owner,
                 token: req.cookies.token,
-                comentarios: comentarios
+                comentarios: comentarios,
+                userId: req.user
             })
         })
         .catch(error => res.status(500).render('error', {error: error}))

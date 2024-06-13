@@ -30,4 +30,31 @@ router.delete('/:id', isLogged, addTokenToHeaders, function(req, res, next){
     })
 });
 
+router.put('/:id/gostos', isLogged, function(req, res, next){
+    console.log("sent",req.body,typeof(req.body.status))
+    axios.put(`http://localhost:3000/comentarios/${req.params.id}/gostos`, req.body, addTokenToHeaders)
+        .then( response => {
+            console.log("Updated comment like status successfully to:", req.body.status)
+            console.log("result",response.data)
+            res.status(201).json(response.data)
+        })
+        .catch(error => {
+            console.log("Error occurred while updating comment like status: ", error);
+            res.status(500).json(response.data)
+    })
+});
+
+router.put('/:id/desgostos', isLogged, function(req, res, next){
+    console.log("sent",req.body,typeof(req.body.status))
+    axios.put(`http://localhost:3000/comentarios/${req.params.id}/desgostos`, req.body, addTokenToHeaders)
+        .then( response => {
+            console.log("Updated comment dislike status successfully to: ",req.body.status)
+            console.log("result",response.data)
+            res.status(201).json(response.data)
+        })
+        .catch(error => {
+            console.log("Error occurred while updating comment dislike status: ", error);
+            res.status(500).json(response.data)
+    })
+});
 module.exports = router;

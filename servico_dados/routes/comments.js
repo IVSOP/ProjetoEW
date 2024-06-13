@@ -76,12 +76,21 @@ router.put('/:id/gostos', auth.verificaAcesso(['USER', 'ADMIN']), async (req, re
   const decodedToken = jwt.decode(token, {complete: true});
   const userId = decodedToken.payload.userId;
 
-  Comment.addLike(req.params.id, userId)
-  .then(data => res.status(201).jsonp(data))
-  .catch(error => {
-    console.log(error)
-    res.status(529).jsonp(error)
+  if (req.body.status) { // se for para dar like
+    Comment.addLike(req.params.id, userId)
+    .then(data => res.status(201).jsonp(data))
+    .catch(error => {
+      console.log(error)
+      res.status(529).jsonp(error)
   })
+  } else { // se for para tirar like
+    Comment.removeLike(req.params.id, userId)
+    .then(data => res.status(201).jsonp(data))
+    .catch(error => {
+      console.log(error)
+      res.status(529).jsonp(error)
+    })
+  }
 });
 
 router.put('/:id/desgostos', auth.verificaAcesso(['USER', 'ADMIN']), async (req, res) => {
@@ -90,12 +99,21 @@ router.put('/:id/desgostos', auth.verificaAcesso(['USER', 'ADMIN']), async (req,
   const decodedToken = jwt.decode(token, {complete: true});
   const userId = decodedToken.payload.userId;
 
-  Comment.addDislike(req.params.id, userId)
-  .then(data => res.status(201).jsonp(data))
-  .catch(error => {
-    console.log(error)
-    res.status(529).jsonp(error)
-  })
+  if (req.body.status) { // se for para dar like
+    Comment.addDislike(req.params.id, userId)
+      .then(data => res.status(201).jsonp(data))
+      .catch(error => {
+        console.log(error)
+        res.status(529).jsonp(error)
+    })
+  } else {
+    Comment.removeDislike(req.params.id, userId)
+      .then(data => res.status(201).jsonp(data))
+      .catch(error => {
+        console.log(error)
+        res.status(529).jsonp(error)
+      })   
+  }
 });
 
 router.put('/:id', auth.verificaAcesso([],true, CommentModel), async (req,res) => {

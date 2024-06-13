@@ -128,6 +128,18 @@ block content
                     .card-body.text-dark
                         p.mb-0.card-text(id=`comment-text-${comment._id}` data-original-text=comment.text)= comment.text
                         textarea.form-control.d-none(id=`comment-textarea-${comment._id}`, name="text", rows="3")= comment.text
+
+                        //secção de like/dislike/reply
+                        .card-options.d-flex.justify-content-left.mt-3
+                            button.btn.btn-lg.btn-outline-secondary.like-button(type="button", data-comment-id=comment._id, class=comment.likes.includes(userId) ? 'liked' : '')
+                                i.bi(class=comment.likes.includes(userId) ? 'bi-hand-thumbs-up-fill' : 'bi-hand-thumbs-up')
+                                 span.ml-1= comment.likes.length
+                            button.btn.btn-lg.btn-outline-secondary.dislike-button(type="button", data-comment-id=comment._id, class=comment.dislikes.includes(userId) ? 'disliked' : '')
+                                i.bi(class=comment.dislikes.includes(userId) ? 'bi-hand-thumbs-down-fill' : 'bi-hand-thumbs-down')
+                                 span.ml-1= comment.dislikes.length
+                            button.btn.btn-lg.reply-button.btn-outline-success(type="button", data-comment-id=comment._id)
+                                | Responder
+
                         // Render replies if any
                         if comment.replies.length > 0
                             .card.border-light.bg-light.mt-3.ml-3
