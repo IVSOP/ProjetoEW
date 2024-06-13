@@ -7,7 +7,7 @@ const addTokenToHeaders = require('../auth/headerToken'); // acrescentar o token
 router.post('/:id', isLogged, addTokenToHeaders, function(req, res, next){
     console.log(req.body)
     axios.put(`http://localhost:3000/comentarios/${req.params.id}`, req.body, addTokenToHeaders)
-        .then( async response => {
+        .then( response => {
             console.log("Comment edit submitted successfully")
             res.status(201).end()
         })

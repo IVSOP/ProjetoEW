@@ -9,7 +9,7 @@ $(document).ready(function () {
         }
     });
 
-    $('.edit-button').on('click', function () {
+    $('.comments-section').on('click', '.edit-button', function () {
         const commentId = $(this).data('comment-id');
         console.log("Entered edit")
         $(this).hide();
@@ -19,7 +19,7 @@ $(document).ready(function () {
         $(`button.cancel-button[data-comment-id="${commentId}"]`).removeClass('d-none');
     });
   
-    $('.cancel-button').on('click', function () {
+    $('.comments-section').on('click', '.cancel-button', function () {
         const commentId = $(this).data('comment-id');
         const originalText = $(`#comment-text-${commentId}`).data('original-text');
         console.log("Entered cancel")
@@ -30,7 +30,7 @@ $(document).ready(function () {
         $(`button.edit-button[data-comment-id="${commentId}"]`).show();
     });
   
-    $('.submit-button').on('click', function () {
+    $('.comments-section').on('click', '.submit-button', function () {
         const commentId = $(this).data('comment-id');
         const newText = $(`#comment-textarea-${commentId}`).val();
         const form = $(`#edit-form-${commentId}`);
@@ -66,14 +66,52 @@ $(document).ready(function () {
           type: 'POST',
           data: form.serialize(),
           success: function (response) {
-            // se adicionar comentário correr bem
-            console.log(response);
+            console.log("Got response", response)
+            // acrescentar comentário novo à lista de comentários
+            appendComment(response)
             form[0].reset();
           },
           error: function (error) {
-            console.error(error);
+            console.log(error);
             alert('An error occurred while submitting the comment.');
           }
         });
-      });
+    });
+
+    //adicionar correspondente de pug de comentário em html
+    function appendComment(comment) {
+        // Assuming you have a mixin or template for rendering a single comment
+        const commentHtml = `
+            <form class="card border-dark bg-light mb-0 mt-3 w-100" id="edit-form-${comment._id}" action="/comentarios/${comment._id}" method="post">
+            <div class="card-header d-flex justify-content-between">
+            <div class="header-left">
+                <b>${comment.owner.username}</b>
+                <br>
+                <small class="text-muted ml-2">
+                ${new Date(comment.createdAt).toLocaleString()}
+                ${comment.updatedAt ? ' (edited)' : ''}
+                </small>
+            </div>
+            <div class="header-right align-items-center">
+                <button class="btn btn-lg edit-button p-2" type="button" data-comment-id="${comment._id}">
+                <i class="bi bi-pencil-fill"></i>
+                </button>
+                <button class="btn btn-lg submit-button p-2 d-none" type="button" data-comment-id="${comment._id}">
+                <i class="bi bi-check-lg"></i>
+                </button>
+                <button class="btn btn-lg cancel-button p-2 d-none" type="button" data-comment-id="${comment._id}">
+                <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            </div>
+            <div class="card-body text-dark">
+            <p class="card-text" id="comment-text-${comment._id}" data-original-text="${comment.text}">${comment.text}</p>
+            <textarea class="form-control d-none" id="comment-textarea-${comment._id}" name="text" rows="3">${comment.text}</textarea>
+            ${comment.replies.length > 0 ? `<div class="card border-light bg-light mt-3 ml-3">${comment.replies.map(reply => commentSection(reply)).join('')}</div>` : ''}
+            </div>
+        </form>
+        `
+        // append new comment html (equivalent to the pug template but in html since page is already loaded!) to page
+        $('.comments-section').append(commentHtml);
+      }
 });

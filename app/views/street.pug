@@ -102,8 +102,8 @@ block content
                             td= casa.vista
                             td= casa.desc.join('\n')
 
-        //bloco reutilizavel de codigo para fazer comentarios recursivamente
-        mixin commentSection(comments,rua)
+        //bloco reutilizavel de codigo para gerar comentarios (e replies recursivamente)
+        mixin commentSection(comments)
             each comment in comments
                 form.card.border-dark.bg-light.mb-0.mt-3.w-100(id=`edit-form-${comment._id}`, action=`/comentarios/${comment._id}`, method="post")
                     .card-header.d-flex.justify-content-between
@@ -130,6 +130,7 @@ block content
                                 +commentSection(comment.replies,rua)
 
         .card.card-body.mt-3.mb-3
+            // adicionar novo comentário
             form.new-comment-form(method="post" action=`/ruas/comentarios/${rua._id}`)
                 .row.m-0.p-0
                     .col-12.col-sm-4.col-md-9.p-0
@@ -139,7 +140,8 @@ block content
                         button.btn.btn-success.btn-lg.btn-block.w-100.h-100(style="width: 15%")
                             | Submeter
 
-            // render comment
-            +commentSection(comentarios,rua)
+            // render de comentários já existentes
+            .comments-section
+                +commentSection(comentarios)
 
     script(src="/js/comments.js")

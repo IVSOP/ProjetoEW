@@ -169,15 +169,18 @@ router.post('/comentarios/:id', isLogged, function(req, res, next){
         streetId: req.params.id
     }
     console.log(comment)
-    
+
     axios.post(`http://localhost:3000/comentarios`, comment, addTokenToHeaders)
-        .then( async response => {
-            console.log("Comment submitted successfully")
-            res.status(201).end()
+        .then(response => {
+            response.data.replies = []
+            axios.get(`http://localhost:3000/comentarios/${response.data._id}`, addTokenToHeaders)
+            .then(response => {
+                res.status(201).json(response.data)
+            })
         })
         .catch(error => {
             console.log("Error occurred while submitting the comment: ", error);
-            res.status(500).end()
+            res.status(500).jsonp(error)
     })
 });
 
