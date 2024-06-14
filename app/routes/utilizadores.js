@@ -11,7 +11,8 @@ router.get('/:id', isLogged, addTokenToHeaders, function(req, res, next) {
         .then(async response => {
 
             ruas =  (await axios.get(`http://localhost:3000/ruas`, addTokenToHeaders)).data
-            ruas = ruas.filter(x => x.favorites.includes(req.params.id))
+            registos = ruas.filter(x => x.owner == req.params.id)
+            favoritos = ruas.filter(x => x.favorites.includes(req.params.id))
 
             comentarios =  (await axios.get(`http://localhost:3000/comentarios`, addTokenToHeaders)).data
             comentarios = comentarios.filter(x => x.owner == req.params.id)
@@ -23,7 +24,8 @@ router.get('/:id', isLogged, addTokenToHeaders, function(req, res, next) {
 
             res.render('user',{
                 title: response.data.username,
-                ruas: ruas,
+                registos: registos,
+                favoritos: favoritos,
                 comentarios: comentarios,
                 utilizador: response.data})
         })

@@ -18,27 +18,36 @@ block content
                     input.form-control(type="text", value=utilizador.level, readonly)
 
         .card.mb-3.border-dark
-            h5.card-header.fw-bold Ruas Favoritas
-            .card-body.overflow-scroll.pb-0(style="max-height: 245px;")
-                ul.list-group(style="font-size: 17px;")
+            h5.card-header.fw-bold Ruas
+            .card-body
 
-                    if (ruas.length == 0)
-                        li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.mb-3
-                            | Ainda sem ruas favoritas
+                mixin listaRuas(elements,header,message)
+                    .col
+                        .card.border-dark.h-100
+                            h5.card-header.fw-bold= header
+                            .card-body.overflow-scroll.pb-0(style="max-height: 187px;")
 
-                    each rua in ruas        
-                       a(href=`/ruas/${rua['_id']}` style="text-decoration: none;")
-                            li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.mb-3
-                                | #{rua.name}
+                                if (elements.length == 0)
+                                    .alert.alert-secondary.text-center.p-2.h5
+                                        | #{message}
+
+                                else
+                                    ul.list-group(style="font-size: 17px;")
+                                        each element in elements        
+                                            a(href=`/ruas/${element['_id']}` style="text-decoration: none;")
+                                                li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.mb-3.rounded
+                                                    | #{element.name}
+                .row.g-3
+                    +listaRuas(registos,'Registos','Ainda sem ruas registadas')
+                    +listaRuas(favoritos,'Favoritos','Ainda sem ruas favoritas')
 
         .card.mb-3.border-dark
             h5.card-header.fw-bold Comentários
             .card-body.overflow-scroll.pb-0(style="max-height: 339px;")
 
                 if (comentarios.length == 0)
-                    ul.list-group(style="font-size: 17px;")
-                        li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.mb-3
-                            | Ainda sem comentários
+                    .alert.alert-secondary.text-center.mb-3.p-2.h5
+                        | Ainda sem comentários
 
                 each comentario in comentarios
                     a.card.border-dark.bg-light.mb-3.w-100(href=`/ruas/${comentario.streetId}#comment-text-${comentario['_id']}`, style="text-decoration: none;")

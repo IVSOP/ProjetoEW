@@ -13,7 +13,7 @@ block content
 
         ul.list-group.mb-3(style="font-size: 20px;")
             each element, index in listElements
-                li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.mt-3(data-bs-toggle='collapse', href='#collapse' + index, role='button')
+                li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.rounded.mt-3(data-bs-toggle='collapse', href='#collapse' + index, role='button')
                     | #{element.name}
 
                 .collapse(id='collapse' + index)

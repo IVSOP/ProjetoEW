@@ -5,40 +5,21 @@ const addTokenToHeaders = require('../auth/headerToken');
 var fs = require('fs');
 var axios = require('axios');
 var multer = require('multer');
+const mime = require('mime-types');
 var FormData = require('form-data');
 var upload = multer({dest: 'uploads'}) 
 
 
 router.get('/', isLogged, addTokenToHeaders, function(req, res, next) {
-
-    if (req.query.exportar){
-
-        // Não colocar tokens no pedido
-        axios.get('http://localhost:3000/impexp/exportar', {responseType: 'arraybuffer'},)
-            .then(response => {
-
-                let fileName = 'dados.tar.gz';
-                fs.writeFileSync(fileName, Buffer.from(response.data,'binary'));
-
-                res.download(fileName, (error) => {
-                    if (error) throw new Error(error)
-                    else fs.unlinkSync(fileName)
-                })
-            })
-            .catch(error => res.render('error', {error: error}))
-    }
-
-    else{
-        res.status(200).render('index', {
-            title: 'Índice',
-            utilizador: req.user,
-            permissao: req.level == 'ADMIN'
-        })
-    }
+    res.status(200).render('index', {
+        title: 'Índice',
+        utilizador: req.user,
+        permissao: req.level == 'ADMIN'
+    })
 });
 
 
-router.post('/', isLogged, addTokenToHeaders, upload.single('importFile'), function(req, res, next) {
+router.post('/importar', isLogged, addTokenToHeaders, upload.single('importFile'), function(req, res, next) {
 
     const formData = new FormData()
     const data = fs.readFileSync(req.file.path)
@@ -48,7 +29,24 @@ router.post('/', isLogged, addTokenToHeaders, upload.single('importFile'), funct
         headers: { 'Content-Type': 'multipart/form-data' }})
         .then(() => {
             fs.unlinkSync(req.file.path)
-            res.redirect('/')
+            res.status(200).end()
+        })
+        .catch(() => res.status(500).end())
+});
+
+
+router.get('/exportar', isLogged, addTokenToHeaders, function(req, res, next) {
+
+    axios.get('http://localhost:3000/impexp/exportar', {responseType: 'arraybuffer'},)
+        .then(response => {
+
+            let fileName = `dados.${mime.extension(response.headers.get('content-type'))}`;
+            fs.writeFileSync(fileName, Buffer.from(response.data,'binary'));
+
+            res.download(fileName, (error) => {
+                if (error) throw new Error(error)
+                else fs.unlinkSync(fileName)
+            })
         })
         .catch(error => res.render('error', {error: error}))
 });
