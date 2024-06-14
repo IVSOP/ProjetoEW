@@ -42,7 +42,7 @@ $(document).ready(function () {
                 url: `/comentarios/${commentId}`,
                 type: 'DELETE',
                 success: function (response) {
-                    $(`#edit-form-${commentId}`).remove(); // apagar o comentário todo
+                    $(`#comment-banner-${commentId}`).remove(); // apagar o comentário todo
                 },
                 error: function (error) {
                     console.log(error);
@@ -173,51 +173,57 @@ $(document).ready(function () {
     function appendComment(comment, prevCommentOwner=null) {
         // Assuming you have a mixin or template for rendering a single comment
         const commentHtml = `
-            <form class="card border-dark bg-light mb-0 mt-3 w-100" id="edit-form-${comment._id}" action="/comentarios/${comment._id}" method="post">
-                <div class="card-header d-flex justify-content-between">
-                    <div class="header-left">
-                        <b>${comment.owner.username}</b>
-                        ${prevCommentOwner ? `<i class="bi bi-arrow-right"></i> <span>${prevCommentOwner}</span>` : ''}
-                        <br>
-                        <small class="text-muted ml-2">
-                            ${new Date(comment.createdAt).toLocaleString()}
-                            ${comment.updatedAt ? ' (edited)' : ''}
-                        </small>
-                    </div>
-                    <div class="header-right align-items-center">
-                        <button class="btn btn-lg edit-button p-2" type="button" data-comment-id="${comment._id}">
-                            <i class="bi bi-pencil-fill"></i>
-                        </button>
-                        <button class="btn btn-lg remove-button p-2" type="button" data-comment-id="${comment._id}">
-                            <i class="bi bi-trash-fill"></i>
-                        </button>
-                        <button class="btn btn-lg submit-button p-2 d-none" type="button" data-comment-id="${comment._id}">
-                            <i class="bi bi-check-lg"></i>
-                        </button>
-                        <button class="btn btn-lg cancel-button p-2 d-none" type="button" data-comment-id="${comment._id}">
-                            <i class="bi bi-x-lg"></i>
-                        </button>
-                    </div>
+            <div class="comment d-flex align-items-stretch pt-4 h-100" id="comment-banner-${comment._id}">
+                <div class="left-div d-flex flex-column align-items-center pe-3">
+                    <img class="profile-icon mb-2" src="/images/default_user_icon.svg" alt="Profile Icon" style="width: 4em; height: auto">
+                    <div class="border-start border-secondary flex-grow-1 mb-1 line-end" style="--bs-border-opacity: .5; position: relative;"></div>
                 </div>
-                <div class="card-body text-dark">
-                    <p class="card-text mb-0" id="comment-text-${comment._id}" data-original-text="${comment.text}">${comment.text}</p>
-                    <textarea class="form-control d-none" id="comment-textarea-${comment._id}" name="text" rows="3">${comment.text}</textarea>
-                    <div class="card-options d-flex justify-content-left mt-3">
-                        <button class="btn btn-lg btn-outline-secondary like-button ${comment.likes.includes(userId) ? 'liked' : ''}" type="button" data-comment-id="${comment._id}">
-                            <i class="bi ${comment.likes.includes(userId) ? 'bi-hand-thumbs-up-fill' : 'bi-hand-thumbs-up'}"></i>
-                            <span class="ml-1">${comment.likes.length}</span>
-                        </button>
-                        <button class="btn btn-lg btn-outline-secondary dislike-button ${comment.dislikes.includes(userId) ? 'disliked' : ''}" type="button" data-comment-id="${comment._id}">
-                            <i class="bi ${comment.dislikes.includes(userId) ? 'bi-hand-thumbs-down-fill' : 'bi-hand-thumbs-down'}"></i>
-                            <span class="ml-1">${comment.dislikes.length}</span>
-                        </button>
-                        <button class="btn btn-lg btn-outline-success reply-button" type="button" data-comment-id="${comment._id}">
-                            Responder
-                        </button>
-                    </div>
-                    ${comment.replies.length > 0 ? `<div class="card border-light bg-light mt-3 ml-3 custom-indent">${comment.replies.map(reply => createCommentHtml(reply, comment.owner.username)).join('')}</div>` : ''}
+                <div class="right-div w-100">
+                    <form class="card border-dark bg-light mb-0" id="edit-form-${comment._id}" action="/comentarios/${comment._id}" method="post">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-left">
+                                <b>${comment.owner.username}</b>
+                                ${prevCommentOwner ? `<i class="bi bi-arrow-right"></i> <span>${prevCommentOwner}</span>` : ''}
+                                <br>
+                                <small class="text-muted ml-2" id="comment-date-${comment._id}">
+                                    ${comment.updatedAt ? new Date(comment.updatedAt).toLocaleString() + ' (edited)' : new Date(comment.createdAt).toLocaleString()}
+                                </small>
+                            </div>
+                            <div class="header-right align-items-center">
+                                <button class="btn btn-lg edit-button p-2" type="button" data-comment-id="${comment._id}">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </button>
+                                <button class="btn btn-lg remove-button p-2" type="button" data-comment-id="${comment._id}">
+                                    <i class="bi bi-trash-fill"></i>
+                                </button>
+                                <button class="btn btn-lg submit-button p-2 d-none" type="button" data-comment-id="${comment._id}">
+                                    <i class="bi bi-check-lg"></i>
+                                </button>
+                                <button class="btn btn-lg cancel-button p-2 d-none" type="button" data-comment-id="${comment._id}">
+                                    <i class="bi bi-x-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body text-dark">
+                            <p class="card-text mb-0" id="comment-text-${comment._id}" data-original-text="${comment.text}">${comment.text}</p>
+                            <textarea class="form-control d-none" id="comment-textarea-${comment._id}" name="text" rows="3">${comment.text}</textarea>
+                            <div class="card-options d-flex justify-content-left mt-3">
+                                <button class="btn btn-lg btn-outline-secondary like-button ${comment.likes.includes(userId) ? 'liked' : ''}" type="button" data-comment-id="${comment._id}">
+                                    <i class="bi ${comment.likes.includes(userId) ? 'bi-hand-thumbs-up-fill' : 'bi-hand-thumbs-up'}"></i>
+                                    <span class="ml-1">${comment.likes.length}</span>
+                                </button>
+                                <button class="btn btn-lg btn-outline-secondary dislike-button ${comment.dislikes.includes(userId) ? 'disliked' : ''}" type="button" data-comment-id="${comment._id}">
+                                    <i class="bi ${comment.dislikes.includes(userId) ? 'bi-hand-thumbs-down-fill' : 'bi-hand-thumbs-down'}"></i>
+                                    <span class="ml-1">${comment.dislikes.length}</span>
+                                </button>
+                                <button class="btn btn-lg btn-outline-success reply-button" type="button" data-comment-id="${comment._id}">
+                                    Responder
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         `;
         // append new comment html (equivalent to the pug template but in html since page is already loaded!) to page
         $('.comments-section').append(commentHtml);

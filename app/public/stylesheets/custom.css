@@ -16,3 +16,15 @@
 	bottom: 85px;
 	right: 25px;
 }
+
+/* adicionar traço horizontal no fim da linha vertical*/
+.left-div .border-start.line-end::after {
+    content: "";
+    position: absolute;
+    bottom: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 1px;
+    background-color: rgba(117, 117, 117, 0.5);
+}
