@@ -156,6 +156,7 @@ router.get('/:id', isLogged, addTokenToHeaders, function(req, res, next){
                 permissao: req.level == 'ADMIN' || req.user == response.data.owner,
                 token: req.cookies.token,
                 comentarios: comentarios,
+                userLevel: req.level,
                 userId: req.user
             })
         })
