@@ -153,27 +153,34 @@ $(document).ready(function () {
     // clicar para responder
     $('.comments-section').on('click', '.reply-button', function () {
         const commentId = $(this).data('comment-id');
-        const replyFormSelector = `#reply-form-${commentId}`;
+        const replyFormBanner = `#reply-form-${commentId}`;
         console.log("entrei no reply button")
-        if ($(replyFormSelector).length > 0) { // se form já está visível, ao clicar no responder, removê-lo.
-            $(replyFormSelector).remove();
-        } else { // se fomr ainda não está vísivel mostrá-lo
+        if ($(replyFormBanner).length > 0) { 
+            $(replyFormBanner).toggleClass('d-none'); // se form já foi tornado visível antes, ao clicar no responder outra vez, toggle entre aparecer e desaparecer
+        } else { // se fomr ainda não foi renderizado,  mostrá-lo
             console.log("entrei no else")
             const replyFormHtml = `
-                <form id="reply-form-${commentId}" class="new-reply-form" method="post" action="/ruas/${streetId}/comentarios/${commentId}/respostas" data-comment-id="${commentId}">
-                    <div class="row m-0 p-0">
-                        <div class="col-12 col-sm-4 col-md-9 p-0">
-                            <div class="form-group">
-                                <textarea class="form-control" rows="3" placeholder="Inserir comentário" name="text" required></textarea>
-                            </div>
-                        </div>
-                        <div class="col-3 col-md-3 pr-3" style="padding-right: 0px">
-                            <button class="btn btn-success btn-lg btn-block w-100 h-100" style="width: 15%">
-                                Submeter
-                            </button>
-                        </div>
+                <div id="reply-form-${commentId}" class="new-reply d-flex align-items-stretch pt-4 h-100">
+                    <div class="left-div pe-3">
+                        <img class="profile-icon" src="/images/default_user_icon.svg" alt="Profile Icon" style="width: 4em; height: auto;">
                     </div>
-                </form>
+                    <div class="right-div w-100">
+                        <form class="card border-success border-3 bg-light p-3 new-reply-form" method="post" action="/ruas/${streetId}/comentarios/${commentId}/respostas" data-comment-id="${commentId}">
+                            <div class="row m-0 p-0">
+                                <div class="col-12 col-sm-4 col-md-9 p-0">
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="3" placeholder="Diga-nos o que está a pensar..." name="text" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-3 col-md-3 pr-3" style="padding-right: 0px;">
+                                    <button class="btn btn-success btn-lg btn-block w-100 h-100" type="submit">
+                                        Submeter
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             `;
             $(`#comment-banner-${commentId} .replies`).first().prepend(replyFormHtml);
         }
@@ -191,7 +198,8 @@ $(document).ready(function () {
             success: function (response) {
                 const parentCommentOwner = $(`#comment-banner-${response.baseCommentId}`).data('comment-owner'); // obter comentário com esse id e extrair dele o campo comment-owner
                 appendComment(response, parentCommentOwner, response.baseCommentId);
-                form.remove();
+                $(`#reply-form-${response.baseCommentId}`).toggleClass('d-none')
+                form[0].reset();
             },
             error: function (error) {
                 console.log(error);
@@ -226,9 +234,9 @@ $(document).ready(function () {
     function appendComment(comment, prevCommentOwner=null, prevCommentId=null) {
         // Assuming you have a mixin or template for rendering a single comment
         const commentHtml = `
-            <div class="comment d-flex align-items-stretch pt-4 h-100" id="comment-banner-${comment._id}">
+            <div class="comment d-flex align-items-stretch pt-4 h-100" id="comment-banner-${comment._id}" data-comment-owner="${comment.owner.username}">
                 <div class="left-div d-flex flex-column align-items-center pe-3">
-                    <img class="profile-icon mb-2" src="/images/default_user_icon.svg" alt="Profile Icon" style="width: 4em; height: auto">
+                    <img class="profile-icon mb-2" src="/images/default_user_icon.svg" alt="Profile Icon" style="width: 4em; height: auto;">
                     <div class="border-start border-secondary flex-grow-1 mb-1 line-end" style="--bs-border-opacity: .5; position: relative;"></div>
                 </div>
                 <div class="right-div w-100">
@@ -236,10 +244,9 @@ $(document).ready(function () {
                         <div class="card-header d-flex justify-content-between">
                             <div class="header-left">
                                 <b>${comment.owner.username}</b>
-                                ${prevCommentOwner ? `<i class="bi bi-arrow-right"></i> <span>${prevCommentOwner}</span>` : ''}
-                                <br>
+                                ${prevCommentOwner ? `<i class="bi bi-arrow-right"></i> <span>${prevCommentOwner}</span><br>` : ''}
                                 <small class="text-muted ml-2" id="comment-date-${comment._id}">
-                                    ${comment.updatedAt ? new Date(comment.updatedAt).toLocaleString() + ' (edited)' : new Date(comment.createdAt).toLocaleString()}
+                                    ${comment.updatedAt ? `${new Date(comment.updatedAt).toLocaleString()} (edited)` : `${new Date(comment.createdAt).toLocaleString()}`}
                                 </small>
                             </div>
                             <div class="header-right align-items-center">
@@ -261,20 +268,21 @@ $(document).ready(function () {
                             <p class="card-text mb-0" id="comment-text-${comment._id}" data-original-text="${comment.text}">${comment.text}</p>
                             <textarea class="form-control d-none" id="comment-textarea-${comment._id}" name="text" rows="3">${comment.text}</textarea>
                             <div class="card-options d-flex justify-content-left mt-3">
-                                <button class="btn btn-lg btn-outline-secondary like-button ${comment.likes.includes(userId) ? 'liked' : ''}" type="button" data-comment-id="${comment._id}">
+                                <button class="btn btn-lg btn-outline-secondary like-button me-2 ${comment.likes.includes(userId) ? 'liked' : ''}" type="button" data-comment-id="${comment._id}">
                                     <i class="bi ${comment.likes.includes(userId) ? 'bi-hand-thumbs-up-fill' : 'bi-hand-thumbs-up'}"></i>
-                                    <span class="ml-1">${comment.likes.length}</span>
+                                    <span class="ms-1">${comment.likes.length}</span>
                                 </button>
-                                <button class="btn btn-lg btn-outline-secondary dislike-button ${comment.dislikes.includes(userId) ? 'disliked' : ''}" type="button" data-comment-id="${comment._id}">
+                                <button class="btn btn-lg btn-outline-secondary dislike-button me-2 ${comment.dislikes.includes(userId) ? 'disliked' : ''}" type="button" data-comment-id="${comment._id}">
                                     <i class="bi ${comment.dislikes.includes(userId) ? 'bi-hand-thumbs-down-fill' : 'bi-hand-thumbs-down'}"></i>
-                                    <span class="ml-1">${comment.dislikes.length}</span>
+                                    <span class="ms-1">${comment.dislikes.length}</span>
                                 </button>
-                                <button class="btn btn-lg btn-outline-success reply-button" type="button" data-comment-id="${comment._id}">
+                                <button class="btn btn-lg reply-button btn-outline-success" type="button" data-comment-id="${comment._id}">
                                     Responder
                                 </button>
                             </div>
                         </div>
                     </form>
+                    <div class="replies"></div>
                 </div>
             </div>
         `;

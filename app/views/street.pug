@@ -160,14 +160,18 @@ block content
 
         .card.card-body.mt-3.mb-3
             // adicionar novo comentário
-            form.new-comment-form(method="post" action=`/ruas/${rua._id}`/comentarios)
-                .row.m-0.p-0
-                    .col-12.col-sm-4.col-md-9.p-0
-                        .form-group
-                            textarea.form-control(rows="3", placeholder="Inserir comentário", name="text", required)
-                    .col-3.col-md-3.pr-3(style="padding-right: 0px")
-                        button.btn.btn-success.btn-lg.btn-block.w-100.h-100(style="width: 15%")
-                            | Submeter
+            .new-comment.d-flex.align-items-stretch.pt-4.h-100
+                .left-div.pe-3
+                    img.profile-icon(src="/images/default_user_icon.svg", alt="Profile Icon",style="width: 4em; height: auto")
+                .right-div.w-100
+                    form.card.border-success.border-3.bg-light.p-3.new-comment-form(method="post" action=`/ruas/${rua._id}/comentarios`)
+                        .row.m-0.p-0
+                            .col-12.col-sm-4.col-md-9.p-0
+                                .form-group
+                                    textarea.form-control(rows="3", placeholder="Diga-nos o que está a pensar...", name="text", required)
+                            .col-3.col-md-3.pr-3(style="padding-right: 0px")
+                                button.btn.btn-success.btn-lg.btn-block.w-100.h-100
+                                    | Submeter
 
             // render de comentários já existentes
             .comments-section
