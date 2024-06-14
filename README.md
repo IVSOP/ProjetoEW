@@ -23,46 +23,99 @@ problema: nomes das imagens estavam mal com ma conversao de caracteres portugues
 
 # Docker:
 
-Criamos dois ficheiros compose. Um deles usa o script de python para converter os XML e povoar a base de dados, colocando tambem as imagens no servico de dados:
+Criamos dois docker compose. Um deles usa o script de python para converter os XML e povoar a base de dados, colocando tambem as imagens no servico de dados:
 ```bash
 sudo ./docker_setup.sh
 ```
 
-O outro inicia o servico de dados e o frontend em si, aproveitando o container de mongodb ja povoado:
+O outro inicia o servico de dados e o frontend em si, aproveitando o container de mongodb ja povoado pelo script anterior: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! frontend ainda nao esta feito!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ```bash
 sudo ./docker_servico.sh
 ```
 
 # Importacao e exportacao de dados
 
-No servico de dados, utilizam-se os scripts `import.sh` e `export.sh` para importar e exportar os dados. Estes sao tambem executados pelo proprio servico de dados .......................................................
+No servico de dados, utilizam-se os scripts `import.sh` e `export.sh` para importar e exportar os dados. Estes sao tambem executados pelo proprio servico de dados, atraves da rotas:
 
-Estes ficheiros tem o seguinte formato:
+- '/impexp/exportar': download de um ficheiro de exportacao de dados
+- '/impexp/importar': recebe form com o ficheiro a importar
+
+Estas duas rotas sao utilizadas pelo frontend, estando as funcionalidades disponiveis apenas a administradores.
+
+O ficheiro de exportacao, `dados.tar`, tem os seguintes conteudos:
 
 ```
-export.tar
-├── antigo/
-│   ├── imagem
-│	└── ...
-├── antigo.json    -> collection 'antigo'
-├── atual/
-│   ├── imagem
-│	└── ...
-├── atual.json     -> collection 'atual'
-├── dates.json     -> collection 'dates'
-├── entities.json  -> collection 'entities'
-├── manifest.json
-├── places.json    -> collection 'places'
-└── streets.json   -> collection 'streets'
+dados.tar
+├── files.tar.xz
+│   ├── antigo                            -> imagens antigas
+│   │   ├── 666cc1f7ac573c823263d94e.jpg
+│   │   └── 666cc1f7ac573c823263da38.jpg
+│   ├── antigo.json                       -> collection exportada
+│   ├── atual                             -> imagens atuais
+│   │   ├── 666cc1f7ac573c823263d950.JPG
+│   │   └── 666cc1f7ac573c823263da3a.JPG
+│   ├── atual.json                        -> outra collection
+│   ├── comments.json
+│   ├── dates.json
+│   ├── entities.json
+│   ├── places.json
+│   ├── streets.json
+│   └── users.json
+└── manifest.json                         -> manifesto
 ```
 
 O manifesto tem o formato:
 ```json
 {
-	"size": N
+  "meta": {
+    "size": 37768137 // tamanho em bytes dos ficheiros, para poder ver o progresso de extracao
+  },
+  "dados": { // todas as colecoes exportadas
+    "streets": {
+      "collection": "streets",
+      "filename": "streets.json",
+      "records": 60
+    },
+    "dates": {
+      "collection": "dates",
+      "filename": "dates.json",
+      "records": 265
+    },
+    "entities": {
+      "collection": "entities",
+      "filename": "entities.json",
+      "records": 913
+    },
+    "places": {
+      "collection": "places",
+      "filename": "places.json",
+      "records": 587
+    },
+    "antigo": {
+      "collection": "antigo",
+      "filename": "antigo.json",
+      "records": 116
+    },
+    "atual": {
+      "collection": "atual",
+      "filename": "atual.json",
+      "records": 121
+    },
+    "comments": {
+      "collection": "comments",
+      "filename": "comments.json",
+      "records": 0
+    },
+    "users": {
+      "collection": "users",
+      "filename": "users.json",
+      "records": 3
+    }
+  }
 }
 ```
 
-Em que N corresponde ao tamanho dos dados exportados em bytes, para permitir medir o progresso de importacao dos mesmos usando o comando `pv`
-
-O container do backend ja se encontra preparado para executar estes scripts.
+Ao importar, importamos apenas as colecoes mencionadas no mesmo, verificando tambem:
+- o numero de records corresponde ao indicado
+- se o ficheiro de dados existe
+- se uma colecao de imagens for indicada, verificamos se todas as imagens existem

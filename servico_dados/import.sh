@@ -63,7 +63,6 @@ do
 	then
 		ATUAL="true"
 		ATUAL_FILEPATH=$FILEPATH
-		echo "!!!!!!!!!!!!!!!!!!!Collection is $COLLECTION"
 	else
 		if [ "$COLLECTION" = "antigo" ]
 		then
