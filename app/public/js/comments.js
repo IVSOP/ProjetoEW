@@ -2,6 +2,7 @@ $(document).ready(function () {
 
     const token = $('meta[name="csrf-token"]').attr('content');
     const userId = $('meta[name="userId"]').attr('content');
+    const streetId = $('meta[name="streetId"]').attr('content');
     //setup do token para todos os pedidos ajax
     $.ajaxSetup({
         headers: {
@@ -100,12 +101,13 @@ $(document).ready(function () {
             }),
             contentType: 'application/json', // é preciso isto para mandar bool em vez de "true" e "false" !!!!
             success: function (response) {
+                console.log("Likes: ", response.likes.length," Dislikes: ",response.dislikes.length)
                 icon.toggleClass('bi-hand-thumbs-up bi-hand-thumbs-up-fill');
-                button.find('span.ml-1').text(response.likes.length);
+                button.find('span').text(response.likes.length);
 
                 if (isDisliked) { // se antes estava disliked, ao dar like, tenho de atualizar tanto o like como o dislike
                     dislikeButton.find('i').toggleClass('bi-hand-thumbs-down bi-hand-thumbs-down-fill');
-                    dislikeButton.find('span.ml-1').text(response.dislikes.length);
+                    dislikeButton.find('span').text(response.dislikes.length);
                 }
             },
             error: function (error) {
@@ -131,18 +133,69 @@ $(document).ready(function () {
             }),
             contentType: 'application/json', // é preciso isto para mandar bool em vez de "true" e "false" !!!!
             success: function (response) {
+                console.log("Likes: ", response.likes.length," Dislikes: ",response.dislikes.length)
                 icon.toggleClass('bi-hand-thumbs-down bi-hand-thumbs-down-fill');
-                button.find('span.ml-1').text(response.dislikes.length);
+                button.find('span').text(response.dislikes.length);
 
                 if (isLiked) { // se antes estava liked, ao dar dislike, tenho de atualizar tanto o like como o dislike
                     likeButton.find('i').toggleClass('bi-hand-thumbs-up bi-hand-thumbs-up-fill');
                     likeButton.removeClass('liked');
-                    likeButton.find('span.ml-1').text(response.likes.length);
+                    likeButton.find('span').text(response.likes.length);
                 }
             },
             error: function (error) {
                 console.log(error);
                 alert('An error occurred while liking the comment.');
+            }
+        });
+    });
+
+    // clicar para responder
+    $('.comments-section').on('click', '.reply-button', function () {
+        const commentId = $(this).data('comment-id');
+        const replyFormSelector = `#reply-form-${commentId}`;
+        console.log("entrei no reply button")
+        if ($(replyFormSelector).length > 0) { // se form já está visível, ao clicar no responder, removê-lo.
+            $(replyFormSelector).remove();
+        } else { // se fomr ainda não está vísivel mostrá-lo
+            console.log("entrei no else")
+            const replyFormHtml = `
+                <form id="reply-form-${commentId}" class="new-reply-form" method="post" action="/ruas/${streetId}/comentarios/${commentId}/respostas" data-comment-id="${commentId}">
+                    <div class="row m-0 p-0">
+                        <div class="col-12 col-sm-4 col-md-9 p-0">
+                            <div class="form-group">
+                                <textarea class="form-control" rows="3" placeholder="Inserir comentário" name="text" required></textarea>
+                            </div>
+                        </div>
+                        <div class="col-3 col-md-3 pr-3" style="padding-right: 0px">
+                            <button class="btn btn-success btn-lg btn-block w-100 h-100" style="width: 15%">
+                                Submeter
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            `;
+            $(`#comment-banner-${commentId} .replies`).first().prepend(replyFormHtml);
+        }
+    });
+
+    //submit new reply
+    $('.comments-section').on('submit', '.new-reply-form', function (e) {
+        e.preventDefault();
+        const form = $(this);
+
+        $.ajax({
+            url: form.attr('action'),
+            type: 'POST',
+            data: form.serialize(),
+            success: function (response) {
+                const parentCommentOwner = $(`#comment-banner-${response.baseCommentId}`).data('comment-owner'); // obter comentário com esse id e extrair dele o campo comment-owner
+                appendComment(response, parentCommentOwner, response.baseCommentId);
+                form.remove();
+            },
+            error: function (error) {
+                console.log(error);
+                alert('An error occurred while submitting the reply.');
             }
         });
     });
@@ -170,7 +223,7 @@ $(document).ready(function () {
     });
 
     //adicionar correspondente de pug de comentário em html
-    function appendComment(comment, prevCommentOwner=null) {
+    function appendComment(comment, prevCommentOwner=null, prevCommentId=null) {
         // Assuming you have a mixin or template for rendering a single comment
         const commentHtml = `
             <div class="comment d-flex align-items-stretch pt-4 h-100" id="comment-banner-${comment._id}">
@@ -226,6 +279,11 @@ $(document).ready(function () {
             </div>
         `;
         // append new comment html (equivalent to the pug template but in html since page is already loaded!) to page
-        $('.comments-section').append(commentHtml);
-      }
+        if (prevCommentOwner) { // se for reply, acrescentar aos replies de comentário
+            $(`#comment-banner-${prevCommentId} .replies`).first().append(commentHtml);
+        } else { // se for comentário de raiz, acrescentar à lista de comentários
+            $('.comments-section').append(commentHtml);
+        }
+
+    }
 });

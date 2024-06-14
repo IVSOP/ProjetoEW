@@ -163,14 +163,13 @@ router.get('/:id', isLogged, addTokenToHeaders, function(req, res, next){
 });
 
 
-router.post('/comentarios/:id', isLogged, function(req, res, next){
+router.post('/:id/comentarios', isLogged, function(req, res, next){
     console.log(req.body)
 
     const comment = {
         text: req.body.text,
         streetId: req.params.id
     }
-    console.log(comment)
 
     axios.post(`http://localhost:3000/comentarios`, comment, addTokenToHeaders)
         .then(response => {
@@ -186,6 +185,26 @@ router.post('/comentarios/:id', isLogged, function(req, res, next){
     })
 });
 
+router.post('/:streetId/comentarios/:commentId/respostas', isLogged, function(req, res, next){
+
+    const comment = {
+        text: req.body.text,
+        streetId: req.params.streetId
+    }
+
+    axios.post(`http://localhost:3000/comentarios/${req.params.commentId}/respostas`, comment, addTokenToHeaders)
+        .then(response => {
+            response.data.replies = []
+            axios.get(`http://localhost:3000/comentarios/${response.data._id}`, addTokenToHeaders)
+            .then(response => {
+                res.status(201).json(response.data)
+            })
+        })
+        .catch(error => {
+            console.log("Error occurred while submitting the comment: ", error);
+            res.status(500).jsonp(error)
+    })
+});
 
 router.post('/favorito/:id', isLogged, addTokenToHeaders, function(req, res, next){
     axios.post(`http://localhost:3000/ruas/favorito/${req.params.id}`, {userId: req.user}, addTokenToHeaders)

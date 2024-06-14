@@ -2,6 +2,7 @@ extends layout
 
 block content
     meta(name="userId" content=userId)
+    meta(name="streetId" content=rua._id)
     .container.d-flex.justify-content-end.flex-column.mt-3
 
         // slide show for old and current images
@@ -107,7 +108,7 @@ block content
         //bloco reutilizavel de codigo para gerar comentarios (e replies recursivamente)
         mixin commentSection(comments, prevCommentOwner = null)
             each comment in comments
-                .comment.d-flex.align-items-stretch.pt-4.h-100(id=`comment-banner-${comment._id}`)
+                .comment.d-flex.align-items-stretch.pt-4.h-100(id=`comment-banner-${comment._id}`, data-comment-owner=`${comment.owner.username}`)
                     .left-div.d-flex.flex-column.align-items-center.pe-3
                         // default user icon, could be personal user icon in the future
                         img.profile-icon.mb-2(src="/images/default_user_icon.svg", alt="Profile Icon",style="width: 4em; height: auto") 
@@ -153,13 +154,13 @@ block content
                                         | Responder
 
                         // Render replies if any
-                        if comment.replies.length > 0
-                            .replies
-                                +commentSection(comment.replies, comment.owner.username)
+                        .replies
+                            if comment.replies.length > 0
+                                    +commentSection(comment.replies, comment.owner.username)
 
         .card.card-body.mt-3.mb-3
             // adicionar novo comentário
-            form.new-comment-form(method="post" action=`/ruas/comentarios/${rua._id}`)
+            form.new-comment-form(method="post" action=`/ruas/${rua._id}`/comentarios)
                 .row.m-0.p-0
                     .col-12.col-sm-4.col-md-9.p-0
                         .form-group
