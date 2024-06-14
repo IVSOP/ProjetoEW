@@ -31,6 +31,7 @@ var lugaresRouter = require('./routes/places');
 var antigoRouter = require('./routes/antigo');
 var atualRouter = require('./routes/atual');
 var commentsRouter = require('./routes/comments');
+var import_exportRouter = require('./routes/import_export');
 
 const { exit } = require('process');
 
@@ -62,6 +63,7 @@ app.use('/atual', atualRouter);
 app.use('/comentarios', commentsRouter);
 app.use('/users', usersRouter);
 app.use('/admins', adminsRouter); // só para facilmente adicionar admins à db, pode tirar-se depois!
+app.use('/impexp', import_exportRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
