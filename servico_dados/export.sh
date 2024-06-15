@@ -71,13 +71,13 @@ jq ".dados += {\"users\": {\"collection\": \"users\", \"filename\": \"users.json
 # por fim, fazemos o tar.xz ja com acesso ao pv e xz
 echo "Compressing files"
 # see https://stackoverflow.com/questions/66329515/output-of-pv-on-docker-compose-startup-not-working-as-expected
-(cd "$EXPORT_DIR/" && tar -c -f - --owner=0 --group=0 --no-same-owner --no-same-permissions * | pv --force -s $SIZE | xz --threads=0 --stdout > "../files.tar.xz")
+(cd "$EXPORT_DIR/" && tar -c -f - --owner=0 --group=0 --no-same-owner --no-same-permissions * | pv --force -s $SIZE | zstd -10 --long --threads=0 --stdout > "../files.tar.zst")
 
 # fazer um tar para poder meter o manifesto la dentro (nao o comprimimos)
 echo "Final tar"
-tar -c -f "$EXPORT_FILENAME" --owner=0 --group=0 --no-same-owner --no-same-permissions "manifest.json" "files.tar.xz"
+tar -c -f "$EXPORT_FILENAME" --owner=0 --group=0 --no-same-owner --no-same-permissions "manifest.json" "files.tar.zst"
 
-rm "files.tar.xz"
+rm "files.tar.zst"
 rm "manifest.json"
 rm -r "$EXPORT_DIR/"
 

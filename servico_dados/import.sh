@@ -31,7 +31,7 @@ SIZE=$(jq '.meta.size' "$IMPORT_DIR/manifest.json")
 
 # decompress ficheiros para dir de import
 echo "Decompressing"
-(cd "$IMPORT_DIR" && xz --decompress --threads=0 "files.tar.xz" --stdout | pv --force -s $SIZE | tar -x -f -)
+(cd "$IMPORT_DIR" && zstd --decompress --threads=0 "files.tar.zst" --stdout | pv --force -s $SIZE | tar -x -f -)
 
 # ler em loop todas as colecoes mencionadas
 # -c para tirar pretty print, [] por magia mete uma entrada por linha
@@ -121,9 +121,6 @@ then
 	fi
 fi
 
-
-# rm "$IMPORT_DIR/files.tar.xz"
-# rm "$IMPORT_DIR/manifest.json"
 rm -r "$IMPORT_DIR/"
 
 echo "Finished importing"
