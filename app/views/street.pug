@@ -22,7 +22,7 @@ block content
 
                     each imagem, index in imagens
                         .carousel-item(class={active: index === 0, 'mt-30': index === 0} data-bs-interval="5000")
-                            img.d-block.w-100.rounded(style="aspect-ratio: 16 / 10;", src=`http://localhost:3000/${imagem.route}/show/${imagem['_id']}?token=${token}`)
+                            img.d-block.w-100.rounded(style="aspect-ratio: 16 / 10;", src=`/imagens/${imagem.route}/${imagem['_id']}`)
                             .carousel-caption.d-none.d-md-block
                                 h3= imagem.subst.split('/').pop()
 

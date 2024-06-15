@@ -19,6 +19,12 @@ router.get('/', isLogged, addTokenToHeaders, function(req, res, next) {
 });
 
 
+router.get('/logout', isLogged, addTokenToHeaders, function(req, res, next) {
+    res.cookie('token', '', { maxAge: 0 })
+    res.redirect('/login')
+});
+
+
 router.post('/importar', isLogged, addTokenToHeaders, upload.single('importFile'), function(req, res, next) {
 
     const formData = new FormData()

@@ -8,7 +8,7 @@ block content
             .card-header.d-flex.justify-content-between
                 ul.nav.nav-pills.card-header-pills.gap-2
                     li.nav-item
-                        a.nav-link.active(href='/' class=title == 'Login' ? 'active' : '') Logout
+                        a.nav-link.active(href='/logout' class=title == 'Login' ? 'active' : '') Logout
                     li.nav-item
                         a.nav-link.active(href=`/utilizadores/${utilizador}` class=title == 'Login' ? 'active' : '') Conta
                     if permissao
