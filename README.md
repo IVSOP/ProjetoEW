@@ -221,7 +221,7 @@ Os registos das ruas mencionam várias datas, entidades e lugares, assim sendo f
 
 Os índicies são todos semelhantes, ou seja, utilizam *collapsibles* para esconder/apresentar os nomes das ruas, que por sua vez são um *link* para a página da própria rua. 
 
-**Esqueci-me do video**
+https://github.com/pedromeruge/ProjetoEW/assets/87565693/a5257880-e596-4de9-9da3-82e1d52879e5
 
 ## Apresentação das ruas
 
