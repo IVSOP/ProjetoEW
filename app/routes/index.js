@@ -23,7 +23,7 @@ router.post('/importar', isLogged, addTokenToHeaders, upload.single('importFile'
 
     const formData = new FormData()
     const data = fs.readFileSync(req.file.path)
-    formData.append('dados', data, req.file.originalname)
+    formData.append('import_file', data, req.file.originalname)
 
     axios.post('http://localhost:3000/impexp/importar', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }})

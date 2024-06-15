@@ -40,6 +40,6 @@ block content
                                 button.btn.btn-secondary.btn-lg.btn-block.w-100.h-100.p-4(style="font-size: 50px;") Índice das Datas
 
         form.d-none#dataImportForm(method="post", enctype='multipart/form-data', action="/importar")
-            input#dataImportInput(type="file" accept=".tar.gz, application/gzip" name="importFile")
+            input#dataImportInput(type="file" accept=".tar, application/tar" name="importFile")
 
     script(src="/js/data.js", type="module")
