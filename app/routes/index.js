@@ -31,7 +31,7 @@ router.post('/importar', isLogged, addTokenToHeaders, upload.single('importFile'
     const data = fs.readFileSync(req.file.path)
     formData.append('import_file', data, req.file.originalname)
 
-    axios.post('http://localhost:3000/impexp/importar', formData, {
+    axios.post('http://backend:3000/impexp/importar', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }})
         .then(() => {
             fs.unlinkSync(req.file.path)
@@ -43,7 +43,7 @@ router.post('/importar', isLogged, addTokenToHeaders, upload.single('importFile'
 
 router.get('/exportar', isLogged, addTokenToHeaders, function(req, res, next) {
 
-    axios.get('http://localhost:3000/impexp/exportar', {responseType: 'arraybuffer'},)
+    axios.get('http://backend:3000/impexp/exportar', {responseType: 'arraybuffer'},)
         .then(response => {
 
             let fileName = `dados.${mime.extension(response.headers.get('content-type'))}`;

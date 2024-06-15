@@ -14,7 +14,7 @@ router.get('/', function(req, res, next){
 });
 
 router.post('/', async function(req, res, next){
-    axios.post('http://localhost:3000/users/login', req.body)
+    axios.post('http://backend:3000/users/login', req.body)
         .then(resposta => {
             // const token = resposta.data.token;
             // const decoded = jwt.decode(token);

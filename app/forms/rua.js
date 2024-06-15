@@ -47,7 +47,7 @@ const postImagem = async (multerFile,subst,route) => {
         formData.append('imagem', data, multerFile.originalname)
         formData.append('subst', subst);
 
-        const response = await axios.post(`http://localhost:3000/${route}/`, formData, {
+        const response = await axios.post(`http://backend:3000/${route}/`, formData, {
             headers: { 'Content-Type': 'multipart/form-data' }})
 
         fs.unlinkSync(multerFile.path)
@@ -73,7 +73,7 @@ module.exports.deleteImageIfNotContains = async (past,now,route) => {
             }
         }
         if (!contains){
-            axios.delete(`http://localhost:3000/${route}/${past_element['_id']}`)
+            axios.delete(`http://backend:3000/${route}/${past_element['_id']}`)
         }
     }
 }
@@ -96,7 +96,7 @@ module.exports.updateImagens = async (subs,files,route) => {
                 _id: files[index],
                 subst: subs[index]
             }
-            axios.put((`http://localhost:3000/${route}/${imagem['_id']}`), imagem)
+            axios.put((`http://backend:3000/${route}/${imagem['_id']}`), imagem)
         }
     }
 }

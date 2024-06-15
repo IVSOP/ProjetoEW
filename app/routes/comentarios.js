@@ -5,7 +5,7 @@ var isLogged = require('../auth/auth'); // verificar se user tem token de login,
 const addTokenToHeaders = require('../auth/headerToken'); // acrescentar o token ao header, para ter acesso aos recursos do backend
 
 router.post('/:id', isLogged, addTokenToHeaders, function(req, res, next){
-    axios.put(`http://localhost:3000/comentarios/${req.params.id}`, req.body, addTokenToHeaders)
+    axios.put(`http://backend:3000/comentarios/${req.params.id}`, req.body, addTokenToHeaders)
         .then( response => {
             console.log("Comment edit submitted successfully")
             res.status(201).json(response.data)
@@ -17,7 +17,7 @@ router.post('/:id', isLogged, addTokenToHeaders, function(req, res, next){
 });
 
 router.delete('/:id', isLogged, addTokenToHeaders, function(req, res, next){
-    axios.delete(`http://localhost:3000/comentarios/${req.params.id}`, req.body, addTokenToHeaders)
+    axios.delete(`http://backend:3000/comentarios/${req.params.id}`, req.body, addTokenToHeaders)
         .then( response => {
             console.log("Comment deleted successfully")
             res.status(201).json(response.data)
@@ -29,7 +29,7 @@ router.delete('/:id', isLogged, addTokenToHeaders, function(req, res, next){
 });
 
 router.put('/:id/gostos', isLogged, function(req, res, next){
-    axios.put(`http://localhost:3000/comentarios/${req.params.id}/gostos`, req.body, addTokenToHeaders)
+    axios.put(`http://backend:3000/comentarios/${req.params.id}/gostos`, req.body, addTokenToHeaders)
         .then( response => {
             console.log("Updated comment like status successfully to:", req.body.status)
             res.status(201).json(response.data)
@@ -41,7 +41,7 @@ router.put('/:id/gostos', isLogged, function(req, res, next){
 });
 
 router.put('/:id/desgostos', isLogged, function(req, res, next){
-    axios.put(`http://localhost:3000/comentarios/${req.params.id}/desgostos`, req.body, addTokenToHeaders)
+    axios.put(`http://backend:3000/comentarios/${req.params.id}/desgostos`, req.body, addTokenToHeaders)
         .then( response => {
             console.log("Updated comment dislike status successfully to: ",req.body.status)
             res.status(201).json(response.data)

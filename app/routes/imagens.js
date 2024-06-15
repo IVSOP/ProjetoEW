@@ -6,7 +6,7 @@ const addTokenToHeaders = require('../auth/headerToken');
 
 
 router.get('/:folder/:id', isLogged, addTokenToHeaders, function(req, res, next) {
-    axios.get(`http://localhost:3000/${req.params.folder}/show/${req.params.id}`, { responseType: 'arraybuffer' })
+    axios.get(`http://backend:3000/${req.params.folder}/show/${req.params.id}`, { responseType: 'arraybuffer' })
         .then(response => {
             res.contentType(response.headers.get('content-type'))
             res.status(201).send(response.data)

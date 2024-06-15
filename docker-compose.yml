@@ -1,5 +1,17 @@
 services:
 
+  frontend:
+    container_name: proj_ruas_app
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - "7777:7777"
+    depends_on:
+      - backend
+    links:
+      - backend
+
   backend:
     container_name: proj_ruas_servico_dados
     build:

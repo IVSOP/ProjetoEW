@@ -8,7 +8,7 @@ var isLogged = require('../auth/auth'); // verificar se user tem token de login,
 const addTokenToHeaders = require('../auth/headerToken'); // acrescentar o token ao header, para ter acesso aos recursos do backend
 
 router.get('/', isLogged, addTokenToHeaders, function(req, res, next){
-    axios.get('http://localhost:3000/ruas', addTokenToHeaders)
+    axios.get('http://backend:3000/ruas', addTokenToHeaders)
         .then(response => {
             res.status(200).render('streetList', {
                 title: 'Índice das Ruas',
@@ -18,7 +18,7 @@ router.get('/', isLogged, addTokenToHeaders, function(req, res, next){
 });
 
 router.get('/eliminar/:id', isLogged, addTokenToHeaders, function(req, res, next){
-    axios.delete(`http://localhost:3000/ruas/${req.params.id}`, addTokenToHeaders)
+    axios.delete(`http://backend:3000/ruas/${req.params.id}`, addTokenToHeaders)
         .then(() => res.redirect('/ruas'))
         .catch(error => res.status(500).render('error', {error, error}))
 });
@@ -38,7 +38,7 @@ router.post('/registar', isLogged, addTokenToHeaders, upload.fields([{ name: 'ol
                 req.files.newImageFiles,
                 'atual')
 
-            axios.post('http://localhost:3000/ruas/', formData, addTokenToHeaders)
+            axios.post('http://backend:3000/ruas/', formData, addTokenToHeaders)
                 .then(() => res.redirect('/ruas'))
                 .catch(error => res.status(500).render('error', {error: error}))
         })
@@ -46,20 +46,20 @@ router.post('/registar', isLogged, addTokenToHeaders, upload.fields([{ name: 'ol
 });
 
 router.get('/editar/:id', isLogged, addTokenToHeaders, function(req, res, next){
-    axios.get(`http://localhost:3000/ruas/${req.params.id}`, addTokenToHeaders)
+    axios.get(`http://backend:3000/ruas/${req.params.id}`, addTokenToHeaders)
         .then(async response => {
 
             imagens_antigas = []
             imagens_atuais = []
-            datas = (await axios.get('http://localhost:3000/datas', addTokenToHeaders)).data
-            lugares = (await axios.get('http://localhost:3000/lugares', addTokenToHeaders)).data
-            entidades = (await axios.get('http://localhost:3000/entidades', addTokenToHeaders)).data
+            datas = (await axios.get('http://backend:3000/datas', addTokenToHeaders)).data
+            lugares = (await axios.get('http://backend:3000/lugares', addTokenToHeaders)).data
+            entidades = (await axios.get('http://backend:3000/entidades', addTokenToHeaders)).data
 
             for (const x of response.data.old_images)
-                imagens_antigas.push((await axios.get(`http://localhost:3000/antigo/${x['_id']}`, addTokenToHeaders)).data);
+                imagens_antigas.push((await axios.get(`http://backend:3000/antigo/${x['_id']}`, addTokenToHeaders)).data);
 
             for (const x of response.data.new_images)
-                imagens_atuais.push((await axios.get(`http://localhost:3000/atual/${x['_id']}`, addTokenToHeaders)).data);
+                imagens_atuais.push((await axios.get(`http://backend:3000/atual/${x['_id']}`, addTokenToHeaders)).data);
 
             res.status(200).render('streetUpdateForm', {
 
@@ -78,7 +78,7 @@ router.get('/editar/:id', isLogged, addTokenToHeaders, function(req, res, next){
 
 router.post('/editar/:id', isLogged, addTokenToHeaders, upload.fields([{ name: 'oldImageFiles' }, { name: 'newImageFiles' }]), function(req, res, next){
     
-    axios.get(`http://localhost:3000/ruas/${req.params.id}`, addTokenToHeaders)
+    axios.get(`http://backend:3000/ruas/${req.params.id}`, addTokenToHeaders)
         .then(async response => {
 
             var formData = Utils.getRuaForm(req)
@@ -109,7 +109,7 @@ router.post('/editar/:id', isLogged, addTokenToHeaders, upload.fields([{ name: '
             await Utils.updateImagens(req.body.oldImageSubst,req.body.oldImageFiles,'antigo')
             await Utils.updateImagens(req.body.newImageSubst,req.body.newImageFiles,'atual')
 
-            axios.put(`http://localhost:3000/ruas/${req.params.id}`, formData, addTokenToHeaders)
+            axios.put(`http://backend:3000/ruas/${req.params.id}`, formData, addTokenToHeaders)
                 .then(() => res.redirect('/ruas/' + req.params.id))
                 .catch(error => res.status(500).render('error', {error: error}))
         })
@@ -118,23 +118,23 @@ router.post('/editar/:id', isLogged, addTokenToHeaders, upload.fields([{ name: '
 
 
 router.get('/:id', isLogged, addTokenToHeaders, function(req, res, next){
-    axios.get(`http://localhost:3000/ruas/${req.params.id}`, addTokenToHeaders)
+    axios.get(`http://backend:3000/ruas/${req.params.id}`, addTokenToHeaders)
         .then(async response => {
 
             imagens = []
-            datas = (await axios.get('http://localhost:3000/datas', addTokenToHeaders)).data
-            lugares = (await axios.get('http://localhost:3000/lugares', addTokenToHeaders)).data
-            entidades = (await axios.get('http://localhost:3000/entidades', addTokenToHeaders)).data
-            comentarios = (await axios.get(`http://localhost:3000/comentarios/ruas/${req.params.id}`, addTokenToHeaders)).data
+            datas = (await axios.get('http://backend:3000/datas', addTokenToHeaders)).data
+            lugares = (await axios.get('http://backend:3000/lugares', addTokenToHeaders)).data
+            entidades = (await axios.get('http://backend:3000/entidades', addTokenToHeaders)).data
+            comentarios = (await axios.get(`http://backend:3000/comentarios/ruas/${req.params.id}`, addTokenToHeaders)).data
 
             for (let imagem of response.data.old_images){
-                let imagem_data = (await axios.get(`http://localhost:3000/antigo/${imagem['_id']}`, addTokenToHeaders)).data
+                let imagem_data = (await axios.get(`http://backend:3000/antigo/${imagem['_id']}`, addTokenToHeaders)).data
                 imagem_data['route'] = 'antigo'
                 imagens.push(imagem_data);
             }
 
             for (let imagem of response.data.new_images){
-                let imagem_data = (await axios.get(`http://localhost:3000/atual/${imagem['_id']}`, addTokenToHeaders)).data
+                let imagem_data = (await axios.get(`http://backend:3000/atual/${imagem['_id']}`, addTokenToHeaders)).data
                 imagem_data['route'] = 'atual' 
                 imagens.push(imagem_data);
             }
@@ -142,7 +142,7 @@ router.get('/:id', isLogged, addTokenToHeaders, function(req, res, next){
             //atualizar índices de comentários com o conteúdo do comentário em si
 
             for (let i = 0; i < comentarios.length; i++) {
-                comentarios[i] = (await axios.get(`http://localhost:3000/comentarios/${comentarios[i]}`)).data
+                comentarios[i] = (await axios.get(`http://backend:3000/comentarios/${comentarios[i]}`)).data
             }
 
             res.status(200).render('street', {
@@ -172,10 +172,10 @@ router.post('/:id/comentarios', isLogged, function(req, res, next){
         streetId: req.params.id
     }
 
-    axios.post(`http://localhost:3000/comentarios`, comment, addTokenToHeaders)
+    axios.post(`http://backend:3000/comentarios`, comment, addTokenToHeaders)
         .then(response => {
             response.data.replies = []
-            axios.get(`http://localhost:3000/comentarios/${response.data._id}`, addTokenToHeaders)
+            axios.get(`http://backend:3000/comentarios/${response.data._id}`, addTokenToHeaders)
             .then(response => {
                 res.status(201).json(response.data)
             })
@@ -193,10 +193,10 @@ router.post('/:streetId/comentarios/:commentId/respostas', isLogged, function(re
         streetId: req.params.streetId
     }
 
-    axios.post(`http://localhost:3000/comentarios/${req.params.commentId}/respostas`, comment, addTokenToHeaders)
+    axios.post(`http://backend:3000/comentarios/${req.params.commentId}/respostas`, comment, addTokenToHeaders)
         .then(response => {
             response.data.replies = []
-            axios.get(`http://localhost:3000/comentarios/${response.data._id}`, addTokenToHeaders)
+            axios.get(`http://backend:3000/comentarios/${response.data._id}`, addTokenToHeaders)
             .then(response => {
                 res.status(201).json(response.data)
             })
@@ -208,7 +208,7 @@ router.post('/:streetId/comentarios/:commentId/respostas', isLogged, function(re
 });
 
 router.post('/favorito/:id', isLogged, addTokenToHeaders, function(req, res, next){
-    axios.post(`http://localhost:3000/ruas/favorito/${req.params.id}`, {userId: req.user}, addTokenToHeaders)
+    axios.post(`http://backend:3000/ruas/favorito/${req.params.id}`, {userId: req.user}, addTokenToHeaders)
         .then(() => res.status(200).end())
         .catch(error => {
             console.log(error)
@@ -218,7 +218,7 @@ router.post('/favorito/:id', isLogged, addTokenToHeaders, function(req, res, nex
 
 
 router.delete('/favorito/:id', isLogged, function(req, res, next){
-    axios.delete(`http://localhost:3000/ruas/favorito/${req.params.id}`, {data: {userId: req.user}}, addTokenToHeaders)
+    axios.delete(`http://backend:3000/ruas/favorito/${req.params.id}`, {data: {userId: req.user}}, addTokenToHeaders)
         .then(() => res.status(200).end())
         .catch(error => {
             console.log(error)
