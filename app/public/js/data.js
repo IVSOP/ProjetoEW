@@ -13,6 +13,14 @@ $(document).ready(function() {
 
             const form = $('#dataImportForm')[0];
             const formData = new FormData(form);
+            const progressBar = $('#importModal').find('.progress-bar');
+            const modalHeader = $('#importModal').find('.modal-title');
+
+            progressBar.removeClass('bg-success bg-danger');
+            progressBar.addClass('progress-bar-striped progress-bar-animated');
+            modalHeader.text('Importação em progresso');
+
+            $('#importModalButton').click();
 
             $.ajax({
                 url: form.action,
@@ -21,11 +29,13 @@ $(document).ready(function() {
                 processData: false,
                 contentType: false,
                 success: function (response){
-                    console.log('File imported successfully:', response);
+                    progressBar.toggleClass('progress-bar-striped progress-bar-animated bg-success');
+                    modalHeader.text('Importação terminada');
                 },
                 error: function (error) {
                     console.log(error);
-                    alert('An error occurred while importing file.');
+                    progressBar.toggleClass('progress-bar-striped progress-bar-animated bg-danger');
+                    importModal.find('.modal-title').text('Importação cancelada');
                 }
             });
         }

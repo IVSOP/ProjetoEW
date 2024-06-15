@@ -21,7 +21,7 @@ router.get('/', isLogged, addTokenToHeaders, function(req, res, next) {
 
 router.get('/logout', isLogged, addTokenToHeaders, function(req, res, next) {
     res.cookie('token', '', { maxAge: 0 })
-    res.redirect('/login')
+    res.status(200).redirect('/login')
 });
 
 
