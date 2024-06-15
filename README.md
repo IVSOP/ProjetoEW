@@ -5,6 +5,7 @@
 - [Processamento de dados](#Processamento_de_dados)
 - [Docker](#Docker)
 - [Importacao e exportacao de dados](#Importacao_e_exportacao_de_dados)
+- [Páginas do website](#Paginas_do_website)
 
 *******
 
@@ -201,6 +202,8 @@ Ao importar, consideramos apenas as colecoes mencionadas no manifesto, verifican
 - se o numero de records corresponde ao indicado
 - se o ficheiro de dados existe
 - se uma colecao de imagens for indicada, verificamos se todas as imagens mencionadas existem
+
+<div id="Paginas_do_website"/>
 
 # Páginas do website
 
