@@ -201,3 +201,97 @@ Ao importar, consideramos apenas as colecoes mencionadas no manifesto, verifican
 - se o numero de records corresponde ao indicado
 - se o ficheiro de dados existe
 - se uma colecao de imagens for indicada, verificamos se todas as imagens mencionadas existem
+
+# Páginas do website
+
+## Autenticação
+
+Quando estabelecemos uma ligação ao *frontend* somos imediatamente encaminhados para a página de *login*, contudo se tivermos previamente uma sessão aberta tal não acontece e obtemos a página pretendida.
+
+No caso das credenciais de autenticaçãos estarem incorretas é fornecido um pequeno *feedback*, sendo que nas situações de perda da palavra-passe é necessário criar um novo registo.
+
+<video width="100%" height="100%" controls>
+    <source src="assets/auth.mp4" type="video/mp4">>
+</video>
+
+## Índices de datas/entidades/lugares
+
+Os registos das ruas mencionam várias datas, entidades e lugares, assim sendo foram desenvolvidos índices para permitem obter uma listagem completa das ruas visadas por cada um.
+
+Os índicies são todos semelhantes, ou seja, utilizam *collapsibles* para esconder/apresentar os nomes das ruas, que por sua vez são um *link* para a página da própria rua. 
+
+<video width="100%" height="100%" controls>
+    <source src="assets/auth.mp4" type="video/mp4">>
+</video>
+
+## Apresentação das ruas
+
+O primeiro elemento da página é um *slideshow* que apresenta as imagens antigas e atuais da rua, sendo que para cada uma é fornecida uma breve legenda.
+
+De seguida estão posicionados alguns botões que permitem:
+
+- Retroceder
+- Editar
+- Eliminar
+- Adicionar aos favoritos
+- Apresentar as data/entidades/lugares
+
+Convém destacar que os botões de edição e eliminação apenas estão acessíveis aos administradores do sistema e ao utilizador que registou a rua. Por fim é fornecida uma breve descrição da rua, tabela das famílias residentes e zona de comentários onde os utilizadores podem interagir.
+
+<video width="100%" height="100%" controls>
+    <source src="assets/street.mp4" type="video/mp4">>
+</video>
+
+## Registo de ruas
+
+Os registo das ruas pode ser efetuado por qualquer utilizador, além disso é apresentado um formulário bastante dinâmico que está dividido em quatro zonas.
+
+- **Informações:** identificação do nome da rua e descrição da mesma.
+- **Datas/Entidades/Lugares:** parâmetros referenciados pela ruas.
+- **Casas:** caracterização das casas e famílias residentes na rua.
+- **Fotografias:** imagens antigas e atuais da rua, bem como uma legenda sobre cada uma.
+
+Em algumas das zonas apresentadas não é possível prever quantos campos o utilizador irá preencher, como tal foram adicionados botões que permitem adicionar/remover campos do formulário.
+
+<video width="100%" height="100%" controls>
+    <source src="assets/createStreet.mp4" type="video/mp4">>
+</video>
+
+## Edição de ruas
+
+Para alterar o registo de uma rua é possível reutilizar o formulário utilizado durante o seu registo, sendo que desta vez os campos estão preenchidos com os valores atuais.
+
+Desta forma as funcionalidades de adicionar/remover campos estão novamente presentes, e além disso é possível previsualizar as imagens da rua através de um *modal*.
+
+Posto isto, após efetuar as alterações pretendidas é necessário clicar no botão `Atualizar`, sendo que para cancelar tudo basta clicar em `Voltar`.
+
+<video width="100%" height="100%" controls>
+    <source src="assets/editStreet.mp4" type="video/mp4">>
+</video>
+
+## Favoritos e comentários
+
+Para além de apresentar os dados pessoais, a página do utilizador regista ainda as ruas criadas e favoritas, bem como os comentários.
+
+Para adicionar uma rua aos favoritos basta clicar na estrela posicionada na sua página, sendo que a partir daí o botão fica preenchido, e para remover basta clicar novamente.
+
+Já em relação aos comentários, estão disponíveis várias funcionalidades:
+
+- Responder a outro utilizador.
+- Alterar o texto.
+- Eliminar (remove as respostas encadeadas).
+
+<video width="100%" height="100%" controls>
+    <source src="assets/comments.mp4" type="video/mp4">>
+</video>
+
+## Importação e exportação
+
+As funcionalidades para importar/exportar apenas estão acessíveis aos administradores, sendo que para visualizar estas opções é necessário clicar em `Dados`.
+
+- **Importar:** o *browser* abre o selecionador de ficheiros que apenas permite `.tar`, de seguida é apresentada uma barra de progresso até que os dados tenham sido todos importados, no final o utilizador é informado acerda do sucesso da operação.  
+- **Exportar:** o *browser* inicia automaticamente o *download* do ficheiro `dados.tar`, além disso é possível que o *download* tarde a começar divido à demora na criação do arquivo por parte do *backend*.
+
+<video width="100%" height="100%" controls>
+    <source src="assets/importexport.mp4" type="video/mp4">>
+</video>
