@@ -1,25 +1,103 @@
 # ProjetoEW
 
-Para processamento inicial de dados:
-- `validateXml.py` -> validar se todos os .xml de acordo com o .xsd
-  verificamos que havia atributos e tags nos sítios incorretos:
-  - Tag `<vista>` -> aparecia na 2a posição (incorretamente), dentro do elemento `<casa>`. Foi movido para o fim do elemento `<casa>`.
-  - atributo `"entidade"` dentro da tag `<entidade>` não existia. Foi substituído para o atributo correto `"tipo"`
+*******
 
-- Com recurso ao script convXMLtoJSON.py, convertemos os dados xml das ruas para o formato json. Por passos:
-    - Fizemos a conversão inicial de XML para JSON, com recurso à biblioteca lxml, guardando nomeadamente, para cada rua, os lugares,entidades, datas encontrados nas tags dos parágrafos de descrição da respetiva rua.
-    - De seguida, percorrem todos os jsons de ruas e criamos dicionários de todos os lugares, entidades, datas encontrados nas várias ruas, e associamos-lhes um id único.
-    - Depois, substituímos nas várias ruas as lugares, entidades, datas pelo seu id único criado.
-    - Exportamos as ruas, entidades, lugares e datas para ficheiros json diferentes, de modo a serem facilmente importados como jsonArrays no mongoDB
+- [Processamento de dados](#Processamento_de_dados)
+- [Docker](#Docker)
+- [Importacao e exportacao de dados](#Importacao_e_exportacao_de_dados)
 
+*******
 
+<div id="Processamento_de_dados"/>
 
-novo tratamento das imagens:
-passamos a ignorar o nome como identificador e usar o id do mongo
-assim, no script de conv, fazemos ja a insercao das imagens para associar as ruas ao seu id
-logo decidimos usar ja esse script para inserir todos os dados para alem de converted
-problema: nomes das imagens estavam mal com ma conversao de caracteres portugueses, tivemos de corrigir a mao
+# Processamento de dados
 
+Inicialmente, desenvolvemos o script `validateXml.py` que verifica se os dados (`.xml`) tem a estrutura correta (`.xsd`)
+
+Verificamos que existiam tags e atributos nos sitios incorretos/que nao existem. Por exemplo:
+
+- Tag `<vista>` -> aparecia na 2a posição (incorretamente), dentro do elemento `<casa>`. Foi movido para o fim do elemento `<casa>`.
+- Atributo `"entidade"` dentro da tag `<entidade>` não existia. Foi substituído para o atributo correto `"tipo"`
+
+De seguida desenvolvemos o script `convXMLtoJSON.py`, que trasnforma os dados xml em json:
+
+- Fizemos a conversão inicial de XML para JSON, com recurso à biblioteca lxml, guardando nomeadamente, para cada rua, os lugares,entidades, datas encontrados nas tags dos parágrafos de descrição da respetiva rua.
+- De seguida, percorrem todos os jsons de ruas e criamos dicionários de todos os lugares, entidades, datas encontrados nas várias ruas, e associamos-lhes um id único.
+- Depois, substituímos nas várias ruas as lugares, entidades, datas pelo seu id único criado.
+- Exportamos as ruas, entidades, lugares e datas para ficheiros json diferentes, de modo a serem facilmente importados como jsonArrays no mongoDB
+
+No entanto, ao tentar fazer a ligacao com as imagens, surgiram novas dificuldades devido a desformatacao dos nomes. Assim, tivemos de os corrigir manualmente, e decidimos passar a relacionar ruas e as suas imagens atraves de um ID e nao do nome.
+
+Como seria necessario importar as imagens de forma a gerar o seu ID, acabamos por fazer com que o script `convXMLtoJSON.py`, ao inves de exportar os novos dados, os carregue diretamente para as diferentes colecoes no mongodb.
+
+Devido ao tamanho inconsistente das imagens, usamos o script `padding.sh` para lhes colocar padding.
+
+Por fim, as colecoes geradas foram:
+```
+antigo   -> imagens antigas
+atual    -> imagens atuais
+comments -> comentarios sobre posts
+dates    -> datas    \
+entities -> entidades > mencionados nas ruas
+places   -> lugares  /
+streets  -> dados sobre cada rua
+users    -> utilizadores
+```
+
+Com os seguintes formatos:
+
+- antigo/atual
+O nome da imagem sera, implicitamente, igual ao seu _id, pelo que guardamos a extensao de modo a ter o nome completo da mesma
+```
+subst: <string> - descricao da imagem
+extension: <string> - extensao da imagem
+```
+
+- comments
+```
+    streetId: String,
+    baseCommentId: String, // comentário a que se está a dar reply, se for o caso
+    owner: {type: String, required: true},
+    text: String,
+    createdAt: { type: Date, default: Date.now },
+    updatedAt: { type: Date, default: Date.now },
+    likes: [String],
+    dislikes: [String]
+```
+
+- dates/entities/places
+```
+name: <string> - data guardada como string
+ruas: [<string>] - lista dos IDs das ruas onde esta data aparece
+```
+
+- streets
+```
+owner: <string> - nome do dono
+name: <string> - nome da rua
+favorites: [<string>] - ????????????????????????????????????????????????????????????
+description: [<string>] - ????????????????????????????????????????????????????????????
+places: [<string>] - IDs dos lugares que aparecem nesta rua????????????????????????????????????????????????????????????
+entities: [<string>] - IDs das entidades que aparecem nesta rua????????????????????????????????????????????????????????????
+dates: [<string>] - IDs das datas que aparecem nesta rua????????????????????????????????????????????????????????????
+old_images: [<id>] - IDs das imagens antigas que aparecem nesta rua
+houses: [<string>] - IDs das casas que aparecem nesta rua ????????????????????????????????????????????????????????????
+new_images: [<id>] - IDs das imagens novas que aparecem nesta rua
+```
+
+- users
+```
+username: <string> - nome??????????????????????????????????????????????????????????????????????????????????
+password: <string> - hash base64 da password
+name: <string> - nome??????????????????????????????????????????????????????????????????????????????????
+level: String,??????????????????????????????????????????????????????????????????????????????????
+active: Boolean,??????????????????????????????????????????????????????????????????????????????????
+dateCreated: <string> - data de criacao da conta
+```
+
+*******
+
+<div id="Docker"/>
 
 # Docker:
 
@@ -28,10 +106,14 @@ Criamos dois docker compose. Um deles usa o script de python para converter os X
 sudo ./docker_setup.sh
 ```
 
-O outro inicia o servico de dados e o frontend em si, aproveitando o container de mongodb ja povoado pelo script anterior: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! frontend ainda nao esta feito!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+O outro inicia o servico de dados e o frontend em si, aproveitando o container de mongodb ja povoado pelo script anterior: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! frontend ainda nao esta feito!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ```bash
 sudo ./docker_servico.sh
 ```
+
+*******
+
+<div id="Importacao_e_exportacao_de_dados"/>
 
 # Importacao e exportacao de dados
 
@@ -44,7 +126,7 @@ Estas duas rotas sao utilizadas pelo frontend, estando as funcionalidades dispon
 
 O ficheiro de exportacao, `dados.tar`, tem os seguintes conteudos:
 
-```
+```bash
 dados.tar
 ├── files.tar.xz
 │   ├── antigo                            -> imagens antigas
@@ -65,10 +147,10 @@ dados.tar
 ```
 
 O manifesto tem o formato:
-```json
+```js
 {
   "meta": {
-    "size": 37768137 // tamanho em bytes dos ficheiros, para poder ver o progresso de extracao
+    "size": 37768137 // tamanho em bytes dos ficheiros
   },
   "dados": { // todas as colecoes exportadas
     "streets": {
@@ -115,7 +197,7 @@ O manifesto tem o formato:
 }
 ```
 
-Ao importar, importamos apenas as colecoes mencionadas no mesmo, verificando tambem:
-- o numero de records corresponde ao indicado
+Ao importar, consideramos apenas as colecoes mencionadas no manifesto, verificando tambem:
+- se o numero de records corresponde ao indicado
 - se o ficheiro de dados existe
-- se uma colecao de imagens for indicada, verificamos se todas as imagens existem
+- se uma colecao de imagens for indicada, verificamos se todas as imagens mencionadas existem
