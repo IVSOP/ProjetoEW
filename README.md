@@ -210,9 +210,7 @@ Quando estabelecemos uma ligação ao *frontend* somos imediatamente encaminhado
 
 No caso das credenciais de autenticaçãos estarem incorretas é fornecido um pequeno *feedback*, sendo que nas situações de perda da palavra-passe é necessário criar um novo registo.
 
-<video width="100%" height="100%" controls>
-    <source src="assets/auth.mp4" type="video/mp4">>
-</video>
+https://github.com/pedromeruge/ProjetoEW/assets/87565693/7a984b73-f47f-4e60-b1a2-9db0d51aa19b
 
 ## Índices de datas/entidades/lugares
 
@@ -220,9 +218,7 @@ Os registos das ruas mencionam várias datas, entidades e lugares, assim sendo f
 
 Os índicies são todos semelhantes, ou seja, utilizam *collapsibles* para esconder/apresentar os nomes das ruas, que por sua vez são um *link* para a página da própria rua. 
 
-<video width="100%" height="100%" controls>
-    <source src="assets/auth.mp4" type="video/mp4">>
-</video>
+**Esqueci-me do video**
 
 ## Apresentação das ruas
 
@@ -238,9 +234,7 @@ De seguida estão posicionados alguns botões que permitem:
 
 Convém destacar que os botões de edição e eliminação apenas estão acessíveis aos administradores do sistema e ao utilizador que registou a rua. Por fim é fornecida uma breve descrição da rua, tabela das famílias residentes e zona de comentários onde os utilizadores podem interagir.
 
-<video width="100%" height="100%" controls>
-    <source src="assets/street.mp4" type="video/mp4">>
-</video>
+https://github.com/pedromeruge/ProjetoEW/assets/87565693/ba6afc8d-f784-4a5b-a20f-dd0410ee623b
 
 ## Registo de ruas
 
@@ -253,9 +247,7 @@ Os registo das ruas pode ser efetuado por qualquer utilizador, além disso é ap
 
 Em algumas das zonas apresentadas não é possível prever quantos campos o utilizador irá preencher, como tal foram adicionados botões que permitem adicionar/remover campos do formulário.
 
-<video width="100%" height="100%" controls>
-    <source src="assets/createStreet.mp4" type="video/mp4">>
-</video>
+https://github.com/pedromeruge/ProjetoEW/assets/87565693/b6dc82b4-ed3a-488b-a491-6ab2b36bd84f
 
 ## Edição de ruas
 
@@ -265,9 +257,7 @@ Desta forma as funcionalidades de adicionar/remover campos estão novamente pres
 
 Posto isto, após efetuar as alterações pretendidas é necessário clicar no botão `Atualizar`, sendo que para cancelar tudo basta clicar em `Voltar`.
 
-<video width="100%" height="100%" controls>
-    <source src="assets/editStreet.mp4" type="video/mp4">>
-</video>
+https://github.com/pedromeruge/ProjetoEW/assets/87565693/7b088128-4019-478f-8a8f-35a7ecb73c14
 
 ## Favoritos e comentários
 
@@ -281,9 +271,7 @@ Já em relação aos comentários, estão disponíveis várias funcionalidades:
 - Alterar o texto.
 - Eliminar (remove as respostas encadeadas).
 
-<video width="100%" height="100%" controls>
-    <source src="assets/comments.mp4" type="video/mp4">>
-</video>
+https://github.com/pedromeruge/ProjetoEW/assets/87565693/947eaf23-b176-49b4-b046-8dbe480a0305
 
 ## Importação e exportação
 
@@ -292,6 +280,4 @@ As funcionalidades para importar/exportar apenas estão acessíveis aos administ
 - **Importar:** o *browser* abre o selecionador de ficheiros que apenas permite `.tar`, de seguida é apresentada uma barra de progresso até que os dados tenham sido todos importados, no final o utilizador é informado acerda do sucesso da operação.  
 - **Exportar:** o *browser* inicia automaticamente o *download* do ficheiro `dados.tar`, além disso é possível que o *download* tarde a começar divido à demora na criação do arquivo por parte do *backend*.
 
-<video width="100%" height="100%" controls>
-    <source src="assets/importexport.mp4" type="video/mp4">>
-</video>
+https://github.com/pedromeruge/ProjetoEW/assets/87565693/972265ba-d509-4f0f-9696-6738f94eaf78
