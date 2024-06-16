@@ -13,7 +13,7 @@
 
 - [Processamento de dados](#Processamento_de_dados)
 - [Docker](#Docker)
-- [Importacao e exportacao de dados](#Importacao_e_exportacao_de_dados)
+- [Importação e exportação de dados](#Importacao_e_exportacao_de_dados)
 - [Autenticação](#Autenticacao)
 - [Páginas do website](#Paginas_do_website)
 
@@ -23,23 +23,23 @@
 
 # Processamento de dados
 
-Inicialmente, desenvolvemos o script `validateXml.py` que verifica se os dados (`.xml`) tem a estrutura correta (`.xsd`)
+Inicialmente, desenvolvemos o script `validateXml.py` que verifica se os dados (`.xml`) têm a estrutura correta (`.xsd`)
 
-Verificamos que existiam tags e atributos nos sitios incorretos/que nao existem. Por exemplo:
+Verificamos que existiam tags e atributos nos sítios incorretos/que não deviam existir. Por exemplo:
 
-- Tag `<vista>` -> aparecia na 2a posição (incorretamente), dentro do elemento `<casa>`. Foi movido para o fim do elemento `<casa>`.
+- Tag `<vista>` -> aparecia na 2ª posição (incorretamente), dentro do elemento `<casa>`. Foi movido para o fim do elemento `<casa>`.
 - Atributo `"entidade"` dentro da tag `<entidade>` não existia. Foi substituído para o atributo correto `"tipo"`
 
-De seguida desenvolvemos o script `convXMLtoJSON.py`, que trasnforma os dados xml em json:
+De seguida desenvolvemos o script `convXMLtoJSON.py`, que transforma os dados `xml` em `json`:
 
-- Fizemos a conversão inicial de XML para JSON, com recurso à biblioteca lxml, guardando nomeadamente, para cada rua, os lugares,entidades, datas encontrados nas tags dos parágrafos de descrição da respetiva rua.
+- Fizemos a conversão inicial de XML para JSON, com recurso à biblioteca lxml, guardando, para cada rua, os lugares, entidades e datas encontrados nas tags dos parágrafos de descrição da respetiva rua.
 - De seguida, percorremos todos os jsons de ruas e criamos dicionários de todos os lugares, entidades e datas encontrados nas várias ruas, e associamos um ID único a cada um.
 - Depois, substituímos nas várias ruas os lugares, entidades e datas pelo seu ID.
-- Exportamos as ruas, entidades, lugares, datas, ... para ficheiros json diferentes, de modo a serem facilmente importados para colecoes diferentes no mongodb.
+- Exportamos as ruas, entidades, lugares e datas para ficheiros json diferentes, de modo a serem facilmente importados para coleções diferentes no mongodb.
 
-No entanto, ao tentar fazer a ligacao com as imagens, surgiram novas dificuldades devido a desformatacao dos nomes. Assim, tivemos de os corrigir manualmente, e decidimos passar a relacionar ruas e as suas imagens atraves de um ID e nao do nome.
+No entanto, ao tentar fazer a ligação com as imagens, surgiram novas dificuldades devido à desformatação dos nomes. Assim, tivemos de os corrigir manualmente, e decidimos passar a relacionar ruas e as suas imagens através de um ID e não do nome.
 
-Como seria necessario importar as imagens de forma a gerar o seu ID, acabamos por fazer com que o script `convXMLtoJSON.py`, ao inves de exportar os novos dados, os carregue diretamente para as diferentes colecoes no mongodb.
+Como seria necessário importar as imagens de forma a gerar o seu ID, acabamos por fazer com que o script `convXMLtoJSON.py`, ao invés de exportar os novos dados, os carregue diretamente para as diferentes coleções no mongodb.
 
 Devido ao tamanho inconsistente das imagens, usamos o script `padding.sh` para lhes colocar padding.
 
@@ -59,7 +59,7 @@ Com os seguintes formatos:
 
 - **antigo/atual**
 
-O nome da imagem sera, implicitamente, igual ao seu `_id`, pelo que guardamos a extensao de modo a conseguir obter o nome completo da mesma quando for necessario usar o seu ficheiro
+O nome da imagem será, implicitamente, igual ao seu `_id`, pelo que guardamos a extensão de modo a conseguir obter o nome completo do ficheiro respetivo
 ```
 subst: <string> - descricao da imagem
 extension: <string> - extensao da imagem
@@ -113,32 +113,32 @@ dateCreated: <string> - data de criacao da conta
 
 # Docker:
 
-Criamos dois docker compose. Um deles usa o script de python para converter os XML e povoar a base de dados, colocando tambem as imagens no servico de dados:
+Criamos dois _docker compose_. Um deles usa o script de python para converter os XML e povoar a base de dados, como mencionado anteriormente, colocando também as imagens no serviço de dados:
 ```bash
 sudo ./docker_setup.sh
 ```
 
-O outro inicia o servico de dados e o frontend em si, aproveitando o container de mongodb ja povoado pelo script anterior:
+O outro inicia o serviço de dados e o frontend em si, aproveitando o container de mongodb já povoado pelo script anterior:
 ```bash
 sudo ./docker_servico.sh
 ```
 
-> **_NOTA:_**  Enquanto medida de segunça, os *containers* `mongodb` e `servico de dados` não exteriorizam as suas portas, apenas o `frontend` pode ser acedido através do *localhost*.
+> **_NOTA:_**  Enquanto medida de segunça, os *containers* `mongodb` e `serviço de dados` não exteriorizam as suas portas, apenas o `frontend` pode ser acedido através do *localhost*.
 
 *******
 
 <div id="Importacao_e_exportacao_de_dados"/>
 
-# Importacao e exportacao de dados
+# Importação e exportação de dados
 
-No servico de dados, utilizam-se os scripts `import.sh` e `export.sh` para importar e exportar os dados. Estes sao tambem executados pelo proprio servico de dados, atraves da rotas:
+No serviço de dados, utilizam-se os scripts `import.sh` e `export.sh` para importar e exportar os dados. Estes sao também executados pelo proprio serviço de dados, atraves das rotas:
 
-- '/impexp/exportar': download de um ficheiro de exportacao de dados
+- '/impexp/exportar': download de um ficheiro de exportação de dados
 - '/impexp/importar': recebe form com o ficheiro a importar
 
-Estas duas rotas sao utilizadas pelo frontend, estando as funcionalidades disponiveis apenas a administradores.
+Estas duas rotas sao utilizadas pelo frontend, estando as funcionalidades disponíveis apenas a administradores.
 
-O ficheiro de exportacao, `dados.tar`, tem os seguintes conteudos:
+O ficheiro de exportação, `dados.tar`, tem os seguintes conteúdos:
 
 ```bash
 dados.tar
@@ -211,10 +211,10 @@ O manifesto tem o formato:
 }
 ```
 
-Ao importar, consideramos apenas as colecoes mencionadas no manifesto, verificando tambem:
+Ao importar, consideramos apenas as coleções mencionadas no manifesto, verificando também:
 - se o numero de records corresponde ao indicado
 - se o ficheiro de dados existe
-- se uma colecao de imagens for indicada, verificamos se todas as imagens mencionadas existem
+- se uma coleção de imagens for indicada, verificamos se todas as imagens mencionadas existem
 
 *******
 
@@ -224,7 +224,7 @@ Ao importar, consideramos apenas as colecoes mencionadas no manifesto, verifican
 
 Apesar de existirem servidores dedicados única e exclusivamente à auntenticação de utilizadores, consideramos que tal estratégia seria desnecessária, além de envolver necessariamente mais trocas de mensagens entre serviços e consequente aumento do tempo de resposta sentido pelo utilizador. 
 
-Assim sendo, o `servico de dados` garante a autenticação de utilizadores e a manutenção do estado de sessão, sendo que para tal são combinados os *middlewares* do *Passport* e *JSON Web Tokens*.
+Assim sendo, o `serviço de dados` garante a autenticação de utilizadores e a manutenção do estado de sessão, sendo que para tal são combinados os *middlewares* do *Passport* e *JSON Web Tokens*.
 
 ## Passport
 
