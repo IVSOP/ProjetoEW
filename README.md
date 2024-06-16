@@ -5,6 +5,7 @@
 - [Processamento de dados](#Processamento_de_dados)
 - [Docker](#Docker)
 - [Importacao e exportacao de dados](#Importacao_e_exportacao_de_dados)
+- [Autenticação](#Autenticacao)
 - [Páginas do website](#Paginas_do_website)
 
 *******
@@ -205,7 +206,7 @@ Ao importar, consideramos apenas as colecoes mencionadas no manifesto, verifican
 - se o ficheiro de dados existe
 - se uma colecao de imagens for indicada, verificamos se todas as imagens mencionadas existem
 
-<div id="Paginas_do_website"/>
+<div id="Autenticacao"/>
 
 # Autenticação
 
@@ -232,6 +233,8 @@ Por fim, para efetuar *logout*, uma vez que não é possível remover *tokens* d
 ## Obter Recursos
 
 ![get](https://github.com/pedromeruge/ProjetoEW/assets/87565693/72d3086f-9b1f-44d6-bc4c-294fe1476f28)
+
+<div id="Paginas_do_website"/>
 
 # Páginas do website
 
