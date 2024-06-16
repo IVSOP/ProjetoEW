@@ -227,9 +227,11 @@ Por fim, para efetuar *logout*, uma vez que não é possível remover *tokens* d
 
 ## Login
 
+![login](https://github.com/pedromeruge/ProjetoEW/assets/87565693/d2ad9f06-4b86-4345-810d-977781518d67)
 
 ## Obter Recursos
 
+![get](https://github.com/pedromeruge/ProjetoEW/assets/87565693/72d3086f-9b1f-44d6-bc4c-294fe1476f28)
 
 # Páginas do website
 
