@@ -47,14 +47,14 @@ users    -> utilizadores
 
 Com os seguintes formatos:
 
-- antigo/atual
+- **antigo/atual**
 O nome da imagem sera, implicitamente, igual ao seu _id, pelo que guardamos a extensao de modo a ter o nome completo da mesma
 ```
 subst: <string> - descricao da imagem
 extension: <string> - extensao da imagem
 ```
 
-- comments
+- **comments**
 ```
     streetId: String,
     baseCommentId: String, // comentário a que se está a dar reply, se for o caso
@@ -66,27 +66,27 @@ extension: <string> - extensao da imagem
     dislikes: [String]
 ```
 
-- dates/entities/places
+- **dates/entities/places**
 ```
 name: <string> - data guardada como string
 ruas: [<string>] - lista dos IDs das ruas onde esta data aparece
 ```
 
-- streets
+- **streets**
 ```
-owner: <string> - nome do dono
 name: <string> - nome da rua
-favorites: [<string>] - ????????????????????????????????????????????????????????????
-description: [<string>] - ????????????????????????????????????????????????????????????
-places: [<string>] - IDs dos lugares que aparecem nesta rua????????????????????????????????????????????????????????????
-entities: [<string>] - IDs das entidades que aparecem nesta rua????????????????????????????????????????????????????????????
-dates: [<string>] - IDs das datas que aparecem nesta rua????????????????????????????????????????????????????????????
-old_images: [<id>] - IDs das imagens antigas que aparecem nesta rua
-houses: [<string>] - IDs das casas que aparecem nesta rua ????????????????????????????????????????????????????????????
-new_images: [<id>] - IDs das imagens novas que aparecem nesta rua
+owner: <string> - ID do utilizador que registou a rua
+favorites: [<string>] - IDs dos utilizadores que gostam da rua
+description: [<string>] - texto descritivo da história da rua
+dates: [<string>] - IDs das datas referenciadas pela rua
+places: [<string>] - IDs dos lugares referenciados pela rua
+entities: [<string>] - IDs das entidades referenciadas pela rua
+houses: [<string>] - IDs das casas que aparecem na rua
+old_images: [<id>] - IDs das imagens antigas da rua
+new_images: [<id>] - IDs das imagens atuais da rua
 ```
 
-- users
+- **users**
 ```
 username: <string> - nome??????????????????????????????????????????????????????????????????????????????????
 password: <string> - hash base64 da password
@@ -207,11 +207,35 @@ Ao importar, consideramos apenas as colecoes mencionadas no manifesto, verifican
 
 <div id="Paginas_do_website"/>
 
+# Autenticação
+
+Apesar de existirem servidores dedicados única e exclusivamente à auntenticação de utilizadores, consideramos que tal estratégia seria desnecessária, além de envolver necessariamente mais trocas de mensagens entre serviços e consequente aumento do tempo de resposta sentido pelo utilizador. 
+
+Assim sendo, o `servico de dados` garante a autenticação de utilizadores e a manutenção do estado de sessão, sendo que para tal são combinados os *middlewares* do *Passport* e *JSON Web Tokens*.
+
+## Passport
+
+Testa a validade das credencias de acesso, sendo que para tal usufrui da estratégia `local`, além disso não guarda as *passwords* diretamente na base de dados, mas sim o código de *hash* resultante e *salt* utilizado para randomizar.  
+
+## JSON Web Tokens
+
+Para manter o estado de sessão é gerado um *token* com a validade de 1 hora, este é sucessivamente trocado entre o *browser* e a aplicação em todos os pedidos realizados, garantindo assim que apenas utilizadores autenticados recebem respostas corretas.
+
+Durante a criação de um *token*, o *ID* e nível de acesso do utilizador são inseridos no *payload*, desta forma, mais tarde, é possível verificar se um dado pedido tem privilégios suficientes para aceder a um determinado recurso.
+
+Por fim, para efetuar *logout*, uma vez que não é possível remover *tokens* do *browser*, a estratégia utilizada para por tornar o *token* inválido, alterando assim a sua data de expiração para o momento atual.
+
+## Login
+
+
+## Obter Recursos
+
+
 # Páginas do website
 
 ## Autenticação
 
-Quando estabelecemos uma ligação ao *frontend* somos imediatamente encaminhados para a página de *login*, contudo se tivermos previamente uma sessão aberta tal não acontece e obtemos a página pretendida.
+Quando estabelecemos uma ligação ao `frontend` somos imediatamente encaminhados para a página de *login*, contudo se tivermos previamente uma sessão aberta tal não acontece e obtemos a página pretendida.
 
 No caso das credenciais de autenticaçãos estarem incorretas é fornecido um pequeno *feedback*, sendo que nas situações de perda da palavra-passe é necessário criar um novo registo.
 
@@ -235,7 +259,7 @@ De seguida estão posicionados alguns botões que permitem:
 - Editar
 - Eliminar
 - Adicionar aos favoritos
-- Apresentar as data/entidades/lugares
+- Apresentar as datas/entidades/lugares
 
 Convém destacar que os botões de edição e eliminação apenas estão acessíveis aos administradores do sistema e ao utilizador que registou a rua. Por fim é fornecida uma breve descrição da rua, tabela das famílias residentes e zona de comentários onde os utilizadores podem interagir.
 
@@ -282,7 +306,8 @@ https://github.com/pedromeruge/ProjetoEW/assets/87565693/947eaf23-b176-49b4-b046
 
 As funcionalidades para importar/exportar apenas estão acessíveis aos administradores, sendo que para visualizar estas opções é necessário clicar em `Dados`.
 
-- **Importar:** o *browser* abre o selecionador de ficheiros que apenas permite `.tar`, de seguida é apresentada uma barra de progresso até que os dados tenham sido todos importados, no final o utilizador é informado acerda do sucesso da operação.  
+- **Importar:** o *browser* abre o selecionador de ficheiros que apenas permite `.tar`, de seguida é apresentada uma barra de progresso até que os dados tenham sido todos importados, no final o utilizador é informado acerda do sucesso da operação.
+
 - **Exportar:** o *browser* inicia automaticamente o *download* do ficheiro `dados.tar`, além disso é possível que o *download* tarde a começar divido à demora na criação do arquivo por parte do *backend*.
 
 https://github.com/pedromeruge/ProjetoEW/assets/87565693/972265ba-d509-4f0f-9696-6738f94eaf78
