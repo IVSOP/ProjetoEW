@@ -1,5 +1,14 @@
 # ProjetoEW
 
+# Autores
+
+#### Equipa: ENAMETOOLONG
+
+- **Diogo Alexandre Correia Marques a100897** 
+- **Ivan Sérgio Rocha Ribeiro - a100538**
+- **Pedro Miguel Meruge Ferreira a100709**
+
+
 *******
 
 - [Processamento de dados](#Processamento_de_dados)
@@ -24,9 +33,9 @@ Verificamos que existiam tags e atributos nos sitios incorretos/que nao existem.
 De seguida desenvolvemos o script `convXMLtoJSON.py`, que trasnforma os dados xml em json:
 
 - Fizemos a conversão inicial de XML para JSON, com recurso à biblioteca lxml, guardando nomeadamente, para cada rua, os lugares,entidades, datas encontrados nas tags dos parágrafos de descrição da respetiva rua.
-- De seguida, percorrem todos os jsons de ruas e criamos dicionários de todos os lugares, entidades, datas encontrados nas várias ruas, e associamos-lhes um id único.
-- Depois, substituímos nas várias ruas as lugares, entidades, datas pelo seu id único criado.
-- Exportamos as ruas, entidades, lugares e datas para ficheiros json diferentes, de modo a serem facilmente importados como jsonArrays no mongoDB
+- De seguida, percorremos todos os jsons de ruas e criamos dicionários de todos os lugares, entidades e datas encontrados nas várias ruas, e associamos um ID único a cada um.
+- Depois, substituímos nas várias ruas os lugares, entidades e datas pelo seu ID.
+- Exportamos as ruas, entidades, lugares, datas, ... para ficheiros json diferentes, de modo a serem facilmente importados para colecoes diferentes no mongodb.
 
 No entanto, ao tentar fazer a ligacao com as imagens, surgiram novas dificuldades devido a desformatacao dos nomes. Assim, tivemos de os corrigir manualmente, e decidimos passar a relacionar ruas e as suas imagens atraves de um ID e nao do nome.
 
@@ -49,7 +58,8 @@ users    -> utilizadores
 Com os seguintes formatos:
 
 - **antigo/atual**
-O nome da imagem sera, implicitamente, igual ao seu _id, pelo que guardamos a extensao de modo a ter o nome completo da mesma
+
+O nome da imagem sera, implicitamente, igual ao seu `_id`, pelo que guardamos a extensao de modo a conseguir obter o nome completo da mesma quando for necessario usar o seu ficheiro
 ```
 subst: <string> - descricao da imagem
 extension: <string> - extensao da imagem
@@ -206,6 +216,8 @@ Ao importar, consideramos apenas as colecoes mencionadas no manifesto, verifican
 - se o ficheiro de dados existe
 - se uma colecao de imagens for indicada, verificamos se todas as imagens mencionadas existem
 
+*******
+
 <div id="Autenticacao"/>
 
 # Autenticação
@@ -234,6 +246,8 @@ Por fim, para efetuar *logout*, uma vez que não é possível remover *tokens* d
 
 ![get](https://github.com/pedromeruge/ProjetoEW/assets/87565693/72d3086f-9b1f-44d6-bc4c-294fe1476f28)
 
+*******
+
 <div id="Paginas_do_website"/>
 
 # Páginas do website
@@ -248,9 +262,9 @@ https://github.com/pedromeruge/ProjetoEW/assets/87565693/7a984b73-f47f-4e60-b1a2
 
 ## Índices de datas/entidades/lugares
 
-Os registos das ruas mencionam várias datas, entidades e lugares, assim sendo foram desenvolvidos índices para permitem obter uma listagem completa das ruas visadas por cada um.
+Os registos das ruas mencionam várias datas, entidades e lugares, pelo que foram desenvolvidos índices para permitir obter uma listagem completa das ruas visadas por cada um.
 
-Os índicies são todos semelhantes, ou seja, utilizam *collapsibles* para esconder/apresentar os nomes das ruas, que por sua vez são um *link* para a página da própria rua. 
+Os índices são todos semelhantes, ou seja, utilizam *collapsibles* para esconder/apresentar os nomes das ruas, que por sua vez são um *link* para a página da própria rua. 
 
 https://github.com/pedromeruge/ProjetoEW/assets/87565693/a5257880-e596-4de9-9da3-82e1d52879e5
 
@@ -272,7 +286,7 @@ https://github.com/pedromeruge/ProjetoEW/assets/87565693/ba6afc8d-f784-4a5b-a20f
 
 ## Registo de ruas
 
-Os registo das ruas pode ser efetuado por qualquer utilizador, além disso é apresentado um formulário bastante dinâmico que está dividido em quatro zonas.
+Os registo das ruas pode ser efetuado por qualquer utilizador, efetuado através de um formulário dividido em quatro zonas:
 
 - **Informações:** identificação do nome da rua e descrição da mesma.
 - **Datas/Entidades/Lugares:** parâmetros referenciados pela ruas.
@@ -287,7 +301,8 @@ https://github.com/pedromeruge/ProjetoEW/assets/87565693/b6dc82b4-ed3a-488b-a491
 
 Para alterar o registo de uma rua é possível reutilizar o formulário utilizado durante o seu registo, sendo que desta vez os campos estão preenchidos com os valores atuais.
 
-Desta forma as funcionalidades de adicionar/remover campos estão novamente presentes, e além disso é possível previsualizar as imagens da rua através de um *modal*.
+<!-- previsualizar ta errado, mas entre prever e visualizar nao sei qual usar -->
+Desta forma as funcionalidades de adicionar/remover campos estão novamente presentes, e além disso é possível perver as imagens da rua através de um *modal*.
 
 Posto isto, após efetuar as alterações pretendidas é necessário clicar no botão `Atualizar`, sendo que para cancelar tudo basta clicar em `Voltar`.
 
@@ -305,14 +320,17 @@ Já em relação aos comentários, estão disponíveis várias funcionalidades:
 - Alterar o texto.
 - Eliminar (remove as respostas encadeadas).
 
+Os comentários são mostrados encadeados relativamente à resposta anterior, usando uma linha vertical para permitir facilmente visualizar a sua origem.
+
 https://github.com/pedromeruge/ProjetoEW/assets/87565693/947eaf23-b176-49b4-b046-8dbe480a0305
 
 ## Importação e exportação
 
-As funcionalidades para importar/exportar apenas estão acessíveis aos administradores, sendo que para visualizar estas opções é necessário clicar em `Dados`.
+Estas funcionalidades estão expostas na rota `/`, apenas acessíveis aos administradores, bastando clicar no botão `Dados`, onde se podem escolher as duas opções:
 
-- **Importar:** o *browser* abre o selecionador de ficheiros que apenas permite `.tar`, de seguida é apresentada uma barra de progresso até que os dados tenham sido todos importados, no final o utilizador é informado acerda do sucesso da operação.
+<!-- As funcionalidades para importar/exportar apenas estão acessíveis aos administradores, sendo que para visualizar estas opções é necessário clicar em `Dados`. -->
 
-- **Exportar:** o *browser* inicia automaticamente o *download* do ficheiro `dados.tar`, além disso é possível que o *download* tarde a começar divido à demora na criação do arquivo por parte do *backend*.
+- **Importar:** o *browser* abre o selecionador de ficheiros, permitindo escolher um ficheiro `.tar`. De seguida é apresentada uma barra de progresso até que os dados tenham sido todos importados, finalmente sendo o utilizador informado acerca do sucesso (ou não) da operação.  
+- **Exportar:** o *browser* inicia automaticamente o *download* do ficheiro `dados.tar`, contendo todos os dados presentes no _backend_.
 
 https://github.com/pedromeruge/ProjetoEW/assets/87565693/972265ba-d509-4f0f-9696-6738f94eaf78
