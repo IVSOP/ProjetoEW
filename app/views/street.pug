@@ -3,6 +3,7 @@ extends layout
 block content
     meta(name="userId" content=userId)
     meta(name="streetId" content=rua._id)
+
     .container.d-flex.justify-content-end.flex-column.mt-3
 
         // slide show for old and current images
@@ -104,6 +105,10 @@ block content
                             td= casa.subst
                             td= casa.vista
                             td= casa.desc.join('\n')
+
+        //load de mapa
+        include maps.pug
+        +loadSingleStreetMap(rua)
 
         //bloco reutilizavel de codigo para gerar comentarios (e replies recursivamente)
         mixin commentSection(comments, prevCommentOwner = null)

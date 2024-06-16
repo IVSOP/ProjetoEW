@@ -16,3 +16,7 @@ block content
             each rua in ruas
                 a(href='/ruas/' + rua['_id'] style="text-decoration: none;")
                     li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.rounded.mt-3= rua.name
+        
+        //load de mapa de ruas
+        include maps.pug
+        +loadAllStreetsMap(ruas)

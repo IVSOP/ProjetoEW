@@ -30,7 +30,6 @@ router.get('/registar', isLogged, addTokenToHeaders, function(req, res, next){
 router.post('/registar', isLogged, addTokenToHeaders, upload.fields([{ name: 'oldImageFiles' }, { name: 'newImageFiles' }]), function(req, res, next) {
     Utils.postImagens(req.body.oldImageSubst,req.files.oldImageFiles,'antigo')
         .then(async ids_imagens_antigas => {
-
             var formData = Utils.getRuaForm(req)
             formData['old_images'] = ids_imagens_antigas
             formData['new_images'] = await Utils.postImagens(

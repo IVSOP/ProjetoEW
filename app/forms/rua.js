@@ -134,7 +134,8 @@ module.exports.getRuaForm = (req) => {
         entities: [],
         houses: [],
         old_images: [],
-        new_images: []
+        new_images: [],
+        geoCords: null
     }
 
     if (req.body.dates)
@@ -188,6 +189,13 @@ module.exports.getRuaForm = (req) => {
 
     if (req.body.newImageFiles && !Array.isArray(req.body.newImageFiles)){
         formData.new_images.push({_id: req.body.newImageFiles})
+    }
+
+    if (req.body.longitude && req.body.latitude) {
+        formData.geoCords = {
+            "longitude": req.body.longitude,
+            "latitude": req.body.latitude
+        }
     }
 
     return formData

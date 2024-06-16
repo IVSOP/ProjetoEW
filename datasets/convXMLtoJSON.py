@@ -136,9 +136,17 @@ def parseNewImages(newImages,id):
 
     return jsonFiguras
 
+#script abre n vezes o mesmo ficheiro, nas só se corre uma vez o script
+def addGeoCords(id):
+    with open('./parsed/geoCords.json', 'r') as file:
+        data = json.load(file)
+
+    streetId = str(id)
+
+    return data[streetId] # pode ser null ou não
 
 ## Parse a given XML file
-def xmlToJson(xmlFile,newImages):
+def xmlToJson(xmlFile, newImages):
 
     tree = etree.parse(xmlFile)
     root = tree.getroot()
@@ -153,6 +161,7 @@ def xmlToJson(xmlFile,newImages):
     jsonDB['places'] = [regex.sub(r'\n|\t|\s{2,}',r' ',x.text.strip()) for x in tree.xpath("//lugar")]
     jsonDB['entities'] = [regex.sub(r'\n|\t|\s{2,}',r' ',x.text.strip()) for x in tree.xpath("//entidade")]
     jsonDB['dates'] = [regex.sub(r'\n|\t|\s{2,}',r' ',x.text.strip()) for x in tree.xpath("//data")]
+    jsonDB['geoCords'] = addGeoCords(id)
 
     return jsonDB
 

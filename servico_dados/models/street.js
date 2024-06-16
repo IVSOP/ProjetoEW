@@ -31,7 +31,11 @@ var streetSchema = new mongoose.Schema({
     dates: [String],
     old_images: [oldImageSchema],
     houses: [houseSchema],
-    new_images: [newImageSchema]
+    new_images: [newImageSchema],
+    geoCords: {
+        "longitude": String,
+        "latitude": String
+    }
 }, { versionKey: false });
 
 module.exports = mongoose.model('street', streetSchema, 'streets')

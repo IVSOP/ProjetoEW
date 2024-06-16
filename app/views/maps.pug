@@ -1,0 +1,109 @@
+// render de mapa das várias ruas com mapbox e diferente popups         
+mixin loadAllStreetsMap(streets) 
+  link(href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet')
+  script(src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js')
+  if (streets)
+    div#map.w-100.my-3(style='height: 500px;')
+  script(type='text/javascript').
+    mapboxgl.accessToken = 'pk.eyJ1IjoicHJvamV3MjAyNCIsImEiOiJjbHhmYmFtZDEwaXB2MmlxcHRxZWh6NmkyIn0.u-B3ZAgVigR30lMTX7UgvQ';
+    
+    function initializeMap(streets) {
+      let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-8.426869330983795, 41.56317968697595], // centro de braga
+        zoom: 10
+      });
+
+      return map
+    }
+
+    function addMarker(map, street) {
+      let marker = new mapboxgl.Marker()
+        .setLngLat([street.geoCords.longitude, street.geoCords.latitude])
+        .addTo(map);
+
+      const popupContent = `
+        <div>
+          <p><b>${street.name}<b></p>
+          <a href="http://localhost:7777/ruas/${street._id}">Ver página da rua</a>
+
+        </div>
+      `;
+
+      let popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+      }).setHTML(popupContent);
+
+      marker.getElement().addEventListener('mouseenter', () => {
+        popup.addTo(map);
+      });
+
+      marker.getElement().addEventListener('mouseleave', () => {
+        popup.remove();
+      });
+
+      marker.setPopup(popup);
+    }
+
+    var streetsObj = !{JSON.stringify(streets)};
+
+    let map = initializeMap(streetsObj);
+
+    streetsObj.forEach(street => {
+      if(streetObj.geoCords) {
+        addMarker(map,street)
+      }
+    });
+
+// render de mapa das várias ruas com mapbox   
+mixin loadSingleStreetMap(street)
+  link(href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet')
+  script(src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js')
+  if street && street.geoCords
+    div#map.w-100.my-3(style='height: 500px;')
+  script(type='text/javascript').
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoicHJvamV3MjAyNCIsImEiOiJjbHhmYmFtZDEwaXB2MmlxcHRxZWh6NmkyIn0.u-B3ZAgVigR30lMTX7UgvQ';
+    
+    function initializeMap(street) {
+      var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [street.geoCords.longitude, street.geoCords.latitude],
+        zoom: 15
+      });
+
+      var marker = new mapboxgl.Marker()
+        .setLngLat([street.geoCords.longitude, street.geoCords.latitude])
+        .addTo(map);
+
+      const popupContent = `
+        <div>
+          <p><b>${street.name}<b></p>
+        </div>
+      `;
+
+      var popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+      }).setHTML(popupContent);
+
+      marker.getElement().addEventListener('mouseenter', () => {
+        popup.addTo(map);
+      });
+
+      marker.getElement().addEventListener('mouseleave', () => {
+        popup.remove();
+      });
+
+      marker.setPopup(popup);
+    }
+
+    var streetObj = !{JSON.stringify(street)};
+    if (streetObj.geoCords) { // só mostrar mapa se existirem coords geográficas definidas
+      initializeMap(streetObj);
+    }
+
+  
