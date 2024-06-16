@@ -40,7 +40,7 @@ $(document).ready(function() {
         const lng = $('#lng-field').val();
         const lat = $('#lat-field').val();
         const mapError = $('#map-preview-error');
-        const mapContainer = $('#map-preview');
+        const mapContainer = $('.map-content');
 
         mapError.addClass('d-none');
 
@@ -68,7 +68,53 @@ $(document).ready(function() {
             container: 'map-preview',
             style: 'mapbox://styles/mapbox/streets-v11',
             center: [street.geoCords.longitude, street.geoCords.latitude],
-            zoom: 15
+            zoom: 15,
+            antialias: true
+        });
+
+        //add zoom in/out, rotate controls
+        map.addControl(new mapboxgl.NavigationControl());
+        
+        //Draw 3D layer
+        map.on('style.load', () => {
+            const layers = map.getStyle().layers;
+            const labelLayerId = layers.find(
+            (layer) => layer.type === 'symbol' && layer.layout['text-field']
+            ).id;
+
+            map.addLayer(
+            {
+                'id': 'add-3d-buildings',
+                'source': 'composite',
+                'source-layer': 'building',
+                'filter': ['==', 'extrude', 'true'],
+                'type': 'fill-extrusion',
+                'minzoom': 15,
+                'paint': {
+                'fill-extrusion-color': '#aaa',
+                'fill-extrusion-height': [
+                    'interpolate',
+                    ['linear'],
+                    ['zoom'],
+                    15,
+                    0,
+                    15.05,
+                    ['get', 'height']
+                ],
+                'fill-extrusion-base': [
+                    'interpolate',
+                    ['linear'],
+                    ['zoom'],
+                    15,
+                    0,
+                    15.05,
+                    ['get', 'min_height']
+                ],
+                'fill-extrusion-opacity': 0.6
+                }
+            },
+            labelLayerId
+            );
         });
 
         var marker = new mapboxgl.Marker()
@@ -76,24 +122,55 @@ $(document).ready(function() {
             .addTo(map);
 
         const popupContent = `
-            <div>
-                <p><b>${street.name}<b></p>
+            <div style="text-align: center; vertical-align: middle; line-height: 15px; padding: 5px">
+              <span><b>${street.name}<b></span>
             </div>
         `;
 
-        var popup = new mapboxgl.Popup({
+        let popup = new mapboxgl.Popup({
             closeButton: false,
-            closeOnClick: false
+            closeOnClick: true
         }).setHTML(popupContent);
 
-        marker.getElement().addEventListener('mouseenter', () => {
-            popup.addTo(map);
-        });
-
-        marker.getElement().addEventListener('mouseleave', () => {
-            popup.remove();
-        });
-
         marker.setPopup(popup);
+
+        //mostrar popup quando user sobrevoa marker
+      $(marker.getElement()).on('mouseenter', function() {
+        popup.addTo(map);
+      });
+
+      //retirar popup quando user deixa de sobrevoar marker
+      $(marker.getElement()).on('mouseleave', function() {
+        popup.remove();
+      });
+
+      //centrar mapa em marker quando utilizador clica em marcador,e mostrar popup
+      $(marker.getElement()).on('click', function() {
+        map.flyTo({
+          center: [street.geoCords.longitude, street.geoCords.latitude],
+          zoom: 15
+        });
+      });
+
+        // switch between styles
+      $(document).ready(function() {
+        $('#menu input[type=radio]').on('click', function() {
+          const layerId = $(this).attr('id');
+          map.setStyle('mapbox://styles/mapbox/' + layerId);
+        });
+      });
+
+      // toggle 3D angle
+      let is3D = false;
+      $('#toggle-3d').on('click', function() {
+        if (!is3D) {
+          map.setPitch(60);
+            
+        } else {
+          map.setPitch(0);
+        }
+        is3D = !is3D;
+      });
+
     }
 })

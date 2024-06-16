@@ -1,9 +1,33 @@
-// render de mapa das várias ruas com mapbox e diferente popups         
+// render de mapa das várias ruas com mapbox e diferente popups     
+// baseado nos docs do mapbox    
 mixin loadAllStreetsMap(streets) 
   link(href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet')
   script(src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js')
   if (streets)
-    div#map.w-100.my-3(style='height: 500px;')
+    div.map-content.my-3(style='height: 500px; position: relative')
+      div#map.w-100.h-100(style='position: absolute; top: 0; left: 0')
+      // div to switch between map styles
+      div#menu.d-flex.align-items-center(style='position: absolute; background: #efefef; padding: 10px; top: 0; left: 0; font-family: "Open Sans", sans-serif; z-index: 5')
+        span.pe-2 Estilos: 
+        input#satellite-streets-v12(type='radio', name='rtoggle', value='satellite')
+        label(for='satellite-streets-v12') Satélite
+        input#light-v11(type='radio', name='rtoggle', value='light')
+        label(for='light-v11') Claro
+        input#dark-v11(type='radio', name='rtoggle', value='dark')
+        label(for='dark-v11') Escuro
+        input#streets-v12(type='radio', name='rtoggle', value='streets' checked='checked')
+        label(for='streets-v12') Ruas
+        input#outdoors-v12(type='radio', name='rtoggle', value='outdoors')
+        label(for='outdoors-v12') Exterior
+        button#toggle-3d.btn.btn-primary Câmara lateral
+  style.
+    label {
+      margin-right: 15px;
+    }
+    input {
+      margin-right: 3px;
+    }
+
   script(type='text/javascript').
     mapboxgl.accessToken = 'pk.eyJ1IjoicHJvamV3MjAyNCIsImEiOiJjbHhmYmFtZDEwaXB2MmlxcHRxZWh6NmkyIn0.u-B3ZAgVigR30lMTX7UgvQ';
     
@@ -12,7 +36,53 @@ mixin loadAllStreetsMap(streets)
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [-8.426869330983795, 41.56317968697595], // centro de braga
-        zoom: 10
+        zoom: 10,
+        antialias: true
+      });
+
+      //add zoom in/out, rotate controls
+      map.addControl(new mapboxgl.NavigationControl());
+
+      //Draw 3D layer
+      map.on('style.load', () => {
+        const layers = map.getStyle().layers;
+        const labelLayerId = layers.find(
+          (layer) => layer.type === 'symbol' && layer.layout['text-field']
+          ).id;
+
+        map.addLayer(
+          {
+            'id': 'add-3d-buildings',
+            'source': 'composite',
+            'source-layer': 'building',
+            'filter': ['==', 'extrude', 'true'],
+            'type': 'fill-extrusion',
+            'minzoom': 15,
+            'paint': {
+              'fill-extrusion-color': '#aaa',
+              'fill-extrusion-height': [
+                'interpolate',
+                ['linear'],
+                ['zoom'],
+                15,
+                0,
+                15.05,
+                ['get', 'height']
+              ],
+              'fill-extrusion-base': [
+                'interpolate',
+                ['linear'],
+                ['zoom'],
+                15,
+                0,
+                15.05,
+                ['get', 'min_height']
+              ],
+              'fill-extrusion-opacity': 0.6
+            }
+          },
+          labelLayerId
+        );
       });
 
       return map
@@ -24,7 +94,7 @@ mixin loadAllStreetsMap(streets)
         .addTo(map);
 
       const popupContent = `
-        <div>
+        <div style="text-align: center; vertical-align: middle; line-height: 15px; padding: 10px">
           <p><b>${street.name}<b></p>
           <a href="http://localhost:7777/ruas/${street._id}">Ver página da rua</a>
 
@@ -32,19 +102,20 @@ mixin loadAllStreetsMap(streets)
       `;
 
       let popup = new mapboxgl.Popup({
-        closeButton: false,
-        closeOnClick: false
+        closeButton: true,
+        closeOnClick: true
       }).setHTML(popupContent);
 
-      marker.getElement().addEventListener('mouseenter', () => {
-        popup.addTo(map);
-      });
-
-      marker.getElement().addEventListener('mouseleave', () => {
-        popup.remove();
-      });
-
       marker.setPopup(popup);
+
+      //centrar mapa em marker quando utilizador clica em marcador,e mostrar popup
+      $(marker.getElement()).on('click', function() {
+          map.flyTo({
+            center: [street.geoCords.longitude, street.geoCords.latitude],
+            zoom: 15
+          });
+          popup.addTo(map);
+        });
     }
 
     var streetsObj = !{JSON.stringify(streets)};
@@ -52,19 +123,61 @@ mixin loadAllStreetsMap(streets)
     let map = initializeMap(streetsObj);
 
     streetsObj.forEach(street => {
-      if(streetObj.geoCords) {
+      if(street.geoCords) {
         addMarker(map,street)
       }
     });
 
-// render de mapa das várias ruas com mapbox   
+    // switch between styles
+    $(document).ready(function() {
+      $('#menu input[type=radio]').on('click', function() {
+        const layerId = $(this).attr('id');
+        map.setStyle('mapbox://styles/mapbox/' + layerId);
+      });
+    });
+
+    // toggle 3D angle
+    let is3D = false;
+    $('#toggle-3d').on('click', function() {
+      if (!is3D) {
+        map.setPitch(60);
+          
+      } else {
+        map.setPitch(0);
+      }
+      is3D = !is3D;
+    });
+
+// render de mapa de uma só rua com mapbox  
 mixin loadSingleStreetMap(street)
   link(href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet')
   script(src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js')
   if street && street.geoCords
-    div#map.w-100.my-3(style='height: 500px;')
-  script(type='text/javascript').
+    div.map-content.my-3(style='height: 500px; position: relative')
+      div#map.w-100.h-100(style='position: absolute; top: 0; left: 0')
+      // div to switch between map styles
+      div#menu.d-flex.align-items-center(style='position: absolute; background: #efefef; padding: 10px; top: 0; left: 0; font-family: "Open Sans", sans-serif; z-index: 5')
+        span.pe-2 Estilos: 
+        input#satellite-streets-v12(type='radio', name='rtoggle', value='satellite')
+        label(for='satellite-streets-v12') Satélite
+        input#light-v11(type='radio', name='rtoggle', value='light')
+        label(for='light-v11') Claro
+        input#dark-v11(type='radio', name='rtoggle', value='dark')
+        label(for='dark-v11') Escuro
+        input#streets-v12(type='radio', name='rtoggle', value='streets' checked='checked')
+        label(for='streets-v12') Ruas
+        input#outdoors-v12(type='radio', name='rtoggle', value='outdoors')
+        label(for='outdoors-v12') Exterior
+        button#toggle-3d.btn.btn-primary Câmara lateral
+  style.
+    label {
+      margin-right: 15px;
+    }
+    input {
+      margin-right: 3px;
+    }
 
+  script(type='text/javascript').
     mapboxgl.accessToken = 'pk.eyJ1IjoicHJvamV3MjAyNCIsImEiOiJjbHhmYmFtZDEwaXB2MmlxcHRxZWh6NmkyIn0.u-B3ZAgVigR30lMTX7UgvQ';
     
     function initializeMap(street) {
@@ -72,7 +185,53 @@ mixin loadSingleStreetMap(street)
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [street.geoCords.longitude, street.geoCords.latitude],
-        zoom: 15
+        zoom: 15,
+        antialias: true
+      });
+
+      //add zoom in/out, rotate controls
+      map.addControl(new mapboxgl.NavigationControl());
+
+      //Draw 3D layer
+      map.on('style.load', () => {
+        const layers = map.getStyle().layers;
+        const labelLayerId = layers.find(
+          (layer) => layer.type === 'symbol' && layer.layout['text-field']
+          ).id;
+
+        map.addLayer(
+          {
+            'id': 'add-3d-buildings',
+            'source': 'composite',
+            'source-layer': 'building',
+            'filter': ['==', 'extrude', 'true'],
+            'type': 'fill-extrusion',
+            'minzoom': 15,
+            'paint': {
+              'fill-extrusion-color': '#aaa',
+              'fill-extrusion-height': [
+                'interpolate',
+                ['linear'],
+                ['zoom'],
+                15,
+                0,
+                15.05,
+                ['get', 'height']
+              ],
+              'fill-extrusion-base': [
+                'interpolate',
+                ['linear'],
+                ['zoom'],
+                15,
+                0,
+                15.05,
+                ['get', 'min_height']
+              ],
+              'fill-extrusion-opacity': 0.6
+            }
+          },
+          labelLayerId
+        );
       });
 
       var marker = new mapboxgl.Marker()
@@ -80,30 +239,62 @@ mixin loadSingleStreetMap(street)
         .addTo(map);
 
       const popupContent = `
-        <div>
-          <p><b>${street.name}<b></p>
+        <div style="text-align: center; vertical-align: middle; line-height: 15px; padding: 5px">
+          <span><b>${street.name}<b></span>
         </div>
       `;
 
-      var popup = new mapboxgl.Popup({
+      let popup = new mapboxgl.Popup({
         closeButton: false,
-        closeOnClick: false
+        closeOnClick: true
       }).setHTML(popupContent);
 
-      marker.getElement().addEventListener('mouseenter', () => {
+      marker.setPopup(popup);
+
+      //mostrar popup quando user sobrevoa marker
+      $(marker.getElement()).on('mouseenter', function() {
         popup.addTo(map);
       });
 
-      marker.getElement().addEventListener('mouseleave', () => {
+      //retirar popup quando user deixa de sobrevoar marker
+      $(marker.getElement()).on('mouseleave', function() {
         popup.remove();
       });
 
-      marker.setPopup(popup);
+      //centrar mapa em marker quando utilizador clica em marcador,e mostrar popup
+      $(marker.getElement()).on('click', function() {
+        map.flyTo({
+          center: [street.geoCords.longitude, street.geoCords.latitude],
+          zoom: 15
+        });
+      });
+
+        // switch between styles
+      $(document).ready(function() {
+        $('#menu input[type=radio]').on('click', function() {
+          const layerId = $(this).attr('id');
+          map.setStyle('mapbox://styles/mapbox/' + layerId);
+        });
+      });
+
+      // toggle 3D angle
+      let is3D = false;
+      $('#toggle-3d').on('click', function() {
+        if (!is3D) {
+          map.setPitch(60);
+            
+        } else {
+          map.setPitch(0);
+        }
+        is3D = !is3D;
+      });
     }
 
     var streetObj = !{JSON.stringify(street)};
+
     if (streetObj.geoCords) { // só mostrar mapa se existirem coords geográficas definidas
       initializeMap(streetObj);
     }
+
 
   
