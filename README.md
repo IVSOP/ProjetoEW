@@ -33,13 +33,13 @@ Verificamos que existiam tags e atributos nos sítios incorretos/que não deviam
 
 De seguida desenvolvemos o script `convXMLtoJSON.py`, que transforma os dados `xml` em `json`:
 
-- Fizemos a conversão inicial de XML para JSON, com recurso à biblioteca lxml, guardando, para cada rua, os lugares, entidades e datas encontrados nas tags dos parágrafos de descrição da respetiva rua.
+- Fizemos a conversão inicial de XML para JSON, com recurso à biblioteca lxml, guardando, para cada rua: os lugares, entidades e datas encontrados nas tags dos parágrafos de descrição da respetiva rua.
 - De seguida, percorremos todos os jsons de ruas obtidos e criamos dicionários de todos os lugares, entidades e datas encontrados nas várias ruas, e associamos um ID único a cada um.
 - Depois, substituímos nas várias ruas os lugares, entidades e datas pelo seu ID.
 - Exportamos as ruas, entidades, lugares e datas para ficheiros json diferentes, de modo a serem facilmente importados para coleções diferentes no mongodb.
 
 [//]: # (acham relevante isto vvvv ?)
-Separamos ruas, entidades, lugares e datas em coleções diferentes por serem conceitos independentes que várias ruas referenciam e, tendo em vista a expansão da plataforma no futuro, desta forma reduzimos o tempo de queries de procurar ruas por entidade/lugar/data e facilitamos a expansão dos conceitos de lugar/entidade/datas no futuro.
+Separamos entidades, lugares e datas em coleções diferentes por serem conceitos independentes que várias ruas referenciam e, tendo em vista a expansão da plataforma no futuro, desta forma reduzimos o tempo de queries de procurar ruas por entidade/lugar/data e facilitamos a expansão dos conceitos de lugar/entidade/data no futuro.
 
 [//]: # (acaba aqui o parágrafo a que me refiro)
 
@@ -51,22 +51,24 @@ Devido ao tamanho inconsistente das imagens, utilizámos o script `padding.sh` p
 
 Para popular as coordenadas geográficas de cada rua (utilizadas nos mapas do site), utilizámos o script `getStreetsGeoCords.py`que recorre à Geocoding API do MapBox.
 
+
 Por fim, as coleções geradas no processamento do dataset foram:
 ```
-antigo   -> imagens antigas
-atual    -> imagens atuais
-dates    -> datas mencionados nas ruas
-entities -> entidades mencionados nas ruas
-places   -> lugares mencionados nas ruas
-streets  -> dados sobre cada rua
+antigo   - imagens antigas
+atual    - imagens atuais
+dates    - datas mencionadas nas ruas
+entities - entidades mencionadas nas ruas
+places   - lugares mencionadas nas ruas
+streets  - dados sobre cada rua
 ```
 
 Adcionalmente, para suportar as restantes funcionalidades do site, criamos também outras coleções:
 ```
-comments -> comentários sobre ruas
-users    -> utilizadores
+comments - comentários sobre ruas
+users    - utilizadores
 ```
 
+### Coleções
 Em maior detalhe, as coleções têm os seguintes formatos:
 
 - **antigo/atual**
@@ -79,8 +81,8 @@ extension: String - extensão da imagem
 
 - **dates/entities/places**
 ```
-name: String - nome do objeto
-ruas: [String] - lista dos IDs das ruas onde este objeto aparece
+name: String - nome da data/entidade/lugar
+ruas: [String] - IDs das ruas onde a data/entidade/lugar aparece
 ```
 
 - **streets**
@@ -107,7 +109,7 @@ streetId: String - ID da rua sobre a qual se comenta
 baseCommentId: String - ID de comentário a que se está a responder (se for o caso)
 owner: String - ID do utilizador que registou o comentário
 text: String - conteúdo do comentário
-createdAt: Date - data de criação
+createdAt: Date - data de criação do comentário
 updatedAt: Date - data de edição do conteúdo do comentário
 likes: [String] - IDs de utilizadores que gostaram do comentário
 dislikes: [String] - IDs de utilizadores que desgostaram do comentário
@@ -158,11 +160,13 @@ dados.tar
 ├── files.tar.xz
 │   ├── antigo                            -> imagens antigas
 │   │   ├── 666cc1f7ac573c823263d94e.jpg
-│   │   └── 666cc1f7ac573c823263da38.jpg
+│   │   ├── 666cc1f7ac573c823263da38.jpg
+│   │   └── ...
 │   ├── antigo.json                       -> collection exportada
 │   ├── atual                             -> imagens atuais
 │   │   ├── 666cc1f7ac573c823263d950.JPG
-│   │   └── 666cc1f7ac573c823263da3a.JPG
+│   │   ├── 666cc1f7ac573c823263da3a.JPG
+│   │   └── ...
 │   ├── atual.json                        -> outra collection
 │   ├── comments.json
 │   ├── dates.json
@@ -179,7 +183,7 @@ O manifesto tem o formato:
   "meta": {
     "size": 37768137 // tamanho em bytes dos ficheiros
   },
-  "dados": { // todas as colecoes exportadas
+  "dados": { // todas as coleções exportadas
     "streets": {
       "collection": "streets",
       "filename": "streets.json",
@@ -241,11 +245,11 @@ Assim sendo, o `serviço de dados` garante a autenticação de utilizadores e a 
 
 ## Passport
 
-Testa a validade das credencias de acesso, sendo que para tal usufrui da estratégia `local`, além disso não guarda as *passwords* diretamente na base de dados, mas sim o código de *hash* resultante e *salt* utilizado para randomizar.  
+Testa a validade das credencias de acesso, sendo que para tal usufrui da estratégia `local`. Além disso não guarda as *passwords* diretamente na base de dados, mas sim o código de *hash* resultante e *salt* utilizado para randomizar.  
 
 ## JSON Web Tokens
 
-Para manter o estado de sessão é gerado um *token* com a validade de 1 hora, este é sucessivamente trocado entre o *browser* e a aplicação em todos os pedidos realizados, garantindo assim que apenas utilizadores autenticados recebem respostas corretas.
+Para manter o estado de sessão é gerado um *token* com a validade de 1 hora. Este é sucessivamente trocado entre o *browser* e a aplicação em todos os pedidos realizados, garantindo assim que apenas utilizadores autenticados recebem respostas corretas.
 
 Durante a criação de um *token*, o *ID* e nível de acesso do utilizador são inseridos no *payload*, desta forma, mais tarde, é possível verificar se um dado pedido tem privilégios suficientes para aceder a um determinado recurso.
 
@@ -267,9 +271,9 @@ Por fim, para efetuar *logout*, uma vez que não é possível remover *tokens* d
 
 ## Frontend
 
-**Comentários** (usado na página de apresentação de rua)
+**Comentários**
 - POST
-  - `/comentarios/:id` - editar comentário pré-existente 
+  - `/comentarios/:id` - submeter edição de comentário pré-existente 
 - PUT
   - `/comentarios/:id/gostos` - gostar de comentário 
   - `/comentarios/:id/desgostos` - desgostar de comentário
@@ -282,22 +286,22 @@ Por fim, para efetuar *logout*, uma vez que não é possível remover *tokens* d
   - `/entidades` - página de listagem de entidades
   - `/lugares` - página de listagem de lugares
 
-**Imagens** (usado nas página de apresentação/registo/edição de rua)
+**Imagens**
 - GET
   - `/:folder/:id` - obter da pasta "antigo" ou "atual" uma imagem
 
 **Index**
 - GET
   - `/` - página inicial após login
-  - `/` - fazer logout do utilizador
-  - `/importar` - popup de enviar conteúdo da BD inteira para o backend
-  - `/exportar` - popup de exportar conteúdo inteiro da BD do backend
+  - `/logout` - logout do utilizador
+  - `/importar` - enviar ficheiro com dados da BD a ser importados
+  - `/exportar` - receber ficheiro com dados da BD
 
 **Login**
 - GET
   - `/login` - página de login do utilizador
 - POST
-  - `/login` - enviar login do utilizador para backend
+  - `/login` - submeter login do utilizador
 
 **Ruas**
 - GET
@@ -307,11 +311,11 @@ Por fim, para efetuar *logout*, uma vez que não é possível remover *tokens* d
   - `/ruas/editar/:id` - página de edição de rua
   - `/ruas/:id` - página de apresentação de rua
 - POST
-  - `/ruas/registar` - publicar registo de utilizador para backend
-  - `/ruas/editar/:id` - publicar edição de rua
-  - `/ruas/:id/comentarios` - publicar comentário em rua 
-  - `/ruas/:streetId/comentarios/:commentId/respostas` - publicar resposta a comentário em rua
-  - `/ruas/favorito/:id` - publicar rua como favorito
+  - `/ruas/registar` - submeter registo de utilizador
+  - `/ruas/editar/:id` - submeter edição de rua
+  - `/ruas/:id/comentarios` - submeter comentário em rua 
+  - `/ruas/:streetId/comentarios/:commentId/respostas` - submeter resposta a comentário em rua
+  - `/ruas/favorito/:id` - submeter rua como favorita
 - DELETE
   - `/ruas/favorito/:id` - eliminar rua como favorito
 
@@ -341,7 +345,7 @@ Por fim, para efetuar *logout*, uma vez que não é possível remover *tokens* d
 
 - GET
 	- `/comentarios` - lista de comentários
-	- `/comentarios/:id` - dados do comentário com este  id
+	- `/comentarios/:id` - dados do comentário com este id
 	- `/comentarios/ruas/:id` - todos os comentários sobre a rua com este id
 - POST
 	- `/comentarios` - criar um novo comentário
@@ -417,15 +421,22 @@ Quando estabelecemos uma ligação ao `frontend` somos imediatamente encaminhado
 
 No caso das credenciais de autenticaçãos estarem incorretas é fornecido um pequeno *feedback*, sendo que nas situações de perda da palavra-passe é necessário criar um novo registo.
 
-Um utilizador que ainda não tenha credenciais no sistema pode registar-se na secção "r"
+Um utilizador que ainda não tenha credenciais no sistema pode registar-se na secção "registar"
 
 https://github.com/pedromeruge/ProjetoEW/assets/87565693/7a984b73-f47f-4e60-b1a2-9db0d51aa19b
 
-## Índices de ruas
+## Página principal
 
-É a página padrão para a qual o utilizador é redirecionado após login. Inclui uma lista dos nomes das várias ruas inseridas no sistema. Cada elemento da lista redireciona para a página da respetiva rua.
+A página padrão para a qual o utilizador é redirecionado após login/register. 
 
-Inclui um mapa de Braga com um marcador para cada uma das ruas inseridas no sistema.
+Inclui botões que redirecionam para a listagem de ruas,datas,entidades ou lugares. Inclui também botões para fazer "logout" ou aceder ao perfil do utilizador. No caso dos admins, há também acesso aos botões de importar e exportar conteúdos da BD.
+
+## Índice de ruas
+Inclui uma lista dos nomes das várias ruas inseridas no sistema. Cada elemento da lista redireciona para a página da respetiva rua. 
+
+No topo da página surge uma barra de pesquisa que permite filtrar as ruas por nome. 
+
+No fundo existe um mapa de Braga com um marcador interativo para cada uma das ruas inseridas no sistema.
 
 ## Índices de datas/entidades/lugares
 
@@ -433,11 +444,14 @@ Os registos das ruas mencionam várias datas, entidades e lugares, pelo que fora
 
 Os índices são todos semelhantes, ou seja, utilizam *collapsibles* para esconder/apresentar os nomes das ruas, que por sua vez são um *link* para a página da própria rua. 
 
+
+Existe também uma barra de pesquisa para filtrar as entradas da lista por nome.
+
 https://github.com/pedromeruge/ProjetoEW/assets/87565693/60893740-6722-41ac-bb30-8af8f2ae3498
 
 ## Apresentação de rua
 
-O primeiro elemento da página é um *slideshow* que apresenta as imagens antigas e atuais da rua, sendo que para cada uma é fornecida uma breve legenda.
+Apresenta todos os dados relativos a uma rua. O primeiro elemento da página é um *slideshow* que apresenta as imagens antigas e atuais da rua, sendo que para cada uma é fornecida uma breve legenda.
 
 De seguida estão posicionados alguns botões que permitem:
 
@@ -447,7 +461,9 @@ De seguida estão posicionados alguns botões que permitem:
 - Adicionar aos favoritos
 - Apresentar as datas/entidades/lugares
 
-Convém destacar que os botões de edição e eliminação apenas estão acessíveis aos administradores do sistema e ao utilizador que registou a rua. Por fim é fornecida uma breve descrição da rua, tabela das famílias residentes e zona de comentários onde os utilizadores podem interagir.
+Convém destacar que os botões de edição e eliminação apenas estão acessíveis aos administradores do sistema e ao utilizador que registou a rua. De seguida, é fornecida uma breve descrição da rua, tabela das famílias residentes e zona de comentários onde os utilizadores podem interagir. 
+
+No fim existe um mapa do posicionamento geográfico da rua e secção de discussão onde utilizadores podem escrever comentários.
 
 https://github.com/pedromeruge/ProjetoEW/assets/87565693/2465b94f-cc55-4f6c-850d-5892d6f552d5
 
@@ -459,7 +475,7 @@ Os registo das ruas pode ser efetuado por qualquer utilizador, efetuado através
 - **Datas/Entidades/Lugares:** parâmetros referenciados pela ruas.
 - **Casas:** caracterização das casas e famílias residentes na rua.
 - **Fotografias:** imagens antigas e atuais da rua, bem como uma legenda sobre cada uma.
-- **Localização:** coordendas geográficas da rua
+- **Localização:** coordenadas geográficas da rua
 
 Em algumas das zonas apresentadas não é possível prever quantos campos o utilizador irá preencher, como tal foram adicionados botões que permitem adicionar/remover campos do formulário.
 
@@ -476,15 +492,23 @@ Desta forma as funcionalidades de adicionar/remover campos estão novamente pres
 
 Posto isto, após efetuar as alterações pretendidas é necessário clicar no botão `Atualizar`, sendo que para cancelar tudo basta clicar em `Voltar`.
 
-https://github.com/pedromeruge/ProjetoEW/assets/87565693/928b25c8-02a7-46af-aa10-6ec963cbfa6d
+https://github.com/pedromeruge/ProjetoEW/assets/87565693/7b088128-4019-478f-8a8f-35a7ecb73c14
 
-## Favoritos e comentários
+## Página de utilizador
 
-Para além de apresentar os dados pessoais, a página do utilizador regista ainda as ruas criadas e favoritas, bem como os comentários.
+Nesta página o utilizador tem acesso aos seus dados pessoais: o seu username, nome e nível de acesso (admin ou não). Para além disso, são indicados todos os registos de ruas que o utilizador publicou, todas as ruas que marcou como favorito, bem como todos os comentários que já publicou. Clicando em qualquer um deles, o utilizador é redirecionado para a respetiva página.
 
-Para adicionar uma rua aos favoritos basta clicar na estrela posicionada na sua página, sendo que a partir daí o botão fica preenchido, e para remover basta clicar novamente. O utilizador pode depois consultar no seu perfil as ruas favoritas.
+# Funcionalidades do website
 
-Já em relação aos comentários, estão disponíveis várias funcionalidades:
+## Favoritos
+
+Para adicionar uma rua aos favoritos basta clicar na estrela posicionada na respetiva página da rua, sendo que a partir daí o botão fica preenchido, e para remover basta clicar novamente. 
+
+O utilizador pode depois consultar no seu perfil as ruas favoritas.
+
+## Comentários
+
+Em relação aos comentários, estão disponíveis várias funcionalidades:
 
 - Responder a outro utilizador.
 - Alterar o texto.
@@ -497,9 +521,7 @@ https://github.com/pedromeruge/ProjetoEW/assets/87565693/738f1713-d0f1-42df-bbe9
 
 ## Importação e exportação
 
-Estas funcionalidades estão expostas na rota `/`, apenas acessíveis aos administradores, bastando clicar no botão `Dados`, onde se podem escolher as duas opções:
-
-<!-- As funcionalidades para importar/exportar apenas estão acessíveis aos administradores, sendo que para visualizar estas opções é necessário clicar em `Dados`. -->
+Como referido antes, estas funcionalidades estão expostas na página prinicipal, apenas acessíveis aos administradores, bastando clicar no botão `Dados`, onde se podem escolher as duas opções:
 
 - **Importar:** o *browser* abre o selecionador de ficheiros, permitindo escolher um ficheiro `.tar`. De seguida é apresentada uma barra de progresso até que os dados tenham sido todos importados, finalmente sendo o utilizador informado acerca do sucesso (ou não) da operação.  
 - **Exportar:** o *browser* inicia automaticamente o *download* do ficheiro `dados.tar`, contendo todos os dados presentes no _backend_.
@@ -510,6 +532,3 @@ https://github.com/pedromeruge/ProjetoEW/assets/87565693/972265ba-d509-4f0f-9696
 
 Com recurso ao Mapbox, apresentamos mapas da localização das ruas. Existem botões de rodar, ampliar e desampliar para facilitar a navegação. Existem modelos 3D simplificados dos edifícios quando o utilizador amplia significativamente. O utilizador pode escolher entre diferentes estilos de mapa e clicar em "Câmara lateral" para obter uma perspetiva lateral das ruas.
 
-[//]: # (Podiamos mover os título "importação e exportação" para dentor das páginas em que aparecem como subtópicos, já que esta secção do relatório é de "páginas do webiste", o mesmo para "Favoritos e comentários", "Mapas". E acho que isso traduzia melhor a forma como essas funcionalidades se enquadram no site e em que páginas são encontradas######################################################)
-
-[//]: # (Alguns vídeos vão ter que ser refeitos porque agora há mapas :# upsii!! ######################################################)
