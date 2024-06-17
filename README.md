@@ -492,7 +492,7 @@ Desta forma as funcionalidades de adicionar/remover campos estão novamente pres
 
 Posto isto, após efetuar as alterações pretendidas é necessário clicar no botão `Atualizar`, sendo que para cancelar tudo basta clicar em `Voltar`.
 
-https://github.com/pedromeruge/ProjetoEW/assets/87565693/7b088128-4019-478f-8a8f-35a7ecb73c14
+https://github.com/pedromeruge/ProjetoEW/assets/87565693/928b25c8-02a7-46af-aa10-6ec963cbfa6d
 
 ## Página de utilizador
 
