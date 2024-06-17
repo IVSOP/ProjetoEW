@@ -120,7 +120,7 @@ dislikes: [String] - IDs de utilizadores que desgostaram do comentário
 username: String - nome de login do utilizador
 password: String - hash base64 da password
 name: String - nome do utilizador dentro do site
-level: 'ADMIN' | 'USER' - nível de previlégio
+level: 'ADMIN' | 'USER' - nível de privilégio
 active: Boolean - utilizador ativo ou não
 dateCreated: String - data de criação da conta
 ```
@@ -141,7 +141,7 @@ O outro inicia o serviço de dados e o frontend em si, aproveitando o container 
 sudo ./docker_servico.sh
 ```
 
-> **_NOTA:_**  Enquanto medida de segunça, os *containers* `mongodb` e `serviço de dados` não exteriorizam as suas portas, apenas o `frontend` pode ser acedido através do *localhost*.
+> **_NOTA:_**  Enquanto medida de segunça, os *containers* `mongodb` e `serviço de dados` não exteriorizam as suas portas, apenas o `frontend` está exposto.
 
 *******
 
@@ -429,7 +429,7 @@ https://github.com/pedromeruge/ProjetoEW/assets/87565693/7a984b73-f47f-4e60-b1a2
 
 A página padrão para a qual o utilizador é redirecionado após login/register. 
 
-Inclui botões que redirecionam para a listagem de ruas,datas,entidades ou lugares. Inclui também botões para fazer "logout" ou aceder ao perfil do utilizador. No caso dos admins, há também acesso aos botões de importar e exportar conteúdos da BD.
+Inclui botões que redirecionam para a listagem de ruas, datas, entidades ou lugares. Inclui também botões para fazer "logout" ou aceder ao perfil do utilizador. No caso dos admins, há também acesso aos botões de importar e exportar conteúdos da BD.
 
 ## Índice de ruas
 Inclui uma listagem das várias ruas inseridas no sistema. Cada elemento da lista redireciona para a página da respetiva rua. No topo da página existe um mapa de Braga com um marcador interativo para cada uma das ruas inseridas no sistema. Por baixo, surge uma barra de pesquisa que permite filtrar as ruas por nome.
