@@ -434,7 +434,7 @@ Os registos das ruas mencionam várias datas, entidades e lugares, pelo que fora
 
 Os índices são todos semelhantes, ou seja, utilizam *collapsibles* para esconder/apresentar os nomes das ruas, que por sua vez são um *link* para a página da própria rua. 
 
-https://github.com/pedromeruge/ProjetoEW/assets/87565693/a5257880-e596-4de9-9da3-82e1d52879e5
+https://github.com/pedromeruge/ProjetoEW/assets/87565693/60893740-6722-41ac-bb30-8af8f2ae3498
 
 ## Apresentação de rua
 
@@ -450,7 +450,7 @@ De seguida estão posicionados alguns botões que permitem:
 
 Convém destacar que os botões de edição e eliminação apenas estão acessíveis aos administradores do sistema e ao utilizador que registou a rua. Por fim é fornecida uma breve descrição da rua, tabela das famílias residentes e zona de comentários onde os utilizadores podem interagir.
 
-https://github.com/pedromeruge/ProjetoEW/assets/87565693/ba6afc8d-f784-4a5b-a20f-dd0410ee623b
+https://github.com/pedromeruge/ProjetoEW/assets/87565693/2465b94f-cc55-4f6c-850d-5892d6f552d5
 
 ## Registo de rua
 
@@ -466,7 +466,7 @@ Em algumas das zonas apresentadas não é possível prever quantos campos o util
 
 Para facilitar a introdução das coordendas geográficas da rua, existe uma secção de pesquisa automática que comunica com a Geocoding API do Mapbox.
 
-https://github.com/pedromeruge/ProjetoEW/assets/87565693/b6dc82b4-ed3a-488b-a491-6ab2b36bd84f
+https://github.com/pedromeruge/ProjetoEW/assets/87565693/820c5d61-37a6-493f-b38f-35b82444b486
 
 ## Edição de rua
 
@@ -477,7 +477,7 @@ Desta forma as funcionalidades de adicionar/remover campos estão novamente pres
 
 Posto isto, após efetuar as alterações pretendidas é necessário clicar no botão `Atualizar`, sendo que para cancelar tudo basta clicar em `Voltar`.
 
-https://github.com/pedromeruge/ProjetoEW/assets/87565693/7b088128-4019-478f-8a8f-35a7ecb73c14
+https://github.com/pedromeruge/ProjetoEW/assets/87565693/928b25c8-02a7-46af-aa10-6ec963cbfa6d
 
 ## Favoritos e comentários
 
@@ -494,7 +494,7 @@ Já em relação aos comentários, estão disponíveis várias funcionalidades:
 
 Os comentários são mostrados encadeados relativamente à resposta anterior, usando uma linha vertical para permitir facilmente visualizar a sua origem. Um utilizador autor de comentário pode editá-lo ou apagá-lo. Um administrador (não autor) apenas pode apagá-lo.
 
-https://github.com/pedromeruge/ProjetoEW/assets/87565693/947eaf23-b176-49b4-b046-8dbe480a0305
+https://github.com/pedromeruge/ProjetoEW/assets/87565693/738f1713-d0f1-42df-bbe9-e5a948f35fb2
 
 ## Importação e exportação
 
