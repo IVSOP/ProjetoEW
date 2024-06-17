@@ -1,4 +1,4 @@
-# ProjetoEW
+# ProjetoEW - Mapa Virtual das Ruas de Braga - 2024
 
 # Autores
 
@@ -16,6 +16,7 @@
 - [Importação e exportação de dados](#Importacao_e_exportacao_de_dados)
 - [Autenticação](#Autenticacao)
 - [Páginas do website](#Paginas_do_website)
+- [Rotas](#Rotas)
 
 *******
 
@@ -124,7 +125,6 @@ dateCreated: String - data de criação da conta
 
 *******
 
-[//]: # (O que é que esta div está a fazer aqui ######################################################??)
 <div id="Docker"/>
 
 # Docker:
@@ -143,15 +143,11 @@ sudo ./docker_servico.sh
 
 *******
 
-[//]: # (O que é que esta div está a fazer aqui ######################################################??)
 <div id="Importacao_e_exportacao_de_dados"/>
 
 # Importação e exportação de dados
 
-No serviço de dados, utilizam-se os scripts `import.sh` e `export.sh` para importar e exportar os dados. Estes são também executados pelo próprio serviço de dados, através das rotas:
-
-- '/impexp/exportar': download de um ficheiro de exportação de dados
-- '/impexp/importar': recebe form com o ficheiro a importar
+No serviço de dados, utilizam-se os scripts `import.sh` e `export.sh` para importar e exportar os dados. Estes são também executados pelo próprio serviço de dados, através das rotas descritas em [Rotas](#Rotas).
 
 Estas duas rotas são utilizadas pelo frontend, estando as funcionalidades disponíveis apenas a administradores.
 
@@ -234,7 +230,7 @@ Ao importar, consideramos apenas as coleções mencionadas no manifesto, verific
 - se uma coleção de imagens for indicada, verificamos se todas as imagens mencionadas existem
 
 *******
-[//]: # (O que é que esta div está a fazer aqui ######################################################??)
+
 <div id="Autenticacao"/>
 
 # Autenticação
@@ -373,3 +369,13 @@ Com recurso ao Mapbox, apresentamos mapas da localização das ruas. Existem bot
 [//]: # (Podiamos mover os título "importação e exportação" para dentor das páginas em que aparecem como subtópicos, já que esta secção do relatório é de "páginas do webiste", o mesmo para "Favoritos e comentários", "Mapas". E acho que isso traduzia melhor a forma como essas funcionalidades se enquadram no site e em que páginas são encontradas######################################################)
 
 [//]: # (Alguns vídeos vão ter que ser refeitos porque agora há mapas :# upsii!! ######################################################)
+
+*******
+
+<div id="Rotas"/>
+
+# Rotas
+
+## Frontend
+
+## Backend
