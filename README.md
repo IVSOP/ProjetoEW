@@ -432,11 +432,7 @@ A página padrão para a qual o utilizador é redirecionado após login/register
 Inclui botões que redirecionam para a listagem de ruas,datas,entidades ou lugares. Inclui também botões para fazer "logout" ou aceder ao perfil do utilizador. No caso dos admins, há também acesso aos botões de importar e exportar conteúdos da BD.
 
 ## Índice de ruas
-Inclui uma lista dos nomes das várias ruas inseridas no sistema. Cada elemento da lista redireciona para a página da respetiva rua. 
-
-No topo da página surge uma barra de pesquisa que permite filtrar as ruas por nome. 
-
-No fundo existe um mapa de Braga com um marcador interativo para cada uma das ruas inseridas no sistema.
+Inclui uma listagem das várias ruas inseridas no sistema. Cada elemento da lista redireciona para a página da respetiva rua. No topo da página existe um mapa de Braga com um marcador interativo para cada uma das ruas inseridas no sistema. Por baixo, surge uma barra de pesquisa que permite filtrar as ruas por nome.
 
 ## Índices de datas/entidades/lugares
 
@@ -461,9 +457,9 @@ De seguida estão posicionados alguns botões que permitem:
 - Adicionar aos favoritos
 - Apresentar as datas/entidades/lugares
 
-Convém destacar que os botões de edição e eliminação apenas estão acessíveis aos administradores do sistema e ao utilizador que registou a rua. De seguida, é fornecida uma breve descrição da rua, tabela das famílias residentes e zona de comentários onde os utilizadores podem interagir. 
+Convém destacar que os botões de edição e eliminação apenas estão acessíveis aos administradores do sistema e ao utilizador que registou a rua. 
 
-No fim existe um mapa do posicionamento geográfico da rua e secção de discussão onde utilizadores podem escrever comentários.
+De seguida, é fornecida uma breve descrição da rua e tabela das famílias residentes. No fim existe um mapa do posicionamento geográfico da rua e uma secção de discussão onde utilizadores podem escrever comentários e interagir.
 
 https://github.com/pedromeruge/ProjetoEW/assets/87565693/2465b94f-cc55-4f6c-850d-5892d6f552d5
 
@@ -487,8 +483,7 @@ https://github.com/pedromeruge/ProjetoEW/assets/87565693/820c5d61-37a6-493f-b38f
 
 Para alterar o registo de uma rua é possível reutilizar o formulário utilizado durante o seu registo, sendo que desta vez os campos estão preenchidos com os valores atuais.
 
-<!-- previsualizar ta errado, mas entre prever e visualizar nao sei qual usar -->
-Desta forma as funcionalidades de adicionar/remover campos estão novamente presentes, e além disso é possível perver as imagens da rua através de um *modal*.
+Desta forma as funcionalidades de adicionar/remover campos estão novamente presentes, e além disso é possível visualizar as imagens da rua através de um *modal*.
 
 Posto isto, após efetuar as alterações pretendidas é necessário clicar no botão `Atualizar`, sendo que para cancelar tudo basta clicar em `Voltar`.
 
@@ -530,5 +525,6 @@ https://github.com/pedromeruge/ProjetoEW/assets/87565693/972265ba-d509-4f0f-9696
 
 ## Mapas
 
-Com recurso ao Mapbox, apresentamos mapas da localização das ruas. Existem botões de rodar, ampliar e desampliar para facilitar a navegação. Existem modelos 3D simplificados dos edifícios quando o utilizador amplia significativamente. O utilizador pode escolher entre diferentes estilos de mapa e clicar em "Câmara lateral" para obter uma perspetiva lateral das ruas.
+Com recurso ao Mapbox, apresentamos mapas da localização das ruas. Na página de listagem de ruas, ao clicar num marcador de rua, o mapa é centrado nessa rua, e revela um popup no qual o utilizador pode clicar para ser redirecionado para a respetiva página.
 
+Existem botões de rodar, ampliar e desampliar para facilitar a navegação. Existem modelos 3D simplificados dos edifícios quando o utilizador amplia significativamente. O utilizador pode escolher entre diferentes estilos de mapa e clicar em "Câmara lateral" para obter uma perspetiva lateral das ruas. 
