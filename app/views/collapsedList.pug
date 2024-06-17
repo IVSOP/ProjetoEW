@@ -17,15 +17,16 @@ block content
         //lista de elementos
         ul#filtered-list.list-group.mb-3(style="font-size: 20px;")
             each element, index in listElements
-                li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.rounded.mt-3(data-bs-toggle='collapse', href='#collapse' + index, role='button')
-                    | #{element.name}
+                .filter-list-elem
+                    li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.rounded.mt-3(data-bs-toggle='collapse', href='#collapse' + index, role='button')
+                        | #{element.name}
 
-                .collapse(id='collapse' + index)
-                    .card.card-body.mt-3
-                        .row
-                            for rua, index_1 in element.ruas
-                                if index_1 > 0 && index_1 % 3 == 0 
-                                    .w-100
-                                .col.text-left
-                                    a.text-dark(href="/ruas/" + rua['_id'], style="text-decoration: none;")= rua.name
+                    .collapse(id='collapse' + index)
+                        .card.card-body.mt-3
+                            .row
+                                for rua, index_1 in element.ruas
+                                    if index_1 > 0 && index_1 % 3 == 0 
+                                        .w-100
+                                    .col.text-left
+                                        a.text-dark(href="/ruas/" + rua['_id'], style="text-decoration: none;")= rua.name
 

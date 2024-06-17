@@ -1,28 +1,20 @@
 // searchbar para filtrar em páginas de listas   
 mixin searchBarFilter(ulHtmlElem) 
-  w-100.d-flex.flex-row.mt-2
-    input#search-terms.w-100(type='text', placeholder='Filtrar..')
-    button#clear-search.btn-outline-secondary.ms-2(type="button")
-      i.bi.bi-x-lg
+  w-100.d-flex.flex-row.mt-3.align-items-center.card.border-success.border-3(style="padding: 6px 10px")
+    input#search-terms.w-100(type='search', placeholder='Filtrar...' style="border: none; outline:none; font-size: 20px;")
+    i.bi.bi-funnel.ms-1(style="font-size: 20px")
 
   script.
     $('#search-terms').on('input', function () {
-      var filter = $(this).val().toUpperCase();
-      var ulElem = !{JSON.stringify(ulHtmlElem)}
-      $(`#${ulElem} li`).each(function() {
-          var txtValue = $(this).text().toUpperCase();
+      let filter = $(this).val().toUpperCase();
+      let ulElem = !{JSON.stringify(ulHtmlElem)}
+      $(`#${ulElem} > .filter-list-elem`).each(function() {
+          let txtValue = $(this).children('li').text().toUpperCase();
           if (txtValue.indexOf(filter) > -1) { // procurar filter como substring nos nomes
             $(this).show();
           }
           else {
-            $(this).hide()
+            $(this).hide();
           }
       })
-    })
-
-    //on click x button
-    $('#clear-search').on('click', function () {
-      //clear search terms
-      $('#search-terms').val('')
-      $('#search-terms').trigger('input');
     })
