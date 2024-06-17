@@ -253,12 +253,11 @@ Por fim, para efetuar *logout*, uma vez que não é possível remover *tokens* d
 
 ## Login
 
-[//]: # (Frontend está mal escrito ######################################################)
-![login](https://github.com/pedromeruge/ProjetoEW/assets/87565693/d2ad9f06-4b86-4345-810d-977781518d67)
+![login](https://github.com/pedromeruge/ProjetoEW/assets/87565693/46dddf94-ec79-4775-94b8-4430b50488cc)
 
 ## Obter Recursos
-[//]: # (Frontend está mal escrito ######################################################)
-![get](https://github.com/pedromeruge/ProjetoEW/assets/87565693/72d3086f-9b1f-44d6-bc4c-294fe1476f28)
+
+![get](https://github.com/pedromeruge/ProjetoEW/assets/87565693/d1169146-d6b9-4e58-9ddc-1ab21bfc5955)
 
 *******
 
