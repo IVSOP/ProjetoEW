@@ -12,12 +12,17 @@ block content
             .col.p-0
                 a.btn.btn-secondary.btn-lg.btn-block.p-2.w-100.h-100(href="/" style="font-size: 32px; align-content: center;") Voltar
 
-        //load de mapa de ruas
-        include maps.pug
-        +loadAllStreetsMap(ruas)
+        //searchbar
+        include searchbar.pug
+        +searchBarFilterSimpleLi("filtered-list")
         
-        ul.list-group.mb-3(style="font-size: 20px;")
+        //lista de ruas
+        ul#filtered-list.list-group.mb-3(style="font-size: 20px;")
             each rua in ruas
                 a(href='/ruas/' + rua['_id'] style="text-decoration: none;")
                     li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.rounded.mt-3= rua.name
+        
+        //load de mapa de ruas
+        include maps.pug
+        +loadAllStreetsMap(ruas)
         
