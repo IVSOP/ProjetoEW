@@ -258,7 +258,6 @@ Por fim, para efetuar *logout*, uma vez que não é possível remover *tokens* d
 
 ## Obter Recursos
 [//]: # (Frontend está mal escrito ######################################################)
-[//]: # (Acho que é mais correto dizer frontend só "verifica que tem token" -> a cena que fiz de validar token no frontend é só para garantir que um user que tenha um token inválido não possa aceder às páginas do site (apesar de qualquer tentativa de falar com o backend resulta-se em erro) -> Mas na prática no frontend é so para "verificar", e nem sei se é boa prática/necessário validar no frontend ######################################################)
 ![get](https://github.com/pedromeruge/ProjetoEW/assets/87565693/72d3086f-9b1f-44d6-bc4c-294fe1476f28)
 
 *******
@@ -268,6 +267,58 @@ Por fim, para efetuar *logout*, uma vez que não é possível remover *tokens* d
 # Rotas
 
 ## Frontend
+
+**Comentários** (usado na página de apresentação de rua)
+- POST
+  - `/comentarios/:id` - editar comentário pré-existente 
+- PUT
+  - `/comentarios/:id/gostos` - gostar de comentário 
+  - `/comentarios/:id/desgostos` - desgostar de comentário
+- DELETE
+  - `/comentarios/:id` - apagar comentário
+
+**Datas/Entidades/Lugares**
+- GET
+  - `/datas` - página de listagem de datas
+  - `/entidades` - página de listagem de entidades
+  - `/lugares` - página de listagem de lugares
+
+**Imagens** (usado nas página de apresentação/registo/edição de rua)
+- GET
+  - `/:folder/:id` - obter da pasta "antigo" ou "atual" uma imagem
+
+**Index**
+- GET
+  - `/` - página inicial após login
+  - `/` - fazer logout do utilizador
+  - `/importar` - popup de enviar conteúdo da BD inteira para o backend
+  - `/exportar` - popup de exportar conteúdo inteiro da BD do backend
+
+**Login**
+- GET
+  - `/login` - página de login do utilizador
+- POST
+  - `/login` - enviar login do utilizador para backend
+
+**Ruas**
+- GET
+  - `/ruas` - página de listagem de ruas
+  - `/ruas/eliminar/:id` - apagar rua criada
+  - `/ruas/registar` - página de criar rua
+  - `/ruas/editar/:id` - página de edição de rua
+  - `/ruas/:id` - página de apresentação de rua
+- POST
+  - `/ruas/registar` - publicar registo de utilizador para backend
+  - `/ruas/editar/:id` - publicar edição de rua
+  - `/ruas/:id/comentarios` - publicar comentário em rua 
+  - `/ruas/:streetId/comentarios/:commentId/respostas` - publicar resposta a comentário em rua
+  - `/ruas/favorito/:id` - publicar rua como favorito
+- DELETE
+  - `/ruas/favorito/:id` - eliminar rua como favorito
+
+**Utilizadores**
+- GET
+  - `/utilizadores/:id` - página de perfil de utilizador
 
 ## Backend
 
