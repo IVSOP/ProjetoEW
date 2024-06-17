@@ -497,7 +497,7 @@ Nesta página o utilizador tem acesso aos seus dados pessoais: o seu username, n
 
 ## Favoritos
 
-Para adicionar uma rua aos favoritos basta clicar na estrela posicionada na respetiva página da rua, sendo que a partir daí o botão fica preenchido, e para remover basta clicar novamente. 
+Para adicionar uma rua aos favoritos basta clicar na estrela posicionada no início da respetiva página da rua, sendo que a partir daí o botão fica preenchido, e para remover basta clicar novamente. 
 
 O utilizador pode depois consultar no seu perfil as ruas favoritas.
 
@@ -505,8 +505,9 @@ O utilizador pode depois consultar no seu perfil as ruas favoritas.
 
 Em relação aos comentários, estão disponíveis várias funcionalidades:
 
+- Publicar comentário
 - Responder a outro utilizador.
-- Alterar o texto.
+- Alterar o texto de comentário.
 - Eliminar (remove as respostas encadeadas).
 - Gostar/desgostar de comentário
 
