@@ -10,8 +10,12 @@ block content
             .col-4.p-0
                 a.btn.btn-secondary.btn-lg.btn-block.p-2.w-100.h-100(href="/" style="font-size: 32px; align-content: center;") Voltar
 
+        //Searchbar
+        include searchbar.pug
+        +searchBarFilter("filtered-list")
 
-        ul.list-group.mb-3(style="font-size: 20px;")
+        //lista de elementos
+        ul#filtered-list.list-group.mb-3(style="font-size: 20px;")
             each element, index in listElements
                 li.list-group-item.list-group-item-action.list-group-item-secondary.text-center.rounded.mt-3(data-bs-toggle='collapse', href='#collapse' + index, role='button')
                     | #{element.name}
@@ -24,3 +28,4 @@ block content
                                     .w-100
                                 .col.text-left
                                     a.text-dark(href="/ruas/" + rua['_id'], style="text-decoration: none;")= rua.name
+
