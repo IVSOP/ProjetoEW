@@ -278,6 +278,7 @@ Quando estabelecemos uma ligação ao `frontend` somos imediatamente encaminhado
 No caso das credenciais de autenticaçãos estarem incorretas é fornecido um pequeno *feedback*, sendo que nas situações de perda da palavra-passe é necessário criar um novo registo.
 
 Um utilizador que ainda não tenha credenciais no sistema pode registar-se na secção "r"
+
 https://github.com/pedromeruge/ProjetoEW/assets/87565693/7a984b73-f47f-4e60-b1a2-9db0d51aa19b
 
 ## Índices de ruas

@@ -4,10 +4,10 @@ mixin loadAllStreetsMap(streets)
   link(href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet')
   script(src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js')
   if (streets)
-    div.map-content.my-3(style='height: 500px; position: relative')
-      div#map.w-100.h-100(style='position: absolute; top: 0; left: 0')
+    div.map-content.mt-3.mb-0(style='height: 500px; position: relative')
+      div#map.w-100.h-100.rounded.border(style='position: absolute; top: 0; left: 0')
       // div to switch between map styles
-      div#menu.d-flex.align-items-center(style='position: absolute; background: #efefef; padding: 10px; top: 0; left: 0; font-family: "Open Sans", sans-serif; z-index: 5')
+      div#menu.d-flex.align-items-center.rounded(style='position: absolute; background: #efefef; padding: 10px; top: 0; left: 0; font-family: "Open Sans", sans-serif; z-index: 5')
         span.pe-2 Estilos: 
         input#satellite-streets-v12(type='radio', name='rtoggle', value='satellite')
         label(for='satellite-streets-v12') Satélite
@@ -153,10 +153,10 @@ mixin loadSingleStreetMap(street)
   link(href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet')
   script(src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js')
   if street && street.geoCords
-    div.map-content.my-3(style='height: 500px; position: relative')
-      div#map.w-100.h-100(style='position: absolute; top: 0; left: 0')
+    div.map-content.mt-3.mb-0(style='height: 500px; position: relative')
+      div#map.w-100.h-100.border.rounded(style='position: absolute; top: 0; left: 0')
       // div to switch between map styles
-      div#menu.d-flex.align-items-center(style='position: absolute; background: #efefef; padding: 10px; top: 0; left: 0; font-family: "Open Sans", sans-serif; z-index: 5')
+      div#menu.d-flex.align-items-center.rounded(style='position: absolute; background: #efefef; padding: 10px; top: 0; left: 0; font-family: "Open Sans", sans-serif; z-index: 5')
         span.pe-2 Estilos: 
         input#satellite-streets-v12(type='radio', name='rtoggle', value='satellite')
         label(for='satellite-streets-v12') Satélite

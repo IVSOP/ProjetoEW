@@ -102,19 +102,19 @@ block content
                                 .col
                                     button.btn.btn-danger.w-100.h-100.deleteNewImage(data-field-id=`newImage${index}`) Eliminar
 
-            .card.mb-4.mt-3.w-100.border-dark
+            .card.mb-3.mt-3.w-100.border-dark
                 .card-header.d-flex.justify-content-between
                     h5.fw-bold.align-items-center.mb-0 Localização geográfica
                 .card-body#datesContainer
-                    .card.p-4.mb-4.border-secondary.bg-light
+                    .card.p-3.border-dark.bg-light
                         p.text-secondary Para preencher automaticamente as coordenadas geográficas da rua pode escrever no campo abaixo o nome da rua e pressionar "Pesquisa automática". Incluir códigos postais e/ou números de porta promove o sucesso da pesquisa.
                         .row.g-3#date1
                             .col
                                 input#rua-search.form-control(type='text', name='rua-search', placeholder='Ex: Rua Padre António Vieira 23, 4700-006, São Vicente')
                             .col 
                                 button.btn#generate-geo-cords.btn.btn-secondary.w-100(type="button") Pesquisa automática
-                        p#geo-error.text-danger.d-none
-                    .row.g-3.mb-3#date1
+                        p#geo-error.alert.alert-danger.d-none.mt-3.mb-0
+                    .row.g-3.mt-0#date1
                         .col
                             input#lng-field.form-control(type='text', name='longitude', placeholder='Longitude' value=rua.geoCords? rua.geoCords.longitude : '' )
                         .col
@@ -124,10 +124,10 @@ block content
                     p#map-preview-error.text-danger.d-none
                     link(href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet')
                     script(src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js')
-                    div.map-content.my-3.d-none(style='height: 400px; position: relative')
-                        div#map-preview.w-100.h-100(style='position: absolute; top: 0; left: 0')
+                    div.map-content.mt-3.d-none(style='height: 400px; position: relative')
+                        div#map-preview.w-100.h-100.border.rounded(style='position: absolute; top: 0; left: 0')
                         // div to switch between map styles
-                        div#menu.d-flex.align-items-center(style='position: absolute; background: #efefef; padding: 10px; top: 0; left: 0; font-family: "Open Sans", sans-serif; z-index: 5')
+                        div#menu.d-flex.align-items-center.rounded(style='position: absolute; background: #efefef; padding: 10px; top: 0; left: 0; font-family: "Open Sans", sans-serif; z-index: 5')
                             span.pe-2 Estilos: 
                             input#satellite-streets-v12(type='radio', name='rtoggle', value='satellite')
                             label(for='satellite-streets-v12') Satélite
