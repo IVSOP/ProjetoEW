@@ -15,8 +15,8 @@
 - [Docker](#Docker)
 - [Importação e exportação de dados](#Importacao_e_exportacao_de_dados)
 - [Autenticação](#Autenticacao)
-- [Páginas do website](#Paginas_do_website)
 - [Rotas](#Rotas)
+- [Páginas do website](#Paginas_do_website)
 
 *******
 
@@ -147,9 +147,9 @@ sudo ./docker_servico.sh
 
 # Importação e exportação de dados
 
-No serviço de dados, utilizam-se os scripts `import.sh` e `export.sh` para importar e exportar os dados. Estes são também executados pelo próprio serviço de dados, através das rotas descritas em [Rotas](#Rotas).
+No serviço de dados, utilizam-se os scripts `import.sh` e `export.sh` para importar e exportar os dados. Estes são executados pelo próprio serviço de dados, através das rotas descritas em [Rotas](#Rotas).
 
-Estas duas rotas são utilizadas pelo frontend, estando as funcionalidades disponíveis apenas a administradores.
+Estas duas rotas são depois utilizadas pelo frontend, estando as funcionalidades disponíveis apenas a administradores.
 
 O ficheiro de exportação, `dados.tar`, tem os seguintes conteúdos:
 
@@ -263,6 +263,100 @@ Por fim, para efetuar *logout*, uma vez que não é possível remover *tokens* d
 
 *******
 
+<div id="Rotas"/>
+
+# Rotas
+
+## Frontend
+
+## Backend
+
+**Imagens antigas**
+- GET
+	- `/antigo` - lista de dados sobre imagens antigas
+	- `/antigo/:id` - dados sobre uma imagem antiga com este id
+	- `/antigo/show/:id` - a imagem em si, podendo ser mostrada no browser
+- POST
+	- `/antigo` - submeter uma nova imagem
+- PUT
+	- `/antigo/:id` - alterar dados da imagem, exceto o ficheiro da imagem em si
+- DELETE
+	- `/antigo/:id` - apagar imagem
+
+**Imagens atuais**
+
+- Exatamente igual ao anterior, exceto usando `atual` em vez de `antigo`
+
+**Comentários**
+
+- GET
+	- `/comentarios` - lista de comentários
+	- `/comentarios/:id` - dados do comentário com este  id
+	- `/comentarios/ruas/:id` - todos os comentários sobre a rua com este id
+- POST
+	- `/comentarios` - criar um novo comentário
+	- `/comentarios/:id/respostas` - criar um novo comentário como resposta ao deste id 
+- PUT
+	- `/comentarios/:id/gostos` - adicionar gosto (e remover desgosto) ao comentário com este id
+	- `/comentarios/:id/desgostos` - adicionar desgosto (e remover gosto) ao comentário com este id
+	- `/comentarios/:id` - editar um comentário
+- DELETE
+	- `/comentarios/:id` - remover comentário
+
+**Ruas**
+
+- GET
+	- `/ruas` - lista de ruas
+	- `/ruas/:id` - dados de uma rua
+- POST
+	- `/ruas` - criar uma nova rua
+	- `/ruas/favorito/:id` - adicionar favorito a uma rua
+- PUT
+	- `/ruas/:id` - editar uma rua
+- DELETE
+	- `/ruas/:id` - apagar uma rua
+	- `/ruas/favorito/:id` - remover favorito de uma rua
+
+**Datas**
+
+- GET
+	- `/datas` - lista de datas
+	- `/datas/:id` - dados de uma data
+- POST
+	- `/datas` - adicionar uma data
+- PUT
+	- `/datas/:id` - editar uma data
+- DELETE
+	- `/datas/:id` - apagar uma data
+
+**Lugares**
+
+- GET
+	- `/lugares` - lista de lugares
+	- `/lugares/:id` - dados de um lugar
+- POST
+	- `/lugares` - adicionar um lugar
+- PUT
+	- `/lugares/:id` - editar um lugar
+- DELETE
+	- `/lugares/:id` - apagar um lugar
+
+**Utilizadores**
+- GET
+	- `/users` - lista de utilizadores
+	- `/users/:id` - dados de um utilizador
+- POST
+	- `/users/register` - regista um novo utilizador
+	- `/users/login` - efetuar login de um utilizador
+
+**Importar/Exportar**
+- GET
+	- `/impexp/exportar` - download de um ficheiro com os dados exportados
+- POST
+	- `/impexp/importar` - upload de um ficheiro com dados a serem importados
+
+*******
+
 <div id="Paginas_do_website"/>
 
 # Páginas do website
@@ -369,13 +463,3 @@ Com recurso ao Mapbox, apresentamos mapas da localização das ruas. Existem bot
 [//]: # (Podiamos mover os título "importação e exportação" para dentor das páginas em que aparecem como subtópicos, já que esta secção do relatório é de "páginas do webiste", o mesmo para "Favoritos e comentários", "Mapas". E acho que isso traduzia melhor a forma como essas funcionalidades se enquadram no site e em que páginas são encontradas######################################################)
 
 [//]: # (Alguns vídeos vão ter que ser refeitos porque agora há mapas :# upsii!! ######################################################)
-
-*******
-
-<div id="Rotas"/>
-
-# Rotas
-
-## Frontend
-
-## Backend
